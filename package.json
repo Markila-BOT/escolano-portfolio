@@ -6,17 +6,25 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "latest",
+    "@fontsource/quicksand": "^4.5.12",
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^0.9.320",
+    "framer-motion": "^10.12.7",
+    "next": "^13.3.4",
+    "next-themes": "^0.2.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0"
   },
   "devDependencies": {
-    "@types/node": "18.11.3",
-    "@types/react": "18.0.21",
-    "@types/react-dom": "18.0.6",
-    "autoprefixer": "^10.4.12",
-    "postcss": "^8.4.18",
-    "tailwindcss": "^3.2.4",
-    "typescript": "4.9.4"
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "18.16.3",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.1",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "tailwind-scrollbar": "^3.0.0",
+    "tailwindcss": "^3.3.2",
+    "typescript": "5.0.4"
   }
 }
