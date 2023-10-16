@@ -6,10 +6,17 @@ import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import logo from "@/public/logo.png";
+import Image from "next/image";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
+  const isDesktop = useMediaQuery("(min-width: 960px)");
+  const linksBaseFromMedia = isDesktop
+    ? links.filter((link) => link.name !== "Home")
+    : links;
 
   return (
     <header className="z-[999] relative">
@@ -18,12 +25,39 @@ export default function Header() {
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       ></motion.div>
-
+      {isDesktop && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            type: "tween",
+            duration: 0.2,
+          }}
+        >
+          <Link
+            href={"#home"}
+            onClick={() => {
+              setActiveSection("Home");
+              setTimeOfLastClick(Date.now());
+            }}
+          >
+            <Image
+              src={logo}
+              alt="Logo"
+              width="52"
+              height="52"
+              quality="95"
+              priority={true}
+              className="flex fixed top-[1rem] left-[5rem] h-12 sm:top-[1.5rem] sm:h-[initial] sm:py-0 cursor-pointer hover:scale-110 transition duration-300 ease-in-out"
+            />
+          </Link>
+        </motion.div>
+      )}
       <nav className="flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
         <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5">
-          {links.map((link) => (
+          {linksBaseFromMedia.map((link) => (
             <motion.li
-              className="h-3/4 flex items-center justify-center relative"
+              className="relative flex items-center justify-center h-3/4"
               key={link.hash}
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -43,10 +77,9 @@ export default function Header() {
                 }}
               >
                 {link.name}
-
                 {link.name === activeSection && (
                   <motion.span
-                    className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
+                    className="absolute inset-0 bg-gray-100 rounded-full -z-10 dark:bg-gray-800"
                     layoutId="activeSection"
                     transition={{
                       type: "spring",
