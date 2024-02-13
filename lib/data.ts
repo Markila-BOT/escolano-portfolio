@@ -1,10 +1,33 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaHtml5, FaJs, FaNodeJs, FaGitAlt } from "react-icons/fa";
+import { DiMysql } from "react-icons/di";
+import {
+  SiExpress,
+  SiFirebase,
+  SiFramer,
+  SiGraphql,
+  SiMongodb,
+  SiNestjs,
+  SiNextdotjs,
+  SiRedux,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import LAWSON_SMART_REPORT_IMAGE from "@/public/projects/lawson-smart-report.png";
+import ASURION_IRIS_IMAGE from "@/public/projects/asurion-iris.png";
+import BOSCH_GRADE_X_IMAGE from "@/public/projects/bosch-grade-x.png";
+import DENSO_ECU_IMAGE from "@/public/projects/denso-ecu.png";
+import MERCHANTSPRING_IMAGE from "@/public/projects/merchantspring.png";
+import NEC_WEB_OTX_IMAGE from "@/public/projects/nec-web-otx.png";
+import RAKUTEN_TRAVEL_IMAGE from "@/public/projects/rakuten-travel.png";
+import WEALTHPARK_ACTIVITY_IMAGE from "@/public/projects/wealthpark-activity.png";
+import WEALTHPARK_CHAT_ADMIN_IMAGE from "@/public/projects/wealthpark-chat-admin.png";
+import WEALTHPARK_OWNER_APP_IMAGE from "@/public/projects/wealthpark-owner-app.png";
+import WEALTHPARK_VALUATION_IMAGE from "@/public/projects/wealthpark-valuation.png";
+import X_CLIMB_LAGOON_IMAGE from "@/public/projects/x-climb-lagoon.png";
+import LOOKING_GLASS_IMAGE from "@/public/projects/looking-glass.png";
 
 export const links = [
   {
@@ -62,46 +85,142 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
-    description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: corpcommentImg,
+    title: "Valuation",
+    year: "2022-Present",
+    tags: [
+      "TypeScript",
+      "React",
+      "NextJS",
+      "Tailwind CSS",
+      "Jotai",
+      "Zustand",
+      "REST",
+    ],
+    imageUrl: WEALTHPARK_VALUATION_IMAGE,
   },
   {
-    title: "rmtDev",
-    description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: rmtdevImg,
+    title: "Owner Web App",
+    year: "2021-Present",
+    tags: [
+      "TypeScript",
+      "React",
+      "Styled Components",
+      "Tailwind CSS",
+      "Jotai",
+      "REST",
+    ],
+    imageUrl: WEALTHPARK_OWNER_APP_IMAGE,
   },
   {
-    title: "Word Analytics",
-    description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: wordanalyticsImg,
+    title: "Workflow",
+    year: "2021-Present",
+    tags: ["JavaScript", "React", "Styled Components", "Redux", "REST"],
+    imageUrl: WEALTHPARK_ACTIVITY_IMAGE,
+  },
+  {
+    title: "Chat-Admin",
+    year: "2021-Present",
+    tags: ["JavaScript", "React", "Material UI", "Redux", "Websockets"],
+    imageUrl: WEALTHPARK_CHAT_ADMIN_IMAGE,
+  },
+  {
+    title: "LookingGlass",
+    year: "2020-2020",
+    tags: ["JavaScript", "Angular", "Cordova"],
+    imageUrl: LOOKING_GLASS_IMAGE,
+  },
+  {
+    title: "MerchantSpring",
+    year: "2020-2021",
+    tags: [
+      "TypeScript",
+      "React",
+      "Material UI",
+      "Redux",
+      "Styled Components",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "Jest",
+      "Docker",
+    ],
+    imageUrl: MERCHANTSPRING_IMAGE,
+  },
+  {
+    title: "Lagoon",
+    year: "2020-2021",
+    tags: ["TypeScript", "React", "Redux", "Styled Components", "Firebase"],
+    imageUrl: X_CLIMB_LAGOON_IMAGE,
+  },
+  {
+    title: "Iris",
+    year: "2019-2020",
+    tags: [
+      "TypeScript",
+      "React",
+      "Redux",
+      "Styled Components",
+      "Webpack",
+      "Cypress",
+    ],
+    imageUrl: ASURION_IRIS_IMAGE,
+  },
+  {
+    title: "Rakuten Travel",
+    year: "2018-2020",
+    tags: [
+      "JavaScript",
+      "React",
+      "Flux",
+      "Redux",
+      "LESS/SCSS",
+      "Webpack",
+      "Cypress",
+    ],
+    imageUrl: RAKUTEN_TRAVEL_IMAGE,
+  },
+  {
+    title: "ADT(Alliance Diagnostic Tool)",
+    year: "2017-2018",
+    tags: ["JavaScript", "Angular", "Bower", "Grunt", "LESS/SCSS"],
+    imageUrl: BOSCH_GRADE_X_IMAGE,
+  },
+  {
+    title: "WebOTX",
+    year: "2016-2017",
+    tags: ["Java", "Spring Tools"],
+    imageUrl: NEC_WEB_OTX_IMAGE,
+  },
+  {
+    title: "ECUs Non-Toyota-Diesel",
+    year: "2014-2016",
+    tags: ["C", "Misra C", "GAIO Tech"],
+    imageUrl: DENSO_ECU_IMAGE,
+  },
+  {
+    title: "Lawson Smart Report",
+    year: "2013-2014",
+    tags: ["Java", "Spring Tools"],
+    imageUrl: LAWSON_SMART_REPORT_IMAGE,
   },
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
-  "Framer Motion",
+  { label: "HTML", icon: React.createElement(FaHtml5) },
+  { label: "CSS", icon: React.createElement(FaReact) },
+  { label: "JavaScript", icon: React.createElement(FaJs) },
+  { label: "TypeScript", icon: React.createElement(SiTypescript) },
+  { label: "React", icon: React.createElement(FaReact) },
+  { label: "Next.js", icon: React.createElement(SiNextdotjs) },
+  { label: "Node.js", icon: React.createElement(FaNodeJs) },
+  { label: "Git", icon: React.createElement(FaGitAlt) },
+  { label: "Tailwind", icon: React.createElement(SiTailwindcss) },
+  { label: "MongoDB", icon: React.createElement(SiMongodb) },
+  { label: "MySQL", icon: React.createElement(DiMysql) },
+  { label: "Firebase", icon: React.createElement(SiFirebase) },
+  { label: "Redux", icon: React.createElement(SiRedux) },
+  { label: "GraphQL", icon: React.createElement(SiGraphql) },
+  { label: "Nest.js", icon: React.createElement(SiNestjs) },
+  { label: "Express", icon: React.createElement(SiExpress) },
+  { label: "Framer Motion", icon: React.createElement(SiFramer) },
 ] as const;

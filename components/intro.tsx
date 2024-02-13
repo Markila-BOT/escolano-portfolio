@@ -1,25 +1,60 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
-import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
-import { useActiveSectionContext } from "@/context/active-section-context";
 import profile from "@/public/profile.png";
+import Balancer from "react-wrap-balancer";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
-  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+  const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const GREETINGS = ["Welcome!🇬🇧🇺🇸 👋", "Mabuhay!🇵🇭 👋", "ようこそ🇯🇵 🙇"];
+  const interval = useRef<number | undefined>(undefined);
+  const [greeting, setGreeting] = useState(0);
+
+  function animateText(event: React.MouseEvent<HTMLHeadingElement>) {
+    let iteration = 0;
+
+    if (interval.current) {
+      clearInterval(interval.current);
+    }
+
+    interval.current = window.setInterval(() => {
+      const target = event.target! as HTMLHeadingElement;
+      const dataset = target.dataset.value!;
+
+      target.innerText = target.innerText
+        .split("")
+        .map((letter, index) => {
+          if (index < iteration) {
+            return dataset[index];
+          }
+          return LETTERS[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+      if (iteration >= dataset.length!) {
+        clearInterval(interval.current);
+      }
+      iteration += 1 / 3;
+      setGreeting(Math.floor(Math.random() * GREETINGS.length));
+    }, 30);
+  }
+
+  useEffect(() => {
+    return () => {
+      if (interval.current) {
+        clearInterval(interval.current as number);
+      }
+    };
+  }, []);
 
   return (
     <section
       ref={ref}
       id="home"
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+      className="mb-20 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
     >
       <div className="flex items-center justify-center">
         <div className="relative">
@@ -56,58 +91,33 @@ export default function Intro() {
           </motion.span>
         </div>
       </div>
+
       <motion.h1
         className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        {/* TODO: Mark Change this welcome more animations here */}
-        <span>Welcome! </span>
-        <span className="font-bold">I'm Mark Escolano,</span> a{" "}
-        <strong className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
-          Full-Stack Engineer
-        </strong>
-        <span className="font-bold">
-          {" "}
-          with a strong focus on <span className="underline">
-            frontend
-          </span>{" "}
-          technologies.
-        </span>
+        <Balancer>
+          <h1
+            className="subpixel-antialiased leading-9"
+            data-value={`${GREETINGS[greeting]}`}
+            onMouseOver={animateText}
+          >
+            {GREETINGS[greeting]}
+          </h1>
+          <span className="font-bold">I'm Mark Escolano,</span> a{" "}
+          <strong className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
+            Senior Software Engineer
+          </strong>
+          <span className="font-bold">
+            {" "}
+            with a strong focus on <span className="underline">
+              frontend
+            </span>{" "}
+            technologies.
+          </span>
+        </Balancer>
       </motion.h1>
-      <motion.div
-        className="flex flex-col items-center justify-center gap-2 px-4 text-lg font-medium sm:flex-row"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.1,
-        }}
-      >
-        <a
-          className="flex items-center gap-2 py-3 transition bg-white rounded-full outline-none cursor-pointer group px-7 focus:scale-110 hover:scale-110 active:scale-105 borderBlack dark:bg-white/10"
-          href="/CV.pdf"
-          download
-        >
-          Download CV{" "}
-          <HiDownload className="transition opacity-60 group-hover:translate-y-1" />
-        </a>
-
-        <a
-          className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-          href="https://linkedin.com"
-          target="_blank"
-        >
-          <BsLinkedin />
-        </a>
-
-        <a
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-          href="https://github.com"
-          target="_blank"
-        >
-          <FaGithubSquare />
-        </a>
-      </motion.div>
     </section>
   );
 }
