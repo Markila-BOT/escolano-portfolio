@@ -5,29 +5,29 @@ import SectionHeading from "./section-heading";
 import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
-
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.05 * index,
-    },
-  }),
-};
+import { fadeInAnimationVariants } from "@/lib/animations";
+import { Label } from "./ui/label";
 
 export default function Skills() {
   const { ref } = useSectionInView("Skills");
 
   return (
-    <section
+    <motion.section
       id="skills"
       ref={ref}
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 1,
+      }}
+      viewport={{
+        once: true,
+      }}
+      className="max-w-[53rem] text-center mb-20 sm:mb-0 scroll-mt-28"
     >
       <SectionHeading>My skills</SectionHeading>
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
@@ -44,10 +44,10 @@ export default function Skills() {
             custom={index}
           >
             {skill.icon}
-            {skill.label}
+            <Label>{skill.label}</Label>
           </motion.li>
         ))}
       </ul>
-    </section>
+    </motion.section>
   );
 }

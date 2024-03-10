@@ -15,12 +15,11 @@ import {
 import { motion } from "framer-motion";
 
 export default function Projects() {
-  const { ref } = useSectionInView("Projects", 0.5);
+  const { ref } = useSectionInView("Projects");
 
   return (
     <motion.section
       ref={ref}
-      id="projects"
       initial={{
         opacity: 0,
       }}
@@ -33,12 +32,14 @@ export default function Projects() {
       viewport={{
         once: true,
       }}
+      id="projects"
+      className="mb-20 text-center scroll-mt-28 sm:mb-0"
     >
       <SectionHeading>My projects</SectionHeading>
-      <Carousel className="w-full max-w-xs rounded-xl">
+      <Carousel className="w-full max-w-5xl rounded-xl">
         <CarouselContent>
           {projectsData.map((project, index) => (
-            <CarouselItem key={index}>
+            <CarouselItem key={index} className="basis-1/3">
               <Project {...project} />
             </CarouselItem>
           ))}
