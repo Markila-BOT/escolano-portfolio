@@ -38,6 +38,7 @@ import {
   SiLess,
   SiBower,
   SiSpring,
+  SiLevelsdotfyi,
 } from "react-icons/si";
 import {
   TbBrandRedux,
@@ -45,7 +46,14 @@ import {
   TbHexagonLetterC,
 } from "react-icons/tb";
 import { AiOutlineApi } from "react-icons/ai";
+import {
+  FaLaptopCode,
+  FaIdCard,
+  FaPlaneDeparture,
+  FaPlaneArrival,
+} from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
+import { LiaChalkboardTeacherSolid } from "react-icons/lia";
 import LAWSON_SMART_REPORT_IMAGE from "@/public/projects/lawson-smart-report.png";
 import ASURION_IRIS_IMAGE from "@/public/projects/asurion-iris.png";
 import BOSCH_GRADE_X_IMAGE from "@/public/projects/bosch-grade-x.png";
@@ -89,28 +97,89 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Senior Software Engineer",
+    location: "Quezon City, Philippines",
+    description: "Now I work in a property management technology company.",
+    icon: React.createElement(CgWorkAlt),
+    date: "2022-Present",
+  },
+  {
+    title: "Full Stack Engineer",
+    location: "South Melbourne, Australia",
+    description: "Work as a fulltime full stack engineer.",
+    icon: React.createElement(FaReact),
+    date: "2021",
+  },
+  {
+    title: "Lead Software Engineer",
+    location: "Quezon City, Philippines",
+    description: "Lead couple of front end engineers.",
+    icon: React.createElement(LiaChalkboardTeacherSolid),
+    date: "2021",
+  },
+  {
+    title: "Fly back home",
+    location: "Quezon City, Philippines",
+    description: "Work and travel back home. 🇵🇭",
+    icon: React.createElement(FaPlaneArrival),
+    date: "2021",
+  },
+  {
+    title: "Front-End Engineer",
+    location: "Tokyo, Japan",
+    description: "Developed and maintained web applications using React",
+    icon: React.createElement(CgWorkAlt),
+    date: "2020",
+  },
+  {
+    title: "Apply training knowledge",
+    location: "Tokyo, Japan",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
-    icon: React.createElement(LuGraduationCap),
+      "Communicate and collaborate with product managers and engineers.",
+    icon: React.createElement(FaPlaneArrival),
     date: "2019",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
-    description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    title: "Training in United Kingdom",
+    location: "Manchester, United Kingdom",
+    description: "Train with diverse teammates and learn new skills. 🇬🇧",
+    icon: React.createElement(FaPlaneDeparture),
+    date: "2018",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
-    description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
+    title: "Fly to Japan",
+    location: "Tokyo, Japan",
+    description: "Work in Japan. 🇯🇵",
+    icon: React.createElement(FaPlaneDeparture),
+    date: "2017",
+  },
+  {
+    title: "Promoted",
+    location: "Makati, Philippines",
+    description: "Promoted as a software engineer II",
+    icon: React.createElement(SiLevelsdotfyi),
+    date: "2016",
+  },
+  {
+    title: "First Job",
+    location: "Makati, Philippines",
+    description: "Landed my first job as a software engineer.",
+    icon: React.createElement(FaIdCard),
+    date: "2014",
+  },
+  {
+    title: "Internship",
+    location: "Taguig, Philippines",
+    description: "Internship at Lawson. I worked as a Java developer.",
+    icon: React.createElement(FaLaptopCode),
+    date: "2013",
+  },
+  {
+    title: "Education",
+    location: "Mandaluyong, Philippines",
+    description: "Obtained a Bachelor's Degree in Computer Engineering.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2013-2014",
   },
 ] as const;
 
