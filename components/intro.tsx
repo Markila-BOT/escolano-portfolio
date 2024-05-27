@@ -27,7 +27,7 @@ export default function Intro() {
 
       target.innerText = target.innerText
         .split("")
-        .map((letter, index) => {
+        .map((_letter, index) => {
           if (index < iteration) {
             return dataset[index];
           }
