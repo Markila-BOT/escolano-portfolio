@@ -252,7 +252,7 @@ export const projectsData = [
     ],
     imageUrl: WEALTHPARK_ACTIVITY_IMAGE,
     videoUrl: "https://youtu.be/qTU8kAdfIWI",
-    websiteUrl: "https://demo.workflow.wealth-park.com/operation",
+    websiteUrl: "https://demo.workflow.wealth-park.com/operation/",
   },
   {
     title: "Chat-Admin",
@@ -435,7 +435,7 @@ export const projectsData = [
     title: "ECUs Non-Toyota-Diesel",
     year: "2014-2016",
     description: [
-      "The Denso ECU project represents Japan's commitment to automotive excellence, focusing on advancing engine technology beyond Toyota vehicles. Through intensive research and development, the project delves into the intricate logical behaviors governing engine components, aiming to decipher the complex interplay that drives performance and efficiency.",
+      "The Denso ECU project represents Japan's commitment to automotive excellence, focusing on advancing engine technology beyond vehicles. Through intensive research and development, the project delves into the intricate logical behaviors governing engine components, aiming to decipher the complex interplay that drives performance and efficiency.",
       "With a focus on understanding fundamental mechanics, the project seeks to unlock innovative advancements in engine control units (ECUs) and related technologies. By unraveling these intricate relationships, Denso's initiative not only improves the performance and reliability of existing models but also lays the groundwork for future automotive solutions.",
       "In essence, the Denso ECU project embodies Japan's relentless pursuit of technological mastery in automotive engineering. Through its endeavors, it not only elevates industry standards but also contributes to the global automotive landscape, empowering manufacturers to deliver vehicles that excel in quality, efficiency, and driving experience.",
     ],

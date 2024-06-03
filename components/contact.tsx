@@ -7,6 +7,7 @@ import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
+import CVButton from "./cv";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -67,7 +68,10 @@ export default function Contact() {
           required
           maxLength={5000}
         />
-        <SubmitBtn />
+        <div className="flex self-start justify-center gap-x-3">
+          <SubmitBtn />
+          <CVButton />
+        </div>
       </form>
     </motion.section>
   );
