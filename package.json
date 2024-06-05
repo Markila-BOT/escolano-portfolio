@@ -44,6 +44,8 @@
     "vaul": "^0.9.1"
   },
   "devDependencies": {
-    "@types/react-vertical-timeline-component": "^3.3.6"
+    "@types/react-vertical-timeline-component": "^3.3.6",
+    "prettier": "^3.3.1",
+    "prettier-plugin-tailwindcss": "^0.6.1"
   }
 }
