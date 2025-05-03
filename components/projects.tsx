@@ -33,20 +33,26 @@ export default function Projects() {
         once: true,
       }}
       id="projects"
-      className="mb-20 text-center scroll-mt-28 sm:mb-0"
+      className="mb-20 scroll-mt-28 text-center sm:mb-0"
     >
       <SectionHeading>My projects</SectionHeading>
-      <Carousel className="w-full max-w-5xl rounded-xl">
-        <CarouselContent>
-          {projectsData.map((project, index) => (
-            <CarouselItem key={index} className="basis-1/3">
-              <Project {...project} />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Carousel className="w-full rounded-xl">
+          <CarouselContent className="gap-4">
+            {projectsData.map((project, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <Project {...project} />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="hidden md:block">
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
+          </div>
+        </Carousel>
+      </div>
     </motion.section>
   );
 }
