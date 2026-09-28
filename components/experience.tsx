@@ -9,13 +9,11 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
-import { useTheme } from "@/context/theme-context";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
-  const { theme } = useTheme();
 
   const [visibleElements, setVisibleElements] = useState(3);
 
@@ -39,7 +37,7 @@ export default function Experience() {
         once: true,
       }}
       id="experience"
-      className="w-full scroll-mt-28 mb-28 sm:mb-40"
+      className="mb-28 w-full scroll-mt-28 sm:mb-40"
     >
       <SectionHeading>My experience</SectionHeading>
       <VerticalTimeline lineColor="">
@@ -48,10 +46,10 @@ export default function Experience() {
             <VerticalTimelineElement
               visible={true}
               contentStyle={{
-                background:
-                  theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
+                background: "hsl(var(--card))",
+                color: "hsl(var(--foreground))",
                 boxShadow: "none",
-                border: "1px solid rgba(0, 0, 0, 0.05)",
+                border: "1px solid hsl(var(--border))",
                 textAlign: "left",
                 borderRadius: "0.75rem",
                 padding: "1.3rem 2rem",
@@ -62,14 +60,15 @@ export default function Experience() {
               date={item.date}
               icon={item.icon}
               iconStyle={{
-                background:
-                  theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",
+                background: "hsl(var(--card))",
+                color: "hsl(var(--primary))",
+                boxShadow: "0 0 0 3px hsl(var(--border))",
                 fontSize: "1.5rem",
               }}
             >
               <h3 className="font-bold capitalize">{item.title}</h3>
-              <p className="font-normal !mt-0">{item.location}</p>
-              <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
+              <p className="!mt-0 font-normal">{item.location}</p>
+              <p className="text-muted-foreground !mt-1 !font-normal">
                 {item.description}
               </p>
             </VerticalTimelineElement>
@@ -81,7 +80,7 @@ export default function Experience() {
           <Button
             onClick={handleReadMore}
             variant={"outline"}
-            className="mt-4 focus:scale-110 hover:scale-110 hover:bg-gray-300 dark:hover:bg-gray-800 active:scale-105"
+            className="mt-4 hover:scale-110 focus:scale-110 active:scale-105"
           >
             Read More
           </Button>

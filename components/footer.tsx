@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="px-4 mb-10 text-center text-gray-500">
-      <small className="block mb-2 text-xs">
+    <footer className="text-muted-foreground mb-10 px-4 text-center">
+      <small className="mb-2 block text-xs">
         &copy; 2025 Mark Escolano. All rights reserved.
       </small>
     </footer>

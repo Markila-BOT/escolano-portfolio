@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <header className="relative z-[999]">
       <motion.div
-        className="fixed left-1/2 top-0 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] dark:border-black/40 dark:bg-gray-950 dark:bg-opacity-75 sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full"
+        className="border-border bg-background/80 fixed left-1/2 top-0 h-[4.5rem] w-full rounded-none border shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full"
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       ></motion.div>
@@ -55,7 +55,7 @@ export default function Header() {
             </Link>
           </motion.div>
           <nav className="fixed left-1/2 top-[0.15rem] flex h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0">
-            <ul className="flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium text-gray-500 sm:w-[initial] sm:flex-nowrap sm:gap-5">
+            <ul className="text-muted-foreground flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[0.9rem] font-medium sm:w-[initial] sm:flex-nowrap sm:gap-5">
               {links
                 .filter((link) => link.name !== "Home")
                 .map((link) => (
@@ -67,10 +67,9 @@ export default function Header() {
                   >
                     <Link
                       className={clsx(
-                        "flex w-full items-center justify-center px-3 py-3 transition hover:text-gray-950 dark:text-gray-500 dark:hover:text-gray-300",
+                        "hover:text-foreground flex w-full items-center justify-center px-3 py-3 transition",
                         {
-                          "text-gray-950 dark:text-gray-200":
-                            activeSection === link.name,
+                          "text-accent-foreground": activeSection === link.name,
                         },
                       )}
                       href={link.hash}
@@ -82,7 +81,7 @@ export default function Header() {
                       {link.name}
                       {link.name === activeSection && (
                         <motion.span
-                          className="absolute inset-0 -z-10 rounded-full bg-gray-100 dark:bg-gray-800"
+                          className="bg-accent absolute inset-0 -z-10 rounded-full"
                           layoutId="activeSection"
                           transition={{
                             type: "spring",
@@ -100,7 +99,7 @@ export default function Header() {
       ) : (
         <>
           <button
-            className="fixed right-4 top-4 z-50 rounded-lg bg-white/80 p-2 backdrop-blur-sm dark:bg-gray-950/80"
+            className="border-border bg-background/80 text-foreground fixed right-4 top-4 z-50 rounded-lg border p-2 backdrop-blur-sm"
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
             aria-controls={mobileNavigationId}

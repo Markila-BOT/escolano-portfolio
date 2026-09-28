@@ -8,8 +8,8 @@ Status key: `[x]` done, `[ ]` still open. Items marked **partial** exist, and do
 
 | Scope               | Done | Partial | Not started |    Complete |
 | ------------------- | ---: | ------: | ----------: | ----------: |
-| Current spec        |   33 |      11 |          50 | 33/94 (35%) |
-| Future enhancements |    0 |       1 |           7 |    0/8 (0%) |
+| Current spec        |   40 |      11 |          56 | 40/107 (37%) |
+| Future enhancements |    0 |       1 |          14 |   0/15 (0%) |
 
 Protected routes are out of scope. The site is a single public page.
 
@@ -23,15 +23,15 @@ Protected routes are out of scope. The site is a single public page.
 
 ### 1.1 One theme for light and dark
 
-The toggle works. The page and the drawer do not share a palette. Sections use gray utilities and hex blobs (`#fbe2e3`, `#dbd7fb`, `#f64a8a`). The drawer uses shadcn tokens (`bg-card`, `bg-primary`) from `app/globals.css`, which the rest of the page never applies.
+The toggle works. Sections, chrome, project cards, and the drawer read one navy and teal palette from `app/globals.css`, modeled on [Brittany Chiang](https://brittanychiang.com). Text meets 4.5:1 and boundaries meet 3:1 in both themes.
 
-- [ ] One semantic palette (background, surface, text, muted text, border, accent) that every section reads in both modes
-- [ ] Project cards and the project drawer use that palette (cards stay `bg-gray-200` and `text-gray-800` in dark mode; the drawer repeats the page blobs)
-- [ ] Contact fields use that palette (dark mode forces white fields and black text)
-- [ ] Experience timeline reads the palette (colors are chosen in JavaScript with `theme === "light"`)
-- [ ] CV and submit are one button (both files copy the same `bg-gray-900` / `dark:bg-white` classes)
-- [ ] Header, mobile nav, theme switch, skill chips, and footer share the same surface and muted text
-- [ ] Light and dark both pass the contrast check in section 7
+- [x] One semantic palette (background, surface, text, muted text, border, accent) that every section reads in both modes
+- [x] Project cards and the project drawer use that palette
+- [x] Contact fields use that palette
+- [x] Experience timeline reads the palette
+- [x] CV and submit are one button
+- [x] Header, mobile nav, theme switch, skill chips, and footer share the same surface and muted text
+- [x] Light and dark both pass the contrast check in section 7
 
 Component origin and usage must also be uniform. Primitives come from `components/ui` (shadcn), and sections compose them. Today some sections do and some hand-roll the same element.
 
@@ -41,6 +41,28 @@ Component origin and usage must also be uniform. Primitives come from `component
 - [ ] One export style for components (sections are default exports, `components/ui` is named, `cv.tsx` and `text-generate-effect.tsx` assign a const and export default at the end)
 - [ ] `components/ui` files formatted by the repo Prettier config (generated files have no semicolons; the rest of the repo does)
 - [ ] Each shared element has a single source: section heading, card surface, tag chip, and form field are one component each, reused in Skills, Projects, and Contact
+
+### 1.2 Adaptive logo
+
+The current `public/logo.png` loses contrast on the navy theme. Treat the logo as a reusable brand asset rather than correcting the bitmap with CSS filters.
+
+- [ ] Replace the bitmap with a transparent SVG or intentional light and dark variants, preserving the same silhouette in both themes
+- [ ] Select the correct logo from the active theme without flashing the wrong variant during hydration
+- [ ] Keep at least 3:1 contrast against the header and page surfaces in both themes, including hover and focus states
+- [ ] Make the logo link expose "Home" while its image is decorative, and provide a visible keyboard focus treatment
+- [ ] Give the logo link a minimum 44×44 px target and responsive placement that does not overlap navigation from 320 px through desktop widths
+- [ ] Add restrained hover and entrance motion, disable nonessential motion under `prefers-reduced-motion`, and verify the asset causes no layout shift
+
+### 1.3 Interaction sound
+
+Sound stays off until the visitor turns it on. Use [`use-sound`](https://www.npmjs.com/package/use-sound), which wraps [Howler.js](https://github.com/goldfire/howler.js). Do not add Howler as a second direct dependency.
+
+- [ ] A sound control that turns interaction audio on and off, with the choice saved in local storage and defaulting to off
+- [ ] The control names the state it will switch to ("Turn sound on" / "Turn sound off"), keeps a 44×44 px target, and does not overlap the theme switch
+- [ ] Play short sounds only while sound is on, for navigation, the theme switch, opening and closing a project, and form success or error ([Howler.js examples](https://github.com/goldfire/howler.js#examples))
+- [ ] Stop playback immediately when sound is turned off, including a sound already in progress
+- [ ] Load audio after the visitor opts in so it does not compete with first paint, and keep one sprite or a small set of files
+- [ ] Do not autoplay on load, and keep the page usable with sound off
 
 ## 2. Navigation
 
@@ -86,6 +108,7 @@ Component origin and usage must also be uniform. Primitives come from `component
 - [ ] Public code or a short build note on at least one project ([Bruno Simon](https://bruno-simon.com), [Bryan Elliott](https://elliottprogrammer.com))
 - [ ] Expandable project rail: one project opens, the rest stay as slim labels ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
 - [ ] Client, company, and timeline on each project ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
+- [ ] Lay out each project description with [Pretext](https://github.com/chenglou/pretext) so drawer copy wraps from measured lines instead of a DOM reflow, while the text stays readable without JavaScript
 
 ### 3.5 Skills
 
@@ -210,6 +233,18 @@ Concrete gaps inside those items (not scored separately):
 - [ ] A career Q&A grounded in your own project write-ups ([Bryan Elliott](https://elliottprogrammer.com))
 - [ ] Analytics dashboard
 - [ ] Content management system
+
+### 11.1 Pretext-powered typography
+
+[Pretext](https://github.com/chenglou/pretext) measures and lays out multiline text without DOM reflow; it does not animate text. Use it only where its line data enables effects that CSS and `react-wrap-balancer` cannot, then animate those measured lines with the existing Framer Motion dependency.
+
+- [ ] Prototype and benchmark `@chenglou/pretext` against the current hero before adding it; record bundle cost, measurement time, resize cost, and the visual benefit
+- [ ] Prepare multilingual greeting and hero copy once, then rerun only `layout()` or line-range traversal when the available width changes
+- [ ] Build responsive, balanced hero typography from measured line count and width without reading layout through `getBoundingClientRect`
+- [ ] Create one flagship variable-width effect with `layoutNextLineRange()`, such as hero copy flowing around the portrait or brand mark
+- [ ] Feed materialized line ranges into Framer Motion for staggered reveals while preserving one semantic DOM heading and readable no-JavaScript content
+- [ ] Match Geist font metrics in whole pixels, cache prepared text, prevent layout shift, support Unicode and bidirectional copy, and provide a static `prefers-reduced-motion` fallback
+- [ ] Prepare each project description paragraph once with `@chenglou/pretext`, lay it out at the drawer width, and drive the existing word reveal from those measured lines
 
 ## 12. Reference portfolios
 

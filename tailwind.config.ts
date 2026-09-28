@@ -59,6 +59,10 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        glow: {
+          warm: "hsl(var(--glow-warm))",
+          cool: "hsl(var(--glow-cool))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -88,7 +92,9 @@ const config = {
 function addVariablesForColors({ addBase, theme }: any) {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+    Object.entries(allColors)
+      .filter(([, val]) => typeof val === "string" && !val.includes("var("))
+      .map(([key, val]) => [`--${key}`, val]),
   );
 
   addBase({

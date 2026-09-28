@@ -20,14 +20,14 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-white/90 backdrop-blur-sm dark:bg-gray-950/90"
+      className="bg-background/90 fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm"
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: isOpen ? 1 : 0, scale: isOpen ? 1 : 0.95 }}
       transition={{ duration: 0.2 }}
       style={{ display: isOpen ? "flex" : "none" }}
     >
       <nav id={mobileNavigationId} className="flex flex-col items-center gap-4">
-        <ul className="flex flex-col items-center gap-4 text-xl font-medium text-gray-500">
+        <ul className="text-muted-foreground flex flex-col items-center gap-4 text-xl font-medium">
           {links.map((link) => (
             <motion.li
               key={link.hash}
@@ -37,10 +37,9 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
             >
               <Link
                 className={clsx(
-                  "relative px-4 py-2 transition hover:text-gray-950 dark:text-gray-500 dark:hover:text-gray-300",
+                  "hover:text-foreground relative px-4 py-2 transition",
                   {
-                    "text-gray-950 dark:text-gray-200":
-                      activeSection === link.name,
+                    "text-accent-foreground": activeSection === link.name,
                   },
                 )}
                 href={link.hash}
@@ -53,7 +52,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 {link.name}
                 {link.name === activeSection && (
                   <motion.span
-                    className="absolute inset-0 -z-10 rounded-full bg-gray-100 dark:bg-gray-800"
+                    className="bg-accent absolute inset-0 -z-10 rounded-full"
                     layoutId="activeSection"
                     transition={{
                       type: "spring",

@@ -104,14 +104,14 @@ export default function Project({
             rotateX,
             transformStyle: "preserve-3d",
           }}
-          className="relative h-72 w-full shrink-0 cursor-pointer snap-center scroll-ml-6 rounded-xl bg-gradient-to-r from-gray-600 to-gray-800 first:pl-6 last:pr-6 md:h-96"
+          className="relative h-72 w-full shrink-0 cursor-pointer snap-center scroll-ml-6 rounded-xl bg-gradient-to-r from-primary/30 to-secondary first:pl-6 last:pr-6 md:h-96"
         >
           <div
             style={{
               transform: "translateZ(75px)",
               transformStyle: "preserve-3d",
             }}
-            className="absolute inset-4 grid grid-cols-3 grid-rows-5 place-content-center rounded-xl bg-gray-200 shadow-lg transition-all duration-300 hover:shadow-xl"
+            className="absolute inset-4 grid grid-cols-3 grid-rows-5 place-content-center rounded-xl bg-card text-card-foreground shadow-lg transition-all duration-300 hover:shadow-xl"
           >
             <Image
               alt="Project"
@@ -122,7 +122,7 @@ export default function Project({
               style={{
                 transform: "translateZ(50px)",
               }}
-              className="col-span-2 row-span-1 self-center break-words p-2 text-lg font-semibold text-gray-800 md:p-4 md:text-2xl"
+              className="col-span-2 row-span-1 self-center break-words p-2 text-lg font-semibold md:p-4 md:text-2xl"
             >
               {title}
             </h3>
@@ -130,7 +130,7 @@ export default function Project({
               style={{
                 transform: "translateZ(50px)",
               }}
-              className="col-span-1 row-span-1 self-center break-words p-2 text-sm font-semibold text-gray-800 md:p-4 md:text-base"
+              className="col-span-1 row-span-1 self-center break-words p-2 text-sm font-semibold md:p-4 md:text-base"
             >
               {year}
             </p>
@@ -142,7 +142,7 @@ export default function Project({
             >
               {tags.map((tag, index) => (
                 <li
-                  className="rounded-full bg-black/[0.7] px-2 py-0.5 text-[0.5rem] uppercase tracking-wider text-white dark:text-white/70 md:px-3 md:py-1 md:text-[0.6rem]"
+                  className="rounded-full bg-secondary px-2 py-0.5 text-[0.5rem] uppercase tracking-wider text-secondary-foreground md:px-3 md:py-1 md:text-[0.6rem]"
                   key={index}
                 >
                   {tag.label}
@@ -152,9 +152,9 @@ export default function Project({
           </div>
         </motion.div>
       </DrawerTrigger>
-      <DrawerContent className="fixed bottom-0 left-0 right-0 mt-24 flex h-[93%] flex-col items-center rounded-t-[10px] bg-zinc-100 dark:bg-zinc-800">
-        <div className="absolute right-[11rem] top-[-6rem] -z-10 h-[31.25rem] w-[31.25rem] rounded-full bg-[#fbe2e3] blur-[10rem] dark:bg-[#f64a8a] sm:w-[68.75rem]" />
-        <div className="absolute left-[-35rem] top-[-1rem] -z-10 h-[31.25rem] w-[50rem] rounded-full bg-[#dbd7fb] blur-[10rem] dark:bg-[#af9fca] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]" />
+      <DrawerContent className="fixed bottom-0 left-0 right-0 mt-24 flex h-[93%] flex-col items-center rounded-t-[10px] bg-background text-foreground">
+        <div className="absolute right-[11rem] top-[-6rem] -z-10 h-[31.25rem] w-[31.25rem] rounded-full bg-glow-warm blur-[10rem] sm:w-[68.75rem]" />
+        <div className="absolute left-[-35rem] top-[-1rem] -z-10 h-[31.25rem] w-[50rem] rounded-full bg-glow-cool blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]" />
         <DrawerClose>
           <Button variant="ghost" className={"absolute right-5 top-5"}>
             <motion.div whileHover={{ rotate: 180 }}>
@@ -163,7 +163,7 @@ export default function Project({
           </Button>
         </DrawerClose>
         <div className="grid h-full w-full auto-rows-auto grid-cols-1 gap-4 p-4 md:grid-cols-5 md:p-8 lg:p-20">
-          <Card className="row-span-4 overflow-hidden border-2 border-gray-500 md:col-span-3">
+          <Card className="row-span-4 overflow-hidden border-2 border-border md:col-span-3">
             {videoUrl ? (
               <ReactPlayer
                 url={videoUrl}
@@ -181,15 +181,15 @@ export default function Project({
               />
             )}
           </Card>
-          <Card className="row-span-3 border-2 border-gray-500 md:col-span-2">
+          <Card className="row-span-3 border-2 border-border md:col-span-2">
             <CardHeader>
               <CardTitle>Tech Stack</CardTitle>
             </CardHeader>
             <CardContent>
-              <ul className="flex flex-wrap justify-center gap-2 text-sm text-gray-800 md:text-lg">
+              <ul className="flex flex-wrap justify-center gap-2 text-sm md:text-lg">
                 {tags.map((tag, index) => (
                   <motion.li
-                    className="borderBlack flex items-center justify-center gap-2 rounded-xl bg-white px-3 py-2 dark:bg-white/10 dark:text-white/80 md:px-5 md:py-3"
+                    className="flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-3 py-2 text-card-foreground md:px-5 md:py-3"
                     key={index}
                     variants={fadeInAnimationVariants}
                     initial="initial"
@@ -206,7 +206,7 @@ export default function Project({
               </ul>
             </CardContent>
           </Card>
-          <Card className="row-span-1 border-2 border-gray-500 pt-6 md:col-span-1">
+          <Card className="row-span-1 border-2 border-border pt-6 md:col-span-1">
             <CardContent className="flex h-full w-full items-center justify-center">
               {websiteUrl ? (
                 <motion.div
@@ -224,14 +224,14 @@ export default function Project({
                   </Link>
                 </motion.div>
               ) : (
-                <div className="flex flex-col items-center gap-2 text-gray-600 dark:text-white/70">
+                <div className="flex flex-col items-center gap-2 text-muted-foreground">
                   <LuLock size={40} aria-hidden />
                   <span className="text-sm font-medium">Internal project</span>
                 </div>
               )}
             </CardContent>
           </Card>
-          <Card className="row-span-1 border-2 border-gray-500 pt-6 md:col-span-1">
+          <Card className="row-span-1 border-2 border-border pt-6 md:col-span-1">
             <CardContent className="flex h-full w-full items-center justify-center">
               <motion.div
                 className={`bg-gradient-to-r bg-clip-text font-extrabold text-transparent ${colors[colorIndex]}`}
@@ -243,7 +243,7 @@ export default function Project({
               </motion.div>
             </CardContent>
           </Card>
-          <Card className="row-span-2 border-2 border-gray-500 md:col-span-5">
+          <Card className="row-span-2 border-2 border-border md:col-span-5">
             <CardHeader>
               <CardTitle className="text-xl md:text-2xl">{title}</CardTitle>
               <CardDescription className="text-sm font-medium md:text-base">
