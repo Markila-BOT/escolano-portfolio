@@ -10,7 +10,7 @@ import logo from "@/public/logo.png";
 import Image from "next/image";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { FaBars, FaTimes } from "react-icons/fa";
-import MobileNav from "./mobile-nav";
+import MobileNav, { mobileNavigationId } from "./mobile-nav";
 
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
@@ -101,9 +101,16 @@ export default function Header() {
         <>
           <button
             className="fixed right-4 top-4 z-50 rounded-lg bg-white/80 p-2 backdrop-blur-sm dark:bg-gray-950/80"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls={mobileNavigationId}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            {isMenuOpen ? (
+              <FaTimes size={24} aria-hidden />
+            ) : (
+              <FaBars size={24} aria-hidden />
+            )}
           </button>
           <MobileNav isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
         </>

@@ -6,10 +6,10 @@ Status key: `[x]` done, `[ ]` still open. Items marked **partial** exist, and do
 
 ## Progress
 
-| Scope | Done | Partial | Not started | Complete |
-|---|---:|---:|---:|---:|
-| Current spec | 32 | 11 | 38 | 32/81 (40%) |
-| Future enhancements | 0 | 1 | 7 | 0/8 (0%) |
+| Scope               | Done | Partial | Not started |    Complete |
+| ------------------- | ---: | ------: | ----------: | ----------: |
+| Current spec        |   33 |      11 |          50 | 33/94 (35%) |
+| Future enhancements |    0 |       1 |           7 |    0/8 (0%) |
 
 Protected routes are out of scope. The site is a single public page.
 
@@ -19,7 +19,28 @@ Protected routes are out of scope. The site is a single public page.
 - [x] Light and dark mode, with the preference saved in local storage
 - [x] Smooth animations and transitions
 - [x] Modern, clean aesthetic
-- [ ] Accessible navigation (**partial** — header and mobile menu exist; the menu button and theme toggle have no accessible name)
+- [x] Accessible navigation (menu button is "Open menu" / "Close menu" with expanded state; theme toggle names the theme it switches to)
+
+### 1.1 One theme for light and dark
+
+The toggle works. The page and the drawer do not share a palette. Sections use gray utilities and hex blobs (`#fbe2e3`, `#dbd7fb`, `#f64a8a`). The drawer uses shadcn tokens (`bg-card`, `bg-primary`) from `app/globals.css`, which the rest of the page never applies.
+
+- [ ] One semantic palette (background, surface, text, muted text, border, accent) that every section reads in both modes
+- [ ] Project cards and the project drawer use that palette (cards stay `bg-gray-200` and `text-gray-800` in dark mode; the drawer repeats the page blobs)
+- [ ] Contact fields use that palette (dark mode forces white fields and black text)
+- [ ] Experience timeline reads the palette (colors are chosen in JavaScript with `theme === "light"`)
+- [ ] CV and submit are one button (both files copy the same `bg-gray-900` / `dark:bg-white` classes)
+- [ ] Header, mobile nav, theme switch, skill chips, and footer share the same surface and muted text
+- [ ] Light and dark both pass the contrast check in section 7
+
+Component origin and usage must also be uniform. Primitives come from `components/ui` (shadcn), and sections compose them. Today some sections do and some hand-roll the same element.
+
+- [ ] Every button uses `components/ui/button.tsx` variants (CV and submit hand-roll their own; Experience and the project drawer already use `Button`)
+- [ ] One icon library in sections: `react-icons` (the carousel uses `lucide-react` for its arrows)
+- [ ] One import style for primitives: `@/components/ui/...` (sections mix `@/components/ui/drawer` and `./ui/label`)
+- [ ] One export style for components (sections are default exports, `components/ui` is named, `cv.tsx` and `text-generate-effect.tsx` assign a const and export default at the end)
+- [ ] `components/ui` files formatted by the repo Prettier config (generated files have no semicolons; the rest of the repo does)
+- [ ] Each shared element has a single source: section heading, card surface, tag chip, and form field are one component each, reused in Skills, Projects, and Contact
 
 ## 2. Navigation
 
@@ -128,7 +149,7 @@ Known cost: the theme provider renders nothing until mount, and `react-player` l
 - [x] Section headings
 - [x] Project cards
 
-Component rows are inventory. They are not included in the 32/81 score above.
+Component rows are inventory. They are not included in the 33/81 score above.
 
 ## 6. State and data
 
@@ -144,12 +165,12 @@ Target is WCAG 2.1 AA.
 - [ ] Keyboard navigation support (**partial** — links and the form are reachable; the mobile overlay has no focus trap)
 - [ ] Screen reader compatibility
 - [ ] Color contrast requirements (not audited)
-- [ ] ARIA labels (carousel controls only)
+- [ ] ARIA labels (**partial** — carousel controls, the mobile menu button, and the theme toggle)
 
 Concrete gaps inside those items (not scored separately):
 
-- Accessible name on the theme toggle
-- Accessible name and `aria-expanded` on the mobile menu button
+- Done: accessible name on the theme toggle
+- Done: accessible name, `aria-expanded`, and `aria-controls` on the mobile menu button
 - Focus trap and restore for the mobile menu
 - Skip link
 - One `h1` on the page
@@ -194,16 +215,16 @@ Concrete gaps inside those items (not scored separately):
 
 [developer-portfolios](https://github.com/emmabostian/developer-portfolios) is an alphabetical list of 1,986 sites. It has no ranking. These ten are entries from that list, chosen because they are the usual references for a senior frontend portfolio. Each feature above links back to the site it came from.
 
-| Portfolio | In the repo | Feature worth taking | Already here |
-|---|---|---|---|
-| [Brittany Chiang](https://brittanychiang.com) | Yes | One-line role, social links, tech tags per job, projects with a measurable outcome | Experience timeline, project cards |
-| [Bruno Simon](https://bruno-simon.com) | Yes | The site is the demo, with a public "how it's built" note | Video drawer only |
-| [Lee Robinson](https://leerob.io) | Yes | First sentence is the positioning; writing shows how he thinks | Intro copy, no writing index |
-| [Adham Dannaway](https://www.adhamdannaway.com) | Yes | A few selected case studies, not every project at once | Carousel of all projects |
-| [Chris Coyier](https://chriscoyier.net) | Yes | Writing, plus more than one way to make contact | Email form only |
-| [Delba](https://delba.dev) | Yes | Each piece of work is one sentence of outcome | Long project descriptions |
-| [Dustin Brett](https://dustinbrett.com) | Yes | One flagship interaction instead of a gallery | Video drawer only |
-| [Dillion Megida](https://dillionmegida.com) | Yes | Short teaching notes that make the engineering legible | No writing |
-| [Bryan Elliott](https://elliottprogrammer.com) | Yes | Public code, an explicit AI workflow, one small interactive moment | External CV link |
-| [Timmy O'Mahony](https://timmyomahony.com) | Yes | Audience-specific headline, a direct CTA, and a short FAQ | Mailto inside the contact paragraph |
+| Portfolio                                            | In the repo                | Feature worth taking                                                                                                                                                                    | Already here                                                               |
+| ---------------------------------------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| [Brittany Chiang](https://brittanychiang.com)        | Yes                        | One-line role, social links, tech tags per job, projects with a measurable outcome                                                                                                      | Experience timeline, project cards                                         |
+| [Bruno Simon](https://bruno-simon.com)               | Yes                        | The site is the demo, with a public "how it's built" note                                                                                                                               | Video drawer only                                                          |
+| [Lee Robinson](https://leerob.io)                    | Yes                        | First sentence is the positioning; writing shows how he thinks                                                                                                                          | Intro copy, no writing index                                               |
+| [Adham Dannaway](https://www.adhamdannaway.com)      | Yes                        | A few selected case studies, not every project at once                                                                                                                                  | Carousel of all projects                                                   |
+| [Chris Coyier](https://chriscoyier.net)              | Yes                        | Writing, plus more than one way to make contact                                                                                                                                         | Email form only                                                            |
+| [Delba](https://delba.dev)                           | Yes                        | Each piece of work is one sentence of outcome                                                                                                                                           | Long project descriptions                                                  |
+| [Dustin Brett](https://dustinbrett.com)              | Yes                        | One flagship interaction instead of a gallery                                                                                                                                           | Video drawer only                                                          |
+| [Dillion Megida](https://dillionmegida.com)          | Yes                        | Short teaching notes that make the engineering legible                                                                                                                                  | No writing                                                                 |
+| [Bryan Elliott](https://elliottprogrammer.com)       | Yes                        | Public code, an explicit AI workflow, one small interactive moment                                                                                                                      | External CV link                                                           |
+| [Timmy O'Mahony](https://timmyomahony.com)           | Yes                        | Audience-specific headline, a direct CTA, and a short FAQ                                                                                                                               | Mailto inside the contact paragraph                                        |
 | [Gyanendra Pal Singh](https://gyanendra.vercel.app/) | Local copy in `Portfolio/` | Cycling role line, an interactive hero with on-screen controls, an expandable project rail with client and timeline, categorized skills, and a hover action bar for CV and social links | Greeting animation, project carousel, flat skill chips, external CV button |

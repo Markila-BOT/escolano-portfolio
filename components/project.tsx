@@ -19,14 +19,17 @@ import {
 import ReactPlayer from "react-player";
 import { Label } from "./ui/label";
 import { fadeInAnimationVariants } from "@/lib/animations";
-import { LuLink } from "react-icons/lu";
+import { LuLink, LuLock } from "react-icons/lu";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { FaWindowClose } from "react-icons/fa";
 import TextGenerateEffect from "./ui/text-generate-effect";
 
-type ProjectProps = (typeof projectsData)[number];
+type ProjectProps = (typeof projectsData)[number] & {
+  videoUrl?: string;
+  websiteUrl?: string;
+};
 
 export default function Project({
   title,
@@ -160,15 +163,23 @@ export default function Project({
           </Button>
         </DrawerClose>
         <div className="grid h-full w-full auto-rows-auto grid-cols-1 gap-4 p-4 md:grid-cols-5 md:p-8 lg:p-20">
-          <Card className="row-span-4 border-2 border-gray-500 md:col-span-3">
-            <ReactPlayer
-              url={videoUrl}
-              playing
-              loop
-              height={"100%"}
-              width={"100%"}
-              style={{ aspectRatio: "16/9" }}
-            />
+          <Card className="row-span-4 overflow-hidden border-2 border-gray-500 md:col-span-3">
+            {videoUrl ? (
+              <ReactPlayer
+                url={videoUrl}
+                playing
+                loop
+                height={"100%"}
+                width={"100%"}
+                style={{ aspectRatio: "16/9" }}
+              />
+            ) : (
+              <Image
+                alt={`${title} screenshot`}
+                src={imageUrl}
+                className="aspect-video h-full w-full object-cover object-top"
+              />
+            )}
           </Card>
           <Card className="row-span-3 border-2 border-gray-500 md:col-span-2">
             <CardHeader>
@@ -197,19 +208,27 @@ export default function Project({
           </Card>
           <Card className="row-span-1 border-2 border-gray-500 pt-6 md:col-span-1">
             <CardContent className="flex h-full w-full items-center justify-center">
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.3 }}
-                className="cursor-pointer"
-              >
-                <Link
-                  href={websiteUrl}
-                  rel="noopener noreferrer"
-                  target="_blank"
+              {websiteUrl ? (
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                  className="cursor-pointer"
                 >
-                  <LuLink size={40} className="md:w-15 md:h-15" />
-                </Link>
-              </motion.div>
+                  <Link
+                    href={websiteUrl}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    aria-label={`Visit ${title}`}
+                  >
+                    <LuLink size={40} className="md:w-15 md:h-15" />
+                  </Link>
+                </motion.div>
+              ) : (
+                <div className="flex flex-col items-center gap-2 text-gray-600 dark:text-white/70">
+                  <LuLock size={40} aria-hidden />
+                  <span className="text-sm font-medium">Internal project</span>
+                </div>
+              )}
             </CardContent>
           </Card>
           <Card className="row-span-1 border-2 border-gray-500 pt-6 md:col-span-1">

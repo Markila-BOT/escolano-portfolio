@@ -7,6 +7,8 @@ import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
+export const mobileNavigationId = "mobile-navigation";
+
 type MobileNavProps = {
   isOpen: boolean;
   onClose: () => void;
@@ -24,7 +26,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
       transition={{ duration: 0.2 }}
       style={{ display: isOpen ? "flex" : "none" }}
     >
-      <nav className="flex flex-col items-center gap-4">
+      <nav id={mobileNavigationId} className="flex flex-col items-center gap-4">
         <ul className="flex flex-col items-center gap-4 text-xl font-medium text-gray-500">
           {links.map((link) => (
             <motion.li

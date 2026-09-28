@@ -39,6 +39,9 @@ import {
   SiBower,
   SiSpring,
   SiLevelsdotfyi,
+  SiAntdesign,
+  SiMui,
+  SiReactquery,
 } from "react-icons/si";
 import {
   TbBrandRedux,
@@ -63,6 +66,8 @@ import NEC_WEB_OTX_IMAGE from "@/public/projects/nec-web-otx.png";
 import RAKUTEN_TRAVEL_IMAGE from "@/public/projects/rakuten-travel.png";
 import WEALTHPARK_ACTIVITY_IMAGE from "@/public/projects/wealthpark-activity.png";
 import WEALTHPARK_CHAT_ADMIN_IMAGE from "@/public/projects/wealthpark-chat-admin.png";
+import WEALTHPARK_HOUSE_ELF_IMAGE from "@/public/projects/wealthpark-house-elf.png";
+import MATTERWORX_IMAGE from "@/public/projects/matterworx.png";
 import WEALTHPARK_OWNER_APP_IMAGE from "@/public/projects/wealthpark-owner-app.png";
 import WEALTHPARK_VALUATION_IMAGE from "@/public/projects/wealthpark-valuation.png";
 import X_CLIMB_LAGOON_IMAGE from "@/public/projects/x-climb-lagoon.png";
@@ -185,6 +190,23 @@ export const experiencesData = [
 
 export const projectsData = [
   {
+    title: "MatterWorx",
+    year: "2025-Present",
+    description: [
+      "MatterWorx is a private workforce program platform. Program admins land on a dashboard that tracks submissions, onboarding reviews, active assignments, pending timesheets, pending invoices, and credentials that are expiring or already expired, with a direct path into each queue.",
+      "The program covers the placement lifecycle: open positions, candidate submissions, assignments, shifts, and credential management. Timesheets, invoices, and remittance sit next to analytics, so hiring, time, and billing stay in one console.",
+      "Program settings and organization tools configure the program itself. A performance overview charts active workers by worksite and year.",
+    ],
+    tags: [
+      { label: "TypeScript", icon: React.createElement(SiTypescript) },
+      { label: "React", icon: React.createElement(FaReact) },
+      { label: "NextJS", icon: React.createElement(SiNextdotjs) },
+      { label: "Material UI", icon: React.createElement(SiMui) },
+      { label: "TanStack Query", icon: React.createElement(SiReactquery) },
+    ],
+    imageUrl: MATTERWORX_IMAGE,
+  },
+  {
     title: "Valuation",
     year: "2022-Present",
     description: [
@@ -272,6 +294,22 @@ export const projectsData = [
     imageUrl: WEALTHPARK_CHAT_ADMIN_IMAGE,
     videoUrl: "https://youtu.be/3i2YZLn77tw",
     websiteUrl: "https://demo.wealth-park.com/webchat/",
+  },
+  {
+    title: "House Elf",
+    year: "2024-Present",
+    description: [
+      "House Elf is WealthPark's internal admin console, a centralized platform for managing internal operations efficiently and securely. It brings user group management, single sign-on configuration, and account provisioning into one place, so operators no longer need ad-hoc scripts or direct database access for day-to-day tasks.",
+      "It covers bulk workflows such as issuing instant accounts with invitation letters, sending investment notifications to investors, managing chat broadcast tags from CSV uploads, and bulk deletion of owners, rooms, properties, tenants, and contracts from Excel files. Every bulk action is validated and reviewed before it runs.",
+      "A dedicated QA Toolbox supports quality assurance in development and test environments with API testing, member management, and configuration tools. The console is localized, supports light and dark themes, and sits behind company SSO.",
+    ],
+    tags: [
+      { label: "TypeScript", icon: React.createElement(SiTypescript) },
+      { label: "React", icon: React.createElement(FaReact) },
+      { label: "NextJS", icon: React.createElement(SiNextdotjs) },
+      { label: "Ant Design", icon: React.createElement(SiAntdesign) },
+    ],
+    imageUrl: WEALTHPARK_HOUSE_ELF_IMAGE,
   },
   {
     title: "LookingGlass",
