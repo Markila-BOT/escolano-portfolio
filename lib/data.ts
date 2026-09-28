@@ -107,7 +107,7 @@ export const links = [
 
 export const introCallToAction = {
   audience:
-    "The work is for product teams that need end-to-end implementation through deployment.",
+    "I work with product teams that need a product built and carried through deployment.",
   approach:
     "shipping new code with AI, spec-driven development, and TypeScript.",
   startLabel: "Contact",
@@ -117,85 +117,85 @@ export const experiencesData = [
   {
     title: "Senior Software Engineer",
     location: "Quezon City, Philippines",
-    description: "Now I work in a property management technology company.",
+    description: "I work at a property-management technology company.",
     icon: React.createElement(CgWorkAlt),
     date: "2022-Present",
   },
   {
     title: "Full Stack Engineer",
     location: "South Melbourne, Australia",
-    description: "Work as a fulltime full stack engineer.",
+    description: "I worked full time as a full stack engineer.",
     icon: React.createElement(FaReact),
     date: "2021",
   },
   {
     title: "Lead Software Engineer",
     location: "Quezon City, Philippines",
-    description: "Lead couple of front end engineers.",
+    description: "I led a few front-end engineers.",
     icon: React.createElement(LiaChalkboardTeacherSolid),
     date: "2021",
   },
   {
     title: "Fly back home",
     location: "Quezon City, Philippines",
-    description: "Work and travel back home. 🇵🇭",
+    description: "I came home and kept working. 🇵🇭",
     icon: React.createElement(FaPlaneArrival),
     date: "2021",
   },
   {
     title: "Front-End Engineer",
     location: "Tokyo, Japan",
-    description: "Developed and maintained web applications using React",
+    description: "I built and maintained web apps in React.",
     icon: React.createElement(CgWorkAlt),
     date: "2020",
   },
   {
     title: "Apply training knowledge",
     location: "Tokyo, Japan",
-    description:
-      "Communicate and collaborate with product managers and engineers.",
+    description: "I worked with product managers and other engineers.",
     icon: React.createElement(FaPlaneArrival),
     date: "2019",
   },
   {
     title: "Training in United Kingdom",
     location: "Manchester, United Kingdom",
-    description: "Train with diverse teammates and learn new skills. 🇬🇧",
+    description:
+      "I trained with teammates from different places and learned new skills. 🇬🇧",
     icon: React.createElement(FaPlaneDeparture),
     date: "2018",
   },
   {
     title: "Fly to Japan",
     location: "Tokyo, Japan",
-    description: "Work in Japan. 🇯🇵",
+    description: "I went to work in Japan. 🇯🇵",
     icon: React.createElement(FaPlaneDeparture),
     date: "2017",
   },
   {
     title: "Promoted",
     location: "Makati, Philippines",
-    description: "Promoted as a software engineer II",
+    description: "I was promoted to software engineer II.",
     icon: React.createElement(SiLevelsdotfyi),
     date: "2016",
   },
   {
     title: "First Job",
     location: "Makati, Philippines",
-    description: "Landed my first job as a software engineer.",
+    description: "I got my first job as a software engineer.",
     icon: React.createElement(FaIdCard),
     date: "2014",
   },
   {
     title: "Internship",
     location: "Taguig, Philippines",
-    description: "Internship at Lawson. I worked as a Java developer.",
+    description: "I interned at Lawson as a Java developer.",
     icon: React.createElement(FaLaptopCode),
     date: "2013",
   },
   {
     title: "Education",
     location: "Mandaluyong, Philippines",
-    description: "Obtained a Bachelor's Degree in Computer Engineering.",
+    description: "I earned a bachelor's degree in computer engineering.",
     icon: React.createElement(LuGraduationCap),
     date: "2013-2014",
   },
@@ -206,9 +206,9 @@ export const projectsData = [
     title: "MatterWorx",
     year: "2026-Present",
     description: [
-      "MatterWorx is a private workforce program platform. Program admins land on a dashboard that tracks submissions, onboarding reviews, active assignments, pending timesheets, pending invoices, and credentials that are expiring or already expired, with a direct path into each queue.",
-      "The program covers the placement lifecycle: open positions, candidate submissions, assignments, shifts, and credential management. Timesheets, invoices, and remittance sit next to analytics, so hiring, time, and billing stay in one console.",
-      "Program settings and organization tools configure the program itself. A performance overview charts active workers by worksite and year.",
+      "MatterWorx is a private platform for workforce programs. Program admins open a dashboard for submissions, onboarding reviews, active assignments, pending timesheets, pending invoices, and credentials that are expiring or already expired. Each count links into that queue.",
+      "A placement runs from an open position to a candidate submission, an assignment, shifts, and credentials. Timesheets, invoices, and remittance sit with the analytics, so hiring, time, and billing stay in one console.",
+      "Program settings and organization tools configure the program. A performance view charts active workers by worksite and year.",
     ],
     tags: [
       { label: "TypeScript", icon: React.createElement(SiTypescript) },
@@ -226,9 +226,9 @@ export const projectsData = [
     title: "Potato V3",
     year: "2024-Present",
     description: [
-      "Potato V3 is WealthPark's property-management console for PM companies. It replaces the original Potato workspace, so operators handle owners, chat, and program settings in one app.",
-      "Chat is real time. Property managers message owners, follow topics, share files, and see unread badges from the owner list and the room list.",
-      "Settings cover users, roles, and property groups. The console is localized in English, Japanese, and Traditional Chinese.",
+      "Potato V3 is WealthPark's console for property-management companies. It replaces the original Potato workspace. Operators handle owners, chat, and program settings in one app.",
+      "Chat is live. Property managers message owners, follow topics, share files, and see unread badges on the owner list and the room list.",
+      "Settings cover users, roles, and property groups. The console is in English, Japanese, and Traditional Chinese.",
     ],
     tags: [
       { label: "TypeScript", icon: React.createElement(SiTypescript) },
@@ -245,8 +245,8 @@ export const projectsData = [
     title: "Valuation",
     year: "2022-Present",
     description: [
-      "Valuation is the application of assessing the worth or value of a property. This involves various steps, including conducting a thorough inspection of the property, which may include examining its condition, amenities, and location. Operators who manage the property are typically involved in this process to provide insights into its maintenance and operational aspects.",
-      "During the valuation process, it's essential to consider factors such as the distance of the property from key amenities or landmarks, as well as its proximity to other similar properties in the area. This comparative analysis helps in determining the fair market value of the property by assessing how it stacks up against others in terms of floor plans, age, condition, and other relevant criteria.",
+      "Valuation is how operators put a number on a property. They inspect its condition, amenities, and location. The people who run the property add what they know about maintenance and day-to-day operations.",
+      "The comparison also looks at distance from amenities and landmarks, and at similar properties nearby. Floor plan, age, and condition go into the fair market value, along with the other details that matter for that property.",
     ],
     tags: [
       { label: "TypeScript", icon: React.createElement(SiTypescript) },
@@ -267,8 +267,8 @@ export const projectsData = [
     title: "Owner Web App",
     year: "2021-Present",
     description: [
-      "The Owner Application is a digital platform revolutionizing property management for both owners and management companies. It offers a seamless solution for sharing crucial documents such as contracts and repair photos, eliminating the hassle of searching through paper documents or past emails. With this app, owners can effortlessly access and share information, leading to improved convenience and efficiency.",
-      "By centralizing document management, the Owner Application reduces reliance on traditional paper-based communication methods, benefiting both owners and management companies. This streamlined approach not only saves time but also enhances collaboration and decision-making processes. Overall, the Owner Application is a game-changer in property management, offering a user-friendly interface and efficient document sharing capabilities for all stakeholders involved.",
+      "The Owner app is for property owners and the companies that manage their buildings. They share contracts and repair photos there, instead of hunting through paper or old email.",
+      "The documents sit in one place, so both sides spend less time on paper and can find a file when they need to decide what to do next.",
     ],
     tags: [
       { label: "TypeScript", icon: React.createElement(SiTypescript) },
@@ -292,9 +292,8 @@ export const projectsData = [
     title: "Workflow",
     year: "2021-Present",
     description: [
-      "The Workflow application serves as a complementary tool to the Owner Application, offering detailed insights into property-related activities for owners and property managers. It provides comprehensive information on various activities within a property, including expenses, income, and general updates. These activities are categorized and can be tracked through different statuses, facilitating organized management for both property managers and owners.",
-      "By integrating with the Owner Application, Workflow enhances transparency and communication regarding property-related tasks and events. Property managers and owners can easily monitor the progress of each activity and take necessary actions based on its status. This streamlined approach fosters efficiency and coordination, ultimately leading to more effective property management practices.",
-      "In summary, the Workflow application acts as a vital link between owners and property managers, offering a structured framework for managing property-related activities and ensuring smooth operations. Its integration with the Owner Application provides a comprehensive solution for organizing and tracking various tasks, expenses, and updates within a property.",
+      "Workflow sits beside the Owner app. It lists what is happening on a property: expenses, income, and general updates. Each item has a category and a status, so managers and owners can see what is waiting and what is done.",
+      "It is tied to the Owner app, so both sides can follow a task and act on its status.",
     ],
     tags: [
       { label: "JavaScript", icon: React.createElement(SiJavascript) },
@@ -315,9 +314,8 @@ export const projectsData = [
     title: "Chat-Admin",
     year: "2021-Present",
     description: [
-      "The Chat Admin application serves as the instant messaging counterpart, providing real-time responses, file sharing capabilities, and robust organization features. Users can quickly send messages, share files, and attachments, all while benefiting from powerful organization and filtering options.",
-      "One of the key features of the Chat Admin application is its ability to display the availability of property managers to respond to queries. This ensures timely and efficient communication between property managers and users. Additionally, the application provides visibility into the owners under each property management company, facilitating seamless collaboration and coordination.",
-      "With its intuitive interface and advanced features, the Chat Admin application streamlines communication processes and enhances productivity for property management teams. Whether it's addressing inquiries, sharing updates, or coordinating tasks, this application offers a comprehensive solution for efficient communication and collaboration within the property management ecosystem.",
+      "Chat Admin is the messaging app next to the owner tools. People send messages and files, and they can organize and filter the conversations.",
+      "It shows whether a property manager is available to answer. It also lists the owners under each management company.",
     ],
     tags: [
       { label: "JavaScript", icon: React.createElement(SiJavascript) },
@@ -334,9 +332,9 @@ export const projectsData = [
     title: "House Elf",
     year: "2024-Present",
     description: [
-      "House Elf is WealthPark's internal admin console, a centralized platform for managing internal operations efficiently and securely. It brings user group management, single sign-on configuration, and account provisioning into one place, so operators no longer need ad-hoc scripts or direct database access for day-to-day tasks.",
-      "It covers bulk workflows such as issuing instant accounts with invitation letters, sending investment notifications to investors, managing chat broadcast tags from CSV uploads, and bulk deletion of owners, rooms, properties, tenants, and contracts from Excel files. Every bulk action is validated and reviewed before it runs.",
-      "A dedicated QA Toolbox supports quality assurance in development and test environments with API testing, member management, and configuration tools. The console is localized, supports light and dark themes, and sits behind company SSO.",
+      "House Elf is WealthPark's admin console for internal work. Operators manage user groups, single sign-on, and new accounts in one place, without writing a script or opening the database for ordinary tasks.",
+      "Bulk jobs include instant accounts with invitation letters, investment notices to investors, chat broadcast tags from a CSV, and deleting owners, rooms, properties, tenants, and contracts from an Excel file. Each bulk action is checked and reviewed before it runs.",
+      "A QA Toolbox in development and test environments covers API checks, member management, and configuration. The console is translated, has light and dark themes, and uses company SSO.",
     ],
     tags: [
       { label: "TypeScript", icon: React.createElement(SiTypescript) },
@@ -350,9 +348,8 @@ export const projectsData = [
     title: "LookingGlass",
     year: "2020-2020",
     description: [
-      "LookingGlass is a revolutionary fashion app offering personalized styling services tailored to individual style and preferences. This innovative platform allows users to effortlessly elevate their wardrobe and unlock their full fashion potential through a seamless, convenient experience.",
-      "After purchasing one of the styling packages, LookingGlass connects each user with a dedicated personal stylist for a one-on-one consultation. The stylist takes the time to understand the user's fashion goals, clothing preferences, and desired aesthetic. Within 7-10 days, they curate a custom collection of outfit boards showcasing fresh looks that incorporate pieces from the user's existing closet alongside recommended new items.",
-      "With LookingGlass, users receive expert guidance from seasoned fashion professionals committed to helping them look and feel their absolute best. Style ruts become a thing of the past as LookingGlass provides a cutting-edge personal styling solution, rejuvenating wardrobes with a fashionable, customized approach.",
+      "LookingGlass is a fashion app that pairs someone with a stylist.",
+      "After they buy a styling package, they get a one-on-one consult. The stylist asks about their goals, what they like to wear, and the look they want. In 7 to 10 days they get outfit boards that mix clothes already in the closet with new pieces the stylist recommends.",
     ],
     tags: [
       { label: "JavaScript", icon: React.createElement(SiJavascript) },
@@ -368,9 +365,9 @@ export const projectsData = [
     title: "MerchantSpring",
     year: "2020-2021",
     description: [
-      "MerchantSpring is a powerful analytics and reporting platform designed for agencies, vendors, and investors managing multiple e-commerce brands and accounts across major marketplaces like Amazon, Shopify, Shopee, Lazada, Walmart, and more. It provides a centralized solution for in-depth marketplace analytics and comprehensive brand performance tracking.",
-      "With MerchantSpring, professionals can streamline their brand management operations through advanced multi-account performance monitoring across these top marketplaces. The platform generates robust insights into sales metrics, profitability, and overall marketplace success for every brand under management. This enables data-driven decision-making to drive sustainable growth.",
-      "MerchantSpring simplifies the reporting process by efficiently consolidating up-to-date performance data, actionable insights, and visualizations into comprehensive brand reports for marketplaces like Amazon, Shopify, Shopee, and others. This eliminates manual data consolidation, ensuring faster and more accurate reporting for clients and stakeholders. Whether managing a brand portfolio, serving vendor clients, or overseeing e-commerce investments across major platforms, MerchantSpring empowers teams with the powerful cross-marketplace analytics needed to accelerate success.",
+      "MerchantSpring reports on e-commerce brands for agencies, vendors, and investors who run more than one account. It covers Amazon, Shopify, Shopee, Lazada, Walmart, and other marketplaces.",
+      "Teams watch sales, profit, and how each brand is doing on those marketplaces, across the accounts they manage.",
+      "It pulls the latest numbers, notes, and charts into a brand report, so people spend less time copying data by hand.",
     ],
     tags: [
       { label: "TypeScript", icon: React.createElement(SiTypescript) },
@@ -399,10 +396,8 @@ export const projectsData = [
     title: "Lagoon",
     year: "2020-2021",
     description: [
-      "The Next-Gen Chat Experience",
-      "Lagoon is a cutting-edge chat app designed for the new generation of digital natives. This innovative platform redefines the way people connect and communicate, offering an immersive and feature-rich experience tailored for modern users.",
-      "With Lagoon, users can express themselves without limits through a visually stunning interface. From sending expressive emojis and custom stickers to sharing captivating videos and multimedia content, this app ensures every interaction is engaging and memorable. Lagoon seamlessly syncs across desktop and mobile devices, allowing users to pick up conversations wherever they left off and stay connected at all times.",
-      "Beyond one-on-one chats, Lagoon offers opportunities to join vibrant communities, discover new connections based on shared interests, and engage in lively group discussions. With its innovative features and modern design, Lagoon elevates the chat experience, enabling users to forge lasting bonds and embrace the future of digital communication.",
+      "Lagoon is a chat app. People send emoji, custom stickers, video, and other media. It stays in sync on desktop and on a phone, so a conversation can continue on either one.",
+      "People can also join communities, find others with the same interests, and talk in groups.",
     ],
     tags: [
       { label: "TypeScript", icon: React.createElement(SiTypescript) },
@@ -422,9 +417,9 @@ export const projectsData = [
     title: "Iris",
     year: "2019-2020",
     description: [
-      "Iris is a cutting-edge solution designed to revolutionize the way SaaS companies approach customer support and success. It offers a comprehensive model that encompasses both reactive customer support and proactive customer success strategies.",
-      "At its core, Iris empowers SaaS providers to assist customers effectively with their questions and needs through a dedicated support team. This team acts as a safety net, operating within a standard model to address inquiries, provide guidance, and offer troubleshooting assistance. Complementing the support team, Iris's customer success team takes a proactive approach, actively engaging with customers to help them achieve their goals and maximize value from the SaaS solution.",
-      "While the support and success teams have slightly different approaches, they work in tandem toward the shared goal of delivering exceptional customer service. This seamless collaboration ensures customers receive consistent and comprehensive assistance throughout their journey, driving satisfaction, retention, and growth.",
+      "Iris is support and customer-success software for SaaS companies.",
+      "A support team answers questions, explains the product, and helps when something breaks. A customer success team works with customers on their goals and on getting more out of the product.",
+      "The two teams do different work and share the same customers.",
     ],
     tags: [
       { label: "TypeScript", icon: React.createElement(SiTypescript) },
@@ -449,9 +444,8 @@ export const projectsData = [
     title: "Rakuten Travel",
     year: "2018-2020",
     description: [
-      "Rakuten Travel is a premier online travel agency and a leading force in the Japanese travel industry. As part of the renowned Rakuten Group, it offers an unparalleled selection of hotels, accommodations, and package tours tailored for leisure and business travelers exploring Japan.",
-      "With an extensive domestic network, Rakuten Travel provides access to Japan's broadest range of accommodation options, from vibrant city hotels to serene rural retreats. While deeply rooted in Japan, its reach extends globally, offering curated international accommodations and multilingual support in 8 languages. Beyond just lodging, Rakuten Travel simplifies travel planning with comprehensive package tours that seamlessly combine flights, transportation, and activities.",
-      "Through its vast selection, local expertise, and commitment to exceptional service, Rakuten Travel empowers travelers to unlock authentic experiences in Japan and create unforgettable journeys worldwide with confidence and ease.",
+      "Rakuten Travel is an online travel agency in the Rakuten Group. It lists hotels, other places to stay, and package tours for leisure and business trips in Japan.",
+      "The domestic list runs from city hotels to places in the countryside. It also lists stays outside Japan, with support in 8 languages. Package tours can include flights, local transport, and activities.",
     ],
     tags: [
       { label: "JavaScript", icon: React.createElement(SiJavascript) },
@@ -471,9 +465,9 @@ export const projectsData = [
     title: "ADT(Alliance Diagnostic Tool)",
     year: "2017-2018",
     description: [
-      "The GRADE-X suite of products from ADT Tool brings unprecedented efficiency to the automotive diagnostic content lifecycle. This cutting-edge solution revolutionizes how content is developed, managed, reused, and distributed, enabling businesses to streamline processes and optimize resources.",
-      "With GRADE-X, diagnostic content can be authored once and seamlessly published across multiple targets, platforms, and channels. Create rich media assets like flash sequences for service bays or deliver them over-the-air, eliminating redundant efforts. Leveraging advanced data analytics, GRADE-X drives a targeted and efficient content development approach, prioritizing creation based on real-world demand to promote 'fix it right the first time' efficiency.",
-      "The suite simplifies validation by consolidating content updates and streamlining the approval process. Its robust management capabilities ensure the most current and accurate information is readily available across all distribution channels. With its innovative features, GRADE-X redefines diagnostic content, enabling unparalleled efficiency, consistency, and accuracy.",
+      "GRADE-X, from ADT Tool, is a set of products for automotive diagnostic content: writing it, managing it, reusing it, and sending it out.",
+      "Content is written once and published to more than one target, platform, or channel. That includes flash sequences for a service bay and updates sent over the air. Analytics show which content is actually needed, in support of fixing a problem the first time.",
+      "Updates are gathered in one place for approval, and the current version is what the distribution channels serve.",
     ],
     tags: [
       { label: "JavaScript", icon: React.createElement(SiJavascript) },
@@ -492,9 +486,8 @@ export const projectsData = [
     title: "WebOTX",
     year: "2016-2017",
     description: [
-      "WebOTX is an enterprise service bus that seamlessly mediates interactions between diverse services across corporate systems. From web services and EJBs to mainframes, WebOTX ensures compatibility in communication protocols and message formats, eliminating the need for custom integration and conversion logic.",
-      "By acting as a centralized intermediary, WebOTX streamlines interoperability between disparate systems. It handles the complexities of translating protocols and data formats, allowing services to communicate efficiently without extensive development efforts. This capability significantly reduces integration costs and development timelines, enabling organizations to focus on their core business objectives.",
-      "Whether operating in a hybrid environment with legacy mainframes or leveraging modern web services, WebOTX provides a unified platform for service orchestration and secure, reliable data exchange. Its robust service bus architecture simplifies the integration landscape, promoting agility and scalability for evolving enterprise needs.",
+      "WebOTX is an enterprise service bus. It sits between services on a company network, including web services, EJBs, and mainframes, and it lines up their protocols and message formats so each side does not need its own conversion code.",
+      "It also orchestrates those services and moves data between older mainframes and newer web services.",
     ],
     tags: [
       { label: "Java", icon: React.createElement(FaJava) },
@@ -508,9 +501,8 @@ export const projectsData = [
     title: "ECUs Non-Toyota-Diesel",
     year: "2014-2016",
     description: [
-      "The Denso ECU project represents Japan's commitment to automotive excellence, focusing on advancing engine technology beyond vehicles. Through intensive research and development, the project delves into the intricate logical behaviors governing engine components, aiming to decipher the complex interplay that drives performance and efficiency.",
-      "With a focus on understanding fundamental mechanics, the project seeks to unlock innovative advancements in engine control units (ECUs) and related technologies. By unraveling these intricate relationships, Denso's initiative not only improves the performance and reliability of existing models but also lays the groundwork for future automotive solutions.",
-      "In essence, the Denso ECU project embodies Japan's relentless pursuit of technological mastery in automotive engineering. Through its endeavors, it not only elevates industry standards but also contributes to the global automotive landscape, empowering manufacturers to deliver vehicles that excel in quality, efficiency, and driving experience.",
+      "This Denso project is ECU software for diesel engines that are not Toyota's. The work is on the logic that runs engine components, and on how that logic affects performance and efficiency.",
+      "That behavior is what the control software is built from, for engines already in production and for later ones.",
     ],
     tags: [
       { label: "C", icon: React.createElement(TbHexagonLetterC) },
@@ -525,9 +517,8 @@ export const projectsData = [
     title: "Lawson Smart Report",
     year: "2013-2014",
     description: [
-      "The Lawson Smart Report application is a powerful tool designed for users of the Infor Lawson Smart Reports Designer. It offers a streamlined platform for designing and generating insightful reports with ease. With intuitive interfaces and customizable templates, users can effortlessly create reports tailored to their specific needs.",
-      "Key features of the Lawson Smart Report application include robust data analysis capabilities and flexible report design options. Users can manipulate data to extract meaningful insights and visualize trends, facilitating informed decision-making processes within their organizations. Additionally, the application provides seamless integration with the Infor Lawson environment, ensuring compatibility and efficiency.",
-      "In summary, the Lawson Smart Report application enhances reporting efficiency and effectiveness, empowering users to leverage their data to drive business success. With its user-friendly interface and powerful features, it serves as an essential tool for organizations seeking to optimize their reporting processes and maximize the value of their data.",
+      "Lawson Smart Report is for people who use the Infor Lawson Smart Reports Designer. They design reports from templates and adjust them for the question they need answered.",
+      "They can work the data in the report and change the layout. The app runs inside the Infor Lawson environment.",
     ],
     tags: [
       { label: "Java", icon: React.createElement(FaJava) },

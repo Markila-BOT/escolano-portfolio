@@ -9,9 +9,11 @@ import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 import CVButton from "./cv";
 import { Field } from "@/components/ui/field";
+import { useSoundContext } from "@/context/sound-context";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+  const { playCue } = useSoundContext();
 
   return (
     <motion.section
@@ -34,7 +36,7 @@ export default function Contact() {
       <SectionHeading>Contact me</SectionHeading>
 
       <p className="-mt-6 text-muted-foreground">
-        Please contact me directly at{" "}
+        You can email me at{" "}
         <a className="underline" href="mailto:mark.escolano14@gmail.com">
           mark.escolano14@gmail.com
         </a>{" "}
@@ -48,10 +50,12 @@ export default function Contact() {
 
           if (error) {
             toast.error(error);
+            playCue("error");
             return;
           }
 
           toast.success("Email sent successfully!");
+          playCue("success");
         }}
       >
         <Field

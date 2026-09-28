@@ -8,7 +8,7 @@ Status key: `[x]` done, `[ ]` still open. Items marked **partial** exist, and do
 
 | Scope               | Done | Partial | Not started |    Complete |
 | ------------------- | ---: | ------: | ----------: | ----------: |
-| Current spec        |   53 |      11 |          44 | 53/108 (49%) |
+| Current spec        |   59 |      11 |          38 | 59/108 (55%) |
 | Future enhancements |    0 |       1 |          14 |   0/15 (0%) |
 
 Protected routes are out of scope. The site is a single public page.
@@ -57,12 +57,12 @@ The current `public/logo.png` loses contrast on the navy theme. Treat the logo a
 
 Sound stays off until the visitor turns it on. Use [`use-sound`](https://www.npmjs.com/package/use-sound), which wraps [Howler.js](https://github.com/goldfire/howler.js). Do not add Howler as a second direct dependency.
 
-- [ ] A sound control that turns interaction audio on and off, with the choice saved in local storage and defaulting to off
-- [ ] The control names the state it will switch to ("Turn sound on" / "Turn sound off"), keeps a 44×44 px target, and does not overlap the theme switch
-- [ ] Play short sounds only while sound is on, for navigation, the theme switch, opening and closing a project, and form success or error ([Howler.js examples](https://github.com/goldfire/howler.js#examples))
-- [ ] Stop playback immediately when sound is turned off, including a sound already in progress
-- [ ] Load audio after the visitor opts in so it does not compete with first paint, and keep one sprite or a small set of files
-- [ ] Do not autoplay on load, and keep the page usable with sound off
+- [x] A sound control that turns interaction audio on and off, with the choice saved in local storage and defaulting to off
+- [x] The control names the state it will switch to ("Turn sound on" / "Turn sound off"), keeps a 44×44 px target, and does not overlap the theme switch
+- [x] Play short sounds only while sound is on, for navigation, the theme switch, opening and closing a project, and form success or error ([Howler.js examples](https://github.com/goldfire/howler.js#examples))
+- [x] Stop playback immediately when sound is turned off, including a sound already in progress
+- [x] Load audio after the visitor opts in so it does not compete with first paint, and keep one sprite or a small set of files
+- [x] Do not autoplay on load, and keep the page usable with sound off
 
 ## 2. Navigation
 

@@ -1,12 +1,14 @@
 "use client";
 
 import { useTheme } from "@/context/theme-context";
+import { useSoundContext } from "@/context/sound-context";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { BsMoon, BsSun } from "react-icons/bs";
 
 export default function ThemeSwitch() {
   const { theme, toggleTheme } = useTheme();
+  const { playCue } = useSoundContext();
 
   return (
     <Button
@@ -17,7 +19,10 @@ export default function ThemeSwitch() {
       aria-label={
         theme === "light" ? "Switch to dark mode" : "Switch to light mode"
       }
-      onClick={toggleTheme}
+      onClick={() => {
+        playCue("theme");
+        toggleTheme();
+      }}
     >
       {theme === "light" ? <BsSun aria-hidden /> : <BsMoon aria-hidden />}
     </Button>

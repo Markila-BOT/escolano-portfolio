@@ -22,7 +22,8 @@ import { TagChip } from "@/components/ui/tag-chip";
 import { fadeInAnimationVariants } from "@/lib/animations";
 import { LuLink, LuLock } from "react-icons/lu";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useSoundContext } from "@/context/sound-context";
 import { Button } from "@/components/ui/button";
 import { FaWindowClose } from "react-icons/fa";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
@@ -42,6 +43,8 @@ export default function Project({
   description,
 }: ProjectProps) {
   const [colorIndex, setColorIndex] = useState(0);
+  const wasOpen = useRef(false);
+  const { playCue } = useSoundContext();
 
   const colors = [
     "from-green-600 from-10% via-emerald-500 via-30% to-green-600 to-90%",
@@ -95,7 +98,13 @@ export default function Project({
   }, []);
 
   return (
-    <Drawer>
+    <Drawer
+      onOpenChange={(open) => {
+        if (open === wasOpen.current) return;
+        wasOpen.current = open;
+        playCue(open ? "open" : "close");
+      }}
+    >
       <DrawerTrigger asChild>
         <motion.div
           onMouseMove={handleMouseMove}

@@ -11,7 +11,7 @@ export default function About() {
   return (
     <motion.section
       ref={ref}
-      className="max-w-[45rem] text-center leading-8 mb-20 sm:mb-0 scroll-mt-28"
+      className="mb-20 max-w-[45rem] scroll-mt-28 text-center leading-8 sm:mb-0"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
@@ -20,55 +20,46 @@ export default function About() {
       <SectionHeading>About me</SectionHeading>
       <Balancer>
         <p className="mb-3">
-          After gaining my initial experience as a member of the embedded
-          development team in an{" "}
-          <span className="font-semibold">automotive company</span> and
-          understanding how <span className="font-semibold">ECUs</span>{" "}
-          communicate with each other using{" "}
-          <span className="font-semibold">standardized networks</span>, I
-          discovered my true passion for software engineering.
+          I started on an embedded team at an{" "}
+          <span className="font-semibold">automotive company</span>, working on
+          how <span className="font-semibold">ECUs</span> talk to each other
+          over <span className="font-semibold">standardized networks</span>.
+          That is where I got interested in software engineering.
         </p>
 
         <p className="mb-3">
-          I’ve also played a significant role in the development of a travel web
-          application that serves{" "}
-          <span className="italic font-medium">millions</span> of users
-          globally. That’s when I decided to focus on the{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% font-semibold">
+          I later worked on a travel site used by{" "}
+          <span className="font-medium italic">millions</span> of people. That
+          is when I decided to focus on the{" "}
+          <span className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% bg-clip-text font-semibold text-transparent">
+            WEB
+          </span>
+          . With{" "}
+          <span className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% bg-clip-text font-semibold text-transparent">
             WEB
           </span>{" "}
-          because I believe in{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% font-semibold">
-            WEB
-          </span>{" "}
-          development I can serve more people that want to access valuable and
-          necessary information.
+          development I can reach more people who need the information.
         </p>
 
         <p className="mb-3">
-          One of my favorite aspects of software engineering is the thrill of
-          problem-solving, and understanding where is the root of every
-          functionality. Now my expertise lies in a core stack comprising{" "}
+          I like finding the root of a problem and tracing where a feature
+          starts. Most of my work is{" "}
           <span className="font-semibold text-[#61dafb]">React</span>,{" "}
-          <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-800">
+          <span className="bg-gradient-to-r from-gray-200 to-gray-800 bg-clip-text font-semibold text-transparent">
             Next.js
           </span>
           ,{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 from-10% via-emerald-500 via-30% to-green-600 to-90% font-semibold">
+          <span className="bg-gradient-to-r from-green-600 from-10% via-emerald-500 via-30% to-green-600 to-90% bg-clip-text font-semibold text-transparent">
             Node.js
           </span>
-          , and I'm well-versed in{" "}
-          <span className="font-semibold text-gray-400">TypeScript</span>.
-          However, I maintain an insatiable curiosity for learning and am
-          consistently on the lookout for new technologies, design systems, and
-          methodologies to master.
+          , and <span className="font-semibold text-gray-400">TypeScript</span>.
+          I still pick up new tools, design systems, and ways of working.
         </p>
 
         <p className="mb-3">
-          Beyond the professional sphere, I enjoy a balanced life, cherishing
-          moments in which I'm not coding. My ultimate goal remains to continue
-          to thrive, serve, and innovate in this dynamic field while embracing
-          new challenges and opportunities.
+          I also like the time when I am not coding. I want to keep building
+          things people use, and I am fine with the next problem being one I
+          have not seen before.
         </p>
       </Balancer>
     </motion.section>

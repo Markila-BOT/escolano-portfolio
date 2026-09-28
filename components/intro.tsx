@@ -59,7 +59,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="mb-20 max-w-[50rem] text-center sm:mb-0 scroll-mt-28"
+      className="mb-20 max-w-[50rem] scroll-mt-28 text-center sm:mb-0"
     >
       <div className="flex items-center justify-center">
         <div className="relative">
@@ -78,7 +78,7 @@ export default function Intro() {
               height="240"
               quality="95"
               priority={true}
-              className="h-40 w-40 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+              className="h-40 w-40 rounded-full border-[0.35rem] border-white object-cover shadow-xl"
             />
           </motion.div>
           <motion.span
@@ -104,14 +104,14 @@ export default function Intro() {
       >
         <Balancer>
           <h1
-            className="subpixel-antialiased leading-9"
+            className="leading-9 subpixel-antialiased"
             data-value={`${GREETINGS[greeting]}`}
             onMouseOver={animateText}
           >
             {GREETINGS[greeting]}
           </h1>
           <span className="font-bold">I'm Mark Escolano,</span> a{" "}
-          <strong className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
+          <strong className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% bg-clip-text text-6xl font-extrabold text-transparent">
             Senior Software Engineer
           </strong>
           <span className="font-bold"> {introCallToAction.approach}</span>

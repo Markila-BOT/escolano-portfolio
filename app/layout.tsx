@@ -5,13 +5,15 @@ import { GeistMono } from "geist/font/mono";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import Footer from "@/components/footer";
 import ThemeSwitch from "@/components/theme-switch";
+import SoundSwitch from "@/components/sound-switch";
 import ThemeContextProvider from "@/context/theme-context";
+import SoundContextProvider from "@/context/sound-context";
 import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Mark Escolano Portfolio",
   description:
-    "a senior software engineer that more than a decade of experience",
+    "Senior software engineer with more than a decade of experience.",
 };
 
 export default function RootLayout({
@@ -27,13 +29,16 @@ export default function RootLayout({
         <div className="absolute right-[11rem] top-[-6rem] -z-10 h-[31.25rem] w-[31.25rem] rounded-full bg-glow-warm blur-[10rem] sm:w-[68.75rem]" />
         <div className="absolute left-[-35rem] top-[-1rem] -z-10 h-[31.25rem] w-[50rem] rounded-full bg-glow-cool blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]" />
         <ThemeContextProvider>
-          <ActiveSectionContextProvider>
-            <Header />
-            {children}
-            <Footer />
-            <Toaster position="top-right" />
-            <ThemeSwitch />
-          </ActiveSectionContextProvider>
+          <SoundContextProvider>
+            <ActiveSectionContextProvider>
+              <Header />
+              {children}
+              <Footer />
+              <Toaster position="top-right" />
+              <ThemeSwitch />
+              <SoundSwitch />
+            </ActiveSectionContextProvider>
+          </SoundContextProvider>
         </ThemeContextProvider>
       </body>
     </html>

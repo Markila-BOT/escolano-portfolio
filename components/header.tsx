@@ -6,6 +6,7 @@ import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { useSoundContext } from "@/context/sound-context";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { LogoMark } from "@/components/logo-mark";
@@ -16,6 +17,7 @@ import MobileNav, { mobileNavigationId } from "./mobile-nav";
 export default function Header() {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
+  const { playCue } = useSoundContext();
   const isDesktop = useMediaQuery("(min-width: 960px)");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const prefersReducedMotion = useReducedMotion();
@@ -43,6 +45,7 @@ export default function Header() {
           onClick={() => {
             setActiveSection("Home");
             setTimeOfLastClick(Date.now());
+            playCue("navigate");
           }}
           className={cn(
             "flex h-12 w-12 items-center justify-center rounded-full text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
@@ -77,6 +80,7 @@ export default function Header() {
                     onClick={() => {
                       setActiveSection(link.name);
                       setTimeOfLastClick(Date.now());
+                      playCue("navigate");
                     }}
                   >
                     {link.name}
