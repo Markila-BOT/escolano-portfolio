@@ -8,6 +8,7 @@ import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
 import CVButton from "./cv";
+import { Field } from "@/components/ui/field";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -32,7 +33,7 @@ export default function Contact() {
     >
       <SectionHeading>Contact me</SectionHeading>
 
-      <p className="text-muted-foreground -mt-6">
+      <p className="-mt-6 text-muted-foreground">
         Please contact me directly at{" "}
         <a className="underline" href="mailto:mark.escolano14@gmail.com">
           mark.escolano14@gmail.com
@@ -41,7 +42,7 @@ export default function Contact() {
       </p>
 
       <form
-        className="text-foreground mt-10 flex flex-col"
+        className="mt-10 flex flex-col text-foreground"
         action={async (formData) => {
           const { error } = await sendEmail(formData);
 
@@ -53,16 +54,16 @@ export default function Contact() {
           toast.success("Email sent successfully!");
         }}
       >
-        <input
-          className="border-input bg-background text-foreground h-14 rounded-lg border px-4 transition-all"
+        <Field
           name="senderEmail"
           type="email"
           required
           maxLength={500}
           placeholder="Your email"
         />
-        <textarea
-          className="border-input bg-background text-foreground my-3 h-52 rounded-lg border p-4 transition-all"
+        <Field
+          multiline
+          className="my-3"
           name="message"
           placeholder="Your message"
           required

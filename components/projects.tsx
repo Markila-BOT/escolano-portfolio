@@ -11,7 +11,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "./ui/carousel";
+} from "@/components/ui/carousel";
 import { motion } from "framer-motion";
 
 export default function Projects() {

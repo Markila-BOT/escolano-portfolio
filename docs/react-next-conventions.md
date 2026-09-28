@@ -13,16 +13,16 @@ Library roles are in [technology-convention.md](technology-convention.md). Styli
 
 ## Where files go
 
-| Kind | Place | Export |
-| --- | --- | --- |
-| A page section | `components/<name>.tsx` | Default function |
-| A shadcn primitive | `components/ui/<name>.tsx` | Named, plus the generated pattern |
-| Copy, projects, skills | `lib/data.ts` | Named constants |
-| Shared types | `lib/types.ts` | Named types |
-| Section-aware hook | `lib/hooks.ts` | Named function |
-| Generic hook | `hooks/<name>.ts` | Named function |
-| Email template | `email/` | Default function |
-| Project screenshots | `public/projects/`, imported statically in `lib/data.ts` | — |
+| Kind                   | Place                                                    | Export                            |
+| ---------------------- | -------------------------------------------------------- | --------------------------------- |
+| A page section         | `components/<name>.tsx`                                  | Default function                  |
+| A shadcn primitive     | `components/ui/<name>.tsx`                               | Named, plus the generated pattern |
+| Copy, projects, skills | `lib/data.ts`                                            | Named constants                   |
+| Shared types           | `lib/types.ts`                                           | Named types                       |
+| Section-aware hook     | `lib/hooks.ts`                                           | Named function                    |
+| Generic hook           | `hooks/<name>.ts`                                        | Named function                    |
+| Email template         | `email/`                                                 | Default function                  |
+| Project screenshots    | `public/projects/`, imported statically in `lib/data.ts` | —                                 |
 
 File names are lowercase with dashes (`theme-switch.tsx`). Component names are PascalCase.
 
@@ -37,4 +37,5 @@ File names are lowercase with dashes (`theme-switch.tsx`). Component names are P
 - One component per file. Keep the section component thin: read data, render, hand interaction to a child that already exists.
 - Early return when a branch has nothing to render.
 - Reuse `SectionHeading`, `SectionDivider`, `Button`, and `cn` before adding a new primitive.
+- A section imports a primitive from `@/components/ui/...`.
 - Comments only for a rule that the code cannot show. No comments that restate the next line.

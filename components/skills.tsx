@@ -6,7 +6,8 @@ import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 import { fadeInAnimationVariants } from "@/lib/animations";
-import { Label } from "./ui/label";
+import { Label } from "@/components/ui/label";
+import { TagChip } from "@/components/ui/tag-chip";
 
 export default function Skills() {
   const { ref } = useSectionInView("Skills");
@@ -33,7 +34,6 @@ export default function Skills() {
       <ul className="flex flex-wrap justify-center gap-2 text-lg">
         {skillsData.map((skill, index) => (
           <motion.li
-            className="border-border bg-card text-card-foreground flex items-center justify-center gap-2 rounded-xl border px-5 py-3"
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
@@ -43,8 +43,10 @@ export default function Skills() {
             }}
             custom={index}
           >
-            {skill.icon}
-            <Label>{skill.label}</Label>
+            <TagChip>
+              {skill.icon}
+              <Label>{skill.label}</Label>
+            </TagChip>
           </motion.li>
         ))}
       </ul>

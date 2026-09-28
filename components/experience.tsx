@@ -10,7 +10,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
@@ -68,7 +68,7 @@ export default function Experience() {
             >
               <h3 className="font-bold capitalize">{item.title}</h3>
               <p className="!mt-0 font-normal">{item.location}</p>
-              <p className="text-muted-foreground !mt-1 !font-normal">
+              <p className="!mt-1 !font-normal text-muted-foreground">
                 {item.description}
               </p>
             </VerticalTimelineElement>

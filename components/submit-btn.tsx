@@ -2,7 +2,7 @@
 import React from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import { useFormStatus } from "react-dom";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
 export default function SubmitBtn() {
   const { pending } = useFormStatus();
@@ -10,7 +10,7 @@ export default function SubmitBtn() {
   return (
     <Button variant="pill" type="submit" disabled={pending}>
       {pending ? (
-        <div className="border-primary-foreground h-5 w-5 animate-spin rounded-full border-b-2"></div>
+        <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-primary-foreground"></div>
       ) : (
         <>
           Submit{" "}

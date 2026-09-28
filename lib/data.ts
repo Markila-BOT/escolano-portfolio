@@ -42,11 +42,15 @@ import {
   SiAntdesign,
   SiMui,
   SiReactquery,
+  SiPostgresql,
+  SiRust,
 } from "react-icons/si";
 import {
+  TbBrandCSharp,
   TbBrandRedux,
   TbCloudDataConnection,
   TbHexagonLetterC,
+  TbToggleRight,
 } from "react-icons/tb";
 import { AiOutlineApi } from "react-icons/ai";
 import {
@@ -203,6 +207,9 @@ export const projectsData = [
       { label: "NextJS", icon: React.createElement(SiNextdotjs) },
       { label: "Material UI", icon: React.createElement(SiMui) },
       { label: "TanStack Query", icon: React.createElement(SiReactquery) },
+      { label: "DevCycle", icon: React.createElement(TbToggleRight) },
+      { label: "PostgreSQL", icon: React.createElement(SiPostgresql) },
+      { label: "C#", icon: React.createElement(TbBrandCSharp) },
     ],
     imageUrl: MATTERWORX_IMAGE,
   },
@@ -510,6 +517,7 @@ export const skillsData = [
   { label: "CSS", icon: React.createElement(FaReact) },
   { label: "JavaScript", icon: React.createElement(FaJs) },
   { label: "TypeScript", icon: React.createElement(SiTypescript) },
+  { label: "Rust", icon: React.createElement(SiRust) },
   { label: "React", icon: React.createElement(FaReact) },
   { label: "Next.js", icon: React.createElement(SiNextdotjs) },
   { label: "Node.js", icon: React.createElement(FaNodeJs) },
@@ -517,6 +525,7 @@ export const skillsData = [
   { label: "Tailwind", icon: React.createElement(SiTailwindcss) },
   { label: "MongoDB", icon: React.createElement(SiMongodb) },
   { label: "MySQL", icon: React.createElement(DiMysql) },
+  { label: "PostgreSQL", icon: React.createElement(SiPostgresql) },
   { label: "Firebase", icon: React.createElement(SiFirebase) },
   { label: "Redux", icon: React.createElement(SiRedux) },
   { label: "GraphQL", icon: React.createElement(SiGraphql) },

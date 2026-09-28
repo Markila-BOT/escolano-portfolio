@@ -17,14 +17,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import ReactPlayer from "react-player";
-import { Label } from "./ui/label";
+import { Label } from "@/components/ui/label";
+import { TagChip } from "@/components/ui/tag-chip";
 import { fadeInAnimationVariants } from "@/lib/animations";
 import { LuLink, LuLock } from "react-icons/lu";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { FaWindowClose } from "react-icons/fa";
-import TextGenerateEffect from "./ui/text-generate-effect";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 type ProjectProps = (typeof projectsData)[number] & {
   videoUrl?: string;
@@ -141,11 +142,8 @@ export default function Project({
               className="col-span-3 row-span-2 flex flex-wrap gap-1 p-2 sm:mt-auto md:p-4"
             >
               {tags.map((tag, index) => (
-                <li
-                  className="rounded-full bg-secondary px-2 py-0.5 text-[0.5rem] uppercase tracking-wider text-secondary-foreground md:px-3 md:py-1 md:text-[0.6rem]"
-                  key={index}
-                >
-                  {tag.label}
+                <li key={index}>
+                  <TagChip size="compact">{tag.label}</TagChip>
                 </li>
               ))}
             </ul>
@@ -189,7 +187,6 @@ export default function Project({
               <ul className="flex flex-wrap justify-center gap-2 text-sm md:text-lg">
                 {tags.map((tag, index) => (
                   <motion.li
-                    className="flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-3 py-2 text-card-foreground md:px-5 md:py-3"
                     key={index}
                     variants={fadeInAnimationVariants}
                     initial="initial"
@@ -199,8 +196,10 @@ export default function Project({
                     }}
                     custom={index}
                   >
-                    {tag.icon}
-                    <Label>{tag.label}</Label>
+                    <TagChip>
+                      {tag.icon}
+                      <Label>{tag.label}</Label>
+                    </TagChip>
                   </motion.li>
                 ))}
               </ul>

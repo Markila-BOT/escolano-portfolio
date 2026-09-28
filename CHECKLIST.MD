@@ -8,7 +8,7 @@ Status key: `[x]` done, `[ ]` still open. Items marked **partial** exist, and do
 
 | Scope               | Done | Partial | Not started |    Complete |
 | ------------------- | ---: | ------: | ----------: | ----------: |
-| Current spec        |   40 |      11 |          56 | 40/107 (37%) |
+| Current spec        |   46 |      11 |          51 | 46/108 (43%) |
 | Future enhancements |    0 |       1 |          14 |   0/15 (0%) |
 
 Protected routes are out of scope. The site is a single public page.
@@ -35,12 +35,12 @@ The toggle works. Sections, chrome, project cards, and the drawer read one navy 
 
 Component origin and usage must also be uniform. Primitives come from `components/ui` (shadcn), and sections compose them. Today some sections do and some hand-roll the same element.
 
-- [ ] Every button uses `components/ui/button.tsx` variants (CV and submit hand-roll their own; Experience and the project drawer already use `Button`)
-- [ ] One icon library in sections: `react-icons` (the carousel uses `lucide-react` for its arrows)
-- [ ] One import style for primitives: `@/components/ui/...` (sections mix `@/components/ui/drawer` and `./ui/label`)
-- [ ] One export style for components (sections are default exports, `components/ui` is named, `cv.tsx` and `text-generate-effect.tsx` assign a const and export default at the end)
-- [ ] `components/ui` files formatted by the repo Prettier config (generated files have no semicolons; the rest of the repo does)
-- [ ] Each shared element has a single source: section heading, card surface, tag chip, and form field are one component each, reused in Skills, Projects, and Contact
+- [x] Every button uses `components/ui/button.tsx` variants (theme switch and the mobile menu use `chrome`; CV and submit use `pill`)
+- [x] One icon library in sections: `react-icons` (carousel arrows included)
+- [x] One import style for primitives: `@/components/ui/...`
+- [x] One export style for components (sections are default function exports, `components/ui` is named)
+- [x] `components/ui` files formatted by the repo Prettier config
+- [x] Each shared element has a single source: section heading, tag chip, and form field are reused in Skills, Projects, and Contact
 
 ### 1.2 Adaptive logo
 
@@ -109,6 +109,7 @@ Sound stays off until the visitor turns it on. Use [`use-sound`](https://www.npm
 - [ ] Expandable project rail: one project opens, the rest stay as slim labels ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
 - [ ] Client, company, and timeline on each project ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
 - [ ] Lay out each project description with [Pretext](https://github.com/chenglou/pretext) so drawer copy wraps from measured lines instead of a DOM reflow, while the text stays readable without JavaScript
+- [ ] YouTube video in the project drawer for MatterWorx and House Elf (other projects already set `videoUrl`; these two still show the screenshot)
 
 ### 3.5 Skills
 

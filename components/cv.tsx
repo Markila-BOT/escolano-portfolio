@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import { FaAddressCard } from "react-icons/fa";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
-const CVButton = () => {
+export default function CVButton() {
   return (
     <Button
       variant="pill"
@@ -15,6 +15,4 @@ const CVButton = () => {
       </>
     </Button>
   );
-};
-
-export default CVButton;
+}

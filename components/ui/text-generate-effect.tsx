@@ -3,13 +3,13 @@ import { useEffect } from "react";
 import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const TextGenerateEffect = ({
+export function TextGenerateEffect({
   words,
   className,
 }: {
   words: string;
   className?: string;
-}) => {
+}) {
   const [scope, animate] = useAnimate();
   let wordsArray = words.split(" ");
   useEffect(() => {
@@ -42,12 +42,10 @@ const TextGenerateEffect = ({
   return (
     <div className={cn("font-bold", className)}>
       <div className="mt-4">
-        <div className="text-foreground text-xl leading-snug tracking-wide">
+        <div className="text-xl leading-snug tracking-wide text-foreground">
           {renderWords()}
         </div>
       </div>
     </div>
   );
-};
-
-export default TextGenerateEffect;
+}
