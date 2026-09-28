@@ -8,7 +8,7 @@ Status key: `[x]` done, `[ ]` still open. Items marked **partial** exist, and do
 
 | Scope               | Done | Partial | Not started |    Complete |
 | ------------------- | ---: | ------: | ----------: | ----------: |
-| Current spec        |   46 |      11 |          51 | 46/108 (43%) |
+| Current spec        |   53 |      11 |          44 | 53/108 (49%) |
 | Future enhancements |    0 |       1 |          14 |   0/15 (0%) |
 
 Protected routes are out of scope. The site is a single public page.
@@ -46,12 +46,12 @@ Component origin and usage must also be uniform. Primitives come from `component
 
 The current `public/logo.png` loses contrast on the navy theme. Treat the logo as a reusable brand asset rather than correcting the bitmap with CSS filters.
 
-- [ ] Replace the bitmap with a transparent SVG or intentional light and dark variants, preserving the same silhouette in both themes
-- [ ] Select the correct logo from the active theme without flashing the wrong variant during hydration
-- [ ] Keep at least 3:1 contrast against the header and page surfaces in both themes, including hover and focus states
-- [ ] Make the logo link expose "Home" while its image is decorative, and provide a visible keyboard focus treatment
-- [ ] Give the logo link a minimum 44×44 px target and responsive placement that does not overlap navigation from 320 px through desktop widths
-- [ ] Add restrained hover and entrance motion, disable nonessential motion under `prefers-reduced-motion`, and verify the asset causes no layout shift
+- [x] Replace the bitmap with a transparent SVG or intentional light and dark variants, preserving the same silhouette in both themes
+- [x] Select the correct logo from the active theme without flashing the wrong variant during hydration
+- [x] Keep at least 3:1 contrast against the header and page surfaces in both themes, including hover and focus states
+- [x] Make the logo link expose "Home" while its image is decorative, and provide a visible keyboard focus treatment
+- [x] Give the logo link a minimum 44×44 px target and responsive placement that does not overlap navigation from 320 px through desktop widths
+- [x] Add restrained hover and entrance motion, disable nonessential motion under `prefers-reduced-motion`, and verify the asset causes no layout shift
 
 ### 1.3 Interaction sound
 
@@ -77,7 +77,7 @@ Sound stays off until the visitor turns it on. Use [`use-sound`](https://www.npm
 
 - [x] Personal introduction
 - [x] Professional summary
-- [ ] Call-to-action elements ([Timmy O'Mahony](https://timmyomahony.com) states who the work is for and how to start)
+- [x] Call-to-action elements ([Timmy O'Mahony](https://timmyomahony.com) states who the work is for and how to start)
 - [ ] One-line positioning: who you help and what you build ([Lee Robinson](https://leerob.io), [Brittany Chiang](https://brittanychiang.com))
 - [ ] Improve the multilingual greeting animation and presentation ([Bryan Elliott](https://elliottprogrammer.com) uses one small interactive moment)
 - [ ] Cycling role titles in the introduction ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))

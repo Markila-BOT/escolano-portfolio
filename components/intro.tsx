@@ -1,14 +1,19 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
+import { useActiveSectionContext } from "@/context/active-section-context";
+import { introCallToAction } from "@/lib/data";
+import { Button } from "@/components/ui/button";
 import profile from "@/public/profile.png";
 import Balancer from "react-wrap-balancer";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const GREETINGS = ["Welcome!🇬🇧🇺🇸 👋", "Mabuhay!🇵🇭 👋", "ようこそ🇯🇵 🙇"];
   const interval = useRef<number | undefined>(undefined);
@@ -109,15 +114,23 @@ export default function Intro() {
           <strong className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
             Senior Software Engineer
           </strong>
-          <span className="font-bold">
-            {" "}
-            with a strong focus on <span className="underline">
-              frontend
-            </span>{" "}
-            technologies.
-          </span>
+          <span className="font-bold"> {introCallToAction.approach}</span>
         </Balancer>
       </motion.h1>
+      <p className="px-4 text-base text-foreground sm:text-lg">
+        {introCallToAction.audience}
+      </p>
+      <Button className="mt-4" variant="pill" asChild>
+        <Link
+          href="#contact"
+          onClick={() => {
+            setActiveSection("Contact");
+            setTimeOfLastClick(Date.now());
+          }}
+        >
+          {introCallToAction.startLabel}
+        </Link>
+      </Button>
     </section>
   );
 }

@@ -72,6 +72,7 @@ import WEALTHPARK_ACTIVITY_IMAGE from "@/public/projects/wealthpark-activity.png
 import WEALTHPARK_CHAT_ADMIN_IMAGE from "@/public/projects/wealthpark-chat-admin.png";
 import WEALTHPARK_HOUSE_ELF_IMAGE from "@/public/projects/wealthpark-house-elf.png";
 import MATTERWORX_IMAGE from "@/public/projects/matterworx.png";
+import POTATO_V3_IMAGE from "@/public/projects/potato-v3.png";
 import WEALTHPARK_OWNER_APP_IMAGE from "@/public/projects/wealthpark-owner-app.png";
 import WEALTHPARK_VALUATION_IMAGE from "@/public/projects/wealthpark-valuation.png";
 import X_CLIMB_LAGOON_IMAGE from "@/public/projects/x-climb-lagoon.png";
@@ -103,6 +104,14 @@ export const links = [
     hash: "#contact",
   },
 ] as const;
+
+export const introCallToAction = {
+  audience:
+    "The work is for product teams that need end-to-end implementation through deployment.",
+  approach:
+    "shipping new code with AI, spec-driven development, and TypeScript.",
+  startLabel: "Contact",
+} as const;
 
 export const experiencesData = [
   {
@@ -195,7 +204,7 @@ export const experiencesData = [
 export const projectsData = [
   {
     title: "MatterWorx",
-    year: "2025-Present",
+    year: "2026-Present",
     description: [
       "MatterWorx is a private workforce program platform. Program admins land on a dashboard that tracks submissions, onboarding reviews, active assignments, pending timesheets, pending invoices, and credentials that are expiring or already expired, with a direct path into each queue.",
       "The program covers the placement lifecycle: open positions, candidate submissions, assignments, shifts, and credential management. Timesheets, invoices, and remittance sit next to analytics, so hiring, time, and billing stay in one console.",
@@ -212,6 +221,25 @@ export const projectsData = [
       { label: "C#", icon: React.createElement(TbBrandCSharp) },
     ],
     imageUrl: MATTERWORX_IMAGE,
+  },
+  {
+    title: "Potato V3",
+    year: "2024-Present",
+    description: [
+      "Potato V3 is WealthPark's property-management console for PM companies. It replaces the original Potato workspace, so operators handle owners, chat, and program settings in one app.",
+      "Chat is real time. Property managers message owners, follow topics, share files, and see unread badges from the owner list and the room list.",
+      "Settings cover users, roles, and property groups. The console is localized in English, Japanese, and Traditional Chinese.",
+    ],
+    tags: [
+      { label: "TypeScript", icon: React.createElement(SiTypescript) },
+      { label: "React", icon: React.createElement(FaReact) },
+      { label: "NextJS", icon: React.createElement(SiNextdotjs) },
+      { label: "Tailwind CSS", icon: React.createElement(SiTailwindcss) },
+      { label: "Radix UI", icon: React.createElement(SiRadixui) },
+      { label: "TanStack Query", icon: React.createElement(SiReactquery) },
+      { label: "Jotai", icon: React.createElement(SiXstate) },
+    ],
+    imageUrl: POTATO_V3_IMAGE,
   },
   {
     title: "Valuation",
