@@ -8,7 +8,7 @@ Status key: `[x]` done, `[ ]` still open. Items marked **partial** exist, and do
 
 | Scope               | Done | Partial | Not started |     Complete |
 | ------------------- | ---: | ------: | ----------: | -----------: |
-| Current spec        |   62 |      11 |          35 | 62/108 (57%) |
+| Current spec        |   63 |      11 |          35 | 63/109 (58%) |
 | Future enhancements |    0 |       1 |          14 |    0/15 (0%) |
 
 Protected routes are out of scope. The site is a single public page.
@@ -82,6 +82,7 @@ Sound stays off until the visitor turns it on. Use [`use-sound`](https://www.npm
 - [x] Improve the multilingual greeting animation and presentation ([Bryan Elliott](https://elliottprogrammer.com) uses one small interactive moment)
 - [x] Cycling role titles in the introduction ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
 - [ ] A hero you can interact with, with the controls written on screen ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
+- [x] Analytics and a toast once per device visit ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
 
 ### 3.2 About
 

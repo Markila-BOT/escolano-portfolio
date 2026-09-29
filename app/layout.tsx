@@ -9,6 +9,7 @@ import SoundSwitch from "@/components/sound-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import SoundContextProvider from "@/context/sound-context";
 import { Toaster } from "react-hot-toast";
+import VisitorNotice from "@/components/visitor-notice";
 
 export const metadata = {
   title: "Mark Escolano Portfolio",
@@ -35,6 +36,7 @@ export default function RootLayout({
               {children}
               <Footer />
               <Toaster position="top-right" />
+              <VisitorNotice />
               <ThemeSwitch />
               <SoundSwitch />
             </ActiveSectionContextProvider>

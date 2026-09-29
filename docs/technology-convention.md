@@ -14,7 +14,7 @@ Do not bump a major version as part of a feature change. Majors still ahead of t
 | `tailwindcss@3.4`, `tailwindcss-animate`, `prettier-plugin-tailwindcss` | All styling | CSS modules, a CSS-in-JS library. See [css-conventions.md](css-conventions.md) |
 | `clsx`, `tailwind-merge` | Class composition through `cn` in `lib/utils.ts` | String-concatenated class names |
 | `class-variance-authority` | Variants on `components/ui` primitives | A second variant helper |
-| `@radix-ui/react-dialog`, `@radix-ui/react-label`, `@radix-ui/react-slot`, `vaul` | Dialog, label, `asChild`, and the project drawer | A new modal library |
+| `@radix-ui/react-dialog`, `@radix-ui/react-label`, `@radix-ui/react-slot`, `vaul` | Dialog, label, `asChild`, and the project drawer. New reusable controls follow [radix-ui-conventions.md](radix-ui-conventions.md) | A new modal library, or a second primitive for a job this row already names |
 | `embla-carousel-react` | The project carousel (`components/ui/carousel.tsx`) | Another carousel |
 | `framer-motion@11` | Motion. Shared variants live in `lib/animations.ts` | Another animation library |
 | `geist` | Sans and mono on `<body>` in `app/layout.tsx` | A second font package |

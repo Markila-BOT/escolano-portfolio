@@ -124,6 +124,18 @@ export const introRoleTitles = [
   "Front-End Engineer",
 ] as const;
 
+export const firstVisitNotice = {
+  title: "Hello!",
+  description: "Thanks for stopping by — enjoy the site.",
+} as const;
+
+export function returnVisitNotice(visitCount: number) {
+  return {
+    title: "Welcome back!",
+    description: `Good to see you again — visit #${visitCount} on this device.`,
+  };
+}
+
 export const experiencesData = [
   {
     title: "Senior Software Engineer",

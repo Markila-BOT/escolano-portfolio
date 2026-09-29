@@ -57,9 +57,13 @@ export default function SoundContextProvider({
   }, []);
 
   useEffect(() => {
-    const stored = window.localStorage.getItem(SOUND_STORAGE_KEY);
-    if (stored === "on") {
-      setSoundOn(true);
+    try {
+      const stored = window.localStorage.getItem(SOUND_STORAGE_KEY);
+      if (stored === "on") {
+        setSoundOn(true);
+      }
+    } catch {
+      // A blocked store leaves sound off, which is the default.
     }
   }, []);
 
@@ -70,12 +74,20 @@ export default function SoundContextProvider({
       } catch {
         // Stopping a cue must not block the control.
       }
-      window.localStorage.setItem(SOUND_STORAGE_KEY, "off");
+      try {
+        window.localStorage.setItem(SOUND_STORAGE_KEY, "off");
+      } catch {
+        // The control still turns sound off when the store is blocked.
+      }
       setSoundOn(false);
       return;
     }
 
-    window.localStorage.setItem(SOUND_STORAGE_KEY, "on");
+    try {
+      window.localStorage.setItem(SOUND_STORAGE_KEY, "on");
+    } catch {
+      // The control still turns sound on when the store is blocked.
+    }
     setSoundOn(true);
   };
 

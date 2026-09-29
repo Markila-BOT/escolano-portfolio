@@ -24,17 +24,30 @@ export default function ThemeContextProvider({
   const toggleTheme = () => {
     if (theme === "light") {
       setTheme("dark");
-      window.localStorage.setItem("theme", "dark");
+      try {
+        window.localStorage.setItem("theme", "dark");
+      } catch {
+        // A blocked store still leaves the dark theme on the page.
+      }
       document.documentElement.classList.add("dark");
     } else {
       setTheme("light");
-      window.localStorage.setItem("theme", "light");
+      try {
+        window.localStorage.setItem("theme", "light");
+      } catch {
+        // A blocked store still leaves the light theme on the page.
+      }
       document.documentElement.classList.remove("dark");
     }
   };
 
   useEffect(() => {
-    const localTheme = window.localStorage.getItem("theme") as Theme | null;
+    let localTheme: Theme | null = null;
+    try {
+      localTheme = window.localStorage.getItem("theme") as Theme | null;
+    } catch {
+      localTheme = null;
+    }
 
     if (localTheme) {
       setTheme(localTheme);

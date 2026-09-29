@@ -37,5 +37,6 @@ File names are lowercase with dashes (`theme-switch.tsx`). Component names are P
 - One component per file. Keep the section component thin: read data, render, hand interaction to a child that already exists.
 - Early return when a branch has nothing to render.
 - Reuse `SectionHeading`, `SectionDivider`, `Button`, and `cn` before adding a new primitive.
+- A new reusable interactive component follows [radix-ui-conventions.md](radix-ui-conventions.md).
 - A section imports a primitive from `@/components/ui/...`.
 - Comments only for a rule that the code cannot show. No comments that restate the next line.

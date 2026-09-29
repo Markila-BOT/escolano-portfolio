@@ -10,6 +10,7 @@ Follow the convention for the files you touch. Match an existing pattern in this
 | Writing or editing styles | [docs/css-conventions.md](docs/css-conventions.md) |
 | Writing TypeScript | [docs/typescript-conventions.md](docs/typescript-conventions.md) |
 | Adding or changing UI, routing, or content | [docs/react-next-conventions.md](docs/react-next-conventions.md) |
+| Adding a reusable interactive component | [docs/radix-ui-conventions.md](docs/radix-ui-conventions.md) |
 | Adding or changing anything a person operates | [docs/accessibility-conventions.md](docs/accessibility-conventions.md) |
 
 `pnpm lint` is the lint command. Prettier sorts Tailwind classes. Do not start `pnpm dev` unless asked.
