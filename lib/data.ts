@@ -106,12 +106,16 @@ export const links = [
 ] as const;
 
 export const introCallToAction = {
-  audience:
-    "I work with product teams that need a product built and carried through deployment.",
-  approach:
-    "shipping new code with AI, spec-driven development, and TypeScript.",
+  positioning:
+    "I help product teams take new code all the way to deployment, writing most of it in TypeScript with AI and spec-driven development.",
   startLabel: "Contact",
 } as const;
+
+export const introGreetings = [
+  "Welcome!🇬🇧🇺🇸 👋",
+  "Mabuhay!🇵🇭 👋",
+  "ようこそ🇯🇵 🙇",
+] as const;
 
 export const experiencesData = [
   {

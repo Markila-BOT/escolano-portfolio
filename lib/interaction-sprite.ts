@@ -5,6 +5,7 @@ export const interactionSprite = {
   close: [600, 120],
   success: [800, 160],
   error: [1000, 140],
+  greeting: [1300, 1500],
 } satisfies Record<string, [number, number]>;
 
 export type SoundCue = keyof typeof interactionSprite;
