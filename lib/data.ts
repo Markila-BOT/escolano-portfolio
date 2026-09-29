@@ -117,6 +117,13 @@ export const introGreetings = [
   "ようこそ🇯🇵 🙇",
 ] as const;
 
+export const introRoleTitles = [
+  "Senior Software Engineer",
+  "Full Stack Engineer",
+  "Lead Software Engineer",
+  "Front-End Engineer",
+] as const;
+
 export const experiencesData = [
   {
     title: "Senior Software Engineer",

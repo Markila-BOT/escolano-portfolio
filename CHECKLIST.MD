@@ -6,10 +6,10 @@ Status key: `[x]` done, `[ ]` still open. Items marked **partial** exist, and do
 
 ## Progress
 
-| Scope               | Done | Partial | Not started |    Complete |
-| ------------------- | ---: | ------: | ----------: | ----------: |
-| Current spec        |   61 |      11 |          36 | 61/108 (56%) |
-| Future enhancements |    0 |       1 |          14 |   0/15 (0%) |
+| Scope               | Done | Partial | Not started |     Complete |
+| ------------------- | ---: | ------: | ----------: | -----------: |
+| Current spec        |   62 |      11 |          35 | 62/108 (57%) |
+| Future enhancements |    0 |       1 |          14 |    0/15 (0%) |
 
 Protected routes are out of scope. The site is a single public page.
 
@@ -80,7 +80,7 @@ Sound stays off until the visitor turns it on. Use [`use-sound`](https://www.npm
 - [x] Call-to-action elements ([Timmy O'Mahony](https://timmyomahony.com) states who the work is for and how to start)
 - [x] One-line positioning: who you help and what you build ([Lee Robinson](https://leerob.io), [Brittany Chiang](https://brittanychiang.com))
 - [x] Improve the multilingual greeting animation and presentation ([Bryan Elliott](https://elliottprogrammer.com) uses one small interactive moment)
-- [ ] Cycling role titles in the introduction ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
+- [x] Cycling role titles in the introduction ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
 - [ ] A hero you can interact with, with the controls written on screen ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
 
 ### 3.2 About

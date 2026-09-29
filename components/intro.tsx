@@ -7,7 +7,8 @@ import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSoundContext } from "@/context/sound-context";
-import { introCallToAction, introGreetings } from "@/lib/data";
+import { introCallToAction, introGreetings, introRoleTitles } from "@/lib/data";
+import { RoleTitleLoop } from "@/components/role-title-loop";
 import { Button } from "@/components/ui/button";
 import profile from "@/public/profile.png";
 import Balancer from "react-wrap-balancer";
@@ -274,11 +275,13 @@ export default function Intro() {
               )}
             </span>
           </Button>
-          <span className="font-bold">I'm Mark Escolano,</span> a{" "}
-          <strong className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% bg-clip-text text-6xl font-extrabold text-transparent">
-            Senior Software Engineer
-          </strong>
-        </Balancer>
+          <span className="font-bold">I'm Mark Escolano,</span> a
+        </Balancer>{" "}
+        <RoleTitleLoop
+          titles={introRoleTitles}
+          isPaused={isGlitching}
+          className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% bg-clip-text text-6xl font-extrabold text-transparent"
+        />
       </motion.h1>
       <p className="px-4 text-base text-foreground sm:text-lg">
         {introCallToAction.positioning}
