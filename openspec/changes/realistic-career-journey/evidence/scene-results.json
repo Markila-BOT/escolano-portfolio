@@ -1,0 +1,530 @@
+[
+  {
+    "width": 1280,
+    "theme": "light",
+    "stop": 1,
+    "text": "Education\n\nMandaluyong, Philippines\n\n2013-2014\n\nI earned a bachelor's degree in computer engineering.\n\nStop 1 of 12",
+    "stats": {
+      "journeyDrawCalls": "94",
+      "journeyTriangles": "25746",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "light",
+    "stop": 2,
+    "text": "Internship\n\nTaguig, Philippines\n\n2013\n\nI interned at Lawson as a Java developer.\n\nJava\n\nStop 2 of 12",
+    "stats": {
+      "journeyDrawCalls": "92",
+      "journeyTriangles": "25726",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "light",
+    "stop": 3,
+    "text": "First Job\n\nMakati, Philippines\n\n2014\n\nI got my first job as a software engineer.\n\nC\n\nStop 3 of 12",
+    "stats": {
+      "journeyDrawCalls": "92",
+      "journeyTriangles": "25726",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "light",
+    "stop": 4,
+    "text": "Promoted\n\nMakati, Philippines\n\n2016\n\nI was promoted to software engineer II.\n\nJava\n\nStop 4 of 12",
+    "stats": {
+      "journeyDrawCalls": "88",
+      "journeyTriangles": "25170",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "light",
+    "stop": 5,
+    "text": "Fly to Japan\n\nTokyo, Japan\n\n2017\n\nI went to work in Japan. 🇯🇵\n\nStop 5 of 12",
+    "stats": {
+      "journeyDrawCalls": "89",
+      "journeyTriangles": "24058",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "light",
+    "stop": 6,
+    "text": "Training in United Kingdom\n\nManchester, United Kingdom\n\n2018\n\nI trained with teammates from different places and learned new skills. 🇬🇧\n\nJavaScript\nReact\n\nStop 6 of 12",
+    "stats": {
+      "journeyDrawCalls": "102",
+      "journeyTriangles": "35398",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "light",
+    "stop": 7,
+    "text": "Apply training knowledge\n\nTokyo, Japan\n\n2019\n\nI worked with product managers and other engineers.\n\nTypeScript\nReact\nRedux\n\nStop 7 of 12",
+    "stats": {
+      "journeyDrawCalls": "105",
+      "journeyTriangles": "34942",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "light",
+    "stop": 8,
+    "text": "Front-End Engineer\n\nTokyo, Japan\n\n2020\n\nI built and maintained web apps in React.\n\nTypeScript\nReact\nJavaScript\n\nStop 8 of 12",
+    "stats": {
+      "journeyDrawCalls": "91",
+      "journeyTriangles": "20282",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "light",
+    "stop": 9,
+    "text": "Fly back home\n\nQuezon City, Philippines\n\n2021\n\nI came home and kept working. 🇵🇭\n\nStop 9 of 12",
+    "stats": {
+      "journeyDrawCalls": "86",
+      "journeyTriangles": "27826",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "light",
+    "stop": 10,
+    "text": "Lead Software Engineer\n\nQuezon City, Philippines\n\n2021\n\nI led a few front-end engineers.\n\nTypeScript\nReact\n\nStop 10 of 12",
+    "stats": {
+      "journeyDrawCalls": "102",
+      "journeyTriangles": "40470",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "light",
+    "stop": 11,
+    "text": "Full Stack Engineer\n\nSouth Melbourne, Australia\n\n2021\n\nI worked full time as a full stack engineer.\n\nTypeScript\nReact\nNode.js\nExpress\nMySQL\n\nStop 11 of 12",
+    "stats": {
+      "journeyDrawCalls": "91",
+      "journeyTriangles": "20186",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "light",
+    "stop": 12,
+    "text": "Senior Software Engineer\n\nQuezon City, Philippines\n\n2022-Present\n\nI work at a property-management technology company.\n\nTypeScript\nReact\nNextJS\nTailwind CSS\nGraphQL\nNestJS\n\nStop 12 of 12",
+    "stats": {
+      "journeyDrawCalls": "90",
+      "journeyTriangles": "26038",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "stop": 1,
+    "text": "Education\n\nMandaluyong, Philippines\n\n2013-2014\n\nI earned a bachelor's degree in computer engineering.\n\nStop 1 of 12",
+    "stats": {
+      "journeyDrawCalls": "94",
+      "journeyTriangles": "25746",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "stop": 2,
+    "text": "Internship\n\nTaguig, Philippines\n\n2013\n\nI interned at Lawson as a Java developer.\n\nJava\n\nStop 2 of 12",
+    "stats": {
+      "journeyDrawCalls": "92",
+      "journeyTriangles": "25726",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "stop": 3,
+    "text": "First Job\n\nMakati, Philippines\n\n2014\n\nI got my first job as a software engineer.\n\nC\n\nStop 3 of 12",
+    "stats": {
+      "journeyDrawCalls": "92",
+      "journeyTriangles": "25726",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "stop": 4,
+    "text": "Promoted\n\nMakati, Philippines\n\n2016\n\nI was promoted to software engineer II.\n\nJava\n\nStop 4 of 12",
+    "stats": {
+      "journeyDrawCalls": "88",
+      "journeyTriangles": "25170",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "stop": 5,
+    "text": "Fly to Japan\n\nTokyo, Japan\n\n2017\n\nI went to work in Japan. 🇯🇵\n\nStop 5 of 12",
+    "stats": {
+      "journeyDrawCalls": "89",
+      "journeyTriangles": "24058",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "stop": 6,
+    "text": "Training in United Kingdom\n\nManchester, United Kingdom\n\n2018\n\nI trained with teammates from different places and learned new skills. 🇬🇧\n\nJavaScript\nReact\n\nStop 6 of 12",
+    "stats": {
+      "journeyDrawCalls": "102",
+      "journeyTriangles": "35398",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "stop": 7,
+    "text": "Apply training knowledge\n\nTokyo, Japan\n\n2019\n\nI worked with product managers and other engineers.\n\nTypeScript\nReact\nRedux\n\nStop 7 of 12",
+    "stats": {
+      "journeyDrawCalls": "105",
+      "journeyTriangles": "34942",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "stop": 8,
+    "text": "Front-End Engineer\n\nTokyo, Japan\n\n2020\n\nI built and maintained web apps in React.\n\nTypeScript\nReact\nJavaScript\n\nStop 8 of 12",
+    "stats": {
+      "journeyDrawCalls": "91",
+      "journeyTriangles": "20282",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "stop": 9,
+    "text": "Fly back home\n\nQuezon City, Philippines\n\n2021\n\nI came home and kept working. 🇵🇭\n\nStop 9 of 12",
+    "stats": {
+      "journeyDrawCalls": "86",
+      "journeyTriangles": "27826",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "stop": 10,
+    "text": "Lead Software Engineer\n\nQuezon City, Philippines\n\n2021\n\nI led a few front-end engineers.\n\nTypeScript\nReact\n\nStop 10 of 12",
+    "stats": {
+      "journeyDrawCalls": "102",
+      "journeyTriangles": "40470",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "stop": 11,
+    "text": "Full Stack Engineer\n\nSouth Melbourne, Australia\n\n2021\n\nI worked full time as a full stack engineer.\n\nTypeScript\nReact\nNode.js\nExpress\nMySQL\n\nStop 11 of 12",
+    "stats": {
+      "journeyDrawCalls": "91",
+      "journeyTriangles": "20186",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "stop": 12,
+    "text": "Senior Software Engineer\n\nQuezon City, Philippines\n\n2022-Present\n\nI work at a property-management technology company.\n\nTypeScript\nReact\nNextJS\nTailwind CSS\nGraphQL\nNestJS\n\nStop 12 of 12",
+    "stats": {
+      "journeyDrawCalls": "90",
+      "journeyTriangles": "26038",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "stop": 1,
+    "text": "Education\n\nMandaluyong, Philippines\n\n2013-2014\n\nI earned a bachelor's degree in computer engineering.\n\nStop 1 of 12",
+    "stats": {
+      "journeyDrawCalls": "59",
+      "journeyTriangles": "13554",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "stop": 2,
+    "text": "Internship\n\nTaguig, Philippines\n\n2013\n\nI interned at Lawson as a Java developer.\n\nJava\n\nStop 2 of 12",
+    "stats": {
+      "journeyDrawCalls": "59",
+      "journeyTriangles": "13762",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "stop": 3,
+    "text": "First Job\n\nMakati, Philippines\n\n2014\n\nI got my first job as a software engineer.\n\nC\n\nStop 3 of 12",
+    "stats": {
+      "journeyDrawCalls": "59",
+      "journeyTriangles": "13762",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "stop": 4,
+    "text": "Promoted\n\nMakati, Philippines\n\n2016\n\nI was promoted to software engineer II.\n\nJava\n\nStop 4 of 12",
+    "stats": {
+      "journeyDrawCalls": "57",
+      "journeyTriangles": "13230",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "stop": 5,
+    "text": "Fly to Japan\n\nTokyo, Japan\n\n2017\n\nI went to work in Japan. 🇯🇵\n\nStop 5 of 12",
+    "stats": {
+      "journeyDrawCalls": "60",
+      "journeyTriangles": "16222",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "stop": 6,
+    "text": "Training in United Kingdom\n\nManchester, United Kingdom\n\n2018\n\nI trained with teammates from different places and learned new skills. 🇬🇧\n\nJavaScript\nReact\n\nStop 6 of 12",
+    "stats": {
+      "journeyDrawCalls": "73",
+      "journeyTriangles": "27274",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "stop": 7,
+    "text": "Apply training knowledge\n\nTokyo, Japan\n\n2019\n\nI worked with product managers and other engineers.\n\nTypeScript\nReact\nRedux\n\nStop 7 of 12",
+    "stats": {
+      "journeyDrawCalls": "76",
+      "journeyTriangles": "27106",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "stop": 8,
+    "text": "Front-End Engineer\n\nTokyo, Japan\n\n2020\n\nI built and maintained web apps in React.\n\nTypeScript\nReact\nJavaScript\n\nStop 8 of 12",
+    "stats": {
+      "journeyDrawCalls": "62",
+      "journeyTriangles": "12446",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "stop": 9,
+    "text": "Fly back home\n\nQuezon City, Philippines\n\n2021\n\nI came home and kept working. 🇵🇭\n\nStop 9 of 12",
+    "stats": {
+      "journeyDrawCalls": "55",
+      "journeyTriangles": "15886",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "stop": 10,
+    "text": "Lead Software Engineer\n\nQuezon City, Philippines\n\n2021\n\nI led a few front-end engineers.\n\nTypeScript\nReact\n\nStop 10 of 12",
+    "stats": {
+      "journeyDrawCalls": "71",
+      "journeyTriangles": "28530",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "stop": 11,
+    "text": "Full Stack Engineer\n\nSouth Melbourne, Australia\n\n2021\n\nI worked full time as a full stack engineer.\n\nTypeScript\nReact\nNode.js\nExpress\nMySQL\n\nStop 11 of 12",
+    "stats": {
+      "journeyDrawCalls": "62",
+      "journeyTriangles": "12422",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "stop": 12,
+    "text": "Senior Software Engineer\n\nQuezon City, Philippines\n\n2022-Present\n\nI work at a property-management technology company.\n\nTypeScript\nReact\nNextJS\nTailwind CSS\nGraphQL\nNestJS\n\nStop 12 of 12",
+    "stats": {
+      "journeyDrawCalls": "58",
+      "journeyTriangles": "14038",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "stop": 1,
+    "text": "Education\n\nMandaluyong, Philippines\n\n2013-2014\n\nI earned a bachelor's degree in computer engineering.\n\nStop 1 of 12",
+    "stats": {
+      "journeyDrawCalls": "59",
+      "journeyTriangles": "13554",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "stop": 2,
+    "text": "Internship\n\nTaguig, Philippines\n\n2013\n\nI interned at Lawson as a Java developer.\n\nJava\n\nStop 2 of 12",
+    "stats": {
+      "journeyDrawCalls": "59",
+      "journeyTriangles": "13762",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "stop": 3,
+    "text": "First Job\n\nMakati, Philippines\n\n2014\n\nI got my first job as a software engineer.\n\nC\n\nStop 3 of 12",
+    "stats": {
+      "journeyDrawCalls": "59",
+      "journeyTriangles": "13762",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "stop": 4,
+    "text": "Promoted\n\nMakati, Philippines\n\n2016\n\nI was promoted to software engineer II.\n\nJava\n\nStop 4 of 12",
+    "stats": {
+      "journeyDrawCalls": "57",
+      "journeyTriangles": "13230",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "stop": 5,
+    "text": "Fly to Japan\n\nTokyo, Japan\n\n2017\n\nI went to work in Japan. 🇯🇵\n\nStop 5 of 12",
+    "stats": {
+      "journeyDrawCalls": "60",
+      "journeyTriangles": "16222",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "stop": 6,
+    "text": "Training in United Kingdom\n\nManchester, United Kingdom\n\n2018\n\nI trained with teammates from different places and learned new skills. 🇬🇧\n\nJavaScript\nReact\n\nStop 6 of 12",
+    "stats": {
+      "journeyDrawCalls": "73",
+      "journeyTriangles": "27274",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "stop": 7,
+    "text": "Apply training knowledge\n\nTokyo, Japan\n\n2019\n\nI worked with product managers and other engineers.\n\nTypeScript\nReact\nRedux\n\nStop 7 of 12",
+    "stats": {
+      "journeyDrawCalls": "76",
+      "journeyTriangles": "27106",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "stop": 8,
+    "text": "Front-End Engineer\n\nTokyo, Japan\n\n2020\n\nI built and maintained web apps in React.\n\nTypeScript\nReact\nJavaScript\n\nStop 8 of 12",
+    "stats": {
+      "journeyDrawCalls": "62",
+      "journeyTriangles": "12446",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "stop": 9,
+    "text": "Fly back home\n\nQuezon City, Philippines\n\n2021\n\nI came home and kept working. 🇵🇭\n\nStop 9 of 12",
+    "stats": {
+      "journeyDrawCalls": "55",
+      "journeyTriangles": "15886",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "stop": 10,
+    "text": "Lead Software Engineer\n\nQuezon City, Philippines\n\n2021\n\nI led a few front-end engineers.\n\nTypeScript\nReact\n\nStop 10 of 12",
+    "stats": {
+      "journeyDrawCalls": "71",
+      "journeyTriangles": "28530",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "stop": 11,
+    "text": "Full Stack Engineer\n\nSouth Melbourne, Australia\n\n2021\n\nI worked full time as a full stack engineer.\n\nTypeScript\nReact\nNode.js\nExpress\nMySQL\n\nStop 11 of 12",
+    "stats": {
+      "journeyDrawCalls": "62",
+      "journeyTriangles": "12422",
+      "journeyPhase": "rest"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "stop": 12,
+    "text": "Senior Software Engineer\n\nQuezon City, Philippines\n\n2022-Present\n\nI work at a property-management technology company.\n\nTypeScript\nReact\nNextJS\nTailwind CSS\nGraphQL\nNestJS\n\nStop 12 of 12",
+    "stats": {
+      "journeyDrawCalls": "58",
+      "journeyTriangles": "14038",
+      "journeyPhase": "rest"
+    }
+  }
+]

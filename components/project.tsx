@@ -2,56 +2,27 @@
 
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import ReactPlayer from "react-player";
-import { Label } from "@/components/ui/label";
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import { TagChip } from "@/components/ui/tag-chip";
-import { fadeInAnimationVariants } from "@/lib/animations";
-import { LuLink, LuLock } from "react-icons/lu";
-import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
-import { useSoundContext } from "@/context/sound-context";
-import { Button } from "@/components/ui/button";
-import { FaWindowClose } from "react-icons/fa";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 type ProjectProps = (typeof projectsData)[number] & {
-  videoUrl?: string;
-  websiteUrl?: string;
+  onOpen: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 export default function Project({
   title,
   imageUrl,
-  videoUrl,
-  websiteUrl,
   year,
   tags,
-  description,
+  onOpen,
 }: ProjectProps) {
-  const [colorIndex, setColorIndex] = useState(0);
-  const wasOpen = useRef(false);
-  const { playCue } = useSoundContext();
-
-  const colors = [
-    "from-green-600 from-10% via-emerald-500 via-30% to-green-600 to-90%",
-    "from-violet-600 from-10% via-fuchsia-500 via-30% to-violet-600 to-90%",
-    "from-orange-600 from-10% via-amber-500 via-30% to-orange-600 to-90%",
-  ];
-
+  const prefersReducedMotion = useReducedMotion();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -69,17 +40,12 @@ export default function Project({
     ["-17.5deg", "17.5deg"],
   );
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    const rect = (e.target as HTMLElement).getBoundingClientRect();
+  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (prefersReducedMotion) return;
 
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const xPct = (e.clientX - rect.left) / rect.width - 0.5;
+    const yPct = (e.clientY - rect.top) / rect.height - 0.5;
 
     x.set(xPct);
     y.set(yPct);
@@ -90,181 +56,60 @@ export default function Project({
     y.set(0);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <Drawer
-      onOpenChange={(open) => {
-        if (open === wasOpen.current) return;
-        wasOpen.current = open;
-        playCue(open ? "open" : "close");
+    <motion.button
+      type="button"
+      onClick={onOpen}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        rotateY: prefersReducedMotion ? 0 : rotateY,
+        rotateX: prefersReducedMotion ? 0 : rotateX,
+        transformStyle: "preserve-3d",
       }}
+      className="relative h-72 w-full shrink-0 cursor-pointer snap-center scroll-ml-6 rounded-xl bg-gradient-to-r from-primary/30 to-secondary text-left first:pl-6 last:pr-6 md:h-96"
     >
-      <DrawerTrigger asChild>
-        <motion.div
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
+      <div
+        style={{
+          transform: "translateZ(75px)",
+          transformStyle: "preserve-3d",
+        }}
+        className="absolute inset-4 grid grid-cols-3 grid-rows-5 place-content-center rounded-xl bg-card text-card-foreground shadow-lg transition-all duration-300 hover:shadow-xl"
+      >
+        <Image
+          alt="Project"
+          src={imageUrl}
+          className="col-span-3 row-span-2 h-4/5 rounded-t-xl object-cover"
+        />
+        <h3
           style={{
-            rotateY,
-            rotateX,
-            transformStyle: "preserve-3d",
+            transform: "translateZ(50px)",
           }}
-          className="relative h-72 w-full shrink-0 cursor-pointer snap-center scroll-ml-6 rounded-xl bg-gradient-to-r from-primary/30 to-secondary first:pl-6 last:pr-6 md:h-96"
+          className="col-span-2 row-span-1 self-center break-words p-2 text-lg font-semibold md:p-4 md:text-2xl"
         >
-          <div
-            style={{
-              transform: "translateZ(75px)",
-              transformStyle: "preserve-3d",
-            }}
-            className="absolute inset-4 grid grid-cols-3 grid-rows-5 place-content-center rounded-xl bg-card text-card-foreground shadow-lg transition-all duration-300 hover:shadow-xl"
-          >
-            <Image
-              alt="Project"
-              src={imageUrl}
-              className="col-span-3 row-span-2 h-4/5 rounded-t-xl object-cover"
-            />
-            <h3
-              style={{
-                transform: "translateZ(50px)",
-              }}
-              className="col-span-2 row-span-1 self-center break-words p-2 text-lg font-semibold md:p-4 md:text-2xl"
-            >
-              {title}
-            </h3>
-            <p
-              style={{
-                transform: "translateZ(50px)",
-              }}
-              className="col-span-1 row-span-1 self-center break-words p-2 text-sm font-semibold md:p-4 md:text-base"
-            >
-              {year}
-            </p>
-            <ul
-              style={{
-                transform: "translateZ(50px)",
-              }}
-              className="col-span-3 row-span-2 flex flex-wrap gap-1 p-2 sm:mt-auto md:p-4"
-            >
-              {tags.map((tag, index) => (
-                <li key={index}>
-                  <TagChip size="compact">{tag.label}</TagChip>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
-      </DrawerTrigger>
-      <DrawerContent className="fixed bottom-0 left-0 right-0 mt-24 flex h-[93%] flex-col items-center rounded-t-[10px] bg-background text-foreground">
-        <div className="absolute right-[11rem] top-[-6rem] -z-10 h-[31.25rem] w-[31.25rem] rounded-full bg-glow-warm blur-[10rem] sm:w-[68.75rem]" />
-        <div className="absolute left-[-35rem] top-[-1rem] -z-10 h-[31.25rem] w-[50rem] rounded-full bg-glow-cool blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]" />
-        <DrawerClose>
-          <Button variant="ghost" className={"absolute right-5 top-5"}>
-            <motion.div whileHover={{ rotate: 180 }}>
-              <FaWindowClose size={24} />
-            </motion.div>
-          </Button>
-        </DrawerClose>
-        <div className="grid h-full w-full auto-rows-auto grid-cols-1 gap-4 p-4 md:grid-cols-5 md:p-8 lg:p-20">
-          <Card className="row-span-4 overflow-hidden border-2 border-border md:col-span-3">
-            {videoUrl ? (
-              <ReactPlayer
-                url={videoUrl}
-                playing
-                loop
-                height={"100%"}
-                width={"100%"}
-                style={{ aspectRatio: "16/9" }}
-              />
-            ) : (
-              <Image
-                alt={`${title} screenshot`}
-                src={imageUrl}
-                className="aspect-video h-full w-full object-cover object-top"
-              />
-            )}
-          </Card>
-          <Card className="row-span-3 border-2 border-border md:col-span-2">
-            <CardHeader>
-              <CardTitle>Tech Stack</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="flex flex-wrap justify-center gap-2 text-sm md:text-lg">
-                {tags.map((tag, index) => (
-                  <motion.li
-                    key={index}
-                    variants={fadeInAnimationVariants}
-                    initial="initial"
-                    whileInView="animate"
-                    viewport={{
-                      once: true,
-                    }}
-                    custom={index}
-                  >
-                    <TagChip>
-                      {tag.icon}
-                      <Label>{tag.label}</Label>
-                    </TagChip>
-                  </motion.li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-          <Card className="row-span-1 border-2 border-border pt-6 md:col-span-1">
-            <CardContent className="flex h-full w-full items-center justify-center">
-              {websiteUrl ? (
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
-                  className="cursor-pointer"
-                >
-                  <Link
-                    href={websiteUrl}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    aria-label={`Visit ${title}`}
-                  >
-                    <LuLink size={40} className="md:w-15 md:h-15" />
-                  </Link>
-                </motion.div>
-              ) : (
-                <div className="flex flex-col items-center gap-2 text-muted-foreground">
-                  <LuLock size={40} aria-hidden />
-                  <span className="text-sm font-medium">Internal project</span>
-                </div>
-              )}
-            </CardContent>
-          </Card>
-          <Card className="row-span-1 border-2 border-border pt-6 md:col-span-1">
-            <CardContent className="flex h-full w-full items-center justify-center">
-              <motion.div
-                className={`bg-gradient-to-r bg-clip-text font-extrabold text-transparent ${colors[colorIndex]}`}
-                transition={{
-                  duration: 2,
-                }}
-              >
-                <h1 className="text-xl md:text-2xl">{title}</h1>
-              </motion.div>
-            </CardContent>
-          </Card>
-          <Card className="row-span-2 border-2 border-border md:col-span-5">
-            <CardHeader>
-              <CardTitle className="text-xl md:text-2xl">{title}</CardTitle>
-              <CardDescription className="text-sm font-medium md:text-base">
-                {description.map((p) => (
-                  <div className="mb-3" key={p}>
-                    <TextGenerateEffect words={p} />
-                  </div>
-                ))}
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </div>
-      </DrawerContent>
-    </Drawer>
+          {title}
+        </h3>
+        <p
+          style={{
+            transform: "translateZ(50px)",
+          }}
+          className="col-span-1 row-span-1 self-center break-words p-2 text-sm font-semibold md:p-4 md:text-base"
+        >
+          {year}
+        </p>
+        <ul
+          style={{
+            transform: "translateZ(50px)",
+          }}
+          className="col-span-3 row-span-2 flex flex-wrap gap-1 p-2 sm:mt-auto md:p-4"
+        >
+          {tags.map((tag, index) => (
+            <li key={index}>
+              <TagChip size="compact">{tag.label}</TagChip>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </motion.button>
   );
 }

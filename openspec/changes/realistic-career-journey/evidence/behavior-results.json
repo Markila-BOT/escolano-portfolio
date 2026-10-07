@@ -1,0 +1,19 @@
+[
+  "Timeline first, no canvas or journey chunk, Read More expands to six entries.",
+  "Initial pose and idle stage are static; canvas is decorative and never receives focus.",
+  "Arrow and WASD navigation moves one stop without page scrolling; Internship shows Java.",
+  "Walking and finite typing gestures settle and stop rendering.",
+  "Promoted ↔ Fly to Japan flies in both directions.",
+  "Japan ↔ UK training flies in both directions.",
+  "Changing reduced motion during a flight immediately settles at the destination.",
+  "Rapid navigation and direction reversal settle the latest requested stop.",
+  "Resize during travel preserves the stop; narrow instructions name tap and omit keyboard.",
+  "Drag and zoom change the camera without changing the stop.",
+  "Last-stop endpoints, live text, role tags, and silent interaction pass.",
+  "Three open/close cycles release GPU resources (348 buffers, 3 textures); expanded timeline survives.",
+  "Switching back during travel cancels frames and removes the canvas.",
+  "WebGL context loss removes the scene while text navigation and switch back remain usable.",
+  "Failed WebGL creation still permits all 12 text stops and return to timeline.",
+  "No uncaught browser errors during successful scene interactions.",
+  "With sound enabled, navigation, drag, and zoom start no audio; arrow keys outside the journey retain normal page scrolling."
+]

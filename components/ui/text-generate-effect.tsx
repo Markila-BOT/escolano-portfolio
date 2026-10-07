@@ -1,7 +1,9 @@
 "use client";
-import { useEffect } from "react";
-import { motion, stagger, useAnimate } from "framer-motion";
+
+import { motion, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
+
+const revealEase = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
 export function TextGenerateEffect({
   words,
@@ -10,42 +12,18 @@ export function TextGenerateEffect({
   words: string;
   className?: string;
 }) {
-  const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
-  useEffect(() => {
-    animate(
-      "span",
-      {
-        opacity: 1,
-      },
-      {
-        duration: 2,
-        delay: stagger(0.2),
-      },
-    );
-  }, [scope.current]);
-
-  const renderWords = () => {
-    return (
-      <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
-            <motion.span key={word + idx} className="text-foreground opacity-0">
-              {word}{" "}
-            </motion.span>
-          );
-        })}
-      </motion.div>
-    );
-  };
+  const prefersReducedMotion = useReducedMotion() === true;
 
   return (
-    <div className={cn("font-bold", className)}>
-      <div className="mt-4">
-        <div className="text-xl leading-snug tracking-wide text-foreground">
-          {renderWords()}
-        </div>
-      </div>
-    </div>
+    <motion.p
+      className={cn("mb-3 leading-relaxed last:mb-0", className)}
+      initial={
+        prefersReducedMotion ? false : { opacity: 0.45, filter: "blur(6px)" }
+      }
+      animate={{ opacity: 1, filter: "blur(0px)" }}
+      transition={{ duration: 0.45, ease: revealEase }}
+    >
+      {words}
+    </motion.p>
   );
 }

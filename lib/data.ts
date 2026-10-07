@@ -1,4 +1,5 @@
 import React from "react";
+import type { JourneySceneDescriptor } from "@/lib/journey-scene-types";
 import { CgWorkAlt } from "react-icons/cg";
 import {
   FaReact,
@@ -76,7 +77,8 @@ import POTATO_V3_IMAGE from "@/public/projects/potato-v3.png";
 import WEALTHPARK_OWNER_APP_IMAGE from "@/public/projects/wealthpark-owner-app.png";
 import WEALTHPARK_VALUATION_IMAGE from "@/public/projects/wealthpark-valuation.png";
 import X_CLIMB_LAGOON_IMAGE from "@/public/projects/x-climb-lagoon.png";
-import LOOKING_GLASS_IMAGE from "@/public/projects/looking-glass.png";
+import LOOKING_GLASS_LOGIN_IMAGE from "@/public/projects/looking-glass-login.jpg";
+import LOOKING_GLASS_SHOP_IMAGE from "@/public/projects/looking-glass-shop.jpg";
 
 export const links = [
   {
@@ -111,6 +113,21 @@ export const introCallToAction = {
   startLabel: "Contact",
 } as const;
 
+export const aboutWorkflow =
+  "Most days I start from a spec, write the change with Claude Code, Codex, and Cursor, and check it with tests. I own the result. That is AI-assisted engineering, test-driven development, and spec-driven development." as const;
+
+export const experienceJourney = {
+  showJourneyLabel: "Show 3D journey",
+  showTimelineLabel: "Show timeline",
+  instructionWide:
+    "Use the arrow keys or WASD to travel. Drag to look. Scroll to zoom.",
+  instructionNarrow:
+    "Tap Previous or Next to travel. Drag to look. Pinch or scroll to zoom.",
+  previousLabel: "Previous",
+  nextLabel: "Next",
+  stopCount: (current: number, total: number) => `Stop ${current} of ${total}`,
+} as const;
+
 export const introGreetings = [
   "Welcome!🇬🇧🇺🇸 👋",
   "Mabuhay!🇵🇭 👋",
@@ -141,6 +158,14 @@ export const experiencesData = [
     title: "Senior Software Engineer",
     location: "Quezon City, Philippines",
     description: "I work at a property-management technology company.",
+    tags: [
+      "TypeScript",
+      "React",
+      "NextJS",
+      "Tailwind CSS",
+      "GraphQL",
+      "NestJS",
+    ],
     icon: React.createElement(CgWorkAlt),
     date: "2022-Present",
   },
@@ -148,6 +173,7 @@ export const experiencesData = [
     title: "Full Stack Engineer",
     location: "South Melbourne, Australia",
     description: "I worked full time as a full stack engineer.",
+    tags: ["TypeScript", "React", "Node.js", "Express", "MySQL"],
     icon: React.createElement(FaReact),
     date: "2021",
   },
@@ -155,6 +181,7 @@ export const experiencesData = [
     title: "Lead Software Engineer",
     location: "Quezon City, Philippines",
     description: "I led a few front-end engineers.",
+    tags: ["TypeScript", "React"],
     icon: React.createElement(LiaChalkboardTeacherSolid),
     date: "2021",
   },
@@ -169,6 +196,7 @@ export const experiencesData = [
     title: "Front-End Engineer",
     location: "Tokyo, Japan",
     description: "I built and maintained web apps in React.",
+    tags: ["TypeScript", "React", "JavaScript"],
     icon: React.createElement(CgWorkAlt),
     date: "2020",
   },
@@ -176,6 +204,7 @@ export const experiencesData = [
     title: "Apply training knowledge",
     location: "Tokyo, Japan",
     description: "I worked with product managers and other engineers.",
+    tags: ["TypeScript", "React", "Redux"],
     icon: React.createElement(FaPlaneArrival),
     date: "2019",
   },
@@ -184,6 +213,7 @@ export const experiencesData = [
     location: "Manchester, United Kingdom",
     description:
       "I trained with teammates from different places and learned new skills. 🇬🇧",
+    tags: ["JavaScript", "React"],
     icon: React.createElement(FaPlaneDeparture),
     date: "2018",
   },
@@ -198,6 +228,7 @@ export const experiencesData = [
     title: "Promoted",
     location: "Makati, Philippines",
     description: "I was promoted to software engineer II.",
+    tags: ["Java"],
     icon: React.createElement(SiLevelsdotfyi),
     date: "2016",
   },
@@ -205,6 +236,7 @@ export const experiencesData = [
     title: "First Job",
     location: "Makati, Philippines",
     description: "I got my first job as a software engineer.",
+    tags: ["C"],
     icon: React.createElement(FaIdCard),
     date: "2014",
   },
@@ -212,6 +244,7 @@ export const experiencesData = [
     title: "Internship",
     location: "Taguig, Philippines",
     description: "I interned at Lawson as a Java developer.",
+    tags: ["Java"],
     icon: React.createElement(FaLaptopCode),
     date: "2013",
   },
@@ -224,6 +257,146 @@ export const experiencesData = [
   },
 ] as const;
 
+export const experienceJourneyScenes = [
+  {
+    title: "Education",
+    visual: {
+      setting: "campus",
+      activity: "study",
+      careerStage: "student",
+      props: "books",
+    },
+  },
+  {
+    title: "Internship",
+    visual: {
+      setting: "office",
+      activity: "code",
+      careerStage: "junior",
+      props: "workstation",
+    },
+  },
+  {
+    title: "First Job",
+    visual: {
+      setting: "office",
+      activity: "code",
+      careerStage: "junior",
+      props: "workstation",
+    },
+  },
+  {
+    title: "Promoted",
+    visual: {
+      setting: "team",
+      activity: "celebrate",
+      careerStage: "professional",
+      props: "planning",
+    },
+  },
+  {
+    title: "Fly to Japan",
+    visual: {
+      setting: "terminal",
+      activity: "travel",
+      careerStage: "professional",
+      props: "luggage",
+    },
+  },
+  {
+    title: "Training in United Kingdom",
+    visual: {
+      setting: "training",
+      activity: "learn",
+      careerStage: "professional",
+      props: "laptop",
+    },
+  },
+  {
+    title: "Apply training knowledge",
+    visual: {
+      setting: "team",
+      activity: "collaborate",
+      careerStage: "professional",
+      props: "planning",
+    },
+  },
+  {
+    title: "Front-End Engineer",
+    visual: {
+      setting: "office",
+      activity: "code",
+      careerStage: "professional",
+      props: "dual-monitors",
+    },
+  },
+  {
+    title: "Fly back home",
+    visual: {
+      setting: "terminal",
+      activity: "travel",
+      careerStage: "professional",
+      props: "luggage",
+    },
+  },
+  {
+    title: "Lead Software Engineer",
+    visual: {
+      setting: "team",
+      activity: "guide",
+      careerStage: "senior",
+      props: "planning",
+    },
+  },
+  {
+    title: "Full Stack Engineer",
+    visual: {
+      setting: "office",
+      activity: "code",
+      careerStage: "senior",
+      props: "laptop",
+    },
+  },
+  {
+    title: "Senior Software Engineer",
+    visual: {
+      setting: "office",
+      activity: "code",
+      careerStage: "senior",
+      props: "dual-monitors",
+    },
+  },
+] as const satisfies readonly {
+  title: (typeof experiencesData)[number]["title"];
+  visual: JourneySceneDescriptor;
+}[];
+
+export const projectCarousel = {
+  position: (current: number, total: number) => `${current} of ${total}`,
+} as const;
+
+export const projectDrawer = {
+  previous: (title?: string) =>
+    title ? `Previous ${title}` : "Previous project",
+  next: (title?: string) => (title ? `Next ${title}` : "Next project"),
+} as const;
+
+export const projectScreenshots = {
+  previous: "Previous image",
+  next: "Next image",
+  position: (current: number, total: number) => `${current} of ${total}`,
+} as const;
+
+export const projectCaseStudy = {
+  problem: "Problem",
+  role: "Role",
+  outcome: "Outcome",
+} as const;
+
+export const projectBuildNote = {
+  label: "Build",
+} as const;
+
 export const projectsData = [
   {
     title: "MatterWorx",
@@ -233,6 +406,13 @@ export const projectsData = [
       "A placement runs from an open position to a candidate submission, an assignment, shifts, and credentials. Timesheets, invoices, and remittance sit with the analytics, so hiring, time, and billing stay in one console.",
       "Program settings and organization tools configure the program. A performance view charts active workers by worksite and year.",
     ],
+    caseStudy: {
+      problem:
+        "Program admins need one place for submissions, onboarding reviews, active assignments, pending timesheets, pending invoices, and credentials that are expiring or already expired.",
+      role: "A placement runs from an open position to a candidate submission, an assignment, shifts, and credentials. Program settings and organization tools configure the program.",
+      outcome:
+        "Timesheets, invoices, and remittance sit with the analytics, so hiring, time, and billing stay in one console. Each count links into that queue.",
+    },
     tags: [
       { label: "TypeScript", icon: React.createElement(SiTypescript) },
       { label: "React", icon: React.createElement(FaReact) },
@@ -253,6 +433,13 @@ export const projectsData = [
       "Chat is live. Property managers message owners, follow topics, share files, and see unread badges on the owner list and the room list.",
       "Settings cover users, roles, and property groups. The console is in English, Japanese, and Traditional Chinese.",
     ],
+    caseStudy: {
+      problem:
+        "This console replaces the original Potato workspace. Operators need owners, chat, and program settings in one app.",
+      role: "Chat is live. Property managers message owners, follow topics, share files, and see unread badges. Settings cover users, roles, and property groups.",
+      outcome:
+        "Operators handle owners, chat, and program settings in one app. The console is in English, Japanese, and Traditional Chinese.",
+    },
     tags: [
       { label: "TypeScript", icon: React.createElement(SiTypescript) },
       { label: "React", icon: React.createElement(FaReact) },
@@ -293,6 +480,13 @@ export const projectsData = [
       "The Owner app is for property owners and the companies that manage their buildings. They share contracts and repair photos there, instead of hunting through paper or old email.",
       "The documents sit in one place, so both sides spend less time on paper and can find a file when they need to decide what to do next.",
     ],
+    caseStudy: {
+      problem:
+        "Property owners and the companies that manage their buildings were hunting through paper or old email for contracts and repair photos.",
+      role: "The Owner app is where they share contracts and repair photos.",
+      outcome:
+        "The documents sit in one place, so both sides spend less time on paper and can find a file when they need to decide what to do next.",
+    },
     tags: [
       { label: "TypeScript", icon: React.createElement(SiTypescript) },
       { label: "React", icon: React.createElement(FaReact) },
@@ -318,6 +512,13 @@ export const projectsData = [
       "Workflow sits beside the Owner app. It lists what is happening on a property: expenses, income, and general updates. Each item has a category and a status, so managers and owners can see what is waiting and what is done.",
       "It is tied to the Owner app, so both sides can follow a task and act on its status.",
     ],
+    caseStudy: {
+      problem:
+        "Managers and owners need to see expenses, income, and general updates on a property, and what is waiting versus done.",
+      role: "Workflow sits beside the Owner app and lists those items, each with a category and a status.",
+      outcome:
+        "It is tied to the Owner app, so both sides can follow a task and act on its status.",
+    },
     tags: [
       { label: "JavaScript", icon: React.createElement(SiJavascript) },
       { label: "React", icon: React.createElement(FaReact) },
@@ -340,6 +541,12 @@ export const projectsData = [
       "Chat Admin is the messaging app next to the owner tools. People send messages and files, and they can organize and filter the conversations.",
       "It shows whether a property manager is available to answer. It also lists the owners under each management company.",
     ],
+    caseStudy: {
+      problem:
+        "People need to send messages and files and organize the conversations next to the owner tools.",
+      role: "Chat Admin is that messaging app. It shows whether a property manager is available to answer, and it lists the owners under each management company.",
+      outcome: "People can organize and filter the conversations.",
+    },
     tags: [
       { label: "JavaScript", icon: React.createElement(SiJavascript) },
       { label: "React", icon: React.createElement(FaReact) },
@@ -359,6 +566,13 @@ export const projectsData = [
       "Bulk jobs include instant accounts with invitation letters, investment notices to investors, chat broadcast tags from a CSV, and deleting owners, rooms, properties, tenants, and contracts from an Excel file. Each bulk action is checked and reviewed before it runs.",
       "A QA Toolbox in development and test environments covers API checks, member management, and configuration. The console is translated, has light and dark themes, and uses company SSO.",
     ],
+    caseStudy: {
+      problem:
+        "Ordinary admin tasks for user groups, single sign-on, and new accounts required a script or opening the database.",
+      role: "House Elf is WealthPark's admin console for that internal work, including bulk jobs that are checked and reviewed before they run.",
+      outcome:
+        "Operators manage those tasks in one place. The console is translated, has light and dark themes, and uses company SSO.",
+    },
     tags: [
       { label: "TypeScript", icon: React.createElement(SiTypescript) },
       { label: "React", icon: React.createElement(FaReact) },
@@ -380,9 +594,17 @@ export const projectsData = [
       { label: "Cordova", icon: React.createElement(SiApachecordova) },
       { label: "XCode", icon: React.createElement(SiXcode) },
     ],
-    imageUrl: LOOKING_GLASS_IMAGE,
-    videoUrl: "https://youtu.be/Vm0_QV5_snY",
-    websiteUrl: "https://lookingglasslifestyle.com/",
+    imageUrl: LOOKING_GLASS_SHOP_IMAGE,
+    screenshots: [
+      {
+        src: LOOKING_GLASS_LOGIN_IMAGE,
+        alt: "LookingGlass login screen",
+      },
+      {
+        src: LOOKING_GLASS_SHOP_IMAGE,
+        alt: "LookingGlass shop",
+      },
+    ],
   },
   {
     title: "MerchantSpring",
@@ -392,6 +614,15 @@ export const projectsData = [
       "Teams watch sales, profit, and how each brand is doing on those marketplaces, across the accounts they manage.",
       "It pulls the latest numbers, notes, and charts into a brand report, so people spend less time copying data by hand.",
     ],
+    caseStudy: {
+      problem:
+        "Agencies, vendors, and investors who run more than one account were copying sales data by hand across marketplaces.",
+      role: "MerchantSpring reports on those e-commerce brands and covers Amazon, Shopify, Shopee, Lazada, Walmart, and other marketplaces.",
+      outcome:
+        "Teams watch sales, profit, and how each brand is doing, and the latest numbers, notes, and charts go into a brand report, so people spend less time copying data by hand.",
+    },
+    buildNote:
+      "It pulls the latest numbers, notes, and charts into a brand report for the accounts those teams manage across those marketplaces.",
     tags: [
       { label: "TypeScript", icon: React.createElement(SiTypescript) },
       { label: "React", icon: React.createElement(FaReact) },
@@ -444,6 +675,13 @@ export const projectsData = [
       "A support team answers questions, explains the product, and helps when something breaks. A customer success team works with customers on their goals and on getting more out of the product.",
       "The two teams do different work and share the same customers.",
     ],
+    caseStudy: {
+      problem:
+        "SaaS companies need support for questions and breakage, and customer success for goals and getting more out of the product.",
+      role: "Iris is that support and customer-success software. The two teams do different work and share the same customers.",
+      outcome:
+        "A support team answers questions, explains the product, and helps when something breaks. A customer success team works with customers on their goals.",
+    },
     tags: [
       { label: "TypeScript", icon: React.createElement(SiTypescript) },
       { label: "React", icon: React.createElement(FaReact) },
@@ -470,6 +708,13 @@ export const projectsData = [
       "Rakuten Travel is an online travel agency in the Rakuten Group. It lists hotels, other places to stay, and package tours for leisure and business trips in Japan.",
       "The domestic list runs from city hotels to places in the countryside. It also lists stays outside Japan, with support in 8 languages. Package tours can include flights, local transport, and activities.",
     ],
+    caseStudy: {
+      problem:
+        "Travelers need hotels, other places to stay, and package tours for leisure and business trips in Japan, including stays outside Japan.",
+      role: "Rakuten Travel is the online travel agency in the Rakuten Group that lists them.",
+      outcome:
+        "The domestic list runs from city hotels to the countryside. Stays outside Japan have support in 8 languages. Package tours can include flights, local transport, and activities.",
+    },
     tags: [
       { label: "JavaScript", icon: React.createElement(SiJavascript) },
       { label: "React", icon: React.createElement(FaReact) },
@@ -492,6 +737,13 @@ export const projectsData = [
       "Content is written once and published to more than one target, platform, or channel. That includes flash sequences for a service bay and updates sent over the air. Analytics show which content is actually needed, in support of fixing a problem the first time.",
       "Updates are gathered in one place for approval, and the current version is what the distribution channels serve.",
     ],
+    caseStudy: {
+      problem:
+        "Automotive diagnostic content has to be written, managed, reused, and sent out, including to a service bay and over the air.",
+      role: "GRADE-X, from ADT Tool, is the set of products for that. Content is written once and published to more than one target, platform, or channel.",
+      outcome:
+        "Analytics show which content is actually needed, in support of fixing a problem the first time. Updates are gathered in one place for approval, and the current version is what the distribution channels serve.",
+    },
     tags: [
       { label: "JavaScript", icon: React.createElement(SiJavascript) },
       { label: "Angular", icon: React.createElement(SiAngular) },

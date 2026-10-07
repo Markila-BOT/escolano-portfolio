@@ -5,7 +5,7 @@ import SectionHeading from "./section-heading";
 import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
-import { fadeInAnimationVariants } from "@/lib/animations";
+import { fadeInAnimationVariants, sectionReveal } from "@/lib/animations";
 import { Label } from "@/components/ui/label";
 import { TagChip } from "@/components/ui/tag-chip";
 
@@ -16,18 +16,7 @@ export default function Skills() {
     <motion.section
       id="skills"
       ref={ref}
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
+      {...sectionReveal}
       className="mb-20 max-w-[53rem] scroll-mt-28 text-center sm:mb-0"
     >
       <SectionHeading>My skills</SectionHeading>

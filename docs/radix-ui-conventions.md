@@ -10,29 +10,30 @@ Use the skill and this file when the new piece is a reusable control: it opens, 
 
 Do not use it for a static section or a one-off layout. Jobs already assigned stay where they are:
 
-| Job | Keep using |
-| --- | --- |
-| Form success and failure | `react-hot-toast` |
-| The project drawer | `vaul` in `components/ui/drawer.tsx` |
-| The project carousel | `embla-carousel-react` |
-| Section icons | `react-icons` |
-| Icons already inside `components/ui` | `lucide-react` |
+| Job                                  | Keep using                           |
+| ------------------------------------ | ------------------------------------ |
+| Form success and failure             | `react-hot-toast`                    |
+| The project drawer                   | `vaul` in `components/ui/drawer.tsx` |
+| The project carousel                 | `embla-carousel-react`               |
+| Section icons                        | `react-icons`                        |
+| Icons already inside `components/ui` | `lucide-react`                       |
 
 ## Packages already here
 
-| Package | Where |
-| --- | --- |
-| `@radix-ui/react-slot` | `components/ui/button.tsx`, for `asChild` |
-| `@radix-ui/react-label` | `components/ui/label.tsx` |
+| Package                  | Where                                                  |
+| ------------------------ | ------------------------------------------------------ |
+| `@radix-ui/react-slot`   | `components/ui/button.tsx`, for `asChild`              |
+| `@radix-ui/react-label`  | `components/ui/label.tsx`                              |
 | `@radix-ui/react-dialog` | Installed for a dialog. No dialog component exists yet |
-| `vaul` | `components/ui/drawer.tsx` |
+| `vaul`                   | `components/ui/drawer.tsx`                             |
 
 Add the next primitive with `pnpm add @radix-ui/react-<name>`, one package, only when nothing in the table covers the job. Record that package in [technology-convention.md](technology-convention.md) in the same change. Do not install a styled kit, and do not add a second library for a job this table already names.
 
 ## Where the component lives
 
 - Put it in `components/ui/<name>.tsx`.
-- Named exports. Match the shape of `label.tsx`: `forwardRef`, `ElementRef`, and `ComponentPropsWithoutRef`.
+- Named exports and named function implementations, with `data-slot` markers on rendered primitive elements, as in `card.tsx`. Root and Portal wrappers that render no host element do not need a slot or an extra DOM wrapper.
+- React 18 requires `forwardRef` for ref-bearing components. Use a named render function, `ElementRef`, and `ComponentPropsWithoutRef`, as in `label.tsx`; do not copy React 19 ref-as-prop implementations. Preserve refs through `asChild` composition and allow composed controls to override the default slot.
 - Add `"use client"` only when the primitive needs state, effects, or a browser API.
 - New props types use `type`. Leave `interface` only on a generated file that already has one, such as `button.tsx`.
 - Merge classes with `cn()` from `lib/utils.ts`. Variants use `cva`, as `button.tsx` does.

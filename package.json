@@ -25,7 +25,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-react": "8.6.0",
-    "eslint": "9.39.5",
+    "eslint": "8.57.1",
     "eslint-config-next": "14.2.35",
     "framer-motion": "^11.18.2",
     "geist": "^1.7.2",

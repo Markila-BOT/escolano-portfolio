@@ -2,6 +2,8 @@
 
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
+import { sectionReveal } from "@/lib/animations";
+import { aboutWorkflow } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import Balancer from "react-wrap-balancer";
 
@@ -12,9 +14,7 @@ export default function About() {
     <motion.section
       ref={ref}
       className="mb-20 max-w-[45rem] scroll-mt-28 text-center leading-8 sm:mb-0"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
+      {...sectionReveal}
       id="about"
     >
       <SectionHeading>About me</SectionHeading>
@@ -53,8 +53,9 @@ export default function About() {
             Node.js
           </span>
           , and <span className="font-semibold text-gray-400">TypeScript</span>.
-          I still pick up new tools, design systems, and ways of working.
         </p>
+
+        <p className="mb-3">{aboutWorkflow}</p>
 
         <p className="mb-3">
           I also like the time when I am not coding. I want to keep building

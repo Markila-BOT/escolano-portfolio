@@ -8,7 +8,7 @@ Status key: `[x]` done, `[ ]` still open. Items marked **partial** exist, and do
 
 | Scope               | Done | Partial | Not started |     Complete |
 | ------------------- | ---: | ------: | ----------: | -----------: |
-| Current spec        |   63 |      11 |          35 | 63/109 (58%) |
+| Current spec        |   75 |      11 |          31 | 75/117 (64%) |
 | Future enhancements |    0 |       1 |          14 |    0/15 (0%) |
 
 Protected routes are out of scope. The site is a single public page.
@@ -64,6 +64,14 @@ Sound stays off until the visitor turns it on. Use [`use-sound`](https://www.npm
 - [x] Load audio after the visitor opts in so it does not compete with first paint, and keep one sprite or a small set of files
 - [x] Do not autoplay on load, and keep the page usable with sound off
 
+### 1.4 Current UI primitives
+
+`components/ui/card.tsx` matches the current [shadcn card](https://ui.shadcn.com/docs/components/card): a function component with `data-slot`, `size`, and `CardAction`. Spacing uses a `--card-spacing` variable written for Tailwind 3. `button`, `drawer`, `label`, and `carousel` use named implementations and `data-slot` markers on rendered elements. Ref-bearing components retain `forwardRef` for React 18 compatibility; Root and Portal wrappers add no extra DOM. `field`, `tag-chip`, and `text-generate-effect` are local and stay as they are.
+
+- [x] Align `components/ui/card.tsx` with the current shadcn card (`data-slot`, `size`, `CardAction`) ([Chánh Đại](https://chanhdai.com) builds with the current shadcn primitives)
+- [x] Give `button`, `drawer`, `label`, and `carousel` that same shape (retain React 18 ref forwarding)
+- [x] Section copy, skill chips, and project descriptions arrive together in under half a second, stay readable while they settle, and show at once when motion is reduced
+
 ## 2. Navigation
 
 - [x] Header with main navigation
@@ -81,7 +89,6 @@ Sound stays off until the visitor turns it on. Use [`use-sound`](https://www.npm
 - [x] One-line positioning: who you help and what you build ([Lee Robinson](https://leerob.io), [Brittany Chiang](https://brittanychiang.com))
 - [x] Improve the multilingual greeting animation and presentation ([Bryan Elliott](https://elliottprogrammer.com) uses one small interactive moment)
 - [x] Cycling role titles in the introduction ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
-- [ ] A hero you can interact with, with the controls written on screen ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
 - [x] Analytics and a toast once per device visit ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
 
 ### 3.2 About
@@ -89,14 +96,15 @@ Sound stays off until the visitor turns it on. Use [`use-sound`](https://www.npm
 - [x] Detailed personal information
 - [x] Professional background
 - [x] Key skills and expertise
-- [ ] Update the About description to highlight the shift toward AI-assisted engineering, test-driven development (TDD), and spec-driven development (SDD) ([Bryan Elliott](https://elliottprogrammer.com) states how AI fits the daily workflow)
+- [x] Update the About description to highlight the shift toward AI-assisted engineering, test-driven development (TDD), and spec-driven development (SDD) ([Bryan Elliott](https://elliottprogrammer.com) states how AI fits the daily workflow)
 
 ### 3.3 Experience
 
 - [x] Professional work history
 - [x] Timeline-based layout
 - [x] Detailed role descriptions
-- [ ] Tech tags on each role ([Brittany Chiang](https://brittanychiang.com))
+- [x] A 3D journey you can switch to from the timeline, walking between jobs and flying between countries, with the controls written on screen ([Bruno Simon](https://bruno-simon.com) drives a Three.js world and writes the controls on the page)
+- [x] Tech tags on each role ([Brittany Chiang](https://brittanychiang.com))
 
 ### 3.4 Projects
 
@@ -104,18 +112,23 @@ Sound stays off until the visitor turns it on. Use [`use-sound`](https://www.npm
 - [x] Project details and descriptions
 - [x] Interactive project cards
 - [x] Technology stack display
-- [ ] Improve the project carousel’s presentation, navigation, responsiveness, and interaction feedback ([Adham Dannaway](https://www.adhamdannaway.com) leads with a few selected pieces)
-- [ ] Case studies: problem, role, and outcome on featured work ([Adham Dannaway](https://www.adhamdannaway.com), [Delba](https://delba.dev), [Brittany Chiang](https://brittanychiang.com))
-- [ ] Public code or a short build note on at least one project ([Bruno Simon](https://bruno-simon.com), [Bryan Elliott](https://elliottprogrammer.com))
+- [x] Improve the project carousel’s presentation, navigation, responsiveness, and interaction feedback ([Adham Dannaway](https://www.adhamdannaway.com) leads with a few selected pieces)
+- [x] Move through the project carousel with the keyboard: ArrowLeft and ArrowRight move to the neighboring view, and Home and End move to the first and last view
+- [x] After a project opens, Previous and Next move to the neighboring project in list order and keep the details open ([Francisco Salido](https://paco.fyi/projects/parkhub) labels the neighbor "Next" on the open project)
+- [x] Looking Glass opens as one image at a time, with previous and next image controls, so the screenshots stay in a compact frame
+- [x] Case studies: problem, role, and outcome on featured work ([Adham Dannaway](https://www.adhamdannaway.com), [Delba](https://delba.dev), [Brittany Chiang](https://brittanychiang.com))
+- [x] Public code or a short build note on at least one project ([Bruno Simon](https://bruno-simon.com), [Bryan Elliott](https://elliottprogrammer.com))
 - [ ] Expandable project rail: one project opens, the rest stay as slim labels ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
 - [ ] Client, company, and timeline on each project ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
 - [ ] Lay out each project description with [Pretext](https://github.com/chenglou/pretext) so drawer copy wraps from measured lines instead of a DOM reflow, while the text stays readable without JavaScript
-- [ ] YouTube video in the project drawer for MatterWorx and House Elf (other projects already set `videoUrl`; these two still show the screenshot)
+- [ ] YouTube video in the project drawer for MatterWorx, PotatoV3 and House Elf (other projects already set `videoUrl`; these two still show the screenshot), PotatoV3 - https://youtu.be/KTq55vfBbGA
 
 ### 3.5 Skills
 
 - [x] Technical skills display
+- [ ] Add Claude Code, Codex, and Cursor to the skills chips, in the same list as the other tools ([Lee Robinson](https://leerob.io) names Cursor in the opening line)
 - [ ] Categorized skill sets ([Gyanendra Pal Singh](https://gyanendra.vercel.app/) groups languages, tools, databases, and design)
+- [ ] A toolkit you open by category, each tool with a one-line note ([Gyanendra Pal Singh](https://gyanendra.vercel.app/about) — "My toolkit", 17 tools across 6 categories)
 - [ ] Visual representation of proficiency
 
 ### 3.6 Contact
@@ -250,18 +263,20 @@ Concrete gaps inside those items (not scored separately):
 
 ## 12. Reference portfolios
 
-[developer-portfolios](https://github.com/emmabostian/developer-portfolios) is an alphabetical list of 1,986 sites. It has no ranking. These ten are entries from that list, chosen because they are the usual references for a senior frontend portfolio. Each feature above links back to the site it came from.
+[developer-portfolios](https://github.com/emmabostian/developer-portfolios) is an alphabetical list of 2,014 sites. It has no ranking. These twelve are entries from that list, chosen because they are the usual references for a senior frontend portfolio, plus two read while adding the skills, primitive, and project-navigation items. Each feature above links back to the site it came from.
 
-| Portfolio                                            | In the repo                | Feature worth taking                                                                                                                                                                    | Already here                                                               |
-| ---------------------------------------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| [Brittany Chiang](https://brittanychiang.com)        | Yes                        | One-line role, social links, tech tags per job, projects with a measurable outcome                                                                                                      | Experience timeline, project cards                                         |
-| [Bruno Simon](https://bruno-simon.com)               | Yes                        | The site is the demo, with a public "how it's built" note                                                                                                                               | Video drawer only                                                          |
-| [Lee Robinson](https://leerob.io)                    | Yes                        | First sentence is the positioning; writing shows how he thinks                                                                                                                          | Intro copy, no writing index                                               |
-| [Adham Dannaway](https://www.adhamdannaway.com)      | Yes                        | A few selected case studies, not every project at once                                                                                                                                  | Carousel of all projects                                                   |
-| [Chris Coyier](https://chriscoyier.net)              | Yes                        | Writing, plus more than one way to make contact                                                                                                                                         | Email form only                                                            |
-| [Delba](https://delba.dev)                           | Yes                        | Each piece of work is one sentence of outcome                                                                                                                                           | Long project descriptions                                                  |
-| [Dustin Brett](https://dustinbrett.com)              | Yes                        | One flagship interaction instead of a gallery                                                                                                                                           | Video drawer only                                                          |
-| [Dillion Megida](https://dillionmegida.com)          | Yes                        | Short teaching notes that make the engineering legible                                                                                                                                  | No writing                                                                 |
-| [Bryan Elliott](https://elliottprogrammer.com)       | Yes                        | Public code, an explicit AI workflow, one small interactive moment                                                                                                                      | External CV link                                                           |
-| [Timmy O'Mahony](https://timmyomahony.com)           | Yes                        | Audience-specific headline, a direct CTA, and a short FAQ                                                                                                                               | Mailto inside the contact paragraph                                        |
-| [Gyanendra Pal Singh](https://gyanendra.vercel.app/) | Local copy in `Portfolio/` | Cycling role line, an interactive hero with on-screen controls, an expandable project rail with client and timeline, categorized skills, and a hover action bar for CV and social links | Greeting animation, project carousel, flat skill chips, external CV button |
+| Portfolio                                            | In the repo                | Feature worth taking                                                                                                                                                       | Already here                                                               |
+| ---------------------------------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| [Brittany Chiang](https://brittanychiang.com)        | Yes                        | One-line role, social links, tech tags per job, projects with a measurable outcome                                                                                         | Experience timeline, project cards                                         |
+| [Bruno Simon](https://bruno-simon.com)               | Yes                        | A 3D hero you drive, with the controls written on the page, and a public "how it's built" note                                                                             | 3D experience journey; video drawer only                                   |
+| [Lee Robinson](https://leerob.io)                    | Yes                        | First sentence is the positioning; writing shows how he thinks                                                                                                             | Intro copy, no writing index                                               |
+| [Adham Dannaway](https://www.adhamdannaway.com)      | Yes                        | A few selected case studies, not every project at once                                                                                                                     | Carousel of all projects                                                   |
+| [Chris Coyier](https://chriscoyier.net)              | Yes                        | Writing, plus more than one way to make contact                                                                                                                            | Email form only                                                            |
+| [Delba](https://delba.dev)                           | Yes                        | Each piece of work is one sentence of outcome                                                                                                                              | Long project descriptions                                                  |
+| [Dustin Brett](https://dustinbrett.com)              | Yes                        | One flagship interaction instead of a gallery                                                                                                                              | Video drawer only                                                          |
+| [Dillion Megida](https://dillionmegida.com)          | Yes                        | Short teaching notes that make the engineering legible                                                                                                                     | No writing                                                                 |
+| [Bryan Elliott](https://elliottprogrammer.com)       | Yes                        | Public code, an explicit AI workflow, one small interactive moment                                                                                                         | External CV link                                                           |
+| [Timmy O'Mahony](https://timmyomahony.com)           | Yes                        | Audience-specific headline, a direct CTA, and a short FAQ                                                                                                                  | Mailto inside the contact paragraph                                        |
+| [Gyanendra Pal Singh](https://gyanendra.vercel.app/) | Local copy in `Portfolio/` | Cycling role line, an expandable project rail with client and timeline, categorized skills, a toolkit you open by category, and a hover action bar for CV and social links | Greeting animation, project carousel, flat skill chips, external CV button |
+| [Francisco Salido](https://paco.fyi)                 | Yes                        | Previous and Next on an open project, naming the neighbor                                                                                                                  | Project drawer closes only                                                 |
+| [Chánh Đại](https://chanhdai.com)                    | Yes                        | Work built on the current shadcn primitives, with Claude listed beside it                                                                                                  | Older `forwardRef` card; skills omit the AI tools                          |

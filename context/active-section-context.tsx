@@ -2,6 +2,7 @@
 
 import type { SectionName } from "@/lib/types";
 import React, { useState, createContext, useContext } from "react";
+import { MotionConfig } from "framer-motion";
 
 type ActiveSectionContextProviderProps = {
   children: React.ReactNode;
@@ -24,16 +25,18 @@ export default function ActiveSectionContextProvider({
   const [timeOfLastClick, setTimeOfLastClick] = useState(0); // we need to keep track of this to disable the observer temporarily when user clicks on a link
 
   return (
-    <ActiveSectionContext.Provider
-      value={{
-        activeSection,
-        setActiveSection,
-        timeOfLastClick,
-        setTimeOfLastClick,
-      }}
-    >
-      {children}
-    </ActiveSectionContext.Provider>
+    <MotionConfig reducedMotion="user">
+      <ActiveSectionContext.Provider
+        value={{
+          activeSection,
+          setActiveSection,
+          timeOfLastClick,
+          setTimeOfLastClick,
+        }}
+      >
+        {children}
+      </ActiveSectionContext.Provider>
+    </MotionConfig>
   );
 }
 
@@ -42,7 +45,7 @@ export function useActiveSectionContext() {
 
   if (context === null) {
     throw new Error(
-      "useActiveSectionContext must be used within an ActiveSectionContextProvider"
+      "useActiveSectionContext must be used within an ActiveSectionContextProvider",
     );
   }
 

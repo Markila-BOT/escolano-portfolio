@@ -3,6 +3,7 @@
 import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
+import { sectionReveal } from "@/lib/animations";
 import { useSectionInView } from "@/lib/hooks";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./submit-btn";
@@ -20,18 +21,7 @@ export default function Contact() {
       id="contact"
       ref={ref}
       className="mb-20 w-[min(100%,38rem)] text-center sm:mb-28"
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
+      {...sectionReveal}
     >
       <SectionHeading>Contact me</SectionHeading>
 
