@@ -1,44 +1,27 @@
-"use client";
-
-import React from "react";
-import SectionHeading from "./section-heading";
-import { skillsData } from "@/lib/data";
-import { useSectionInView } from "@/lib/hooks";
-import { motion } from "framer-motion";
-import { fadeInAnimationVariants, sectionReveal } from "@/lib/animations";
-import { Label } from "@/components/ui/label";
-import { TagChip } from "@/components/ui/tag-chip";
-
+import { ObservedSection } from "@/components/observed-section";
+import SectionHeading from "@/components/section-heading";
+import SkillSelector from "@/components/skill-selector";
+import { skillGroups, skillEvidenceCopy } from "@/lib/data";
 export default function Skills() {
-  const { ref } = useSectionInView("Skills");
-
   return (
-    <motion.section
+    <ObservedSection
+      name="Skills"
       id="skills"
-      ref={ref}
-      {...sectionReveal}
       className="mb-20 max-w-[53rem] scroll-mt-28 text-center sm:mb-0"
     >
       <SectionHeading>My skills</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2 text-lg">
-        {skillsData.map((skill, index) => (
-          <motion.li
-            key={index}
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-              once: true,
-            }}
-            custom={index}
-          >
-            <TagChip>
-              {skill.icon}
-              <Label>{skill.label}</Label>
-            </TagChip>
-          </motion.li>
-        ))}
-      </ul>
-    </motion.section>
+      <p className="mx-auto mb-6 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+        {skillEvidenceCopy.instruction} {skillEvidenceCopy.description}
+      </p>
+      <SkillSelector
+        groups={skillGroups.map((group) => ({
+          label: group.label,
+          skills: group.skills.map((skill) => ({
+            label: skill.label,
+            icon: skill.icon,
+          })),
+        }))}
+      />
+    </ObservedSection>
   );
 }

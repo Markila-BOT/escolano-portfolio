@@ -1,0 +1,62 @@
+[
+  {
+    "width": 390,
+    "theme": "light",
+    "mode": "hydrated",
+    "errors": [],
+    "interactions": "greeting, projects, skills, timeline/journey, theme, sound, mocked form, navigation pass"
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "mode": "hydrated",
+    "errors": [],
+    "interactions": "greeting, projects, skills, timeline/journey, theme, sound, mocked form, navigation pass"
+  },
+  {
+    "width": 1280,
+    "theme": "light",
+    "mode": "hydrated",
+    "errors": [],
+    "interactions": "greeting, projects, skills, timeline/journey, theme, sound, mocked form, navigation pass"
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "mode": "hydrated",
+    "errors": [],
+    "interactions": "greeting, projects, skills, timeline/journey, theme, sound, mocked form, navigation pass"
+  },
+  {
+    "themeCase": {
+      "stored": null,
+      "system": "dark",
+      "expected": "dark"
+    },
+    "result": "pass"
+  },
+  {
+    "themeCase": {
+      "stored": "invalid",
+      "system": "dark",
+      "expected": "dark"
+    },
+    "result": "pass"
+  },
+  {
+    "themeCase": {
+      "stored": "blocked",
+      "system": "light",
+      "expected": "light"
+    },
+    "result": "pass"
+  },
+  {
+    "themeCase": {
+      "stored": "light",
+      "system": "dark",
+      "expected": "light"
+    },
+    "result": "pass"
+  }
+]

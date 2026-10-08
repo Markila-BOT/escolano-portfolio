@@ -1,0 +1,23 @@
+[
+  {
+    "width": 390,
+    "noJavaScript": "six visible sections and real content"
+  },
+  {
+    "width": 1280,
+    "noJavaScript": "six visible sections and real content"
+  },
+  {
+    "roleRotation": "pass"
+  },
+  {
+    "skills": 22,
+    "evidence": "all source values and keyboard controls pass"
+  },
+  {
+    "drawerFocusReturn": "pass"
+  },
+  {
+    "sectionObservation": "About navigation becomes active on scroll"
+  }
+]

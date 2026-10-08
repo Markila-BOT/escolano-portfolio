@@ -1,7 +1,7 @@
 const revealEase = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
 export const sectionReveal = {
-  initial: { opacity: 0, y: 16 },
+  initial: { opacity: 1, y: 0 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
   transition: { duration: 0.45, ease: revealEase },
@@ -9,8 +9,8 @@ export const sectionReveal = {
 
 export const fadeInAnimationVariants = {
   initial: {
-    opacity: 0,
-    y: 10,
+    opacity: 1,
+    y: 0,
   },
   animate: (index: number) => ({
     opacity: 1,

@@ -2,16 +2,16 @@
 
 Tracks [SPECIFICATION.md](SPECIFICATION.md) against the current app.
 
-Status key: `[x]` done, `[ ]` still open. Items marked **partial** exist, and do not yet meet the spec.
+Status key: `[x]` done, `[ ]` still open. Items marked **partial** exist, and do not yet meet the spec. Items marked **not applicable** have no checkbox and are excluded from progress totals, not counted as done.
 
 ## Progress
 
-| Scope               | Done | Partial | Not started |     Complete |
-| ------------------- | ---: | ------: | ----------: | -----------: |
-| Current spec        |   75 |      11 |          31 | 75/117 (64%) |
-| Future enhancements |    0 |       1 |          14 |    0/15 (0%) |
+| Scope               | Done | Partial | Not started | Complete     |
+| ------------------- | ---- | ------- | ----------- | ------------ |
+| Current spec        | 87   | 8       | 20          | 87/115 (76%) |
+| Future enhancements | 1    | 1       | 13          | 1/15 (7%)    |
 
-Protected routes are out of scope. The site is a single public page.
+Protected routes and server-state data fetching are not applicable. The site is a single public page with static portfolio content.
 
 ## 1. User interface
 
@@ -55,7 +55,7 @@ The current `public/logo.png` loses contrast on the navy theme. Treat the logo a
 
 ### 1.3 Interaction sound
 
-Sound stays off until the visitor turns it on. Use [`use-sound`](https://www.npmjs.com/package/use-sound), which wraps [Howler.js](https://github.com/goldfire/howler.js). Do not add Howler as a second direct dependency.
+Sound stays off until the visitor turns it on. Use `[use-sound](https://www.npmjs.com/package/use-sound)`, which wraps [Howler.js](https://github.com/goldfire/howler.js). Do not add Howler as a second direct dependency.
 
 - [x] A sound control that turns interaction audio on and off, with the choice saved in local storage and defaulting to off
 - [x] The control names the state it will switch to ("Turn sound on" / "Turn sound off"), keeps a 44×44 px target, and does not overlap the theme switch
@@ -118,25 +118,24 @@ Sound stays off until the visitor turns it on. Use [`use-sound`](https://www.npm
 - [x] Looking Glass opens as one image at a time, with previous and next image controls, so the screenshots stay in a compact frame
 - [x] Case studies: problem, role, and outcome on featured work ([Adham Dannaway](https://www.adhamdannaway.com), [Delba](https://delba.dev), [Brittany Chiang](https://brittanychiang.com))
 - [x] Public code or a short build note on at least one project ([Bruno Simon](https://bruno-simon.com), [Bryan Elliott](https://elliottprogrammer.com))
-- [ ] Expandable project rail: one project opens, the rest stay as slim labels ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
-- [ ] Client, company, and timeline on each project ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
-- [ ] Lay out each project description with [Pretext](https://github.com/chenglou/pretext) so drawer copy wraps from measured lines instead of a DOM reflow, while the text stays readable without JavaScript
-- [ ] YouTube video in the project drawer for MatterWorx, PotatoV3 and House Elf (other projects already set `videoUrl`; these two still show the screenshot), PotatoV3 - https://youtu.be/KTq55vfBbGA
+- [x] Expandable project rail: one project opens, the rest stay as slim labels; optional Rail/Carousel switch preserves the carousel ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
+- [x] Lay out drawer descriptions and case-study text with [Pretext](https://github.com/chenglou/pretext) using measured lines, cached preparation, and readable semantic fallbacks (verification in `docs/project-description-layout.md`)
+- [ ] YouTube video in the project drawer for MatterWorx, PotatoV3 and House Elf (other projects already set `videoUrl`; these two still show the screenshot), PotatoV3 - [https://youtu.be/KTq55vfBbGA](https://youtu.be/KTq55vfBbGA)
+- [ ] Add the personal project Truck Driver Guide ([Markila-BOT/truck-driver-guide](https://github.com/Markila-BOT/truck-driver-guide)): a Django API and a React client set up to deploy on Vercel. The guide itself is not in the app yet; what runs today is a health check.
 
 ### 3.5 Skills
 
 - [x] Technical skills display
-- [ ] Add Claude Code, Codex, and Cursor to the skills chips, in the same list as the other tools ([Lee Robinson](https://leerob.io) names Cursor in the opening line)
-- [ ] Categorized skill sets ([Gyanendra Pal Singh](https://gyanendra.vercel.app/) groups languages, tools, databases, and design)
-- [ ] A toolkit you open by category, each tool with a one-line note ([Gyanendra Pal Singh](https://gyanendra.vercel.app/about) — "My toolkit", 17 tools across 6 categories)
-- [ ] Visual representation of proficiency
+- [x] Add Claude Code, Codex, and Cursor to the skills chips, in the same list as the other tools ([Lee Robinson](https://leerob.io) names Cursor in the opening line)
+- [x] Categorized skill sets ([Gyanendra Pal Singh](https://gyanendra.vercel.app/) groups languages, tools, databases, and design)
+- [x] Visual representation of proficiency through evidence-based usage labels and linked project/experience sources
 
 ### 3.6 Contact
 
 - [x] Contact form
-- [ ] Email integration (**partial** — Resend sends, from `onboarding@resend.dev`)
+- [x] Email integration (**partial** — reliable Resend submission; `onboarding@resend.dev` is testing-only, no verified production domain; setup in `docs/contact-email.md`)
 - [ ] Social media links ([Brittany Chiang](https://brittanychiang.com), [Chris Coyier](https://chriscoyier.net))
-- [ ] A direct hiring path: what you are open to, and how to reach you ([Timmy O'Mahony](https://timmyomahony.com))
+- [x] A direct hiring path: full-time and contract/freelance, remote or Philippines-based, with public email and the existing contact form (verification in `docs/hiring-path.md`)
 - [ ] A persistent action bar for CV download and social links, with labels that appear on hover ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
 - [x] Professional contact information
 
@@ -144,22 +143,23 @@ Sound stays off until the visitor turns it on. Use [`use-sound`](https://www.npm
 
 ### 4.1 Performance
 
-- [ ] Server-side rendering (**partial** — the page is a server component; almost every section is a client component)
+- [x] Server-rendered initial content with focused client interactions (statically prerendered; verified with JavaScript disabled)
 - [x] Optimized image loading
-- [ ] Code splitting (**partial** — Next.js defaults only; no route or component splits beyond that)
-- [ ] Lazy loading components
-- [ ] First Contentful Paint under 1.5s (not measured)
-- [ ] Time to Interactive under 3.5s (not measured)
-- [ ] Cumulative Layout Shift under 0.1 (not measured)
-- [ ] Largest Contentful Paint under 2.5s (not measured)
+- [x] Code splitting (Next.js plus demand-loaded project video, 3D journey and Pretext; [evidence](docs/portfolio-performance.md))
+- [x] Lazy loading components (video player only mounts in an open video drawer; 3D journey loads on request)
+- [x] First Contentful Paint under 1.5s (deployed lab baseline: all three runs in both profiles pass; mobile 0.824–0.834s, desktop 0.280–0.285s)
+- [ ] Time to Interactive under 3.5s (unverified — Lighthouse 13.5.0 does not report legacy TTI; TBT is not a replacement)
+- [x] Cumulative Layout Shift under 0.1 (deployed lab baseline: all three runs in both profiles pass; mobile 0.0134–0.0151, desktop 0)
+- [ ] Largest Contentful Paint under 2.5s (deployed lab baseline: mobile 3.433–3.443s fails; desktop 0.676–0.701s passes)
 
-Known cost: the theme provider renders nothing until mount, and `react-player` loads with the project cards.
+Measured on 2026-10-08 with pinned Lighthouse 13.5.0 and cold mobile/desktop profiles; [raw reports, methodology and local comparison](docs/portfolio-performance.md). These are lab results, not field guarantees. Local video splitting reduces first-load JS from 256 to 249kB but does not materially improve paint times. The theme provider already renders initial content; ReactPlayer now loads only on video demand. The candidate is not deployed, and deployed source parity is unknown. Mobile LCP needs separate investigation.
 
 ### 4.2 Security
 
 - [ ] Form validation (**partial** — required fields and a max-length check; no email-format check)
 - [ ] Secure email handling (**partial** — no rate limit, no spam control, unverified sender)
-- Protected routes: not applicable
+
+- Protected routes: **not applicable** — the portfolio is a single public page with no private content.
 
 ### 4.3 SEO
 
@@ -187,13 +187,14 @@ Known cost: the theme provider renders nothing until mount, and `react-player` l
 - [x] Section headings
 - [x] Project cards
 
-Component rows are inventory. They are not included in the 33/81 score above.
+Component rows are inventory. They are not included in the current-spec progress totals above.
 
 ## 6. State and data
 
 - [x] Context API for theme management
 - [x] Local state for form handling
-- [ ] Server state for data fetching (content is static in `lib/data.ts`)
+
+- Server state for data fetching: **not applicable** — portfolio content is imported from static TypeScript in `lib/data.ts`.
 
 ## 7. Accessibility
 
@@ -241,6 +242,7 @@ Concrete gaps inside those items (not scored separately):
 ## 11. Future enhancements
 
 - [ ] Blog integration ([Lee Robinson](https://leerob.io), [Chris Coyier](https://chriscoyier.net), [Dillion Megida](https://dillionmegida.com))
+  - Near future, not a separate task: a Tools section on the blog, the same kind of page as [Gyanendra Pal Singh](https://gyanendra.vercel.app/tools) — small utilities (converters, calculators, text, productivity, and design) that run in the browser. The public [Portfolio](https://github.com/gyanendracd/Portfolio) repo has no `/tools` route, so the live page is the reference.
 - [ ] Project filtering system
 - [ ] Multi-language support
 - [ ] Enhanced animations
@@ -259,9 +261,12 @@ Concrete gaps inside those items (not scored separately):
 - [ ] Create one flagship variable-width effect with `layoutNextLineRange()`, such as hero copy flowing around the portrait or brand mark
 - [ ] Feed materialized line ranges into Framer Motion for staggered reveals while preserving one semantic DOM heading and readable no-JavaScript content
 - [ ] Match Geist font metrics in whole pixels, cache prepared text, prevent layout shift, support Unicode and bidirectional copy, and provide a static `prefers-reduced-motion` fallback
-- [ ] Prepare each project description paragraph once with `@chenglou/pretext`, lay it out at the drawer width, and drive the existing word reveal from those measured lines
+- [x] Prepare drawer description paragraphs per text/font configuration with `@chenglou/pretext`, lay them out at the drawer width, and reveal measured lines (same completed feature as section 3.4; hero typography remains open)
 
 ## 12. Reference portfolios
+
+To Check?
+https://www.rsahani.space/about
 
 [developer-portfolios](https://github.com/emmabostian/developer-portfolios) is an alphabetical list of 2,014 sites. It has no ranking. These twelve are entries from that list, chosen because they are the usual references for a senior frontend portfolio, plus two read while adding the skills, primitive, and project-navigation items. Each feature above links back to the site it came from.
 

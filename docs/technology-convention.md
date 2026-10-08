@@ -32,6 +32,8 @@ Next 14's ESLint config supports ESLint 7 or 8. Keep ESLint pinned to 8.57.1 whi
 
 ## Boundaries
 
+- `@chenglou/pretext@0.0.9` measures project drawer description lines. Load it on drawer demand, cache prepared paragraphs, and retain semantic text fallbacks. Framer Motion owns their reveal; `react-wrap-balancer` continues to handle headlines.
+
 - Add a dependency only when nothing in the table covers the job. Prefer the library already listed.
 - `RESEND_API_KEY` stays on the server. Never prefix it with `NEXT_PUBLIC_`.
 - Content is static TypeScript in `lib/data.ts`. Do not add a CMS, database, or data-fetching client for portfolio copy.

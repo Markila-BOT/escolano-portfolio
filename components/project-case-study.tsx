@@ -1,7 +1,7 @@
 "use client";
 
 import { projectCaseStudy } from "@/lib/data";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import ProjectDescription from "@/components/project-description";
 
 type ProjectCaseStudyProps = {
   caseStudy: {
@@ -19,7 +19,7 @@ export default function ProjectCaseStudy({ caseStudy }: ProjectCaseStudyProps) {
       {parts.map((part) => (
         <section key={part}>
           <h4 className="text-sm font-semibold">{projectCaseStudy[part]}</h4>
-          <TextGenerateEffect words={caseStudy[part]} />
+          <ProjectDescription key={caseStudy[part]} text={caseStudy[part]} />
         </section>
       ))}
     </div>

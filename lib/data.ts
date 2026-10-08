@@ -45,9 +45,12 @@ import {
   SiReactquery,
   SiPostgresql,
   SiRust,
+  SiClaudecode,
+  SiCursor,
 } from "react-icons/si";
 import {
   TbBrandCSharp,
+  TbBrandOpenai,
   TbBrandRedux,
   TbCloudDataConnection,
   TbHexagonLetterC,
@@ -115,6 +118,23 @@ export const introCallToAction = {
 
 export const aboutWorkflow =
   "Most days I start from a spec, write the change with Claude Code, Codex, and Cursor, and check it with tests. I own the result. That is AI-assisted engineering, test-driven development, and spec-driven development." as const;
+
+export const contactFormFeedback = {
+  accepted: "Your message was accepted for sending.",
+} as const;
+
+export const projectVideoFeedback = {
+  loading: "Loading project video…",
+  failed: "Video unavailable. Showing the project screenshot.",
+} as const;
+
+export const hiringContact = {
+  availability:
+    "Open to full-time roles and contract/freelance work, remote or based in the Philippines.",
+  email: "mark.escolano14@gmail.com",
+  emailIntroduction: "You can email me at",
+  formAlternative: "or through this form.",
+} as const;
 
 export const experienceJourney = {
   showJourneyLabel: "Show 3D journey",
@@ -397,6 +417,13 @@ export const projectBuildNote = {
   label: "Build",
 } as const;
 
+export const projectViews = {
+  label: "Project view",
+  carousel: "Carousel",
+  rail: "Rail",
+  details: (title: string) => `View ${title} details`,
+} as const;
+
 export const projectsData = [
   {
     title: "MatterWorx",
@@ -422,6 +449,10 @@ export const projectsData = [
       { label: "DevCycle", icon: React.createElement(TbToggleRight) },
       { label: "PostgreSQL", icon: React.createElement(SiPostgresql) },
       { label: "C#", icon: React.createElement(TbBrandCSharp) },
+      { label: "Claude Code", icon: React.createElement(SiClaudecode) },
+      { label: "Codex", icon: React.createElement(TbBrandOpenai) },
+      { label: "Cursor", icon: React.createElement(SiCursor) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: MATTERWORX_IMAGE,
   },
@@ -448,6 +479,10 @@ export const projectsData = [
       { label: "Radix UI", icon: React.createElement(SiRadixui) },
       { label: "TanStack Query", icon: React.createElement(SiReactquery) },
       { label: "Jotai", icon: React.createElement(SiXstate) },
+      { label: "Claude Code", icon: React.createElement(SiClaudecode) },
+      { label: "Codex", icon: React.createElement(TbBrandOpenai) },
+      { label: "Cursor", icon: React.createElement(SiCursor) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: POTATO_V3_IMAGE,
   },
@@ -468,6 +503,7 @@ export const projectsData = [
       { label: "Zustand", icon: React.createElement(TbBrandRedux) },
       { label: "NestJS", icon: React.createElement(SiNestjs) },
       { label: "GraphQL", icon: React.createElement(SiGraphql) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: WEALTHPARK_VALUATION_IMAGE,
     videoUrl: "https://youtu.be/gK5PkM5Okz8",
@@ -500,6 +536,10 @@ export const projectsData = [
       { label: "Jotai", icon: React.createElement(SiXstate) },
       { label: "Webpack", icon: React.createElement(SiWebpack) },
       { label: "GraphQL", icon: React.createElement(SiGraphql) },
+      { label: "Claude Code", icon: React.createElement(SiClaudecode) },
+      { label: "Codex", icon: React.createElement(TbBrandOpenai) },
+      { label: "Cursor", icon: React.createElement(SiCursor) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: WEALTHPARK_OWNER_APP_IMAGE,
     videoUrl: "https://youtu.be/Vm0_QV5_snY",
@@ -529,6 +569,10 @@ export const projectsData = [
       { label: "Redux", icon: React.createElement(SiRedux) },
       { label: "Vite", icon: React.createElement(SiVite) },
       { label: "GraphQL", icon: React.createElement(SiGraphql) },
+      { label: "Claude Code", icon: React.createElement(SiClaudecode) },
+      { label: "Codex", icon: React.createElement(TbBrandOpenai) },
+      { label: "Cursor", icon: React.createElement(SiCursor) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: WEALTHPARK_ACTIVITY_IMAGE,
     videoUrl: "https://youtu.be/qTU8kAdfIWI",
@@ -553,6 +597,7 @@ export const projectsData = [
       { label: "Material UI", icon: React.createElement(SiMaterialdesign) },
       { label: "Redux", icon: React.createElement(SiRedux) },
       { label: "Websockets", icon: React.createElement(AiOutlineApi) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: WEALTHPARK_CHAT_ADMIN_IMAGE,
     videoUrl: "https://youtu.be/3i2YZLn77tw",
@@ -578,6 +623,10 @@ export const projectsData = [
       { label: "React", icon: React.createElement(FaReact) },
       { label: "NextJS", icon: React.createElement(SiNextdotjs) },
       { label: "Ant Design", icon: React.createElement(SiAntdesign) },
+      { label: "Claude Code", icon: React.createElement(SiClaudecode) },
+      { label: "Codex", icon: React.createElement(TbBrandOpenai) },
+      { label: "Cursor", icon: React.createElement(SiCursor) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: WEALTHPARK_HOUSE_ELF_IMAGE,
   },
@@ -593,6 +642,7 @@ export const projectsData = [
       { label: "Angular", icon: React.createElement(SiAngular) },
       { label: "Cordova", icon: React.createElement(SiApachecordova) },
       { label: "XCode", icon: React.createElement(SiXcode) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: LOOKING_GLASS_SHOP_IMAGE,
     screenshots: [
@@ -641,6 +691,7 @@ export const projectsData = [
       { label: "Webpack", icon: React.createElement(SiWebpack) },
       { label: "Docker", icon: React.createElement(DiDocker) },
       { label: "Terraform", icon: React.createElement(SiTerraform) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: MERCHANTSPRING_IMAGE,
     videoUrl: "https://youtu.be/Hs6XEBY5BTI",
@@ -662,6 +713,7 @@ export const projectsData = [
         icon: React.createElement(SiStyledcomponents),
       },
       { label: "Firebase", icon: React.createElement(SiFirebase) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: X_CLIMB_LAGOON_IMAGE,
     videoUrl: "https://youtu.be/6XUYfT9k07A",
@@ -696,6 +748,7 @@ export const projectsData = [
       { label: "Cypress", icon: React.createElement(SiCypress) },
       { label: "Jest", icon: React.createElement(SiJest) },
       { label: "Webpack", icon: React.createElement(SiWebpack) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: ASURION_IRIS_IMAGE,
     videoUrl: "https://youtu.be/mLPL8-nIMnE",
@@ -724,6 +777,7 @@ export const projectsData = [
       { label: "Cypress", icon: React.createElement(SiCypress) },
       { label: "Jest", icon: React.createElement(SiJest) },
       { label: "Webpack", icon: React.createElement(SiWebpack) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: RAKUTEN_TRAVEL_IMAGE,
     videoUrl: "https://youtu.be/xEo231TmRxc",
@@ -751,6 +805,7 @@ export const projectsData = [
       { label: "Grunt", icon: React.createElement(FaGrunt) },
       { label: "LESS/SCSS", icon: React.createElement(SiLess) },
       { label: "Jest", icon: React.createElement(SiJest) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: BOSCH_GRADE_X_IMAGE,
     videoUrl: "https://youtu.be/QRjNHXbdyvY",
@@ -767,6 +822,7 @@ export const projectsData = [
     tags: [
       { label: "Java", icon: React.createElement(FaJava) },
       { label: "Spring Tools Suite", icon: React.createElement(SiSpring) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: NEC_WEB_OTX_IMAGE,
     videoUrl: "https://youtu.be/uDpSI4LsSVk",
@@ -783,6 +839,7 @@ export const projectsData = [
       { label: "C", icon: React.createElement(TbHexagonLetterC) },
       { label: "Misra C", icon: React.createElement(TbHexagonLetterC) },
       { label: "GAIO Tech", icon: React.createElement(TbCloudDataConnection) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: DENSO_ECU_IMAGE,
     videoUrl: "https://youtu.be/k8YHQkQekk0",
@@ -798,6 +855,7 @@ export const projectsData = [
     tags: [
       { label: "Java", icon: React.createElement(FaJava) },
       { label: "Spring Tools Suite", icon: React.createElement(SiSpring) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: LAWSON_SMART_REPORT_IMAGE,
     videoUrl: "https://youtu.be/FypJL83X9Yg",
@@ -806,24 +864,167 @@ export const projectsData = [
   },
 ] as const;
 
-export const skillsData = [
-  { label: "HTML", icon: React.createElement(FaHtml5) },
-  { label: "CSS", icon: React.createElement(FaReact) },
-  { label: "JavaScript", icon: React.createElement(FaJs) },
-  { label: "TypeScript", icon: React.createElement(SiTypescript) },
-  { label: "Rust", icon: React.createElement(SiRust) },
-  { label: "React", icon: React.createElement(FaReact) },
-  { label: "Next.js", icon: React.createElement(SiNextdotjs) },
-  { label: "Node.js", icon: React.createElement(FaNodeJs) },
-  { label: "Git", icon: React.createElement(FaGitAlt) },
-  { label: "Tailwind", icon: React.createElement(SiTailwindcss) },
-  { label: "MongoDB", icon: React.createElement(SiMongodb) },
-  { label: "MySQL", icon: React.createElement(DiMysql) },
-  { label: "PostgreSQL", icon: React.createElement(SiPostgresql) },
-  { label: "Firebase", icon: React.createElement(SiFirebase) },
-  { label: "Redux", icon: React.createElement(SiRedux) },
-  { label: "GraphQL", icon: React.createElement(SiGraphql) },
-  { label: "Nest.js", icon: React.createElement(SiNestjs) },
-  { label: "Express", icon: React.createElement(SiExpress) },
-  { label: "Framer Motion", icon: React.createElement(SiFramer) },
-] as const;
+type SkillGroup = {
+  label: string;
+  skills: readonly {
+    label: string;
+    icon: React.ReactElement;
+    note: string;
+  }[];
+};
+
+export const skillGroups: readonly SkillGroup[] = [
+  {
+    label: "Languages",
+    skills: [
+      {
+        label: "HTML",
+        icon: React.createElement(FaHtml5),
+        note: "Markup for the structure of a page.",
+      },
+      {
+        label: "CSS",
+        icon: React.createElement(FaReact),
+        note: "Layout, color, and type for a page.",
+      },
+      {
+        label: "JavaScript",
+        icon: React.createElement(FaJs),
+        note: "The language that makes a page respond.",
+      },
+      {
+        label: "TypeScript",
+        icon: React.createElement(SiTypescript),
+        note: "JavaScript with types that are checked before it runs.",
+      },
+      {
+        label: "Rust",
+        icon: React.createElement(SiRust),
+        note: "A systems language that keeps memory safe without a garbage collector.",
+      },
+    ],
+  },
+  {
+    label: "Tools",
+    skills: [
+      {
+        label: "React",
+        icon: React.createElement(FaReact),
+        note: "A library for building an interface from components.",
+      },
+      {
+        label: "Next.js",
+        icon: React.createElement(SiNextdotjs),
+        note: "A React framework for routing and server-rendered pages.",
+      },
+      {
+        label: "Node.js",
+        icon: React.createElement(FaNodeJs),
+        note: "A runtime for JavaScript outside the browser.",
+      },
+      {
+        label: "Git",
+        icon: React.createElement(FaGitAlt),
+        note: "Version control for a repository.",
+      },
+      {
+        label: "Tailwind",
+        icon: React.createElement(SiTailwindcss),
+        note: "Utility classes that style an element from the markup.",
+      },
+      {
+        label: "Redux",
+        icon: React.createElement(SiRedux),
+        note: "A store for application state.",
+      },
+      {
+        label: "GraphQL",
+        icon: React.createElement(SiGraphql),
+        note: "A query language for asking an API for specific fields.",
+      },
+      {
+        label: "Nest.js",
+        icon: React.createElement(SiNestjs),
+        note: "A Node.js framework that organizes a server into modules.",
+      },
+      {
+        label: "Express",
+        icon: React.createElement(SiExpress),
+        note: "A Node.js framework for HTTP routes.",
+      },
+      {
+        label: "Framer Motion",
+        icon: React.createElement(SiFramer),
+        note: "A React library for animation.",
+      },
+      {
+        label: "Claude Code",
+        icon: React.createElement(SiClaudecode),
+        note: "Anthropic's coding agent for editing a repository from the terminal.",
+      },
+      {
+        label: "Codex",
+        icon: React.createElement(TbBrandOpenai),
+        note: "OpenAI's coding agent for writing and editing code.",
+      },
+      {
+        label: "Cursor",
+        icon: React.createElement(SiCursor),
+        note: "An editor that writes and edits code with an agent.",
+      },
+    ],
+  },
+  {
+    label: "Databases",
+    skills: [
+      {
+        label: "MongoDB",
+        icon: React.createElement(SiMongodb),
+        note: "A database that stores documents.",
+      },
+      {
+        label: "MySQL",
+        icon: React.createElement(DiMysql),
+        note: "A relational database.",
+      },
+      {
+        label: "PostgreSQL",
+        icon: React.createElement(SiPostgresql),
+        note: "A relational database.",
+      },
+      {
+        label: "Firebase",
+        icon: React.createElement(SiFirebase),
+        note: "A platform for stored data and sign-in.",
+      },
+    ],
+  },
+];
+
+export const skillEvidenceAliases: Readonly<Record<string, readonly string[]>> =
+  {
+    "Next.js": ["NextJS"],
+    Tailwind: ["Tailwind CSS"],
+    "Nest.js": ["NestJS"],
+  };
+
+export const skillEvidenceWorkRoles = [
+  "Senior Software Engineer",
+  "Full Stack Engineer",
+  "Lead Software Engineer",
+  "Front-End Engineer",
+  "Apply training knowledge",
+  "Promoted",
+  "First Job",
+  "Internship",
+] as const satisfies readonly (typeof experiencesData)[number]["title"][];
+
+export const skillEvidenceCopy = {
+  instruction: "Select a skill to see its evidence.",
+  missing: "No matching project or work source is linked in this portfolio.",
+  description:
+    "Evidence shows documented usage, not a proficiency score. No linked evidence means this portfolio has no matching source; it does not describe ability.",
+  professional: "Used professionally",
+  project: "Used in projects",
+  unlinked: "No linked evidence",
+} as const;

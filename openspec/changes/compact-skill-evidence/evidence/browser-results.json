@@ -1,0 +1,54 @@
+[
+  {
+    "width": 1280,
+    "theme": "light",
+    "skills": 22,
+    "sourceValues": "exact resolver match",
+    "keyboard": "Enter/Space and focus pass",
+    "crossCategory": "single panel",
+    "touch": "44px+ and tap pass",
+    "contrast": "4.5:1+",
+    "overflow": false,
+    "toolkit": "unchanged",
+    "pageErrors": 0
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "skills": 22,
+    "sourceValues": "exact resolver match",
+    "keyboard": "Enter/Space and focus pass",
+    "crossCategory": "single panel",
+    "touch": "44px+ and tap pass",
+    "contrast": "4.5:1+",
+    "overflow": false,
+    "toolkit": "unchanged",
+    "pageErrors": 0
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "skills": 22,
+    "sourceValues": "exact resolver match",
+    "keyboard": "Enter/Space and focus pass",
+    "crossCategory": "single panel",
+    "touch": "44px+ and tap pass",
+    "contrast": "4.5:1+",
+    "overflow": false,
+    "toolkit": "unchanged",
+    "pageErrors": 0
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "skills": 22,
+    "sourceValues": "exact resolver match",
+    "keyboard": "Enter/Space and focus pass",
+    "crossCategory": "single panel",
+    "touch": "44px+ and tap pass",
+    "contrast": "4.5:1+",
+    "overflow": false,
+    "toolkit": "unchanged",
+    "pageErrors": 0
+  }
+]

@@ -124,11 +124,11 @@ A modern, responsive portfolio website built with Next.js 13, featuring a clean 
 
 - Context API for theme management
 - Local state for form handling
-- Server state for data fetching
+- Server state for data fetching: **not applicable** — portfolio content is static TypeScript in `lib/data.ts`, with no remote content source or data-fetching client.
 
 ## Data Flow
 
-1. Server-side data fetching
+1. Static portfolio content imported from `lib/data.ts` for rendering; server-side content fetching is **not applicable**
 2. Client-side state updates
 3. Form submissions to email service
 4. Theme preference persistence

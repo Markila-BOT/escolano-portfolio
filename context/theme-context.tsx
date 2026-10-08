@@ -19,7 +19,6 @@ export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
   const [theme, setTheme] = useState<Theme>("light");
-  const [mounted, setMounted] = useState(false);
 
   const toggleTheme = () => {
     if (theme === "light") {
@@ -42,29 +41,25 @@ export default function ThemeContextProvider({
   };
 
   useEffect(() => {
-    let localTheme: Theme | null = null;
+    let nextTheme: Theme = "light";
     try {
-      localTheme = window.localStorage.getItem("theme") as Theme | null;
-    } catch {
-      localTheme = null;
-    }
-
-    if (localTheme) {
-      setTheme(localTheme);
-
-      if (localTheme === "dark") {
-        document.documentElement.classList.add("dark");
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        nextTheme = "dark";
       }
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
+    } catch {
+      // The deterministic default also works without media-query support.
     }
-    setMounted(true);
+    try {
+      const storedTheme = window.localStorage.getItem("theme");
+      if (storedTheme === "light" || storedTheme === "dark") {
+        nextTheme = storedTheme;
+      }
+    } catch {
+      // Keep the system preference when storage is unavailable.
+    }
+    setTheme(nextTheme);
+    document.documentElement.classList.toggle("dark", nextTheme === "dark");
   }, []);
-
-  if (!mounted) {
-    return null;
-  }
 
   return (
     <ThemeContext.Provider

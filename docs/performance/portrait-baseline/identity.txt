@@ -1,0 +1,144 @@
+URL: http://127.0.0.1:3100/
+UTC timestamp: 2026-10-08T07:19:08Z
+Node: v24.18.0
+Lighthouse: 13.5.0
+Local HEAD: ce39643650e50aab70e26d724396043281492009
+Local build: jSdO7SBsU0IzzE1XH_8OY
+Working directory status:
+ M CHECKLIST.MD
+ M SPECIFICATION.md
+ M actions/sendEmail.ts
+ M components/about.tsx
+ M components/contact.tsx
+ M components/experience.tsx
+ M components/intro.tsx
+ M components/project-case-study.tsx
+ M components/projects.tsx
+ M components/section-divider.tsx
+ M components/skills.tsx
+ M context/theme-context.tsx
+ M docs/technology-convention.md
+ M lib/animations.ts
+ M lib/data.ts
+ D openspec/changes/skills-ai-tools/.openspec.yaml
+ D openspec/changes/skills-ai-tools/design.md
+ D openspec/changes/skills-ai-tools/proposal.md
+ D openspec/changes/skills-ai-tools/specs/skills-ai-tools/spec.md
+ D openspec/changes/skills-ai-tools/tasks.md
+ M openspec/specs/intro-call-to-action/spec.md
+ M package.json
+ M pnpm-lock.yaml
+?? .env.example
+?? components/contact-form.tsx
+?? components/experience-interactive.tsx
+?? components/intro-contact-link.tsx
+?? components/intro-greeting.tsx
+?? components/observed-section.tsx
+?? components/project-description.tsx
+?? components/project-rail.tsx
+?? components/project-video-boundary.tsx
+?? components/project-video-fallback.tsx
+?? components/project-video-frame.tsx
+?? components/project-video.tsx
+?? components/projects-interactive.tsx
+?? components/skill-evidence.tsx
+?? components/skill-selector.tsx
+?? docs/contact-email.md
+?? docs/hiring-path.md
+?? docs/performance/
+?? docs/portfolio-performance.md
+?? docs/portfolio-rendering.md
+?? docs/project-description-layout.md
+?? docs/project-rail.md
+?? docs/skill-evidence.md
+?? lib/project-description-layout.ts
+?? lib/skill-evidence.ts
+?? openspec/changes/archive/2026-10-07-skill-categories/
+?? openspec/changes/archive/2026-10-07-skills-ai-tools/
+?? openspec/changes/archive/2026-10-08-direct-hiring-path/
+?? openspec/changes/archive/2026-10-08-portfolio-performance-audit/
+?? openspec/changes/archive/2026-10-08-reliable-free-contact-email/
+?? openspec/changes/clarify-static-content-state/
+?? openspec/changes/compact-skill-evidence/
+?? openspec/changes/expandable-project-rail/
+?? openspec/changes/pretext-project-descriptions/
+?? openspec/changes/right-size-intro-portrait/
+?? openspec/changes/server-first-portfolio/
+?? openspec/changes/skill-evidence-indicators/
+?? openspec/changes/skill-toolkit/
+?? openspec/specs/contact-email/
+?? openspec/specs/project-media-loading/
+?? openspec/specs/skill-categories/
+?? openspec/specs/skills-ai-tools/
+?? scripts/
+?? tests/
+
+Source hashes:
+48a82e46a00a563e71c22748a4cc8eb5575be4d64fc92631078ee59d50b1ed54  app/favicon.ico
+6dcdaa9411c959d395b4f0820c26088a182d74dbdc5a81b76112b6f7d8528624  app/globals.css
+965be05c8db23d17f4ab4ff96db0be3f7e026fd1eb37fa87ceb4f4198eb4e176  app/layout.tsx
+7ec587f0dd15d18a7a998ad02ef6b99f324bafedc55a9b848dcef98256e2d84d  app/page.tsx
+d868d7869648938ee421aa452a0d69fcdac19cae90aecd88b6b21db0c1762e58  components/about.tsx
+410554aca55eb572bd7a581b78a5c57a96a282a662e41801812747b147a872e6  components/contact-form.tsx
+cb60df54451e0ad27f65707e60f74147943b710bfe9b84a5d992486634087d07  components/contact.tsx
+8252cf721a1be6b24118c21b5de178cccaada98bc5bb5ba02bab87d90a94ce48  components/cv.tsx
+d0bcf842ebdc1f95629ae6b5ac0369981fc04edf9139504ab9488b38f263f315  components/experience-interactive.tsx
+18f4a3098b223cd129760d7a470c6262313b282aeb79512b7960a37418065c82  components/experience-journey-stage.tsx
+c3b6a56ffdbb26ec399e194662f4c3c903fff55af803153e893d1489f7b85bc4  components/experience.tsx
+4a4ef2b5264920ff2f3cb9db3d4e6b5fb5565ec9d7e2ab3d5f8a62cf895e77b5  components/footer.tsx
+9067c5523267492a09a184ee9e9e4a3606d26ff3f8f7f50454b81f935126b9b5  components/header.tsx
+393d45027f265805d1ff3693ab6ae3f05fc30edafaba913016dc99304c97c61f  components/intro-contact-link.tsx
+089cd147f7568bd0f318082229769f5a6fc404f8f9f937f9a1047802bc4c5dc2  components/intro-greeting.tsx
+bf30dab0b553b230921b344d9c09cb2287dbb67beec71be13ec59de7173cccbe  components/intro.tsx
+4955618757a20819454f1a46f246151417a581dbec321551fb339e53abe66bad  components/logo-mark.tsx
+4a23e9baf9692508fea1835c8f98cf21184e520078ed4690b10431a6befed9a8  components/mobile-nav.tsx
+1dc5d3ace9a80841ab15064ef0d4a3697273685f34ee87ae9802e06b0a5dc466  components/observed-section.tsx
+9515d4011a02e37eec4dbfd56e391b90b9307d4bbe15b93dc22a1fdc4cca5106  components/project-build-note.tsx
+f4995a46b2e404b5f75c9ad8d66f3fe8b5436db4950363171d1bd3dba9f05710  components/project-case-study.tsx
+b1fbcc3b4dd05d4e2326e2e70b229cd1255c26b357280e7d464a678bc4e93cae  components/project-description.tsx
+7c14ba297bdd6ffc1566c39ae579f01e3b0e210a4f6a40ccdb09d4e53349a4e0  components/project-rail.tsx
+e3b423093ce5b822f55a846ec4a944b362d12b2b82c8d7f1543f1560a0a523f1  components/project-screenshot-preview.tsx
+c24673769bc6edc9c68ba5e8465c5371385ebf2d3d141daf3c09a3b833a4be8b  components/project-video-boundary.tsx
+61119cd1a820868f1fe591e994689059c32f0bc42d2d7c58bcc34b849a00246e  components/project-video-fallback.tsx
+7124d8ab02d4e629c406dcd0f94e82030c03dd7d4f24e0b9454f10bda8843bc2  components/project-video-frame.tsx
+9a3bb5daab1219e6e10c0e8699b2b122095548d38b2f9122fbfff6439af3b8e1  components/project-video.tsx
+fc1dc9c7475a047134aa11f61cfb982fa4ad605a508e486aa4922a5048964706  components/project.tsx
+a6de856e2b9d8cefc05c0b63bf3627f084ba6d27533749e70e6e2f9ee6157dfe  components/projects-interactive.tsx
+6080a9535695558e21626a32fe215d5f8a327926c9d5177189d801d49028718c  components/projects.tsx
+48407b0ff2c9bdc79a3399adaae98f9493fbc38489c9fef9bf7895c3440faa53  components/role-title-loop.tsx
+c6fb939caac74cb16eb55f932b1ed9295d465710f13d99ea6c3e0f98664cc70d  components/section-divider.tsx
+30f74cc4018a474d20440be03c434d17dd0d452fe35ef8be58a5202fa77cbacf  components/section-heading.tsx
+1213a80f22240f776183520f6f0aed7f49caa1a1e8761e3b0eb6294c72f13d51  components/skill-evidence.tsx
+8bcef0ae1ec85cfbc6ca0bf338fb41bcd37f12b403f165ce788e94131a923f0b  components/skill-selector.tsx
+2363df59526e5db2a720cb67bef26d3e828f3cb29cbde09342bb4dc2dc03beeb  components/skills.tsx
+9e804f866e0b441ef91cfc3ef1833ff76b1626a08be46e6fefe09c36835a3e51  components/sound-switch.tsx
+ca3762e1768e4cd8a222aaa12d65806a9793f587eda8a62b1d62797acc22eb81  components/submit-btn.tsx
+f8819830db80c42cdbedfbab25d1145260f6051aa53eb2b74e86121a3117db87  components/theme-switch.tsx
+13f1a390f922e2c7d96dccb8496f5d552a540ecd90953db516456468ddc12267  components/ui/button.tsx
+79bb26a584af1406e9b78198e5ace4c74edce628c2db2a4250d31b5a0945c1ff  components/ui/card.tsx
+30deb01e2d5cf14ebf3b6b7fdcacd353d92b35a0934912cb833297b3cf635c53  components/ui/carousel.tsx
+0cbfc1a146d6b67bbc55cb99a68b99ad2fa360761249a8ed11111111f7f9b2aa  components/ui/drawer.tsx
+f77dff3cd00b09fc5cac74e3edf78c12d8a313f1cd7fc1b5e634007be4ca0e4c  components/ui/field.tsx
+0ae3fc5221efa240e5a3967dd7f5349ce9a2963e12dca3264080bfc6b14cad42  components/ui/label.tsx
+1f05b3a3c1e7ac7f5b92ff29df7e955fd93d546e49314f5320cd9f2b0a42e892  components/ui/tag-chip.tsx
+9c431988c28cd4f73e0c0e1af4c148751d8dc181d9886e16af4ca6695d76de18  components/ui/text-generate-effect.tsx
+eaa9e1351f4e72cbf99bedf688b530fe9ca37d5ad442a95e815dfedff778e702  components/visitor-notice.tsx
+51da7dc50c5d5ba262fe1a85cf5a16f363739ab06b0f5bfb9da5b66c132d946c  context/active-section-context.tsx
+a7c76c188dcf2978c803971b416e26474461a13f1ae0e634ef3b456a7afa2f98  context/sound-context.tsx
+cf31afdf89ab644d979f80034ac58ca9ce54dd0b386b1c8bccfbb62c78cd7ec9  context/theme-context.tsx
+8de4d68dfbc9d273436ef8ca35b85802c2ac5ab4e43975fb0087e53d8682e378  hooks/useMediaQuery.ts
+ef401e9e56d43b699d279985cae0272e2b61cb89721ba58190b1e5a174be1e71  lib/animations.ts
+d53c4441de4b5a28b11b824b6c549793911ddc6528fc5b7e6d2749699101b1e3  lib/data.ts
+c65f7462c7846a14c341969519c2592607411f5156cf7da2c38852a31c87ceb1  lib/experience-journey.ts
+7ff9077688f9d9560fb6afa4665834225a4c049969b14e56b98841901d1cbf39  lib/hooks.ts
+4c109f84f770d8e0602c5eea66578ef659cca589a31a9490a7d978e011c3f540  lib/interaction-sprite.ts
+fe772f6d7d50f1a6d37e131ae7b8fd454393b13fbbb8168beccfa67352eb5954  lib/journey-character.ts
+45d8fed4d2885315d45640baab75e1b70b3ef37b944dd4ae3acca3aa7944dfff  lib/journey-flags.ts
+29e241977fb59bafc3fcff03a2a3a53d04129a443621b7b1ce4069f81aa79436  lib/journey-scene-resources.ts
+59f76298946058f83de75fcdf20ec3ed5369b773ef1effd18f619d1e5867fa8c  lib/journey-scene-types.ts
+59940e2398c13d1dd702dbc75fa833b265fa64afc8532cdcfc8517c716ecffab  lib/journey-scenery.ts
+e5b6e615c43d97a3dc60a1d99f3ad02b4c37a766a4d6a0d6a3d7d5adab176cf5  lib/project-description-layout.ts
+3686fa74e621504dbf413d30098386c6fc5e40332c8f71febc2b46089f67159f  lib/skill-evidence.ts
+83a94d8809e90346863ccb9ac296b46ffcbf95096eb63b87ad3ef6b5e6ef304a  lib/types.ts
+74fcbbde6a4770f55a25a858592f77d5e445f4180104f17190bb3bc43e2d0dbd  lib/utils.ts
+b85ba41d0a17bd9993855a16dfa24e9f5adc6742b555d8080f76e55036aebfe7  lib/visitor.ts

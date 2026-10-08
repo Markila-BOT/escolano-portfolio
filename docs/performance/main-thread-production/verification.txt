@@ -1,0 +1,24 @@
+Audit: production-main-thread-audit, 2026-10-08
+Served snapshot BUILD_ID: s0L_unizYq2n1AohnOtqg
+Served URL: http://127.0.0.1:3100/
+Node: 24.18.0; Next: 14.2.35; Lighthouse: 13.5.0; Chrome: 154.0.0.0
+
+PASS: isolated production build, lint/type checks, static generation
+PASS: tests/portfolio-html.py against snapshot .next/server/app/index.html
+PASS: source.sha256 verified in snapshot and checkout before/after measurement
+PASS: original .next file hashes unchanged through build and audit
+PASS: original application/assets/config/dependency Git diff unchanged
+PASS: six expected JSON reports, intended profiles, finite metrics
+PASS: no report runtimeError or runWarnings; main-thread score 1 in all reports
+PASS: all observed scripts are successful production resources present in snapshot
+PASS: summary regeneration byte-identical to summary.json
+PASS: raw main-thread numeric values equal summary values
+PASS: six focused Node tests; shell syntax and Prettier checks
+PASS: agent-owned production session stopped; no port-3100 listener afterward
+PASS: agent-owned /private/tmp/portfolio-main-thread.hwwfCz removed
+PASS: original port-3000 node PID 11785 still listening, HTTP 200 after cleanup
+
+Port-3000 HTTP availability check can cause normal development cache updates;
+hash equality was checked before that final request. No build ran in the checkout.
+No private environment files copied, contact submission, commit, push or deployment.
+See ../../main-thread-audit.md for limitations and deployed retest handoff.

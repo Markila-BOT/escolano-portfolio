@@ -1,0 +1,50 @@
+[
+  {
+    "width": 1280,
+    "theme": "light",
+    "rows": 22,
+    "disclosures": 15,
+    "sourceLists": "exact match",
+    "keyboard": "Enter/Space and focus pass",
+    "touch": "44px+",
+    "independent": "pass",
+    "toolkit": "preserved",
+    "overflow": false
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "rows": 22,
+    "disclosures": 15,
+    "sourceLists": "exact match",
+    "keyboard": "Enter/Space and focus pass",
+    "touch": "44px+",
+    "independent": "pass",
+    "toolkit": "preserved",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "rows": 22,
+    "disclosures": 15,
+    "sourceLists": "exact match",
+    "keyboard": "Enter/Space and focus pass",
+    "touch": "44px+",
+    "independent": "pass",
+    "toolkit": "preserved",
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "rows": 22,
+    "disclosures": 15,
+    "sourceLists": "exact match",
+    "keyboard": "Enter/Space and focus pass",
+    "touch": "44px+",
+    "independent": "pass",
+    "toolkit": "preserved",
+    "overflow": false
+  }
+]
