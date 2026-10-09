@@ -23,6 +23,34 @@ function statistics(values) {
   };
 }
 
+function lcpEvidence(report) {
+  const items = report.audits?.["lcp-breakdown-insight"]?.details?.items || [];
+  const node = items.find((item) => item.type === "node");
+  const subparts = items.find((item) => item.type === "table")?.items || [];
+  const fonts = (
+    report.audits?.["network-requests"]?.details?.items || []
+  ).filter((item) => item.resourceType === "Font");
+  return {
+    node: node
+      ? {
+          label: node.nodeLabel,
+          selector: node.selector,
+          snippet: node.snippet,
+        }
+      : null,
+    observedSubparts: subparts.map(({ subpart, duration }) => ({
+      subpart,
+      duration,
+    })),
+    fonts: fonts.map(({ url, transferSize, resourceSize, isLinkPreload }) => ({
+      url,
+      transferSize,
+      resourceSize,
+      isLinkPreload,
+    })),
+  };
+}
+
 function summarizeReports(directory) {
   const summary = {};
   for (const profile of ["mobile", "desktop"]) {
@@ -124,6 +152,7 @@ function summarizeReports(directory) {
             0,
           ),
         },
+        lcpEvidence: lcpEvidence(report),
         mainThreadScore: breakdown.score,
         mainThreadWarning: breakdown.score < 1,
         categories,
@@ -176,7 +205,7 @@ function summarizeReports(directory) {
   return summary;
 }
 
-module.exports = { statistics, summarizeReports };
+module.exports = { statistics, summarizeReports, lcpEvidence };
 
 if (require.main === module) {
   try {

@@ -1,0 +1,20 @@
+{
+  "headingOpacity": "1",
+  "region": {
+    "bottom": 612,
+    "height": 252,
+    "left": 32,
+    "right": 288,
+    "top": 360,
+    "width": 256,
+    "x": 32,
+    "y": 360
+  },
+  "role": [
+    {
+      "opacity": "1",
+      "text": "Senior Software Engineer"
+    }
+  ],
+  "contactUrl": "http://127.0.0.1:3103/?mode=nojs#contact"
+}

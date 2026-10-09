@@ -1,0 +1,1932 @@
+{
+  "mobile": {
+    "runs": [
+      {
+        "filename": "mobile-1.json",
+        "fetchTime": "2026-10-08T22:20:11.262Z",
+        "url": "http://127.0.0.1:3104/",
+        "settings": {
+          "output": [
+            "json"
+          ],
+          "maxWaitForFcp": 30000,
+          "maxWaitForLoad": 45000,
+          "pauseAfterFcpMs": 1000,
+          "pauseAfterLoadMs": 1000,
+          "networkQuietThresholdMs": 1000,
+          "cpuQuietThresholdMs": 1000,
+          "formFactor": "mobile",
+          "throttling": {
+            "rttMs": 150,
+            "throughputKbps": 1638.4,
+            "requestLatencyMs": 562.5,
+            "downloadThroughputKbps": 1474.5600000000002,
+            "uploadThroughputKbps": 675,
+            "cpuSlowdownMultiplier": 4
+          },
+          "throttlingMethod": "simulate",
+          "screenEmulation": {
+            "mobile": true,
+            "width": 412,
+            "height": 823,
+            "deviceScaleFactor": 1.75,
+            "disabled": false
+          },
+          "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+          "auditMode": false,
+          "gatherMode": false,
+          "clearStorageTypes": [
+            "file_systems",
+            "shader_cache",
+            "service_workers",
+            "cache_storage"
+          ],
+          "disableStorageReset": false,
+          "debugNavigation": false,
+          "channel": "cli",
+          "usePassiveGathering": false,
+          "disableFullPageScreenshot": false,
+          "skipAboutBlank": false,
+          "blankPage": "about:blank",
+          "ignoreStatusCode": false,
+          "locale": "en-US",
+          "blockedUrlPatterns": null,
+          "additionalTraceCategories": null,
+          "extraHeaders": null,
+          "precomputedLanternData": null,
+          "onlyAudits": null,
+          "onlyCategories": [
+            "performance"
+          ],
+          "skipAudits": null
+        },
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "metrics": {
+          "mainThreadMs": 1010.1520000000023,
+          "tbtMs": 6.5,
+          "fcpMs": 1227.5141,
+          "lcpMs": 3477.5141000000003,
+          "cls": 0,
+          "scriptTransferBytes": 262462,
+          "scriptResourceBytes": 782050
+        },
+        "lcpEvidence": {
+          "node": {
+            "label": "Senior Software Engineer",
+            "selector": "section#home > h1.mb-10 > strong.relative > span.absolute",
+            "snippet": "<span aria-hidden=\"true\" class=\"absolute inset-0 flex items-center justify-center\" style=\"opacity:1;transform:none\">"
+          },
+          "observedSubparts": [
+            {
+              "subpart": "timeToFirstByte",
+              "duration": 119.232
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "duration": 79.781
+            }
+          ],
+          "fonts": [
+            {
+              "url": "http://127.0.0.1:3104/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+              "transferSize": 69953,
+              "resourceSize": 69652,
+              "isLinkPreload": true
+            },
+            {
+              "url": "http://127.0.0.1:3104/_next/static/media/723e11e5093b8e80.p.woff2",
+              "transferSize": 71669,
+              "resourceSize": 71368,
+              "isLinkPreload": true
+            }
+          ]
+        },
+        "mainThreadScore": 1,
+        "mainThreadWarning": false,
+        "categories": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 354.3320000000007
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 298.2480000000003
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 197.252
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 75.67600000000145
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 56.195999999999984
+          },
+          {
+            "group": "parseHTML",
+            "groupLabel": "Parse HTML & CSS",
+            "duration": 20.124000000000002
+          },
+          {
+            "group": "garbageCollection",
+            "groupLabel": "Garbage Collection",
+            "duration": 8.323999999999998
+          }
+        ],
+        "topScripts": [
+          {
+            "url": "http://127.0.0.1:3104/",
+            "total": 271.8360000000005,
+            "scripting": 7.992000000000001,
+            "scriptParseCompile": 8.019999999999998
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4902-b03d7df100afb8f3.js",
+            "total": 249.67199999999912,
+            "scripting": 201.84799999999908,
+            "scriptParseCompile": 7.704
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3346-e2e164183f23a82f.js",
+            "total": 208.89599999999976,
+            "scripting": 54.53199999999999,
+            "scriptParseCompile": 10.908
+          },
+          {
+            "url": "Unattributable",
+            "total": 128.30800000000033,
+            "scripting": 5.868,
+            "scriptParseCompile": 0
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/1081f1e7-f9bb05a4d931bf08.js",
+            "total": 99.81600000000034,
+            "scripting": 68.14400000000033,
+            "scriptParseCompile": 10.116
+          }
+        ],
+        "scriptRequests": [
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/webpack-89384221ee794a5a.js",
+            "transferSize": 2784,
+            "resourceSize": 4825
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/1081f1e7-f9bb05a4d931bf08.js",
+            "transferSize": 54178,
+            "resourceSize": 172835
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4902-b03d7df100afb8f3.js",
+            "transferSize": 32257,
+            "resourceSize": 124383
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/main-app-c2bbabc94d9dca84.js",
+            "transferSize": 813,
+            "resourceSize": 466
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/349eb581-561d9e8764abe348.js",
+            "transferSize": 1555,
+            "resourceSize": 4024
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/99562e22-696d1a3bf06df984.js",
+            "transferSize": 22535,
+            "resourceSize": 55208
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/8a090de9-893c1ae3763d01c6.js",
+            "transferSize": 955,
+            "resourceSize": 1101
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/e9e11d25-21125a35b2020274.js",
+            "transferSize": 930,
+            "resourceSize": 1802
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/fb84bacf-c30538b73bf7d430.js",
+            "transferSize": 7555,
+            "resourceSize": 18514
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/69912e11-4ebd237b2d55fdc6.js",
+            "transferSize": 1050,
+            "resourceSize": 1347
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4c279ef9-1ae1105913503b6e.js",
+            "transferSize": 1043,
+            "resourceSize": 696
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/1c7cfde1-efb21dec26b42f6a.js",
+            "transferSize": 7317,
+            "resourceSize": 24228
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/c87eb371-4b04e40c42390e08.js",
+            "transferSize": 843,
+            "resourceSize": 1139
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3346-e2e164183f23a82f.js",
+            "transferSize": 60377,
+            "resourceSize": 185114
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3606-b14db0bf84aae939.js",
+            "transferSize": 19273,
+            "resourceSize": 52699
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/9406-3f59cf172519f1a4.js",
+            "transferSize": 12353,
+            "resourceSize": 37613
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/app/page-91928e43caf25d49.js",
+            "transferSize": 9935,
+            "resourceSize": 28347
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/9d733233-78bb8ed14f6b817a.js",
+            "transferSize": 1459,
+            "resourceSize": 2886
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/7190-6c968ffa7de97c4f.js",
+            "transferSize": 1825,
+            "resourceSize": 3131
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/772-198c3d926bd0e427.js",
+            "transferSize": 12268,
+            "resourceSize": 35572
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/app/layout-8877a72288a6ecfe.js",
+            "transferSize": 11157,
+            "resourceSize": 26120
+          }
+        ]
+      },
+      {
+        "filename": "mobile-2.json",
+        "fetchTime": "2026-10-08T22:20:22.735Z",
+        "url": "http://127.0.0.1:3104/",
+        "settings": {
+          "output": [
+            "json"
+          ],
+          "maxWaitForFcp": 30000,
+          "maxWaitForLoad": 45000,
+          "pauseAfterFcpMs": 1000,
+          "pauseAfterLoadMs": 1000,
+          "networkQuietThresholdMs": 1000,
+          "cpuQuietThresholdMs": 1000,
+          "formFactor": "mobile",
+          "throttling": {
+            "rttMs": 150,
+            "throughputKbps": 1638.4,
+            "requestLatencyMs": 562.5,
+            "downloadThroughputKbps": 1474.5600000000002,
+            "uploadThroughputKbps": 675,
+            "cpuSlowdownMultiplier": 4
+          },
+          "throttlingMethod": "simulate",
+          "screenEmulation": {
+            "mobile": true,
+            "width": 412,
+            "height": 823,
+            "deviceScaleFactor": 1.75,
+            "disabled": false
+          },
+          "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+          "auditMode": false,
+          "gatherMode": false,
+          "clearStorageTypes": [
+            "file_systems",
+            "shader_cache",
+            "service_workers",
+            "cache_storage"
+          ],
+          "disableStorageReset": false,
+          "debugNavigation": false,
+          "channel": "cli",
+          "usePassiveGathering": false,
+          "disableFullPageScreenshot": false,
+          "skipAboutBlank": false,
+          "blankPage": "about:blank",
+          "ignoreStatusCode": false,
+          "locale": "en-US",
+          "blockedUrlPatterns": null,
+          "additionalTraceCategories": null,
+          "extraHeaders": null,
+          "precomputedLanternData": null,
+          "onlyAudits": null,
+          "onlyCategories": [
+            "performance"
+          ],
+          "skipAudits": null
+        },
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "metrics": {
+          "mainThreadMs": 819.6519999999963,
+          "tbtMs": 0,
+          "fcpMs": 1205.0624,
+          "lcpMs": 4367.7184,
+          "cls": 0,
+          "scriptTransferBytes": 262462,
+          "scriptResourceBytes": 782050
+        },
+        "lcpEvidence": {
+          "node": {
+            "label": "Senior Software Engineer",
+            "selector": "section#home > h1.mb-10 > strong.relative > span.absolute",
+            "snippet": "<span aria-hidden=\"true\" class=\"absolute inset-0 flex items-center justify-center\" style=\"opacity:1;transform:none\">"
+          },
+          "observedSubparts": [
+            {
+              "subpart": "timeToFirstByte",
+              "duration": 10.596
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "duration": 53.66
+            }
+          ],
+          "fonts": [
+            {
+              "url": "http://127.0.0.1:3104/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+              "transferSize": 69953,
+              "resourceSize": 69652,
+              "isLinkPreload": true
+            },
+            {
+              "url": "http://127.0.0.1:3104/_next/static/media/723e11e5093b8e80.p.woff2",
+              "transferSize": 71669,
+              "resourceSize": 71368,
+              "isLinkPreload": true
+            }
+          ]
+        },
+        "mainThreadScore": 1,
+        "mainThreadWarning": false,
+        "categories": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 273.24399999999883
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 233.57999999999828
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 177.14
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 60.19599999999915
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 52.31599999999998
+          },
+          {
+            "group": "parseHTML",
+            "groupLabel": "Parse HTML & CSS",
+            "duration": 12.527999999999999
+          },
+          {
+            "group": "garbageCollection",
+            "groupLabel": "Garbage Collection",
+            "duration": 10.647999999999985
+          }
+        ],
+        "topScripts": [
+          {
+            "url": "http://127.0.0.1:3104/",
+            "total": 224.2840000000001,
+            "scripting": 4.9,
+            "scriptParseCompile": 7.123999999999997
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4902-b03d7df100afb8f3.js",
+            "total": 199.4400000000009,
+            "scripting": 164.0800000000009,
+            "scriptParseCompile": 7.311999999999999
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3346-e2e164183f23a82f.js",
+            "total": 198.4319999999998,
+            "scripting": 51.06000000000005,
+            "scriptParseCompile": 10.256
+          },
+          {
+            "url": "Unattributable",
+            "total": 95.66399999999962,
+            "scripting": 5.827999999999999,
+            "scriptParseCompile": 0
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/1081f1e7-f9bb05a4d931bf08.js",
+            "total": 65.1640000000002,
+            "scripting": 38.10000000000021,
+            "scriptParseCompile": 9.488
+          }
+        ],
+        "scriptRequests": [
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/webpack-89384221ee794a5a.js",
+            "transferSize": 2784,
+            "resourceSize": 4825
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/1081f1e7-f9bb05a4d931bf08.js",
+            "transferSize": 54178,
+            "resourceSize": 172835
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4902-b03d7df100afb8f3.js",
+            "transferSize": 32257,
+            "resourceSize": 124383
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/main-app-c2bbabc94d9dca84.js",
+            "transferSize": 813,
+            "resourceSize": 466
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/349eb581-561d9e8764abe348.js",
+            "transferSize": 1555,
+            "resourceSize": 4024
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/99562e22-696d1a3bf06df984.js",
+            "transferSize": 22535,
+            "resourceSize": 55208
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/8a090de9-893c1ae3763d01c6.js",
+            "transferSize": 955,
+            "resourceSize": 1101
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/e9e11d25-21125a35b2020274.js",
+            "transferSize": 930,
+            "resourceSize": 1802
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/fb84bacf-c30538b73bf7d430.js",
+            "transferSize": 7555,
+            "resourceSize": 18514
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/69912e11-4ebd237b2d55fdc6.js",
+            "transferSize": 1050,
+            "resourceSize": 1347
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4c279ef9-1ae1105913503b6e.js",
+            "transferSize": 1043,
+            "resourceSize": 696
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/1c7cfde1-efb21dec26b42f6a.js",
+            "transferSize": 7317,
+            "resourceSize": 24228
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/c87eb371-4b04e40c42390e08.js",
+            "transferSize": 843,
+            "resourceSize": 1139
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3346-e2e164183f23a82f.js",
+            "transferSize": 60377,
+            "resourceSize": 185114
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3606-b14db0bf84aae939.js",
+            "transferSize": 19273,
+            "resourceSize": 52699
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/9406-3f59cf172519f1a4.js",
+            "transferSize": 12353,
+            "resourceSize": 37613
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/app/page-91928e43caf25d49.js",
+            "transferSize": 9935,
+            "resourceSize": 28347
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/9d733233-78bb8ed14f6b817a.js",
+            "transferSize": 1459,
+            "resourceSize": 2886
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/7190-6c968ffa7de97c4f.js",
+            "transferSize": 1825,
+            "resourceSize": 3131
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/772-198c3d926bd0e427.js",
+            "transferSize": 12268,
+            "resourceSize": 35572
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/app/layout-8877a72288a6ecfe.js",
+            "transferSize": 11157,
+            "resourceSize": 26120
+          }
+        ]
+      },
+      {
+        "filename": "mobile-3.json",
+        "fetchTime": "2026-10-08T22:20:33.366Z",
+        "url": "http://127.0.0.1:3104/",
+        "settings": {
+          "output": [
+            "json"
+          ],
+          "maxWaitForFcp": 30000,
+          "maxWaitForLoad": 45000,
+          "pauseAfterFcpMs": 1000,
+          "pauseAfterLoadMs": 1000,
+          "networkQuietThresholdMs": 1000,
+          "cpuQuietThresholdMs": 1000,
+          "formFactor": "mobile",
+          "throttling": {
+            "rttMs": 150,
+            "throughputKbps": 1638.4,
+            "requestLatencyMs": 562.5,
+            "downloadThroughputKbps": 1474.5600000000002,
+            "uploadThroughputKbps": 675,
+            "cpuSlowdownMultiplier": 4
+          },
+          "throttlingMethod": "simulate",
+          "screenEmulation": {
+            "mobile": true,
+            "width": 412,
+            "height": 823,
+            "deviceScaleFactor": 1.75,
+            "disabled": false
+          },
+          "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+          "auditMode": false,
+          "gatherMode": false,
+          "clearStorageTypes": [
+            "file_systems",
+            "shader_cache",
+            "service_workers",
+            "cache_storage"
+          ],
+          "disableStorageReset": false,
+          "debugNavigation": false,
+          "channel": "cli",
+          "usePassiveGathering": false,
+          "disableFullPageScreenshot": false,
+          "skipAboutBlank": false,
+          "blankPage": "about:blank",
+          "ignoreStatusCode": false,
+          "locale": "en-US",
+          "blockedUrlPatterns": null,
+          "additionalTraceCategories": null,
+          "extraHeaders": null,
+          "precomputedLanternData": null,
+          "onlyAudits": null,
+          "onlyCategories": [
+            "performance"
+          ],
+          "skipAudits": null
+        },
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "metrics": {
+          "mainThreadMs": 836.0439999999941,
+          "tbtMs": 0,
+          "fcpMs": 1205.9751,
+          "lcpMs": 4370.91285,
+          "cls": 0,
+          "scriptTransferBytes": 262462,
+          "scriptResourceBytes": 782050
+        },
+        "lcpEvidence": {
+          "node": {
+            "label": "Senior Software Engineer",
+            "selector": "section#home > h1.mb-10 > strong.relative > span.absolute",
+            "snippet": "<span aria-hidden=\"true\" class=\"absolute inset-0 flex items-center justify-center\" style=\"opacity:1;transform:none\">"
+          },
+          "observedSubparts": [
+            {
+              "subpart": "timeToFirstByte",
+              "duration": 10.494
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "duration": 67.294
+            }
+          ],
+          "fonts": [
+            {
+              "url": "http://127.0.0.1:3104/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+              "transferSize": 69953,
+              "resourceSize": 69652,
+              "isLinkPreload": true
+            },
+            {
+              "url": "http://127.0.0.1:3104/_next/static/media/723e11e5093b8e80.p.woff2",
+              "transferSize": 71669,
+              "resourceSize": 71368,
+              "isLinkPreload": true
+            }
+          ]
+        },
+        "mainThreadScore": 1,
+        "mainThreadWarning": false,
+        "categories": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 284.8639999999974
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 232.40399999999724
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 183.076
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 63.42399999999931
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 52.151999999999994
+          },
+          {
+            "group": "parseHTML",
+            "groupLabel": "Parse HTML & CSS",
+            "duration": 12.784
+          },
+          {
+            "group": "garbageCollection",
+            "groupLabel": "Garbage Collection",
+            "duration": 7.339999999999996
+          }
+        ],
+        "topScripts": [
+          {
+            "url": "http://127.0.0.1:3104/",
+            "total": 234.67200000000014,
+            "scripting": 6.007999999999999,
+            "scriptParseCompile": 7.347999999999997
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3346-e2e164183f23a82f.js",
+            "total": 208.78399999999982,
+            "scripting": 51.43200000000006,
+            "scriptParseCompile": 10.203999999999999
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4902-b03d7df100afb8f3.js",
+            "total": 204.4440000000015,
+            "scripting": 169.8680000000015,
+            "scriptParseCompile": 6.9239999999999995
+          },
+          {
+            "url": "Unattributable",
+            "total": 78.77199999999942,
+            "scripting": 5.68,
+            "scriptParseCompile": 0
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/1081f1e7-f9bb05a4d931bf08.js",
+            "total": 69.80000000000028,
+            "scripting": 40.324000000000275,
+            "scriptParseCompile": 9.568
+          }
+        ],
+        "scriptRequests": [
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/webpack-89384221ee794a5a.js",
+            "transferSize": 2784,
+            "resourceSize": 4825
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/1081f1e7-f9bb05a4d931bf08.js",
+            "transferSize": 54178,
+            "resourceSize": 172835
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4902-b03d7df100afb8f3.js",
+            "transferSize": 32257,
+            "resourceSize": 124383
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/main-app-c2bbabc94d9dca84.js",
+            "transferSize": 813,
+            "resourceSize": 466
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/349eb581-561d9e8764abe348.js",
+            "transferSize": 1555,
+            "resourceSize": 4024
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/99562e22-696d1a3bf06df984.js",
+            "transferSize": 22535,
+            "resourceSize": 55208
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/8a090de9-893c1ae3763d01c6.js",
+            "transferSize": 955,
+            "resourceSize": 1101
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/e9e11d25-21125a35b2020274.js",
+            "transferSize": 930,
+            "resourceSize": 1802
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/fb84bacf-c30538b73bf7d430.js",
+            "transferSize": 7555,
+            "resourceSize": 18514
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/69912e11-4ebd237b2d55fdc6.js",
+            "transferSize": 1050,
+            "resourceSize": 1347
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4c279ef9-1ae1105913503b6e.js",
+            "transferSize": 1043,
+            "resourceSize": 696
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/1c7cfde1-efb21dec26b42f6a.js",
+            "transferSize": 7317,
+            "resourceSize": 24228
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/c87eb371-4b04e40c42390e08.js",
+            "transferSize": 843,
+            "resourceSize": 1139
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3346-e2e164183f23a82f.js",
+            "transferSize": 60377,
+            "resourceSize": 185114
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3606-b14db0bf84aae939.js",
+            "transferSize": 19273,
+            "resourceSize": 52699
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/9406-3f59cf172519f1a4.js",
+            "transferSize": 12353,
+            "resourceSize": 37613
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/app/page-91928e43caf25d49.js",
+            "transferSize": 9935,
+            "resourceSize": 28347
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/9d733233-78bb8ed14f6b817a.js",
+            "transferSize": 1459,
+            "resourceSize": 2886
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/7190-6c968ffa7de97c4f.js",
+            "transferSize": 1825,
+            "resourceSize": 3131
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/772-198c3d926bd0e427.js",
+            "transferSize": 12268,
+            "resourceSize": 35572
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/app/layout-8877a72288a6ecfe.js",
+            "transferSize": 11157,
+            "resourceSize": 26120
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "mainThreadMs": {
+        "values": [
+          1010.1520000000023,
+          819.6519999999963,
+          836.0439999999941
+        ],
+        "median": 836.0439999999941,
+        "min": 819.6519999999963,
+        "max": 1010.1520000000023
+      },
+      "tbtMs": {
+        "values": [
+          6.5,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 6.5
+      },
+      "fcpMs": {
+        "values": [
+          1227.5141,
+          1205.0624,
+          1205.9751
+        ],
+        "median": 1205.9751,
+        "min": 1205.0624,
+        "max": 1227.5141
+      },
+      "lcpMs": {
+        "values": [
+          3477.5141000000003,
+          4367.7184,
+          4370.91285
+        ],
+        "median": 4367.7184,
+        "min": 3477.5141000000003,
+        "max": 4370.91285
+      },
+      "cls": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "scriptTransferBytes": {
+        "values": [
+          262462,
+          262462,
+          262462
+        ],
+        "median": 262462,
+        "min": 262462,
+        "max": 262462
+      },
+      "scriptResourceBytes": {
+        "values": [
+          782050,
+          782050,
+          782050
+        ],
+        "median": 782050,
+        "min": 782050,
+        "max": 782050
+      }
+    },
+    "categories": {
+      "scriptEvaluation": {
+        "values": [
+          354.3320000000007,
+          273.24399999999883,
+          284.8639999999974
+        ],
+        "median": 284.8639999999974,
+        "min": 273.24399999999883,
+        "max": 354.3320000000007
+      },
+      "other": {
+        "values": [
+          298.2480000000003,
+          233.57999999999828,
+          232.40399999999724
+        ],
+        "median": 233.57999999999828,
+        "min": 232.40399999999724,
+        "max": 298.2480000000003
+      },
+      "styleLayout": {
+        "values": [
+          197.252,
+          177.14,
+          183.076
+        ],
+        "median": 183.076,
+        "min": 177.14,
+        "max": 197.252
+      },
+      "paintCompositeRender": {
+        "values": [
+          75.67600000000145,
+          60.19599999999915,
+          63.42399999999931
+        ],
+        "median": 63.42399999999931,
+        "min": 60.19599999999915,
+        "max": 75.67600000000145
+      },
+      "scriptParseCompile": {
+        "values": [
+          56.195999999999984,
+          52.31599999999998,
+          52.151999999999994
+        ],
+        "median": 52.31599999999998,
+        "min": 52.151999999999994,
+        "max": 56.195999999999984
+      },
+      "parseHTML": {
+        "values": [
+          20.124000000000002,
+          12.527999999999999,
+          12.784
+        ],
+        "median": 12.784,
+        "min": 12.527999999999999,
+        "max": 20.124000000000002
+      },
+      "garbageCollection": {
+        "values": [
+          8.323999999999998,
+          10.647999999999985,
+          7.339999999999996
+        ],
+        "median": 8.323999999999998,
+        "min": 7.339999999999996,
+        "max": 10.647999999999985
+      }
+    },
+    "warningCount": 0
+  },
+  "desktop": {
+    "runs": [
+      {
+        "filename": "desktop-1.json",
+        "fetchTime": "2026-10-08T22:20:43.993Z",
+        "url": "http://127.0.0.1:3104/",
+        "settings": {
+          "output": [
+            "json"
+          ],
+          "maxWaitForFcp": 30000,
+          "maxWaitForLoad": 45000,
+          "pauseAfterFcpMs": 1000,
+          "pauseAfterLoadMs": 1000,
+          "networkQuietThresholdMs": 1000,
+          "cpuQuietThresholdMs": 1000,
+          "formFactor": "desktop",
+          "throttling": {
+            "rttMs": 40,
+            "throughputKbps": 10240,
+            "requestLatencyMs": 0,
+            "downloadThroughputKbps": 0,
+            "uploadThroughputKbps": 0,
+            "cpuSlowdownMultiplier": 1
+          },
+          "throttlingMethod": "simulate",
+          "screenEmulation": {
+            "mobile": false,
+            "width": 1350,
+            "height": 940,
+            "deviceScaleFactor": 1,
+            "disabled": false
+          },
+          "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+          "auditMode": false,
+          "gatherMode": false,
+          "clearStorageTypes": [
+            "file_systems",
+            "shader_cache",
+            "service_workers",
+            "cache_storage"
+          ],
+          "disableStorageReset": false,
+          "debugNavigation": false,
+          "channel": "cli",
+          "usePassiveGathering": false,
+          "disableFullPageScreenshot": false,
+          "skipAboutBlank": false,
+          "blankPage": "about:blank",
+          "ignoreStatusCode": false,
+          "locale": "en-US",
+          "blockedUrlPatterns": null,
+          "additionalTraceCategories": null,
+          "extraHeaders": null,
+          "precomputedLanternData": null,
+          "onlyAudits": null,
+          "onlyCategories": [
+            "performance"
+          ],
+          "skipAudits": null
+        },
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "metrics": {
+          "mainThreadMs": 210.9359999999995,
+          "tbtMs": 0,
+          "fcpMs": 328.3744,
+          "lcpMs": 860.9359999999998,
+          "cls": 0,
+          "scriptTransferBytes": 262462,
+          "scriptResourceBytes": 782050
+        },
+        "lcpEvidence": {
+          "node": {
+            "label": "Senior Software Engineer",
+            "selector": "section#home > h1.mb-10 > strong.relative > span.absolute",
+            "snippet": "<span aria-hidden=\"true\" class=\"absolute inset-0 flex items-center justify-center\" style=\"opacity:1;transform:none\">"
+          },
+          "observedSubparts": [
+            {
+              "subpart": "timeToFirstByte",
+              "duration": 8.997
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "duration": 60.027
+            }
+          ],
+          "fonts": [
+            {
+              "url": "http://127.0.0.1:3104/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+              "transferSize": 69953,
+              "resourceSize": 69652,
+              "isLinkPreload": true
+            },
+            {
+              "url": "http://127.0.0.1:3104/_next/static/media/723e11e5093b8e80.p.woff2",
+              "transferSize": 71669,
+              "resourceSize": 71368,
+              "isLinkPreload": true
+            }
+          ]
+        },
+        "mainThreadScore": 1,
+        "mainThreadWarning": false,
+        "categories": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 70.7539999999998
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 58.047999999999874
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 47.273999999999994
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 16.08699999999982
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 13.781
+          },
+          {
+            "group": "parseHTML",
+            "groupLabel": "Parse HTML & CSS",
+            "duration": 3.0929999999999995
+          },
+          {
+            "group": "garbageCollection",
+            "groupLabel": "Garbage Collection",
+            "duration": 1.8989999999999991
+          }
+        ],
+        "topScripts": [
+          {
+            "url": "http://127.0.0.1:3104/",
+            "total": 62.31900000000005,
+            "scripting": 1.6260000000000001,
+            "scriptParseCompile": 1.873999999999999
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3346-e2e164183f23a82f.js",
+            "total": 50.73599999999994,
+            "scripting": 13.228999999999997,
+            "scriptParseCompile": 2.7379999999999995
+          }
+        ],
+        "scriptRequests": [
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/webpack-89384221ee794a5a.js",
+            "transferSize": 2784,
+            "resourceSize": 4825
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/1081f1e7-f9bb05a4d931bf08.js",
+            "transferSize": 54178,
+            "resourceSize": 172835
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4902-b03d7df100afb8f3.js",
+            "transferSize": 32257,
+            "resourceSize": 124383
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/main-app-c2bbabc94d9dca84.js",
+            "transferSize": 813,
+            "resourceSize": 466
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/349eb581-561d9e8764abe348.js",
+            "transferSize": 1555,
+            "resourceSize": 4024
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/99562e22-696d1a3bf06df984.js",
+            "transferSize": 22535,
+            "resourceSize": 55208
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/8a090de9-893c1ae3763d01c6.js",
+            "transferSize": 955,
+            "resourceSize": 1101
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/e9e11d25-21125a35b2020274.js",
+            "transferSize": 930,
+            "resourceSize": 1802
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/fb84bacf-c30538b73bf7d430.js",
+            "transferSize": 7555,
+            "resourceSize": 18514
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/69912e11-4ebd237b2d55fdc6.js",
+            "transferSize": 1050,
+            "resourceSize": 1347
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4c279ef9-1ae1105913503b6e.js",
+            "transferSize": 1043,
+            "resourceSize": 696
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/1c7cfde1-efb21dec26b42f6a.js",
+            "transferSize": 7317,
+            "resourceSize": 24228
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/c87eb371-4b04e40c42390e08.js",
+            "transferSize": 843,
+            "resourceSize": 1139
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3346-e2e164183f23a82f.js",
+            "transferSize": 60377,
+            "resourceSize": 185114
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3606-b14db0bf84aae939.js",
+            "transferSize": 19273,
+            "resourceSize": 52699
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/9406-3f59cf172519f1a4.js",
+            "transferSize": 12353,
+            "resourceSize": 37613
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/app/page-91928e43caf25d49.js",
+            "transferSize": 9935,
+            "resourceSize": 28347
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/9d733233-78bb8ed14f6b817a.js",
+            "transferSize": 1459,
+            "resourceSize": 2886
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/7190-6c968ffa7de97c4f.js",
+            "transferSize": 1825,
+            "resourceSize": 3131
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/772-198c3d926bd0e427.js",
+            "transferSize": 12268,
+            "resourceSize": 35572
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/app/layout-8877a72288a6ecfe.js",
+            "transferSize": 11157,
+            "resourceSize": 26120
+          }
+        ]
+      },
+      {
+        "filename": "desktop-2.json",
+        "fetchTime": "2026-10-08T22:20:55.055Z",
+        "url": "http://127.0.0.1:3104/",
+        "settings": {
+          "output": [
+            "json"
+          ],
+          "maxWaitForFcp": 30000,
+          "maxWaitForLoad": 45000,
+          "pauseAfterFcpMs": 1000,
+          "pauseAfterLoadMs": 1000,
+          "networkQuietThresholdMs": 1000,
+          "cpuQuietThresholdMs": 1000,
+          "formFactor": "desktop",
+          "throttling": {
+            "rttMs": 40,
+            "throughputKbps": 10240,
+            "requestLatencyMs": 0,
+            "downloadThroughputKbps": 0,
+            "uploadThroughputKbps": 0,
+            "cpuSlowdownMultiplier": 1
+          },
+          "throttlingMethod": "simulate",
+          "screenEmulation": {
+            "mobile": false,
+            "width": 1350,
+            "height": 940,
+            "deviceScaleFactor": 1,
+            "disabled": false
+          },
+          "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+          "auditMode": false,
+          "gatherMode": false,
+          "clearStorageTypes": [
+            "file_systems",
+            "shader_cache",
+            "service_workers",
+            "cache_storage"
+          ],
+          "disableStorageReset": false,
+          "debugNavigation": false,
+          "channel": "cli",
+          "usePassiveGathering": false,
+          "disableFullPageScreenshot": false,
+          "skipAboutBlank": false,
+          "blankPage": "about:blank",
+          "ignoreStatusCode": false,
+          "locale": "en-US",
+          "blockedUrlPatterns": null,
+          "additionalTraceCategories": null,
+          "extraHeaders": null,
+          "precomputedLanternData": null,
+          "onlyAudits": null,
+          "onlyCategories": [
+            "performance"
+          ],
+          "skipAudits": null
+        },
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "metrics": {
+          "mainThreadMs": 210.02399999999764,
+          "tbtMs": 0,
+          "fcpMs": 324.7042,
+          "lcpMs": 891.7605000000001,
+          "cls": 0,
+          "scriptTransferBytes": 262462,
+          "scriptResourceBytes": 782050
+        },
+        "lcpEvidence": {
+          "node": {
+            "label": "Senior Software Engineer",
+            "selector": "section#home > h1.mb-10 > strong.relative > span.absolute",
+            "snippet": "<span aria-hidden=\"true\" class=\"absolute inset-0 flex items-center justify-center\" style=\"opacity:1;transform:none\">"
+          },
+          "observedSubparts": [
+            {
+              "subpart": "timeToFirstByte",
+              "duration": 8.32
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "duration": 64.238
+            }
+          ],
+          "fonts": [
+            {
+              "url": "http://127.0.0.1:3104/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+              "transferSize": 69953,
+              "resourceSize": 69652,
+              "isLinkPreload": true
+            },
+            {
+              "url": "http://127.0.0.1:3104/_next/static/media/723e11e5093b8e80.p.woff2",
+              "transferSize": 71669,
+              "resourceSize": 71368,
+              "isLinkPreload": true
+            }
+          ]
+        },
+        "mainThreadScore": 1,
+        "mainThreadWarning": false,
+        "categories": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 72.14899999999912
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 58.28699999999879
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 46.12800000000001
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 14.635999999999699
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 13.543999999999997
+          },
+          {
+            "group": "parseHTML",
+            "groupLabel": "Parse HTML & CSS",
+            "duration": 3.1439999999999997
+          },
+          {
+            "group": "garbageCollection",
+            "groupLabel": "Garbage Collection",
+            "duration": 2.1359999999999992
+          }
+        ],
+        "topScripts": [
+          {
+            "url": "http://127.0.0.1:3104/",
+            "total": 57.88800000000001,
+            "scripting": 1.807,
+            "scriptParseCompile": 1.8729999999999993
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4902-b03d7df100afb8f3.js",
+            "total": 51.206000000000444,
+            "scripting": 42.40100000000044,
+            "scriptParseCompile": 1.8309999999999997
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3346-e2e164183f23a82f.js",
+            "total": 50.80399999999994,
+            "scripting": 13.513000000000009,
+            "scriptParseCompile": 2.66
+          }
+        ],
+        "scriptRequests": [
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/webpack-89384221ee794a5a.js",
+            "transferSize": 2784,
+            "resourceSize": 4825
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/1081f1e7-f9bb05a4d931bf08.js",
+            "transferSize": 54178,
+            "resourceSize": 172835
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4902-b03d7df100afb8f3.js",
+            "transferSize": 32257,
+            "resourceSize": 124383
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/main-app-c2bbabc94d9dca84.js",
+            "transferSize": 813,
+            "resourceSize": 466
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/349eb581-561d9e8764abe348.js",
+            "transferSize": 1555,
+            "resourceSize": 4024
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/99562e22-696d1a3bf06df984.js",
+            "transferSize": 22535,
+            "resourceSize": 55208
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/8a090de9-893c1ae3763d01c6.js",
+            "transferSize": 955,
+            "resourceSize": 1101
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/e9e11d25-21125a35b2020274.js",
+            "transferSize": 930,
+            "resourceSize": 1802
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/fb84bacf-c30538b73bf7d430.js",
+            "transferSize": 7555,
+            "resourceSize": 18514
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/69912e11-4ebd237b2d55fdc6.js",
+            "transferSize": 1050,
+            "resourceSize": 1347
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4c279ef9-1ae1105913503b6e.js",
+            "transferSize": 1043,
+            "resourceSize": 696
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/1c7cfde1-efb21dec26b42f6a.js",
+            "transferSize": 7317,
+            "resourceSize": 24228
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/c87eb371-4b04e40c42390e08.js",
+            "transferSize": 843,
+            "resourceSize": 1139
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3346-e2e164183f23a82f.js",
+            "transferSize": 60377,
+            "resourceSize": 185114
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3606-b14db0bf84aae939.js",
+            "transferSize": 19273,
+            "resourceSize": 52699
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/9406-3f59cf172519f1a4.js",
+            "transferSize": 12353,
+            "resourceSize": 37613
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/app/page-91928e43caf25d49.js",
+            "transferSize": 9935,
+            "resourceSize": 28347
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/9d733233-78bb8ed14f6b817a.js",
+            "transferSize": 1459,
+            "resourceSize": 2886
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/7190-6c968ffa7de97c4f.js",
+            "transferSize": 1825,
+            "resourceSize": 3131
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/772-198c3d926bd0e427.js",
+            "transferSize": 12268,
+            "resourceSize": 35572
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/app/layout-8877a72288a6ecfe.js",
+            "transferSize": 11157,
+            "resourceSize": 26120
+          }
+        ]
+      },
+      {
+        "filename": "desktop-3.json",
+        "fetchTime": "2026-10-08T22:21:05.697Z",
+        "url": "http://127.0.0.1:3104/",
+        "settings": {
+          "output": [
+            "json"
+          ],
+          "maxWaitForFcp": 30000,
+          "maxWaitForLoad": 45000,
+          "pauseAfterFcpMs": 1000,
+          "pauseAfterLoadMs": 1000,
+          "networkQuietThresholdMs": 1000,
+          "cpuQuietThresholdMs": 1000,
+          "formFactor": "desktop",
+          "throttling": {
+            "rttMs": 40,
+            "throughputKbps": 10240,
+            "requestLatencyMs": 0,
+            "downloadThroughputKbps": 0,
+            "uploadThroughputKbps": 0,
+            "cpuSlowdownMultiplier": 1
+          },
+          "throttlingMethod": "simulate",
+          "screenEmulation": {
+            "mobile": false,
+            "width": 1350,
+            "height": 940,
+            "deviceScaleFactor": 1,
+            "disabled": false
+          },
+          "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+          "auditMode": false,
+          "gatherMode": false,
+          "clearStorageTypes": [
+            "file_systems",
+            "shader_cache",
+            "service_workers",
+            "cache_storage"
+          ],
+          "disableStorageReset": false,
+          "debugNavigation": false,
+          "channel": "cli",
+          "usePassiveGathering": false,
+          "disableFullPageScreenshot": false,
+          "skipAboutBlank": false,
+          "blankPage": "about:blank",
+          "ignoreStatusCode": false,
+          "locale": "en-US",
+          "blockedUrlPatterns": null,
+          "additionalTraceCategories": null,
+          "extraHeaders": null,
+          "precomputedLanternData": null,
+          "onlyAudits": null,
+          "onlyCategories": [
+            "performance"
+          ],
+          "skipAudits": null
+        },
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "metrics": {
+          "mainThreadMs": 218.10499999999925,
+          "tbtMs": 0,
+          "fcpMs": 325.637,
+          "lcpMs": 894.0925,
+          "cls": 0,
+          "scriptTransferBytes": 262462,
+          "scriptResourceBytes": 782050
+        },
+        "lcpEvidence": {
+          "node": {
+            "label": "Senior Software Engineer",
+            "selector": "section#home > h1.mb-10 > strong.relative > span.absolute",
+            "snippet": "<span aria-hidden=\"true\" class=\"absolute inset-0 flex items-center justify-center\" style=\"opacity:1;transform:none\">"
+          },
+          "observedSubparts": [
+            {
+              "subpart": "timeToFirstByte",
+              "duration": 7.744
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "duration": 71.982
+            }
+          ],
+          "fonts": [
+            {
+              "url": "http://127.0.0.1:3104/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+              "transferSize": 69953,
+              "resourceSize": 69652,
+              "isLinkPreload": true
+            },
+            {
+              "url": "http://127.0.0.1:3104/_next/static/media/723e11e5093b8e80.p.woff2",
+              "transferSize": 71669,
+              "resourceSize": 71368,
+              "isLinkPreload": true
+            }
+          ]
+        },
+        "mainThreadScore": 1,
+        "mainThreadWarning": false,
+        "categories": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 74.3949999999996
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 59.53399999999981
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 49.644000000000005
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 15.831999999999818
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 13.814
+          },
+          {
+            "group": "parseHTML",
+            "groupLabel": "Parse HTML & CSS",
+            "duration": 3.0919999999999996
+          },
+          {
+            "group": "garbageCollection",
+            "groupLabel": "Garbage Collection",
+            "duration": 1.7939999999999992
+          }
+        ],
+        "topScripts": [
+          {
+            "url": "http://127.0.0.1:3104/",
+            "total": 62.87100000000004,
+            "scripting": 2.399,
+            "scriptParseCompile": 1.9759999999999993
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3346-e2e164183f23a82f.js",
+            "total": 53.02299999999993,
+            "scripting": 14.010000000000007,
+            "scriptParseCompile": 2.69
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4902-b03d7df100afb8f3.js",
+            "total": 51.48699999999995,
+            "scripting": 42.49599999999995,
+            "scriptParseCompile": 1.845
+          }
+        ],
+        "scriptRequests": [
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/webpack-89384221ee794a5a.js",
+            "transferSize": 2784,
+            "resourceSize": 4825
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/1081f1e7-f9bb05a4d931bf08.js",
+            "transferSize": 54178,
+            "resourceSize": 172835
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4902-b03d7df100afb8f3.js",
+            "transferSize": 32257,
+            "resourceSize": 124383
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/main-app-c2bbabc94d9dca84.js",
+            "transferSize": 813,
+            "resourceSize": 466
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/349eb581-561d9e8764abe348.js",
+            "transferSize": 1555,
+            "resourceSize": 4024
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/99562e22-696d1a3bf06df984.js",
+            "transferSize": 22535,
+            "resourceSize": 55208
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/8a090de9-893c1ae3763d01c6.js",
+            "transferSize": 955,
+            "resourceSize": 1101
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/e9e11d25-21125a35b2020274.js",
+            "transferSize": 930,
+            "resourceSize": 1802
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/fb84bacf-c30538b73bf7d430.js",
+            "transferSize": 7555,
+            "resourceSize": 18514
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/69912e11-4ebd237b2d55fdc6.js",
+            "transferSize": 1050,
+            "resourceSize": 1347
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/4c279ef9-1ae1105913503b6e.js",
+            "transferSize": 1043,
+            "resourceSize": 696
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/1c7cfde1-efb21dec26b42f6a.js",
+            "transferSize": 7317,
+            "resourceSize": 24228
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/c87eb371-4b04e40c42390e08.js",
+            "transferSize": 843,
+            "resourceSize": 1139
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3346-e2e164183f23a82f.js",
+            "transferSize": 60377,
+            "resourceSize": 185114
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/3606-b14db0bf84aae939.js",
+            "transferSize": 19273,
+            "resourceSize": 52699
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/9406-3f59cf172519f1a4.js",
+            "transferSize": 12353,
+            "resourceSize": 37613
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/app/page-91928e43caf25d49.js",
+            "transferSize": 9935,
+            "resourceSize": 28347
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/9d733233-78bb8ed14f6b817a.js",
+            "transferSize": 1459,
+            "resourceSize": 2886
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/7190-6c968ffa7de97c4f.js",
+            "transferSize": 1825,
+            "resourceSize": 3131
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/772-198c3d926bd0e427.js",
+            "transferSize": 12268,
+            "resourceSize": 35572
+          },
+          {
+            "url": "http://127.0.0.1:3104/_next/static/chunks/app/layout-8877a72288a6ecfe.js",
+            "transferSize": 11157,
+            "resourceSize": 26120
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "mainThreadMs": {
+        "values": [
+          210.9359999999995,
+          210.02399999999764,
+          218.10499999999925
+        ],
+        "median": 210.9359999999995,
+        "min": 210.02399999999764,
+        "max": 218.10499999999925
+      },
+      "tbtMs": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fcpMs": {
+        "values": [
+          328.3744,
+          324.7042,
+          325.637
+        ],
+        "median": 325.637,
+        "min": 324.7042,
+        "max": 328.3744
+      },
+      "lcpMs": {
+        "values": [
+          860.9359999999998,
+          891.7605000000001,
+          894.0925
+        ],
+        "median": 891.7605000000001,
+        "min": 860.9359999999998,
+        "max": 894.0925
+      },
+      "cls": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "scriptTransferBytes": {
+        "values": [
+          262462,
+          262462,
+          262462
+        ],
+        "median": 262462,
+        "min": 262462,
+        "max": 262462
+      },
+      "scriptResourceBytes": {
+        "values": [
+          782050,
+          782050,
+          782050
+        ],
+        "median": 782050,
+        "min": 782050,
+        "max": 782050
+      }
+    },
+    "categories": {
+      "scriptEvaluation": {
+        "values": [
+          70.7539999999998,
+          72.14899999999912,
+          74.3949999999996
+        ],
+        "median": 72.14899999999912,
+        "min": 70.7539999999998,
+        "max": 74.3949999999996
+      },
+      "other": {
+        "values": [
+          58.047999999999874,
+          58.28699999999879,
+          59.53399999999981
+        ],
+        "median": 58.28699999999879,
+        "min": 58.047999999999874,
+        "max": 59.53399999999981
+      },
+      "styleLayout": {
+        "values": [
+          47.273999999999994,
+          46.12800000000001,
+          49.644000000000005
+        ],
+        "median": 47.273999999999994,
+        "min": 46.12800000000001,
+        "max": 49.644000000000005
+      },
+      "paintCompositeRender": {
+        "values": [
+          16.08699999999982,
+          14.635999999999699,
+          15.831999999999818
+        ],
+        "median": 15.831999999999818,
+        "min": 14.635999999999699,
+        "max": 16.08699999999982
+      },
+      "scriptParseCompile": {
+        "values": [
+          13.781,
+          13.543999999999997,
+          13.814
+        ],
+        "median": 13.781,
+        "min": 13.543999999999997,
+        "max": 13.814
+      },
+      "parseHTML": {
+        "values": [
+          3.0929999999999995,
+          3.1439999999999997,
+          3.0919999999999996
+        ],
+        "median": 3.0929999999999995,
+        "min": 3.0919999999999996,
+        "max": 3.1439999999999997
+      },
+      "garbageCollection": {
+        "values": [
+          1.8989999999999991,
+          2.1359999999999992,
+          1.7939999999999992
+        ],
+        "median": 1.8989999999999991,
+        "min": 1.7939999999999992,
+        "max": 2.1359999999999992
+      }
+    },
+    "warningCount": 0
+  }
+}

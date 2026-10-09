@@ -8,7 +8,11 @@ import Skills from "@/components/skills";
 
 export default function Home() {
   return (
-    <main className="mx-auto flex w-full max-w-[90rem] flex-col items-center">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="mx-auto flex w-full max-w-[90rem] scroll-mt-28 flex-col items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
+    >
       <div className="w-full max-w-[52rem] px-4 sm:px-6 md:px-8">
         <Intro />
       </div>

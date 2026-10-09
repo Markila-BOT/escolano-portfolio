@@ -1,0 +1,37 @@
+--- /private/tmp/portfolio-lcp-baseline.9TVBOw/app/layout.tsx	2026-10-08 21:21:22
++++ /private/tmp/portfolio-lcp-font.FbCHkq/app/layout.tsx	2026-10-08 21:25:40
+@@ -1,7 +1,7 @@
+ import Header from "@/components/header";
+ import "./globals.css";
+ import { GeistSans } from "geist/font/sans";
+-import { GeistMono } from "geist/font/mono";
++import localFont from "next/font/local";
+ import ActiveSectionContextProvider from "@/context/active-section-context";
+ import Footer from "@/components/footer";
+ import ThemeSwitch from "@/components/theme-switch";
+@@ -11,6 +11,25 @@
+ import { Toaster } from "react-hot-toast";
+ import VisitorNotice from "@/components/visitor-notice";
+ 
++const GeistMono = localFont({
++  src: "../node_modules/geist/dist/fonts/geist-mono/GeistMono-Variable.woff2",
++  variable: "--font-geist-mono",
++  adjustFontFallback: false,
++  fallback: [
++    "ui-monospace",
++    "SFMono-Regular",
++    "Roboto Mono",
++    "Menlo",
++    "Monaco",
++    "Liberation Mono",
++    "DejaVu Sans Mono",
++    "Courier New",
++    "monospace",
++  ],
++  weight: "100 900",
++  preload: false,
++});
++
+ export const metadata = {
+   title: "Mark Escolano Portfolio",
+   description:

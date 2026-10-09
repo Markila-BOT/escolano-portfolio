@@ -1,0 +1,439 @@
+[
+  {
+    "capturedAt": "2026-10-08T14:47:19.025Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Senior Software Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:20.052Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "0.320116",
+          "text": "Full Stack Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:21.068Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Full Stack Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:22.083Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Full Stack Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:23.104Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Full Stack Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:24.120Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "0.539306",
+          "text": "Lead Software Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:25.128Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Lead Software Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:26.151Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Lead Software Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:27.173Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Lead Software Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:28.197Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "0.795438",
+          "text": "Front-End Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:29.208Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Front-End Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:30.228Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Front-End Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:31.250Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Front-End Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:32.269Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "0.95122",
+          "text": "Senior Software Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:33.287Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Senior Software Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:34.303Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Senior Software Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:35.310Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Senior Software Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:36.321Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Full Stack Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  },
+  {
+    "capturedAt": "2026-10-08T14:47:37.347Z",
+    "state": {
+      "overflow": false,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Full Stack Engineer"
+        }
+      ],
+      "visibility": "visible"
+    }
+  }
+]

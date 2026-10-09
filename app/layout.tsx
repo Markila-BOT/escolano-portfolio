@@ -32,6 +32,12 @@ export default function RootLayout({
         <ThemeContextProvider>
           <SoundContextProvider>
             <ActiveSectionContextProvider>
+              <a
+                href="#main-content"
+                className="sr-only fixed left-4 top-4 z-[1002] rounded-md bg-background text-foreground focus:not-sr-only focus:p-3 focus:outline-none focus:ring-2 focus:ring-ring"
+              >
+                Skip to main content
+              </a>
               <Header />
               {children}
               <Footer />

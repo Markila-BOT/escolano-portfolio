@@ -136,6 +136,14 @@ export const hiringContact = {
   formAlternative: "or through this form.",
 } as const;
 
+export const professionalSocialLinks = [
+  { label: "GitHub", href: "https://github.com/Markila-BOT" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/mark-escolano-2715ab129/",
+  },
+] as const;
+
 export const experienceJourney = {
   showJourneyLabel: "Show 3D journey",
   showTimelineLabel: "Show timeline",

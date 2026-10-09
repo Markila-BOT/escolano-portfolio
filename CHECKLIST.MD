@@ -8,7 +8,7 @@ Status key: `[x]` done, `[ ]` still open. Items marked **partial** exist, and do
 
 | Scope               | Done | Partial | Not started | Complete     |
 | ------------------- | ---- | ------- | ----------- | ------------ |
-| Current spec        | 87   | 8       | 20          | 87/115 (76%) |
+| Current spec        | 103  | 8       | 19          | 103/130 (79%) |
 | Future enhancements | 1    | 1       | 13          | 1/15 (7%)    |
 
 Protected routes and server-state data fetching are not applicable. The site is a single public page with static portfolio content.
@@ -134,7 +134,7 @@ Sound stays off until the visitor turns it on. Use `[use-sound](https://www.npmj
 
 - [x] Contact form
 - [x] Email integration (**partial** — reliable Resend submission; `onboarding@resend.dev` is testing-only, no verified production domain; setup in `docs/contact-email.md`)
-- [ ] Social media links ([Brittany Chiang](https://brittanychiang.com), [Chris Coyier](https://chriscoyier.net))
+- [x] Social media links ([Brittany Chiang](https://brittanychiang.com), [Chris Coyier](https://chriscoyier.net)) — labeled GitHub and LinkedIn links in Contact; [verification](docs/contact-social-links.md)
 - [x] A direct hiring path: full-time and contract/freelance, remote or Philippines-based, with public email and the existing contact form (verification in `docs/hiring-path.md`)
 - [ ] A persistent action bar for CV download and social links, with labels that appear on hover ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
 - [x] Professional contact information
@@ -201,7 +201,7 @@ Component rows are inventory. They are not included in the current-spec progress
 Target is WCAG 2.1 AA.
 
 - [ ] WCAG 2.1 AA compliance
-- [ ] Keyboard navigation support (**partial** — links and the form are reachable; the mobile overlay has no focus trap)
+- [x] Keyboard navigation support (modal mobile-menu focus containment/restoration, Escape dismissal, breakpoint recovery and native skip link; automated and user-reported reduced-motion verification in `docs/keyboard-navigation.md`)
 - [ ] Screen reader compatibility
 - [ ] Color contrast requirements (not audited)
 - [ ] ARIA labels (**partial** — carousel controls, the mobile menu button, and the theme toggle)
@@ -210,9 +210,9 @@ Concrete gaps inside those items (not scored separately):
 
 - Done: accessible name on the theme toggle
 - Done: accessible name, `aria-expanded`, and `aria-controls` on the mobile menu button
-- Focus trap and restore for the mobile menu
-- Skip link
-- One `h1` on the page
+- Done: focus trap and restore for the mobile menu
+- Done: skip link
+- Done: one `h1` in the initial page (Intro uses one heading)
 
 ## 8. Development guidelines
 

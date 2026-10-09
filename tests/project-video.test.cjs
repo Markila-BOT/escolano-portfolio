@@ -134,7 +134,10 @@ test("render failures show fallback and keyed remount resets errors", () => {
 });
 
 test("closed and image-only drawers do not mount video; departures unmount instead of hiding players", () => {
-  const source = fs.readFileSync("components/projects-interactive.tsx", "utf8");
+  const source = fs.readFileSync(
+    "components/project-details-drawer.tsx",
+    "utf8",
+  );
   assert.match(source, /videoUrl && isOpen/);
   assert.doesNotMatch(source, /from ["']react-player/);
   assert.match(source, /<ProjectVideoFrame/);

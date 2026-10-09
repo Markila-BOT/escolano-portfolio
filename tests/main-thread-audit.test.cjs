@@ -4,9 +4,57 @@ const os = require("node:os");
 const path = require("node:path");
 const test = require("node:test");
 const {
+  lcpEvidence,
   statistics,
   summarizeReports,
 } = require("../scripts/summarize-main-thread.cjs");
+
+test("LCP evidence keeps observed timing separate and represents absent attribution", () => {
+  assert.deepEqual(lcpEvidence({}), {
+    node: null,
+    observedSubparts: [],
+    fonts: [],
+  });
+  const evidence = lcpEvidence({
+    audits: {
+      "lcp-breakdown-insight": {
+        details: {
+          items: [
+            {
+              type: "table",
+              items: [{ subpart: "elementRenderDelay", duration: 80 }],
+            },
+            {
+              type: "node",
+              nodeLabel: "Senior Software Engineer",
+              selector: "strong span",
+              snippet: '<span style="opacity:1">',
+            },
+          ],
+        },
+      },
+      "network-requests": {
+        details: {
+          items: [
+            {
+              resourceType: "Font",
+              url: "sans.woff2",
+              transferSize: 100,
+              resourceSize: 90,
+              isLinkPreload: true,
+            },
+          ],
+        },
+      },
+    },
+  });
+  assert.equal(evidence.node.label, "Senior Software Engineer");
+  assert.deepEqual(evidence.observedSubparts, [
+    { subpart: "elementRenderDelay", duration: 80 },
+  ]);
+  assert.equal(evidence.fonts[0].isLinkPreload, true);
+  assert.equal(evidence.lcpMs, undefined);
+});
 
 function fixture(context, mutate = () => {}) {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), "main-thread-test-"));

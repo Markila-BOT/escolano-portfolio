@@ -1,0 +1,24 @@
+--- /private/tmp/portfolio-lcp-trace.uR0sPp/app/layout.tsx	2026-10-08 22:37:35
++++ /private/tmp/portfolio-lcp-sans.jxTZAf/app/layout.tsx	2026-10-08 22:43:14
+@@ -1,6 +1,6 @@
+ import Header from "@/components/header";
+ import "./globals.css";
+-import { GeistSans } from "geist/font/sans";
++import localFont from "next/font/local";
+ import { GeistMono } from "geist/font/mono";
+ import ActiveSectionContextProvider from "@/context/active-section-context";
+ import Footer from "@/components/footer";
+@@ -11,6 +11,13 @@
+ import { Toaster } from "react-hot-toast";
+ import VisitorNotice from "@/components/visitor-notice";
+ 
++const GeistSans = localFont({
++  src: "../node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2",
++  variable: "--font-geist-sans",
++  weight: "100 900",
++  preload: false,
++});
++
+ export const metadata = {
+   title: "Mark Escolano Portfolio",
+   description:

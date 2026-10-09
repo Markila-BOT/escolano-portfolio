@@ -1,0 +1,3 @@
+Snapshot: /private/tmp/portfolio-lcp-images.4Ib0ET
+Variant: project image sizes only
+4195629711ed38a216b1026821280e8aaafcc480c931e70419156def39e1090f  /private/tmp/portfolio-lcp-images.4Ib0ET/components/project.tsx

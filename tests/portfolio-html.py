@@ -65,14 +65,34 @@ def check(html):
     assert any(attrs.get('as') == 'image' and attrs.get('imagesizes') == '160px' and attrs.get('imagesrcset') == portrait.get('srcset') for attrs in document.preloads), 'Missing matching portrait preload'
     for field in ['senderEmail', 'message']:
         assert any(attrs.get('name') == field for _, attrs in document.elements), f'Missing field: {field}'
+    hero_heading = next(attrs for tag, attrs in document.section_elements['home'] if tag == 'h1')
+    assert 'opacity:0' not in hero_heading.get('style', '').replace(' ', ''), 'Initial heading must not wait for an entrance animation'
+    first_role = next(attrs for tag, attrs in document.section_elements['home'] if tag == 'span' and 'absolute inset-0 flex items-center justify-center' in attrs.get('class', ''))
+    assert 'opacity:1' in first_role.get('style', '').replace(' ', ''), 'First role must be visibly server-rendered'
+    assert 'transform:none' in first_role.get('style', '').replace(' ', ''), 'First role must start settled'
     assert 'My toolkit' not in text, 'Redundant toolkit section must stay removed'
     assert any(tag == 'a' and attrs.get('href') == '#contact' for tag, attrs in document.elements), 'Missing contact anchor'
+    main = next(attrs for tag, attrs in document.elements if tag == 'main')
+    assert main.get('id') == 'main-content' and main.get('tabindex') == '-1', 'Missing focusable skip target'
+    first_link = next(attrs for tag, attrs in document.elements if tag == 'a')
+    assert first_link.get('href') == '#main-content', 'Skip link must precede header links'
+    assert 'Skip to main content' in text, 'Missing native skip link'
     assert any(tag == 'a' and attrs.get('href', '').startswith('mailto:') for tag, attrs in document.elements), 'Missing email link'
     hiring = 'Open to full-time roles and contract/freelance work, remote or based in the Philippines.'
     for section in ['home', 'contact']:
         assert hiring in ' '.join(' '.join(document.section_text[section]).split()), f'Missing hiring preferences: {section}'
     assert sum(tag == 'a' and attrs.get('href') == '#contact' for tag, attrs in document.section_elements['home']) == 1, 'Intro must keep one Contact CTA'
     assert any(tag == 'a' and attrs.get('href') == 'mailto:mark.escolano14@gmail.com' for tag, attrs in document.section_elements['contact']), 'Wrong public hiring email'
+    contact_elements = document.section_elements['contact']
+    form_index = next(index for index, (tag, _) in enumerate(contact_elements) if tag == 'form')
+    email_index = next(index for index, (tag, attrs) in enumerate(contact_elements) if tag == 'a' and attrs.get('href', '').startswith('mailto:'))
+    for label, destination in [('GitHub', 'https://github.com/Markila-BOT'), ('LinkedIn', 'https://www.linkedin.com/in/mark-escolano-2715ab129/')]:
+        matches = [(index, attrs) for index, (tag, attrs) in enumerate(contact_elements) if tag == 'a' and attrs.get('href') == destination]
+        assert len(matches) == 1, f'Missing/duplicate profile: {label}'
+        index, attrs = matches[0]
+        assert email_index < index < form_index, f'Wrong profile placement: {label}'
+        assert 'target' not in attrs, f'Profile must use native current-tab navigation: {label}'
+        assert attrs.get('aria-label') == label, f'Missing accessible profile label: {label}'
     assert re.search(r'20\d\d', text), 'Missing dates'
     print('PASS: real document content, section IDs, portrait, skill names, timeline, contact fields and native links/disclosures')
 

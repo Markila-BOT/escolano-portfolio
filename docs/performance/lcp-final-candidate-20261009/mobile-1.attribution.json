@@ -1,0 +1,442 @@
+{
+  "simulatedLcpMs": 3477.5141000000003,
+  "observedLcpMs": 199,
+  "observedTraceEndMs": 3146,
+  "candidates": [
+    {
+      "observedMs": 186.557,
+      "nodeId": 7,
+      "nodeName": "SPAN",
+      "size": 7440,
+      "type": "text"
+    },
+    {
+      "observedMs": 199.013,
+      "nodeId": 59,
+      "nodeName": "SPAN class='absolute inset-0 flex items-center justify-center'",
+      "size": 68880,
+      "type": "text"
+    }
+  ],
+  "recomputedSimulatedLcpMs": 3477.5141000000003,
+  "estimates": {
+    "optimisticEstimate": {
+      "simulatedMs": 3477.5141000000003,
+      "nodes": [
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+          "event": null,
+          "observedStartMs": 127.878,
+          "simulatedStartMs": 913.75705,
+          "simulatedEndMs": 3477.5141000000003
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/media/723e11e5093b8e80.p.woff2",
+          "event": null,
+          "observedStartMs": 128.818,
+          "simulatedStartMs": 913.75705,
+          "simulatedEndMs": 3477.5141000000003
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/3606-b14db0bf84aae939.js",
+          "event": null,
+          "observedStartMs": 129.197,
+          "simulatedStartMs": 2468.7852500000004,
+          "simulatedEndMs": 3232.5423
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/9d733233-78bb8ed14f6b817a.js",
+          "event": null,
+          "observedStartMs": 129.24699999976158,
+          "simulatedStartMs": 3027.5141000000003,
+          "simulatedEndMs": 3191.27115
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/app/page-91928e43caf25d49.js",
+          "event": null,
+          "observedStartMs": 129.23200000023843,
+          "simulatedStartMs": 2660.0564000000004,
+          "simulatedEndMs": 3123.81345
+        },
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 182.009,
+          "simulatedStartMs": 3027.5141000000003,
+          "simulatedEndMs": 3083.5141000000003
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/9406-3f59cf172519f1a4.js",
+          "event": null,
+          "observedStartMs": 129.213,
+          "simulatedStartMs": 2605.0282,
+          "simulatedEndMs": 3068.7852500000004
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/1081f1e7-f9bb05a4d931bf08.js",
+          "event": null,
+          "observedStartMs": 128.976,
+          "simulatedStartMs": 913.75705,
+          "simulatedEndMs": 3027.5141000000003
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/1c7cfde1-efb21dec26b42f6a.js",
+          "event": null,
+          "observedStartMs": 129.151,
+          "simulatedStartMs": 2346.2993500000002,
+          "simulatedEndMs": 2660.0564000000004
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/c87eb371-4b04e40c42390e08.js",
+          "event": null,
+          "observedStartMs": 129.166,
+          "simulatedStartMs": 2441.2711500000005,
+          "simulatedEndMs": 2605.0282
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/4c279ef9-1ae1105913503b6e.js",
+          "event": null,
+          "observedStartMs": 129.13400000023842,
+          "simulatedStartMs": 2305.0282,
+          "simulatedEndMs": 2468.7852500000004
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/4902-b03d7df100afb8f3.js",
+          "event": null,
+          "observedStartMs": 128.994,
+          "simulatedStartMs": 1227.5141,
+          "simulatedEndMs": 2441.2711500000005
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/69912e11-4ebd237b2d55fdc6.js",
+          "event": null,
+          "observedStartMs": 129.116,
+          "simulatedStartMs": 2182.5423,
+          "simulatedEndMs": 2346.2993500000002
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/99562e22-696d1a3bf06df984.js",
+          "event": null,
+          "observedStartMs": 129.045,
+          "simulatedStartMs": 1391.27115,
+          "simulatedEndMs": 2305.0282
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/fb84bacf-c30538b73bf7d430.js",
+          "event": null,
+          "observedStartMs": 129.1,
+          "simulatedStartMs": 1868.78525,
+          "simulatedEndMs": 2182.5423
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/e9e11d25-21125a35b2020274.js",
+          "event": null,
+          "observedStartMs": 129.08,
+          "simulatedStartMs": 1705.0282,
+          "simulatedEndMs": 1868.78525
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/8a090de9-893c1ae3763d01c6.js",
+          "event": null,
+          "observedStartMs": 129.06,
+          "simulatedStartMs": 1541.27115,
+          "simulatedEndMs": 1705.0282
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/349eb581-561d9e8764abe348.js",
+          "event": null,
+          "observedStartMs": 129.03,
+          "simulatedStartMs": 1377.5141,
+          "simulatedEndMs": 1541.27115
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/main-app-c2bbabc94d9dca84.js",
+          "event": null,
+          "observedStartMs": 129.015,
+          "simulatedStartMs": 1227.5141,
+          "simulatedEndMs": 1391.27115
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/css/c910c488b31eb512.css",
+          "event": null,
+          "observedStartMs": 128.898,
+          "simulatedStartMs": 913.75705,
+          "simulatedEndMs": 1377.5141
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/css/34c26eb5be187d8a.css",
+          "event": null,
+          "observedStartMs": 128.924,
+          "simulatedStartMs": 913.75705,
+          "simulatedEndMs": 1227.5141
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/webpack-89384221ee794a5a.js",
+          "event": null,
+          "observedStartMs": 128.953,
+          "simulatedStartMs": 913.75705,
+          "simulatedEndMs": 1227.5141
+        },
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 148.996,
+          "simulatedStartMs": 920.75705,
+          "simulatedEndMs": 940.75705
+        },
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 129.97,
+          "simulatedStartMs": 913.75705,
+          "simulatedEndMs": 920.75705
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/",
+          "event": null,
+          "observedStartMs": 0.32399999976158145,
+          "simulatedStartMs": 0,
+          "simulatedEndMs": 913.75705
+        }
+      ]
+    },
+    "pessimisticEstimate": {
+      "simulatedMs": 3477.5141000000003,
+      "nodes": [
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+          "event": null,
+          "observedStartMs": 127.878,
+          "simulatedStartMs": 913.75705,
+          "simulatedEndMs": 3477.5141000000003
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/media/723e11e5093b8e80.p.woff2",
+          "event": null,
+          "observedStartMs": 128.818,
+          "simulatedStartMs": 913.75705,
+          "simulatedEndMs": 3477.5141000000003
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/3606-b14db0bf84aae939.js",
+          "event": null,
+          "observedStartMs": 129.197,
+          "simulatedStartMs": 2468.7852500000004,
+          "simulatedEndMs": 3232.5423
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/9d733233-78bb8ed14f6b817a.js",
+          "event": null,
+          "observedStartMs": 129.24699999976158,
+          "simulatedStartMs": 3027.5141000000003,
+          "simulatedEndMs": 3191.27115
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/app/page-91928e43caf25d49.js",
+          "event": null,
+          "observedStartMs": 129.23200000023843,
+          "simulatedStartMs": 2660.0564000000004,
+          "simulatedEndMs": 3123.81345
+        },
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 182.009,
+          "simulatedStartMs": 3027.5141000000003,
+          "simulatedEndMs": 3083.5141000000003
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/9406-3f59cf172519f1a4.js",
+          "event": null,
+          "observedStartMs": 129.213,
+          "simulatedStartMs": 2605.0282,
+          "simulatedEndMs": 3068.7852500000004
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/1081f1e7-f9bb05a4d931bf08.js",
+          "event": null,
+          "observedStartMs": 128.976,
+          "simulatedStartMs": 913.75705,
+          "simulatedEndMs": 3027.5141000000003
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/1c7cfde1-efb21dec26b42f6a.js",
+          "event": null,
+          "observedStartMs": 129.151,
+          "simulatedStartMs": 2346.2993500000002,
+          "simulatedEndMs": 2660.0564000000004
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/c87eb371-4b04e40c42390e08.js",
+          "event": null,
+          "observedStartMs": 129.166,
+          "simulatedStartMs": 2441.2711500000005,
+          "simulatedEndMs": 2605.0282
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/4c279ef9-1ae1105913503b6e.js",
+          "event": null,
+          "observedStartMs": 129.13400000023842,
+          "simulatedStartMs": 2305.0282,
+          "simulatedEndMs": 2468.7852500000004
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/4902-b03d7df100afb8f3.js",
+          "event": null,
+          "observedStartMs": 128.994,
+          "simulatedStartMs": 1227.5141,
+          "simulatedEndMs": 2441.2711500000005
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/69912e11-4ebd237b2d55fdc6.js",
+          "event": null,
+          "observedStartMs": 129.116,
+          "simulatedStartMs": 2182.5423,
+          "simulatedEndMs": 2346.2993500000002
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/99562e22-696d1a3bf06df984.js",
+          "event": null,
+          "observedStartMs": 129.045,
+          "simulatedStartMs": 1391.27115,
+          "simulatedEndMs": 2305.0282
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/fb84bacf-c30538b73bf7d430.js",
+          "event": null,
+          "observedStartMs": 129.1,
+          "simulatedStartMs": 1868.78525,
+          "simulatedEndMs": 2182.5423
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/e9e11d25-21125a35b2020274.js",
+          "event": null,
+          "observedStartMs": 129.08,
+          "simulatedStartMs": 1705.0282,
+          "simulatedEndMs": 1868.78525
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/8a090de9-893c1ae3763d01c6.js",
+          "event": null,
+          "observedStartMs": 129.06,
+          "simulatedStartMs": 1541.27115,
+          "simulatedEndMs": 1705.0282
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/349eb581-561d9e8764abe348.js",
+          "event": null,
+          "observedStartMs": 129.03,
+          "simulatedStartMs": 1377.5141,
+          "simulatedEndMs": 1541.27115
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/main-app-c2bbabc94d9dca84.js",
+          "event": null,
+          "observedStartMs": 129.015,
+          "simulatedStartMs": 1227.5141,
+          "simulatedEndMs": 1391.27115
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/css/c910c488b31eb512.css",
+          "event": null,
+          "observedStartMs": 128.898,
+          "simulatedStartMs": 913.75705,
+          "simulatedEndMs": 1377.5141
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/css/34c26eb5be187d8a.css",
+          "event": null,
+          "observedStartMs": 128.924,
+          "simulatedStartMs": 913.75705,
+          "simulatedEndMs": 1227.5141
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/_next/static/chunks/webpack-89384221ee794a5a.js",
+          "event": null,
+          "observedStartMs": 128.953,
+          "simulatedStartMs": 913.75705,
+          "simulatedEndMs": 1227.5141
+        },
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 164.255,
+          "simulatedStartMs": 940.75705,
+          "simulatedEndMs": 965.75705
+        },
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 148.996,
+          "simulatedStartMs": 920.75705,
+          "simulatedEndMs": 940.75705
+        },
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 129.97,
+          "simulatedStartMs": 913.75705,
+          "simulatedEndMs": 920.75705
+        },
+        {
+          "type": "network",
+          "url": "http://127.0.0.1:3104/",
+          "event": null,
+          "observedStartMs": 0.32399999976158145,
+          "simulatedStartMs": 0,
+          "simulatedEndMs": 913.75705
+        }
+      ]
+    }
+  }
+}

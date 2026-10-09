@@ -1,0 +1,10 @@
+--- components/project.tsx	2026-10-07 07:50:27
++++ /private/tmp/portfolio-lcp-images.4Ib0ET/components/project.tsx	2026-10-09 06:13:21
+@@ -79,6 +79,7 @@
+         <Image
+           alt="Project"
+           src={imageUrl}
++          sizes="(min-width: 1024px) 360px, (min-width: 768px) 46vw, 85vw"
+           className="col-span-3 row-span-2 h-4/5 rounded-t-xl object-cover"
+         />
+         <h3

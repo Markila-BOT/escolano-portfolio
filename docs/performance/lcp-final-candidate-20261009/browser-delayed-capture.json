@@ -1,0 +1,71 @@
+[
+  {
+    "at": "2026-10-09T03:49:00.175Z",
+    "state": {
+      "headingOpacity": "1",
+      "hydrated": true,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Senior Software Engineer"
+        }
+      ]
+    }
+  },
+  {
+    "at": "2026-10-09T03:49:00.686Z",
+    "state": {
+      "headingOpacity": "1",
+      "hydrated": true,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Senior Software Engineer"
+        }
+      ]
+    }
+  },
+  {
+    "at": "2026-10-09T03:49:01.193Z",
+    "state": {
+      "headingOpacity": "1",
+      "hydrated": true,
+      "region": {
+        "bottom": 612,
+        "height": 252,
+        "left": 32,
+        "right": 288,
+        "top": 360,
+        "width": 256,
+        "x": 32,
+        "y": 360
+      },
+      "roles": [
+        {
+          "opacity": "1",
+          "text": "Senior Software Engineer"
+        }
+      ]
+    }
+  }
+]
