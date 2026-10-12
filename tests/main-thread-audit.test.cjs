@@ -89,6 +89,12 @@ function fixture(context, mutate = () => {}) {
           ].map((key) => [key, { numericValue: run * 100 }]),
         ),
       };
+      report.audits.interactive = {
+        numericValue: run * 1000,
+        numericUnit: "millisecond",
+        scoreDisplayMode: "numeric",
+        score: 1,
+      };
       report.audits["mainthread-work-breakdown"].score = 1;
       report.audits["mainthread-work-breakdown"].details = {
         items: [{ group: "scriptEvaluation", duration: run * 10 }],
@@ -148,6 +154,83 @@ test("rejects missing reports", (context) => {
   const directory = fixture(context);
   fs.unlinkSync(path.join(directory, "desktop-3.json"));
   assert.throws(() => summarizeReports(directory), /ENOENT/);
+});
+
+test("TTI statistics and strict budgets are independent of TBT and LCP", (context) => {
+  const summary = summarizeReports(
+    fixture(context, (report, profile, run) => {
+      report.audits.interactive.numericValue = [3499, 3500, 3501][run - 1];
+      report.audits["total-blocking-time"].numericValue = 0;
+      report.audits["largest-contentful-paint"].numericValue = 100;
+    }),
+  );
+  assert.deepEqual(summary.mobile.metrics.ttiMs, {
+    values: [3499, 3500, 3501],
+    median: 3500,
+    min: 3499,
+    max: 3501,
+  });
+  assert.deepEqual(
+    summary.mobile.runs.map((run) => run.ttiBudgetPassed),
+    [true, false, false],
+  );
+  assert.deepEqual(summary.mobile.ttiBudget.failedRuns, [
+    "mobile-2.json",
+    "mobile-3.json",
+  ]);
+  assert.equal(summary.mobile.ttiBudget.passed, false);
+  assert.equal(summary.mobile.metrics.tbtMs.median, 0);
+  assert.equal(summary.mobile.metrics.lcpMs.median, 100);
+});
+
+test("a low TTI median cannot hide a failing run", (context) => {
+  const summary = summarizeReports(
+    fixture(context, (report, profile, run) => {
+      report.audits.interactive.numericValue = [1000, 2000, 3500][run - 1];
+    }),
+  );
+  assert.equal(summary.mobile.metrics.ttiMs.median, 2000);
+  assert.equal(summary.mobile.ttiBudget.passed, false);
+  assert.deepEqual(summary.mobile.ttiBudget.failedRuns, ["mobile-3.json"]);
+});
+
+test("rejects missing, errored or malformed interactive audits by filename", (context) => {
+  const mutations = [
+    (report) => delete report.audits.interactive,
+    (report) => (report.audits.interactive.scoreDisplayMode = "error"),
+    (report) => (report.audits.interactive.errorMessage = "Unavailable"),
+    (report) => (report.audits.interactive.numericUnit = "second"),
+    (report) => (report.audits.interactive.score = null),
+    ...[null, "3000", -1, NaN, Infinity].map(
+      (value) => (report) => (report.audits.interactive.numericValue = value),
+    ),
+  ];
+  for (const mutate of mutations)
+    assert.throws(
+      () => summarizeReports(fixture(context, mutate)),
+      /mobile-1.json: missing\/invalid (interactive audit|metric: interactive)/,
+    );
+});
+
+test("rejects contamination and different URLs across profiles", (context) => {
+  assert.throws(
+    () =>
+      summarizeReports(
+        fixture(context, (report) => {
+          report.runWarnings = ["Extensions affected performance"];
+        }),
+      ),
+    /audit warnings/,
+  );
+  assert.throws(
+    () =>
+      summarizeReports(
+        fixture(context, (report, profile) => {
+          if (profile === "desktop") report.finalUrl = "https://other.test/";
+        }),
+      ),
+    /mobile\/desktop: inconsistent URLs/,
+  );
 });
 
 test("rejects runtime errors", (context) => {

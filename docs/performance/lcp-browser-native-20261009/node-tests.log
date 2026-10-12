@@ -1,0 +1,46 @@
+✔ missing and malformed configuration fails without constructing the client (5.177833ms)
+✔ invalid inputs never attempt delivery (9.846791ms)
+✔ valid limits preserve message, Reply-To, and server addresses (1.248792ms)
+✔ rejections, exceptions, and malformed responses never report success or leak details (4.696708ms)
+✔ form routes accepted and rejected submissions to matching feedback and opt-in cues (15.951541ms)
+✔ Contact renders confirmed profiles once with native labeled links before the form (3.010583ms)
+✔ actual Framer Motion SSR exposes a settled first role and stable accessible copy (104.038458ms)
+✔ role order wraps and pause/resume restarts a full display interval (10.34625ms)
+✔ reduced motion shows the first role without a timer (5.645542ms)
+✔ shared dialog preserves refs, override slots and primitive closed mounting (124.56125ms)
+✔ mobile modal focuses its close control and preserves section selection feedback (24.650666ms)
+✔ desktop transition clears stale menu state and disables modal (10.405416ms)
+✔ compact close delegates focus return; desktop close uses visible fallback only with modal focus (13.824042ms)
+✔ main is a stable skip target outside normal tab order (3.127334ms)
+✔ keeps observed candidates separate from simulated LCP (1.340875ms)
+✔ reports absent candidates without inventing a node (0.616459ms)
+✔ rejects missing navigation and malformed candidate evidence (0.903125ms)
+✔ LCP evidence keeps observed timing separate and represents absent attribution (1.408375ms)
+✔ summarizes all values, median/range, CPU categories and distinct JS byte counts (14.314041ms)
+✔ rejects missing reports (4.030583ms)
+✔ rejects runtime errors (1.976458ms)
+✔ rejects missing metrics (2.941541ms)
+✔ rejects development resources and wrong profiles (6.498833ms)
+✔ counts tool warnings independently of TBT (3.485625ms)
+✔ actual Intro portrait generates accurate density-aware image props (51.299625ms)
+✔ prepare is cached across widths but changes with text and font metrics (0.510917ms)
+✔ line materialization preserves source whitespace and unicode (0.135291ms)
+✔ normalization or synthetic hyphens keep the plain text fallback (0.067417ms)
+✔ server rendering contains complete visible semantic paragraphs (66.392709ms)
+✔ drawer is absent until activation and stays mounted for close/focus behavior (94.927375ms)
+✔ project image candidates follow card widths without changing lazy loading or geometry (9.820209ms)
+✔ media loading, readiness, errors and stale readiness retain stable fallback (57.914834ms)
+✔ deferred module is not invoked on frame creation; delayed and failed imports remain usable (13.711875ms)
+✔ render failures show fallback and keyed remount resets errors (19.185167ms)
+✔ closed and image-only drawers do not mount video; departures unmount instead of hiding players (0.345292ms)
+✔ project cards preserve the reduced-motion preference without moving media (15.52325ms)
+✔ actual portfolio classifies all 22 skills and retains exact evidence values (1.144583ms)
+✔ classification handles precedence, removal, exclusions, exact matches and stale references (0.147084ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 482.163917

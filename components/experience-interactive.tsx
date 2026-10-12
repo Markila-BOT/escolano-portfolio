@@ -211,7 +211,7 @@ export default function ExperienceInteractive() {
                     display: "none",
                   }}
                   date={item.date}
-                  icon={item.icon}
+                  icon={<span aria-hidden="true">{item.icon}</span>}
                   iconStyle={{
                     background: "hsl(var(--card))",
                     color: "hsl(var(--primary))",

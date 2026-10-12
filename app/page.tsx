@@ -5,6 +5,8 @@ import Intro from "@/components/intro";
 import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
+import { professionalSocialLinks } from "@/lib/data";
+import { createPortfolioGraph, serializeStructuredData } from "@/lib/seo";
 
 export default function Home() {
   return (
@@ -13,6 +15,16 @@ export default function Home() {
       tabIndex={-1}
       className="mx-auto flex w-full max-w-[90rem] scroll-mt-28 flex-col items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeStructuredData(
+            createPortfolioGraph(
+              professionalSocialLinks.map((link) => link.href),
+            ),
+          ),
+        }}
+      />
       <div className="w-full max-w-[52rem] px-4 sm:px-6 md:px-8">
         <Intro />
       </div>

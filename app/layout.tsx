@@ -10,11 +10,28 @@ import ThemeContextProvider from "@/context/theme-context";
 import SoundContextProvider from "@/context/sound-context";
 import { Toaster } from "react-hot-toast";
 import VisitorNotice from "@/components/visitor-notice";
+import type { Metadata } from "next";
+import { portfolioIdentity, portfolioShareImage } from "@/lib/seo";
 
-export const metadata = {
-  title: "Mark Escolano Portfolio",
-  description:
-    "Senior software engineer with more than a decade of experience.",
+export const metadata: Metadata = {
+  metadataBase: new URL(portfolioIdentity.url),
+  title: portfolioIdentity.title,
+  description: portfolioIdentity.description,
+  alternates: { canonical: portfolioIdentity.url },
+  openGraph: {
+    type: "website",
+    url: portfolioIdentity.url,
+    siteName: portfolioIdentity.title,
+    title: portfolioIdentity.title,
+    description: portfolioIdentity.description,
+    images: [portfolioShareImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: portfolioIdentity.title,
+    description: portfolioIdentity.description,
+    images: [portfolioShareImage],
+  },
 };
 
 export default function RootLayout({

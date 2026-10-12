@@ -12,11 +12,11 @@ Raw JSON reports include FCP, LCP, CLS, TBT, environment, diagnostics and settin
 
 Summaries must retain all three values plus median and range for each metric/profile. Timing checklist gates require every valid deployed run in both profiles to meet FCP <1500ms, LCP <2500ms, and CLS <0.1. Failed or missing measurements are never passing evidence. Local baseline/candidate comparison diagnoses code changes, not Vercel latency or deployed candidate improvement.
 
-Modern Lighthouse does not provide the legacy TTI target; retain it as unverified/unsupported. Report TBT separately, not as a substitute for TTI <3.5s. Field data is not collected by this CLI and remains unavailable unless separately obtained with its population and time window.
+TTI is retired from Lighthouse's scored metrics, but the pinned 13.5.0 raw JSON provides `audits.interactive.numericValue`. The summary now validates and reports it against the preserved strict TTI <3500ms all-run gate; see [TTI methodology and current evidence](time-to-interactive.md). Report TBT separately, never as a TTI substitute. Field data is not collected by this CLI and remains unavailable unless separately obtained with its population and time window.
 
 ## Current evidence
 
-Qualifying baseline reports all have valid numeric FCP/LCP/CLS/TBT results and no runtime error. Values below are milliseconds except unitless CLS, rounded for readability; raw JSON retains full precision. TTI is absent in every report. Field data was not collected.
+Qualifying baseline reports all have valid numeric FCP/LCP/CLS/TBT results and no runtime error. Values below are milliseconds except unitless CLS, rounded for readability; raw JSON retains full precision. TTI is present in raw JSON but was omitted from the original summary; the earlier claim that it was absent was incorrect. The dated baselines below are unchanged. Field data was not collected.
 
 Chrome 154.0.0.0 on macOS was used for both baselines. Desktop settings are 1350×940, DPR 1, simulated RTT 40ms, throughput 10240Kbps and CPU slowdown 1. Mobile settings are those above. Local source hashes and build IDs are in each directory's `identity.txt`; the unchanged local source was audited before the video boundary edits. Public deployment source/build identity is unknown. HTTP 200, Vercel cache HIT and ETag `"f4503311a1558d2e081704eb64a37fc1"` were observed at 2026-10-08T06:50:19Z; this is response identity, not source parity.
 
@@ -100,4 +100,4 @@ Validation: `pnpm lint`, `pnpm exec tsc --noEmit`, `node --test tests/*.test.cjs
 
 ## Budget decisions and follow-up
 
-Every deployed run in both profiles meets FCP <1500ms and CLS <0.1, so those checklist rows are complete for this captured lab baseline only. Mobile LCP is 3432.51–3442.92ms, above 2500ms; LCP stays open. Legacy TTI is unsupported/unmeasured and stays open; TBT is diagnostic, not equivalent. No field-performance guarantee is made. Investigating the mobile LCP element/render delay and broader critical-path costs is a separate optimization proposal, not silently added to this change.
+Every deployed run in both profiles meets FCP <1500ms and CLS <0.1, so those checklist rows are complete for this captured lab baseline only. Mobile LCP is 3432.51–3442.92ms, above 2500ms; LCP stays open. TTI was not extracted in this original analysis; the separate [2026-10-09 TTI verification](time-to-interactive.md) now establishes a lab pass for its identified public build. TBT is diagnostic, not equivalent. No field-performance guarantee is made. Investigating the mobile LCP element/render delay and broader critical-path costs is a separate optimization proposal, not silently added to this change.

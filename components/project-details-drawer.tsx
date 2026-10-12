@@ -21,7 +21,6 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import ProjectVideoFrame from "@/components/project-video-frame";
-import { Label } from "@/components/ui/label";
 import { TagChip } from "@/components/ui/tag-chip";
 import { fadeInAnimationVariants } from "@/lib/animations";
 import { LuChevronLeft, LuChevronRight, LuLink, LuLock } from "react-icons/lu";
@@ -135,14 +134,16 @@ export default function ProjectDetailsDrawer({
             aria-label="Close project"
           >
             <motion.div whileHover={{ rotate: 180 }}>
-              <FaWindowClose size={24} />
+              <FaWindowClose size={24} aria-hidden="true" />
             </motion.div>
           </Button>
         </DrawerClose>
         <div
           ref={detailsRef}
-          tabIndex={-1}
-          className="min-h-0 flex-1 overflow-y-auto pt-14 outline-none"
+          tabIndex={0}
+          aria-label="Project details"
+          role="region"
+          className="min-h-0 flex-1 overflow-y-auto pt-14 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
         >
           <div className="grid w-full auto-rows-[minmax(min-content,auto)] grid-cols-1 gap-4 p-4 md:grid-cols-5 md:p-8 lg:p-20">
             {screenshots ? (
@@ -187,8 +188,8 @@ export default function ProjectDetailsDrawer({
                       custom={index}
                     >
                       <TagChip>
-                        {tag.icon}
-                        <Label>{tag.label}</Label>
+                        <span aria-hidden="true">{tag.icon}</span>
+                        <span>{tag.label}</span>
                       </TagChip>
                     </motion.li>
                   ))}
@@ -210,7 +211,11 @@ export default function ProjectDetailsDrawer({
                         target="_blank"
                         aria-label={`Visit ${project.title}`}
                       >
-                        <LuLink size={40} className="md:w-15 md:h-15" />
+                        <LuLink
+                          size={40}
+                          aria-hidden="true"
+                          className="md:w-15 md:h-15"
+                        />
                       </Link>
                     </motion.div>
                   ) : (
@@ -234,7 +239,7 @@ export default function ProjectDetailsDrawer({
                     duration: 2,
                   }}
                 >
-                  <h1 className="text-xl md:text-2xl">{project.title}</h1>
+                  <p className="text-xl md:text-2xl">{project.title}</p>
                 </motion.div>
               </CardContent>
             </Card>

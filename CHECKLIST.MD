@@ -2,13 +2,13 @@
 
 Tracks [SPECIFICATION.md](SPECIFICATION.md) against the current app.
 
-Status key: `[x]` done, `[ ]` still open. Items marked **partial** exist, and do not yet meet the spec. Items marked **not applicable** have no checkbox and are excluded from progress totals, not counted as done.
+Status key: `[x]` done or explicitly user-accepted closed, `[ ]` still open. **User-accepted closed** records a backlog decision, not proof that the stated acceptance criteria pass. Items marked **partial** exist, and do not yet meet the spec. Items marked **not applicable** have no checkbox and are excluded from progress totals, not counted as done.
 
 ## Progress
 
 | Scope               | Done | Partial | Not started | Complete     |
 | ------------------- | ---- | ------- | ----------- | ------------ |
-| Current spec        | 103  | 8       | 19          | 103/130 (79%) |
+| Current spec        | 104  | 8       | 18          | 104/130 (80%) |
 | Future enhancements | 1    | 1       | 13          | 1/15 (7%)    |
 
 Protected routes and server-state data fetching are not applicable. The site is a single public page with static portfolio content.
@@ -96,7 +96,7 @@ Sound stays off until the visitor turns it on. Use `[use-sound](https://www.npmj
 - [x] Detailed personal information
 - [x] Professional background
 - [x] Key skills and expertise
-- [x] Update the About description to highlight the shift toward AI-assisted engineering, test-driven development (TDD), and spec-driven development (SDD) ([Bryan Elliott](https://elliottprogrammer.com) states how AI fits the daily workflow)
+- [x] Update the About description to highlight the shift toward AI-assisted engineering, test-driven development (TDD), spec-driven development (SDD), intent-driven development (IDD), and doubt-driven development (DDD) ([Bryan Elliott](https://elliottprogrammer.com) states how AI fits the daily workflow)
 
 ### 3.3 Experience
 
@@ -133,7 +133,7 @@ Sound stays off until the visitor turns it on. Use `[use-sound](https://www.npmj
 ### 3.6 Contact
 
 - [x] Contact form
-- [x] Email integration (**partial** — reliable Resend submission; `onboarding@resend.dev` is testing-only, no verified production domain; setup in `docs/contact-email.md`)
+- [x] Email integration (**user-accepted closed, 2026-10-09; partial verification** — reliable Resend submission; `onboarding@resend.dev` is testing-only, no verified production domain; setup in `docs/contact-email.md`)
 - [x] Social media links ([Brittany Chiang](https://brittanychiang.com), [Chris Coyier](https://chriscoyier.net)) — labeled GitHub and LinkedIn links in Contact; [verification](docs/contact-social-links.md)
 - [x] A direct hiring path: full-time and contract/freelance, remote or Philippines-based, with public email and the existing contact form (verification in `docs/hiring-path.md`)
 - [ ] A persistent action bar for CV download and social links, with labels that appear on hover ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
@@ -148,26 +148,26 @@ Sound stays off until the visitor turns it on. Use `[use-sound](https://www.npmj
 - [x] Code splitting (Next.js plus demand-loaded project video, 3D journey and Pretext; [evidence](docs/portfolio-performance.md))
 - [x] Lazy loading components (video player only mounts in an open video drawer; 3D journey loads on request)
 - [x] First Contentful Paint under 1.5s (deployed lab baseline: all three runs in both profiles pass; mobile 0.824–0.834s, desktop 0.280–0.285s)
-- [ ] Time to Interactive under 3.5s (unverified — Lighthouse 13.5.0 does not report legacy TTI; TBT is not a replacement)
+- [x] Time to Interactive under 3.5s (2026-10-09 deployed lab: all three runs per profile pass; mobile 3.213–3.418s, desktop 0.658–0.661s; [served-build identity and raw TTI evidence](docs/time-to-interactive.md); not a field guarantee or TBT substitution)
 - [x] Cumulative Layout Shift under 0.1 (deployed lab baseline: all three runs in both profiles pass; mobile 0.0134–0.0151, desktop 0)
-- [ ] Largest Contentful Paint under 2.5s (deployed lab baseline: mobile 3.433–3.443s fails; desktop 0.676–0.701s passes)
+- [x] Largest Contentful Paint under 2.5s (**user-accepted closed, 2026-10-09; mobile threshold not verified as passing** — deployed lab baseline: mobile 3.433–3.443s fails; desktop 0.676–0.701s passes)
 
 Measured on 2026-10-08 with pinned Lighthouse 13.5.0 and cold mobile/desktop profiles; [raw reports, methodology and local comparison](docs/portfolio-performance.md). These are lab results, not field guarantees. Local video splitting reduces first-load JS from 256 to 249kB but does not materially improve paint times. The theme provider already renders initial content; ReactPlayer now loads only on video demand. The candidate is not deployed, and deployed source parity is unknown. Mobile LCP needs separate investigation.
 
 ### 4.2 Security
 
-- [ ] Form validation (**partial** — required fields and a max-length check; no email-format check)
-- [ ] Secure email handling (**partial** — no rate limit, no spam control, unverified sender)
+- [x] Form validation (**user-accepted closed with Contact readiness, 2026-10-09; partial verification** — required fields and a max-length check; no email-format check recorded)
+- [x] Secure email handling (**user-accepted closed with Contact readiness, 2026-10-09; partial verification** — no rate limit, no spam control, unverified sender recorded)
 
 - Protected routes: **not applicable** — the portfolio is a single public page with no private content.
 
 ### 4.3 SEO
 
-- [ ] Meta tags (**partial** — title and description only; no Open Graph, Twitter, or canonical)
-- [ ] Semantic HTML (**partial** — sections exist; Intro nests an `h1` inside an `h1`)
-- [ ] Structured data
-- [ ] Sitemap generation
-- [ ] `robots` file
+- [x] Meta tags (**local production verified, 2026-10-09** — canonical, Open Graph, Twitter large-image metadata and 1200×630 share image; deployed verification pending; see `docs/portfolio-seo.md`)
+- [x] Semantic HTML (**local production verified, 2026-10-09** — one main and h1, section h2s and native landmarks; stale nested-h1 note corrected; see `docs/portfolio-seo.md`)
+- [x] Structured data (**local production verified, 2026-10-09** — safely serialized Person/WebSite JSON-LD with published profiles; deployed verification pending)
+- [x] Sitemap generation (**local production verified, 2026-10-09** — `/sitemap.xml` lists only the canonical homepage; deployed verification pending)
+- [x] `robots` file (**local production verified, 2026-10-09** — `/robots.txt` allows public discovery and advertises the canonical sitemap; deployed verification pending)
 
 ## 5. Component architecture
 

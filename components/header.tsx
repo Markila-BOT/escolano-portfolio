@@ -127,7 +127,7 @@ export default function Header() {
             </ul>
           </nav>
         ) : (
-          <>
+          <nav aria-label="Main navigation">
             <DialogTrigger asChild>
               <Button
                 type="button"
@@ -148,7 +148,7 @@ export default function Header() {
                 hasModalFocus.current = hasFocus;
               }}
             />
-          </>
+          </nav>
         )}
       </header>
     </Dialog>

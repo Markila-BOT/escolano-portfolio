@@ -164,7 +164,8 @@ test("form routes accepted and rejected submissions to matching feedback and opt
       vm.runInNewContext(formSource, {
         exports,
         require(name) {
-          if (name === "react") return React;
+          if (name === "react")
+            return { ...React, useState: (initial) => [initial, () => {}] };
           if (name === "@/lib/data")
             return {
               contactFormFeedback: {

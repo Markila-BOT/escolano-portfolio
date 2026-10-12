@@ -1,0 +1,98 @@
+{
+  "browser": "154.0.8037.98",
+  "url": "http://localhost:3127",
+  "checks": [
+    {
+      "kind": "reduced-motion",
+      "width": 320,
+      "theme": "light",
+      "initial": {
+        "title": [
+          "Senior Software Engineer"
+        ],
+        "width": 256,
+        "height": 252,
+        "overflow": false,
+        "visibility": "visible"
+      },
+      "settled": {
+        "title": [
+          "Senior Software Engineer"
+        ],
+        "width": 256,
+        "height": 252,
+        "overflow": false,
+        "visibility": "visible"
+      }
+    },
+    {
+      "kind": "reduced-motion",
+      "width": 320,
+      "theme": "dark",
+      "initial": {
+        "title": [
+          "Senior Software Engineer"
+        ],
+        "width": 256,
+        "height": 252,
+        "overflow": false,
+        "visibility": "visible"
+      },
+      "settled": {
+        "title": [
+          "Senior Software Engineer"
+        ],
+        "width": 256,
+        "height": 252,
+        "overflow": false,
+        "visibility": "visible"
+      }
+    },
+    {
+      "kind": "reduced-motion",
+      "width": 1280,
+      "theme": "light",
+      "initial": {
+        "title": [
+          "Senior Software Engineer"
+        ],
+        "width": 736,
+        "height": 168,
+        "overflow": false,
+        "visibility": "visible"
+      },
+      "settled": {
+        "title": [
+          "Senior Software Engineer"
+        ],
+        "width": 736,
+        "height": 168,
+        "overflow": false,
+        "visibility": "visible"
+      }
+    },
+    {
+      "kind": "reduced-motion",
+      "width": 1280,
+      "theme": "dark",
+      "initial": {
+        "title": [
+          "Senior Software Engineer"
+        ],
+        "width": 736,
+        "height": 168,
+        "overflow": false,
+        "visibility": "visible"
+      },
+      "settled": {
+        "title": [
+          "Senior Software Engineer"
+        ],
+        "width": 736,
+        "height": 168,
+        "overflow": false,
+        "visibility": "visible"
+      }
+    }
+  ]
+}

@@ -4,6 +4,7 @@ const path = require("node:path");
 const metricKeys = {
   mainThreadMs: "mainthread-work-breakdown",
   tbtMs: "total-blocking-time",
+  ttiMs: "interactive",
   fcpMs: "first-contentful-paint",
   lcpMs: "largest-contentful-paint",
   cls: "cumulative-layout-shift",
@@ -83,6 +84,16 @@ function summarizeReports(directory) {
       )
         fail("unexpected audit profile");
       const metrics = {};
+      const interactive = report.audits?.interactive;
+      if (
+        interactive?.scoreDisplayMode !== "numeric" ||
+        interactive.numericUnit !== "millisecond" ||
+        interactive.errorMessage ||
+        !Number.isFinite(interactive.score) ||
+        interactive.score < 0 ||
+        interactive.score > 1
+      )
+        fail("missing/invalid interactive audit");
       for (const [name, key] of Object.entries(metricKeys)) {
         const value = report.audits?.[key]?.numericValue;
         if (!Number.isFinite(value) || value < 0)
@@ -141,6 +152,7 @@ function summarizeReports(directory) {
         url: report.finalDisplayedUrl || report.finalUrl,
         settings,
         browser: report.environment?.hostUserAgent,
+        ttiBudgetPassed: metrics.ttiMs < 3500,
         metrics: {
           ...metrics,
           scriptTransferBytes: scriptRequests.reduce(
@@ -200,8 +212,17 @@ function summarizeReports(directory) {
         ]),
       ),
       warningCount: runs.filter((run) => run.mainThreadWarning).length,
+      ttiBudget: {
+        thresholdMs: 3500,
+        passed: runs.every((run) => run.ttiBudgetPassed),
+        failedRuns: runs
+          .filter((run) => !run.ttiBudgetPassed)
+          .map((run) => run.filename),
+      },
     };
   }
+  if (summary.mobile.runs[0].url !== summary.desktop.runs[0].url)
+    throw new Error("mobile/desktop: inconsistent URLs");
   return summary;
 }
 

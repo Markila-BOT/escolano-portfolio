@@ -1,0 +1,539 @@
+{
+  "simulatedLcpMs": 3400.6965,
+  "observedLcpMs": 293,
+  "observedTraceEndMs": 2689,
+  "candidates": [
+    {
+      "observedMs": 293.07,
+      "nodeId": 60,
+      "nodeName": "SPAN class='absolute inset-0 flex items-center justify-center'",
+      "size": 68880,
+      "type": "text"
+    }
+  ],
+  "recomputedSimulatedLcpMs": 3400.6965,
+  "estimates": {
+    "optimisticEstimate": {
+      "simulatedMs": 3400.6965,
+      "nodes": [
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 280.946,
+          "simulatedStartMs": 3359.6965,
+          "simulatedEndMs": 3400.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/7726-97f3e4415ae0e7e6.js",
+          "event": null,
+          "observedStartMs": 143.008,
+          "simulatedStartMs": 3209.6965,
+          "simulatedEndMs": 3359.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/layout-eed0d6f709eeabc9.js",
+          "event": null,
+          "observedStartMs": 143.025,
+          "simulatedStartMs": 3359.6965,
+          "simulatedEndMs": 3359.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2053-4197a4c9496bab04.js",
+          "event": null,
+          "observedStartMs": 142.887,
+          "simulatedStartMs": 3059.6965,
+          "simulatedEndMs": 3209.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/5162-e78cf00236068b0b.js",
+          "event": null,
+          "observedStartMs": 142.94,
+          "simulatedStartMs": 3209.6965,
+          "simulatedEndMs": 3209.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/page-3337ecb4c0894818.js",
+          "event": null,
+          "observedStartMs": 142.96,
+          "simulatedStartMs": 3209.6965,
+          "simulatedEndMs": 3209.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/993e6b61-9cf6d4ed62c1ce51.js",
+          "event": null,
+          "observedStartMs": 142.977,
+          "simulatedStartMs": 3209.6965,
+          "simulatedEndMs": 3209.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/4815-e8f97c8bea95d40b.js",
+          "event": null,
+          "observedStartMs": 142.992,
+          "simulatedStartMs": 3209.6965,
+          "simulatedEndMs": 3209.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/6520-c68430cbdeae63d3.js",
+          "event": null,
+          "observedStartMs": 142.872,
+          "simulatedStartMs": 2759.6965,
+          "simulatedEndMs": 3059.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e1420163-c33f7186c147eec4.js",
+          "event": null,
+          "observedStartMs": 142.777,
+          "simulatedStartMs": 2609.6965,
+          "simulatedEndMs": 2759.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/97a8525b-8eea13cfa7e4704e.js",
+          "event": null,
+          "observedStartMs": 142.794,
+          "simulatedStartMs": 2759.6965,
+          "simulatedEndMs": 2759.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/664871ed-ae539950b778d09d.js",
+          "event": null,
+          "observedStartMs": 142.815,
+          "simulatedStartMs": 2759.6965,
+          "simulatedEndMs": 2759.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/a97198d3-174fddb9e2ee7fb7.js",
+          "event": null,
+          "observedStartMs": 142.83400000047683,
+          "simulatedStartMs": 2759.6965,
+          "simulatedEndMs": 2759.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/aee267ce-a5e3429565046d7c.js",
+          "event": null,
+          "observedStartMs": 142.85299999952315,
+          "simulatedStartMs": 2759.6965,
+          "simulatedEndMs": 2759.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/374c924f-3a1b102ea292dbd0.js",
+          "event": null,
+          "observedStartMs": 142.715,
+          "simulatedStartMs": 2459.6965,
+          "simulatedEndMs": 2609.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/9a49160a-c7248aac1df4445b.js",
+          "event": null,
+          "observedStartMs": 142.73099999952316,
+          "simulatedStartMs": 2609.6965,
+          "simulatedEndMs": 2609.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e5b94e92-4559663366fb29d8.js",
+          "event": null,
+          "observedStartMs": 142.76000000047685,
+          "simulatedStartMs": 2609.6965,
+          "simulatedEndMs": 2609.6965
+        },
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 255.707,
+          "simulatedStartMs": 2459.6965,
+          "simulatedEndMs": 2510.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2945-290d407b673c087d.js",
+          "event": null,
+          "observedStartMs": 142.65500000047683,
+          "simulatedStartMs": 2309.6965,
+          "simulatedEndMs": 2459.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/main-app-b0d4e3a07e6a8cd0.js",
+          "event": null,
+          "observedStartMs": 142.67999999952318,
+          "simulatedStartMs": 2459.6965,
+          "simulatedEndMs": 2459.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/db154509-ea1316a873fa0289.js",
+          "event": null,
+          "observedStartMs": 142.697,
+          "simulatedStartMs": 2459.6965,
+          "simulatedEndMs": 2459.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2200cc46-3b68f251f09ee66c.js",
+          "event": null,
+          "observedStartMs": 142.63500000047685,
+          "simulatedStartMs": 2009.6965,
+          "simulatedEndMs": 2309.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fprofile.17779dd2.png&w=384&q=95",
+          "event": null,
+          "observedStartMs": 142.492,
+          "simulatedStartMs": 1859.6965,
+          "simulatedEndMs": 2009.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/webpack-47b2740f2f9f3f3b.js",
+          "event": null,
+          "observedStartMs": 142.603,
+          "simulatedStartMs": 2009.6965,
+          "simulatedEndMs": 2009.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/media/723e11e5093b8e80.p.woff2",
+          "event": null,
+          "observedStartMs": 142.442,
+          "simulatedStartMs": 1559.6965,
+          "simulatedEndMs": 1859.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+          "event": null,
+          "observedStartMs": 141.171,
+          "simulatedStartMs": 1109.6965,
+          "simulatedEndMs": 1559.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/css/c910c488b31eb512.css",
+          "event": null,
+          "observedStartMs": 142.53999999952316,
+          "simulatedStartMs": 959.6965,
+          "simulatedEndMs": 1109.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/css/34c26eb5be187d8a.css",
+          "event": null,
+          "observedStartMs": 142.572,
+          "simulatedStartMs": 1109.6965,
+          "simulatedEndMs": 1109.6965
+        },
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 226.439,
+          "simulatedStartMs": 1014.6965,
+          "simulatedEndMs": 1068.6965
+        },
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 144.599,
+          "simulatedStartMs": 1006.6965,
+          "simulatedEndMs": 1014.6965
+        },
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 132.404,
+          "simulatedStartMs": 959.6965,
+          "simulatedEndMs": 1006.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/",
+          "event": null,
+          "observedStartMs": 0.312,
+          "simulatedStartMs": 0,
+          "simulatedEndMs": 959.6965
+        }
+      ]
+    },
+    "pessimisticEstimate": {
+      "simulatedMs": 3400.6965,
+      "nodes": [
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 280.946,
+          "simulatedStartMs": 3359.6965,
+          "simulatedEndMs": 3400.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/7726-97f3e4415ae0e7e6.js",
+          "event": null,
+          "observedStartMs": 143.008,
+          "simulatedStartMs": 3209.6965,
+          "simulatedEndMs": 3359.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/layout-eed0d6f709eeabc9.js",
+          "event": null,
+          "observedStartMs": 143.025,
+          "simulatedStartMs": 3359.6965,
+          "simulatedEndMs": 3359.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2053-4197a4c9496bab04.js",
+          "event": null,
+          "observedStartMs": 142.887,
+          "simulatedStartMs": 3059.6965,
+          "simulatedEndMs": 3209.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/5162-e78cf00236068b0b.js",
+          "event": null,
+          "observedStartMs": 142.94,
+          "simulatedStartMs": 3209.6965,
+          "simulatedEndMs": 3209.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/page-3337ecb4c0894818.js",
+          "event": null,
+          "observedStartMs": 142.96,
+          "simulatedStartMs": 3209.6965,
+          "simulatedEndMs": 3209.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/993e6b61-9cf6d4ed62c1ce51.js",
+          "event": null,
+          "observedStartMs": 142.977,
+          "simulatedStartMs": 3209.6965,
+          "simulatedEndMs": 3209.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/4815-e8f97c8bea95d40b.js",
+          "event": null,
+          "observedStartMs": 142.992,
+          "simulatedStartMs": 3209.6965,
+          "simulatedEndMs": 3209.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/6520-c68430cbdeae63d3.js",
+          "event": null,
+          "observedStartMs": 142.872,
+          "simulatedStartMs": 2759.6965,
+          "simulatedEndMs": 3059.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e1420163-c33f7186c147eec4.js",
+          "event": null,
+          "observedStartMs": 142.777,
+          "simulatedStartMs": 2609.6965,
+          "simulatedEndMs": 2759.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/97a8525b-8eea13cfa7e4704e.js",
+          "event": null,
+          "observedStartMs": 142.794,
+          "simulatedStartMs": 2759.6965,
+          "simulatedEndMs": 2759.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/664871ed-ae539950b778d09d.js",
+          "event": null,
+          "observedStartMs": 142.815,
+          "simulatedStartMs": 2759.6965,
+          "simulatedEndMs": 2759.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/a97198d3-174fddb9e2ee7fb7.js",
+          "event": null,
+          "observedStartMs": 142.83400000047683,
+          "simulatedStartMs": 2759.6965,
+          "simulatedEndMs": 2759.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/aee267ce-a5e3429565046d7c.js",
+          "event": null,
+          "observedStartMs": 142.85299999952315,
+          "simulatedStartMs": 2759.6965,
+          "simulatedEndMs": 2759.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/374c924f-3a1b102ea292dbd0.js",
+          "event": null,
+          "observedStartMs": 142.715,
+          "simulatedStartMs": 2459.6965,
+          "simulatedEndMs": 2609.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/9a49160a-c7248aac1df4445b.js",
+          "event": null,
+          "observedStartMs": 142.73099999952316,
+          "simulatedStartMs": 2609.6965,
+          "simulatedEndMs": 2609.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e5b94e92-4559663366fb29d8.js",
+          "event": null,
+          "observedStartMs": 142.76000000047685,
+          "simulatedStartMs": 2609.6965,
+          "simulatedEndMs": 2609.6965
+        },
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 255.707,
+          "simulatedStartMs": 2459.6965,
+          "simulatedEndMs": 2510.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2945-290d407b673c087d.js",
+          "event": null,
+          "observedStartMs": 142.65500000047683,
+          "simulatedStartMs": 2309.6965,
+          "simulatedEndMs": 2459.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/main-app-b0d4e3a07e6a8cd0.js",
+          "event": null,
+          "observedStartMs": 142.67999999952318,
+          "simulatedStartMs": 2459.6965,
+          "simulatedEndMs": 2459.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/db154509-ea1316a873fa0289.js",
+          "event": null,
+          "observedStartMs": 142.697,
+          "simulatedStartMs": 2459.6965,
+          "simulatedEndMs": 2459.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2200cc46-3b68f251f09ee66c.js",
+          "event": null,
+          "observedStartMs": 142.63500000047685,
+          "simulatedStartMs": 2009.6965,
+          "simulatedEndMs": 2309.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fprofile.17779dd2.png&w=384&q=95",
+          "event": null,
+          "observedStartMs": 142.492,
+          "simulatedStartMs": 1859.6965,
+          "simulatedEndMs": 2009.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/webpack-47b2740f2f9f3f3b.js",
+          "event": null,
+          "observedStartMs": 142.603,
+          "simulatedStartMs": 2009.6965,
+          "simulatedEndMs": 2009.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/media/723e11e5093b8e80.p.woff2",
+          "event": null,
+          "observedStartMs": 142.442,
+          "simulatedStartMs": 1559.6965,
+          "simulatedEndMs": 1859.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+          "event": null,
+          "observedStartMs": 141.171,
+          "simulatedStartMs": 1109.6965,
+          "simulatedEndMs": 1559.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/css/c910c488b31eb512.css",
+          "event": null,
+          "observedStartMs": 142.53999999952316,
+          "simulatedStartMs": 959.6965,
+          "simulatedEndMs": 1109.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/_next/static/css/34c26eb5be187d8a.css",
+          "event": null,
+          "observedStartMs": 142.572,
+          "simulatedStartMs": 1109.6965,
+          "simulatedEndMs": 1109.6965
+        },
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 226.439,
+          "simulatedStartMs": 1014.6965,
+          "simulatedEndMs": 1068.6965
+        },
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 144.599,
+          "simulatedStartMs": 1006.6965,
+          "simulatedEndMs": 1014.6965
+        },
+        {
+          "type": "cpu",
+          "url": null,
+          "event": "RunTask",
+          "observedStartMs": 132.404,
+          "simulatedStartMs": 959.6965,
+          "simulatedEndMs": 1006.6965
+        },
+        {
+          "type": "network",
+          "url": "https://escolano-portfolio.vercel.app/",
+          "event": null,
+          "observedStartMs": 0.312,
+          "simulatedStartMs": 0,
+          "simulatedEndMs": 959.6965
+        }
+      ]
+    }
+  }
+}

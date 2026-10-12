@@ -1,0 +1,1920 @@
+{
+  "mobile": {
+    "runs": [
+      {
+        "filename": "mobile-1.json",
+        "fetchTime": "2026-10-09T04:18:14.812Z",
+        "url": "https://escolano-portfolio.vercel.app/",
+        "settings": {
+          "output": [
+            "json"
+          ],
+          "maxWaitForFcp": 30000,
+          "maxWaitForLoad": 45000,
+          "pauseAfterFcpMs": 1000,
+          "pauseAfterLoadMs": 1000,
+          "networkQuietThresholdMs": 1000,
+          "cpuQuietThresholdMs": 1000,
+          "formFactor": "mobile",
+          "throttling": {
+            "rttMs": 150,
+            "throughputKbps": 1638.4,
+            "requestLatencyMs": 562.5,
+            "downloadThroughputKbps": 1474.5600000000002,
+            "uploadThroughputKbps": 675,
+            "cpuSlowdownMultiplier": 4
+          },
+          "throttlingMethod": "simulate",
+          "screenEmulation": {
+            "mobile": true,
+            "width": 412,
+            "height": 823,
+            "deviceScaleFactor": 1.75,
+            "disabled": false
+          },
+          "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+          "auditMode": false,
+          "gatherMode": false,
+          "clearStorageTypes": [
+            "file_systems",
+            "shader_cache",
+            "service_workers",
+            "cache_storage"
+          ],
+          "disableStorageReset": false,
+          "debugNavigation": false,
+          "channel": "cli",
+          "usePassiveGathering": false,
+          "disableFullPageScreenshot": false,
+          "skipAboutBlank": false,
+          "blankPage": "about:blank",
+          "ignoreStatusCode": false,
+          "locale": "en-US",
+          "blockedUrlPatterns": null,
+          "additionalTraceCategories": null,
+          "extraHeaders": null,
+          "precomputedLanternData": null,
+          "onlyAudits": null,
+          "onlyCategories": [
+            "performance"
+          ],
+          "skipAudits": null
+        },
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "metrics": {
+          "mainThreadMs": 1074.1760000000133,
+          "tbtMs": 1,
+          "fcpMs": 1109.6965,
+          "lcpMs": 3400.6965,
+          "cls": 0,
+          "scriptTransferBytes": 266059,
+          "scriptResourceBytes": 782929
+        },
+        "lcpEvidence": {
+          "node": {
+            "label": "Senior Software Engineer",
+            "selector": "section#home > h1.mb-10 > strong.relative > span.absolute",
+            "snippet": "<span aria-hidden=\"true\" class=\"absolute inset-0 flex items-center justify-center\" style=\"opacity:1;transform:none\">"
+          },
+          "observedSubparts": [
+            {
+              "subpart": "timeToFirstByte",
+              "duration": 118.093
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "duration": 174.977
+            }
+          ],
+          "fonts": [
+            {
+              "url": "https://escolano-portfolio.vercel.app/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+              "transferSize": 69933,
+              "resourceSize": 69652,
+              "isLinkPreload": true
+            },
+            {
+              "url": "https://escolano-portfolio.vercel.app/_next/static/media/723e11e5093b8e80.p.woff2",
+              "transferSize": 71584,
+              "resourceSize": 71368,
+              "isLinkPreload": true
+            }
+          ]
+        },
+        "mainThreadScore": 1,
+        "mainThreadWarning": false,
+        "categories": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 354.0640000000004
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 329.60800000001217
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 218.82000000000002
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 71.65200000000095
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 56.775999999999975
+          },
+          {
+            "group": "parseHTML",
+            "groupLabel": "Parse HTML & CSS",
+            "duration": 27.088
+          },
+          {
+            "group": "garbageCollection",
+            "groupLabel": "Garbage Collection",
+            "duration": 16.16799999999998
+          }
+        ],
+        "topScripts": [
+          {
+            "url": "https://escolano-portfolio.vercel.app/",
+            "total": 296.8280000000009,
+            "scripting": 8.068,
+            "scriptParseCompile": 8.363999999999997
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2945-290d407b673c087d.js",
+            "total": 241.17599999999888,
+            "scripting": 196.99599999999887,
+            "scriptParseCompile": 7.704
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/6520-c68430cbdeae63d3.js",
+            "total": 222.19999999999976,
+            "scripting": 63.13199999999999,
+            "scriptParseCompile": 10.427999999999999
+          },
+          {
+            "url": "Unattributable",
+            "total": 164.55200000000374,
+            "scripting": 6.507999999999999,
+            "scriptParseCompile": 0
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2200cc46-3b68f251f09ee66c.js",
+            "total": 90.5760000000002,
+            "scripting": 58.79200000000021,
+            "scriptParseCompile": 9.692
+          }
+        ],
+        "scriptRequests": [
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/webpack-47b2740f2f9f3f3b.js",
+            "transferSize": 2865,
+            "resourceSize": 5285
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2200cc46-3b68f251f09ee66c.js",
+            "transferSize": 55388,
+            "resourceSize": 172835
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2945-290d407b673c087d.js",
+            "transferSize": 33167,
+            "resourceSize": 124349
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/main-app-b0d4e3a07e6a8cd0.js",
+            "transferSize": 668,
+            "resourceSize": 465
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/db154509-ea1316a873fa0289.js",
+            "transferSize": 1371,
+            "resourceSize": 4023
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/374c924f-3a1b102ea292dbd0.js",
+            "transferSize": 22040,
+            "resourceSize": 55207
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/9a49160a-c7248aac1df4445b.js",
+            "transferSize": 742,
+            "resourceSize": 1100
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e5b94e92-4559663366fb29d8.js",
+            "transferSize": 772,
+            "resourceSize": 1803
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e1420163-c33f7186c147eec4.js",
+            "transferSize": 7346,
+            "resourceSize": 18514
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/97a8525b-8eea13cfa7e4704e.js",
+            "transferSize": 849,
+            "resourceSize": 1347
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/664871ed-ae539950b778d09d.js",
+            "transferSize": 904,
+            "resourceSize": 696
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/a97198d3-174fddb9e2ee7fb7.js",
+            "transferSize": 7438,
+            "resourceSize": 24228
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/aee267ce-a5e3429565046d7c.js",
+            "transferSize": 617,
+            "resourceSize": 1141
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/6520-c68430cbdeae63d3.js",
+            "transferSize": 62735,
+            "resourceSize": 185100
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2053-4197a4c9496bab04.js",
+            "transferSize": 19974,
+            "resourceSize": 52693
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/5162-e78cf00236068b0b.js",
+            "transferSize": 12113,
+            "resourceSize": 38078
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/page-3337ecb4c0894818.js",
+            "transferSize": 10200,
+            "resourceSize": 28343
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/993e6b61-9cf6d4ed62c1ce51.js",
+            "transferSize": 1264,
+            "resourceSize": 2885
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/4815-e8f97c8bea95d40b.js",
+            "transferSize": 1669,
+            "resourceSize": 3132
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/7726-97f3e4415ae0e7e6.js",
+            "transferSize": 12561,
+            "resourceSize": 35574
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/layout-eed0d6f709eeabc9.js",
+            "transferSize": 11376,
+            "resourceSize": 26131
+          }
+        ]
+      },
+      {
+        "filename": "mobile-2.json",
+        "fetchTime": "2026-10-09T04:18:25.772Z",
+        "url": "https://escolano-portfolio.vercel.app/",
+        "settings": {
+          "output": [
+            "json"
+          ],
+          "maxWaitForFcp": 30000,
+          "maxWaitForLoad": 45000,
+          "pauseAfterFcpMs": 1000,
+          "pauseAfterLoadMs": 1000,
+          "networkQuietThresholdMs": 1000,
+          "cpuQuietThresholdMs": 1000,
+          "formFactor": "mobile",
+          "throttling": {
+            "rttMs": 150,
+            "throughputKbps": 1638.4,
+            "requestLatencyMs": 562.5,
+            "downloadThroughputKbps": 1474.5600000000002,
+            "uploadThroughputKbps": 675,
+            "cpuSlowdownMultiplier": 4
+          },
+          "throttlingMethod": "simulate",
+          "screenEmulation": {
+            "mobile": true,
+            "width": 412,
+            "height": 823,
+            "deviceScaleFactor": 1.75,
+            "disabled": false
+          },
+          "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+          "auditMode": false,
+          "gatherMode": false,
+          "clearStorageTypes": [
+            "file_systems",
+            "shader_cache",
+            "service_workers",
+            "cache_storage"
+          ],
+          "disableStorageReset": false,
+          "debugNavigation": false,
+          "channel": "cli",
+          "usePassiveGathering": false,
+          "disableFullPageScreenshot": false,
+          "skipAboutBlank": false,
+          "blankPage": "about:blank",
+          "ignoreStatusCode": false,
+          "locale": "en-US",
+          "blockedUrlPatterns": null,
+          "additionalTraceCategories": null,
+          "extraHeaders": null,
+          "precomputedLanternData": null,
+          "onlyAudits": null,
+          "onlyCategories": [
+            "performance"
+          ],
+          "skipAudits": null
+        },
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "metrics": {
+          "mainThreadMs": 844.9679999999995,
+          "tbtMs": 0,
+          "fcpMs": 1110.751,
+          "lcpMs": 3360.751,
+          "cls": 0,
+          "scriptTransferBytes": 266058,
+          "scriptResourceBytes": 782929
+        },
+        "lcpEvidence": {
+          "node": {
+            "label": "Senior Software Engineer",
+            "selector": "section#home > h1.mb-10 > strong.relative > span.absolute",
+            "snippet": "<span aria-hidden=\"true\" class=\"absolute inset-0 flex items-center justify-center\" style=\"opacity:1;transform:none\">"
+          },
+          "observedSubparts": [
+            {
+              "subpart": "timeToFirstByte",
+              "duration": 118.936
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "duration": 171.899
+            }
+          ],
+          "fonts": [
+            {
+              "url": "https://escolano-portfolio.vercel.app/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+              "transferSize": 69872,
+              "resourceSize": 69652,
+              "isLinkPreload": true
+            },
+            {
+              "url": "https://escolano-portfolio.vercel.app/_next/static/media/723e11e5093b8e80.p.woff2",
+              "transferSize": 71668,
+              "resourceSize": 71368,
+              "isLinkPreload": true
+            }
+          ]
+        },
+        "mainThreadScore": 1,
+        "mainThreadWarning": false,
+        "categories": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 271.1720000000002
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 240.53200000000012
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 187.48399999999998
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 65.13999999999933
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 56.35999999999999
+          },
+          {
+            "group": "parseHTML",
+            "groupLabel": "Parse HTML & CSS",
+            "duration": 16.432000000000002
+          },
+          {
+            "group": "garbageCollection",
+            "groupLabel": "Garbage Collection",
+            "duration": 7.847999999999995
+          }
+        ],
+        "topScripts": [
+          {
+            "url": "https://escolano-portfolio.vercel.app/",
+            "total": 249.72800000000046,
+            "scripting": 7.016,
+            "scriptParseCompile": 8.567999999999994
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/6520-c68430cbdeae63d3.js",
+            "total": 196.26799999999972,
+            "scripting": 49.42400000000008,
+            "scriptParseCompile": 10.403999999999998
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2945-290d407b673c087d.js",
+            "total": 186.69199999999947,
+            "scripting": 151.65999999999946,
+            "scriptParseCompile": 7.56
+          },
+          {
+            "url": "Unattributable",
+            "total": 98.73999999999972,
+            "scripting": 7.9879999999999995,
+            "scriptParseCompile": 0
+          }
+        ],
+        "scriptRequests": [
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/webpack-47b2740f2f9f3f3b.js",
+            "transferSize": 2864,
+            "resourceSize": 5285
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2200cc46-3b68f251f09ee66c.js",
+            "transferSize": 55358,
+            "resourceSize": 172835
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2945-290d407b673c087d.js",
+            "transferSize": 33196,
+            "resourceSize": 124349
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/main-app-b0d4e3a07e6a8cd0.js",
+            "transferSize": 694,
+            "resourceSize": 465
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/db154509-ea1316a873fa0289.js",
+            "transferSize": 1345,
+            "resourceSize": 4023
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/374c924f-3a1b102ea292dbd0.js",
+            "transferSize": 22031,
+            "resourceSize": 55207
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/9a49160a-c7248aac1df4445b.js",
+            "transferSize": 789,
+            "resourceSize": 1100
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e5b94e92-4559663366fb29d8.js",
+            "transferSize": 711,
+            "resourceSize": 1803
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e1420163-c33f7186c147eec4.js",
+            "transferSize": 7392,
+            "resourceSize": 18514
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/97a8525b-8eea13cfa7e4704e.js",
+            "transferSize": 873,
+            "resourceSize": 1347
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/664871ed-ae539950b778d09d.js",
+            "transferSize": 878,
+            "resourceSize": 696
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/a97198d3-174fddb9e2ee7fb7.js",
+            "transferSize": 7383,
+            "resourceSize": 24228
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/aee267ce-a5e3429565046d7c.js",
+            "transferSize": 613,
+            "resourceSize": 1141
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/6520-c68430cbdeae63d3.js",
+            "transferSize": 62712,
+            "resourceSize": 185100
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2053-4197a4c9496bab04.js",
+            "transferSize": 19974,
+            "resourceSize": 52693
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/5162-e78cf00236068b0b.js",
+            "transferSize": 12113,
+            "resourceSize": 38078
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/page-3337ecb4c0894818.js",
+            "transferSize": 10194,
+            "resourceSize": 28343
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/993e6b61-9cf6d4ed62c1ce51.js",
+            "transferSize": 1264,
+            "resourceSize": 2885
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/4815-e8f97c8bea95d40b.js",
+            "transferSize": 1700,
+            "resourceSize": 3132
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/7726-97f3e4415ae0e7e6.js",
+            "transferSize": 12621,
+            "resourceSize": 35574
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/layout-eed0d6f709eeabc9.js",
+            "transferSize": 11353,
+            "resourceSize": 26131
+          }
+        ]
+      },
+      {
+        "filename": "mobile-3.json",
+        "fetchTime": "2026-10-09T04:18:36.673Z",
+        "url": "https://escolano-portfolio.vercel.app/",
+        "settings": {
+          "output": [
+            "json"
+          ],
+          "maxWaitForFcp": 30000,
+          "maxWaitForLoad": 45000,
+          "pauseAfterFcpMs": 1000,
+          "pauseAfterLoadMs": 1000,
+          "networkQuietThresholdMs": 1000,
+          "cpuQuietThresholdMs": 1000,
+          "formFactor": "mobile",
+          "throttling": {
+            "rttMs": 150,
+            "throughputKbps": 1638.4,
+            "requestLatencyMs": 562.5,
+            "downloadThroughputKbps": 1474.5600000000002,
+            "uploadThroughputKbps": 675,
+            "cpuSlowdownMultiplier": 4
+          },
+          "throttlingMethod": "simulate",
+          "screenEmulation": {
+            "mobile": true,
+            "width": 412,
+            "height": 823,
+            "deviceScaleFactor": 1.75,
+            "disabled": false
+          },
+          "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+          "auditMode": false,
+          "gatherMode": false,
+          "clearStorageTypes": [
+            "file_systems",
+            "shader_cache",
+            "service_workers",
+            "cache_storage"
+          ],
+          "disableStorageReset": false,
+          "debugNavigation": false,
+          "channel": "cli",
+          "usePassiveGathering": false,
+          "disableFullPageScreenshot": false,
+          "skipAboutBlank": false,
+          "blankPage": "about:blank",
+          "ignoreStatusCode": false,
+          "locale": "en-US",
+          "blockedUrlPatterns": null,
+          "additionalTraceCategories": null,
+          "extraHeaders": null,
+          "precomputedLanternData": null,
+          "onlyAudits": null,
+          "onlyCategories": [
+            "performance"
+          ],
+          "skipAudits": null
+        },
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "metrics": {
+          "mainThreadMs": 938.0519999999995,
+          "tbtMs": 11,
+          "fcpMs": 1111.2755,
+          "lcpMs": 3361.2754999999997,
+          "cls": 0,
+          "scriptTransferBytes": 266061,
+          "scriptResourceBytes": 782929
+        },
+        "lcpEvidence": {
+          "node": {
+            "label": "Senior Software Engineer",
+            "selector": "section#home > h1.mb-10 > strong.relative > span.absolute",
+            "snippet": "<span aria-hidden=\"true\" class=\"absolute inset-0 flex items-center justify-center\" style=\"opacity:1;transform:none\">"
+          },
+          "observedSubparts": [
+            {
+              "subpart": "timeToFirstByte",
+              "duration": 117.78199999952317
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "duration": 160.60100000047683
+            }
+          ],
+          "fonts": [
+            {
+              "url": "https://escolano-portfolio.vercel.app/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+              "transferSize": 69936,
+              "resourceSize": 69652,
+              "isLinkPreload": true
+            },
+            {
+              "url": "https://escolano-portfolio.vercel.app/_next/static/media/723e11e5093b8e80.p.woff2",
+              "transferSize": 71583,
+              "resourceSize": 71368,
+              "isLinkPreload": true
+            }
+          ]
+        },
+        "mainThreadScore": 1,
+        "mainThreadWarning": false,
+        "categories": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 311.7839999999988
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 269.13199999999887
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 197.744
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 76.84800000000173
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 58.231999999999985
+          },
+          {
+            "group": "parseHTML",
+            "groupLabel": "Parse HTML & CSS",
+            "duration": 17.716
+          },
+          {
+            "group": "garbageCollection",
+            "groupLabel": "Garbage Collection",
+            "duration": 6.595999999999998
+          }
+        ],
+        "topScripts": [
+          {
+            "url": "https://escolano-portfolio.vercel.app/",
+            "total": 267.5000000000009,
+            "scripting": 6.651999999999999,
+            "scriptParseCompile": 8.647999999999998
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2945-290d407b673c087d.js",
+            "total": 216.0119999999992,
+            "scripting": 175.8879999999992,
+            "scriptParseCompile": 7.832
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/6520-c68430cbdeae63d3.js",
+            "total": 197.92799999999974,
+            "scripting": 32.65999999999998,
+            "scriptParseCompile": 10.751999999999999
+          },
+          {
+            "url": "Unattributable",
+            "total": 105.6320000000002,
+            "scripting": 7.991999999999999,
+            "scriptParseCompile": 0
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/webpack-47b2740f2f9f3f3b.js",
+            "total": 59.69599999999995,
+            "scripting": 58.71999999999995,
+            "scriptParseCompile": 0.544
+          }
+        ],
+        "scriptRequests": [
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/webpack-47b2740f2f9f3f3b.js",
+            "transferSize": 2888,
+            "resourceSize": 5285
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2200cc46-3b68f251f09ee66c.js",
+            "transferSize": 55408,
+            "resourceSize": 172835
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2945-290d407b673c087d.js",
+            "transferSize": 33210,
+            "resourceSize": 124349
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/main-app-b0d4e3a07e6a8cd0.js",
+            "transferSize": 650,
+            "resourceSize": 465
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/db154509-ea1316a873fa0289.js",
+            "transferSize": 1346,
+            "resourceSize": 4023
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/374c924f-3a1b102ea292dbd0.js",
+            "transferSize": 22030,
+            "resourceSize": 55207
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/9a49160a-c7248aac1df4445b.js",
+            "transferSize": 742,
+            "resourceSize": 1100
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e5b94e92-4559663366fb29d8.js",
+            "transferSize": 717,
+            "resourceSize": 1803
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e1420163-c33f7186c147eec4.js",
+            "transferSize": 7389,
+            "resourceSize": 18514
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/97a8525b-8eea13cfa7e4704e.js",
+            "transferSize": 826,
+            "resourceSize": 1347
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/664871ed-ae539950b778d09d.js",
+            "transferSize": 878,
+            "resourceSize": 696
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/a97198d3-174fddb9e2ee7fb7.js",
+            "transferSize": 7427,
+            "resourceSize": 24228
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/aee267ce-a5e3429565046d7c.js",
+            "transferSize": 614,
+            "resourceSize": 1141
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/6520-c68430cbdeae63d3.js",
+            "transferSize": 62710,
+            "resourceSize": 185100
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2053-4197a4c9496bab04.js",
+            "transferSize": 20000,
+            "resourceSize": 52693
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/5162-e78cf00236068b0b.js",
+            "transferSize": 12119,
+            "resourceSize": 38078
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/page-3337ecb4c0894818.js",
+            "transferSize": 10198,
+            "resourceSize": 28343
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/993e6b61-9cf6d4ed62c1ce51.js",
+            "transferSize": 1263,
+            "resourceSize": 2885
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/4815-e8f97c8bea95d40b.js",
+            "transferSize": 1718,
+            "resourceSize": 3132
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/7726-97f3e4415ae0e7e6.js",
+            "transferSize": 12546,
+            "resourceSize": 35574
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/layout-eed0d6f709eeabc9.js",
+            "transferSize": 11382,
+            "resourceSize": 26131
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "mainThreadMs": {
+        "values": [
+          1074.1760000000133,
+          844.9679999999995,
+          938.0519999999995
+        ],
+        "median": 938.0519999999995,
+        "min": 844.9679999999995,
+        "max": 1074.1760000000133
+      },
+      "tbtMs": {
+        "values": [
+          1,
+          0,
+          11
+        ],
+        "median": 1,
+        "min": 0,
+        "max": 11
+      },
+      "fcpMs": {
+        "values": [
+          1109.6965,
+          1110.751,
+          1111.2755
+        ],
+        "median": 1110.751,
+        "min": 1109.6965,
+        "max": 1111.2755
+      },
+      "lcpMs": {
+        "values": [
+          3400.6965,
+          3360.751,
+          3361.2754999999997
+        ],
+        "median": 3361.2754999999997,
+        "min": 3360.751,
+        "max": 3400.6965
+      },
+      "cls": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "scriptTransferBytes": {
+        "values": [
+          266059,
+          266058,
+          266061
+        ],
+        "median": 266059,
+        "min": 266058,
+        "max": 266061
+      },
+      "scriptResourceBytes": {
+        "values": [
+          782929,
+          782929,
+          782929
+        ],
+        "median": 782929,
+        "min": 782929,
+        "max": 782929
+      }
+    },
+    "categories": {
+      "scriptEvaluation": {
+        "values": [
+          354.0640000000004,
+          271.1720000000002,
+          311.7839999999988
+        ],
+        "median": 311.7839999999988,
+        "min": 271.1720000000002,
+        "max": 354.0640000000004
+      },
+      "other": {
+        "values": [
+          329.60800000001217,
+          240.53200000000012,
+          269.13199999999887
+        ],
+        "median": 269.13199999999887,
+        "min": 240.53200000000012,
+        "max": 329.60800000001217
+      },
+      "styleLayout": {
+        "values": [
+          218.82000000000002,
+          187.48399999999998,
+          197.744
+        ],
+        "median": 197.744,
+        "min": 187.48399999999998,
+        "max": 218.82000000000002
+      },
+      "paintCompositeRender": {
+        "values": [
+          71.65200000000095,
+          65.13999999999933,
+          76.84800000000173
+        ],
+        "median": 71.65200000000095,
+        "min": 65.13999999999933,
+        "max": 76.84800000000173
+      },
+      "scriptParseCompile": {
+        "values": [
+          56.775999999999975,
+          56.35999999999999,
+          58.231999999999985
+        ],
+        "median": 56.775999999999975,
+        "min": 56.35999999999999,
+        "max": 58.231999999999985
+      },
+      "parseHTML": {
+        "values": [
+          27.088,
+          16.432000000000002,
+          17.716
+        ],
+        "median": 17.716,
+        "min": 16.432000000000002,
+        "max": 27.088
+      },
+      "garbageCollection": {
+        "values": [
+          16.16799999999998,
+          7.847999999999995,
+          6.595999999999998
+        ],
+        "median": 7.847999999999995,
+        "min": 6.595999999999998,
+        "max": 16.16799999999998
+      }
+    },
+    "warningCount": 0
+  },
+  "desktop": {
+    "runs": [
+      {
+        "filename": "desktop-1.json",
+        "fetchTime": "2026-10-09T04:18:47.533Z",
+        "url": "https://escolano-portfolio.vercel.app/",
+        "settings": {
+          "output": [
+            "json"
+          ],
+          "maxWaitForFcp": 30000,
+          "maxWaitForLoad": 45000,
+          "pauseAfterFcpMs": 1000,
+          "pauseAfterLoadMs": 1000,
+          "networkQuietThresholdMs": 1000,
+          "cpuQuietThresholdMs": 1000,
+          "formFactor": "desktop",
+          "throttling": {
+            "rttMs": 40,
+            "throughputKbps": 10240,
+            "requestLatencyMs": 0,
+            "downloadThroughputKbps": 0,
+            "uploadThroughputKbps": 0,
+            "cpuSlowdownMultiplier": 1
+          },
+          "throttlingMethod": "simulate",
+          "screenEmulation": {
+            "mobile": false,
+            "width": 1350,
+            "height": 940,
+            "deviceScaleFactor": 1,
+            "disabled": false
+          },
+          "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+          "auditMode": false,
+          "gatherMode": false,
+          "clearStorageTypes": [
+            "file_systems",
+            "shader_cache",
+            "service_workers",
+            "cache_storage"
+          ],
+          "disableStorageReset": false,
+          "debugNavigation": false,
+          "channel": "cli",
+          "usePassiveGathering": false,
+          "disableFullPageScreenshot": false,
+          "skipAboutBlank": false,
+          "blankPage": "about:blank",
+          "ignoreStatusCode": false,
+          "locale": "en-US",
+          "blockedUrlPatterns": null,
+          "additionalTraceCategories": null,
+          "extraHeaders": null,
+          "precomputedLanternData": null,
+          "onlyAudits": null,
+          "onlyCategories": [
+            "performance"
+          ],
+          "skipAudits": null
+        },
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "metrics": {
+          "mainThreadMs": 230.09699999999924,
+          "tbtMs": 0,
+          "fcpMs": 343.841,
+          "lcpMs": 663.841,
+          "cls": 0,
+          "scriptTransferBytes": 266063,
+          "scriptResourceBytes": 782929
+        },
+        "lcpEvidence": {
+          "node": {
+            "label": "Senior Software Engineer",
+            "selector": "section#home > h1.mb-10 > strong.relative > span.absolute",
+            "snippet": "<span aria-hidden=\"true\" class=\"absolute inset-0 flex items-center justify-center\" style=\"opacity:1;transform:none\">"
+          },
+          "observedSubparts": [
+            {
+              "subpart": "timeToFirstByte",
+              "duration": 118.43200000047683
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "duration": 138.43599999952318
+            }
+          ],
+          "fonts": [
+            {
+              "url": "https://escolano-portfolio.vercel.app/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+              "transferSize": 69937,
+              "resourceSize": 69652,
+              "isLinkPreload": true
+            },
+            {
+              "url": "https://escolano-portfolio.vercel.app/_next/static/media/723e11e5093b8e80.p.woff2",
+              "transferSize": 71584,
+              "resourceSize": 71368,
+              "isLinkPreload": true
+            }
+          ]
+        },
+        "mainThreadScore": 1,
+        "mainThreadWarning": false,
+        "categories": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 74.65899999999966
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 65.72799999999972
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 51.717999999999996
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 16.622999999999863
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 14.744999999999992
+          },
+          {
+            "group": "parseHTML",
+            "groupLabel": "Parse HTML & CSS",
+            "duration": 3.943
+          },
+          {
+            "group": "garbageCollection",
+            "groupLabel": "Garbage Collection",
+            "duration": 2.680999999999995
+          }
+        ],
+        "topScripts": [
+          {
+            "url": "https://escolano-portfolio.vercel.app/",
+            "total": 69.13600000000005,
+            "scripting": 1.9219999999999995,
+            "scriptParseCompile": 2.2659999999999987
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2945-290d407b673c087d.js",
+            "total": 53.46400000000002,
+            "scripting": 44.157000000000025,
+            "scriptParseCompile": 1.9889999999999999
+          }
+        ],
+        "scriptRequests": [
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/webpack-47b2740f2f9f3f3b.js",
+            "transferSize": 2892,
+            "resourceSize": 5285
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2200cc46-3b68f251f09ee66c.js",
+            "transferSize": 55433,
+            "resourceSize": 172835
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2945-290d407b673c087d.js",
+            "transferSize": 33191,
+            "resourceSize": 124349
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/main-app-b0d4e3a07e6a8cd0.js",
+            "transferSize": 665,
+            "resourceSize": 465
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/db154509-ea1316a873fa0289.js",
+            "transferSize": 1354,
+            "resourceSize": 4023
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/374c924f-3a1b102ea292dbd0.js",
+            "transferSize": 22025,
+            "resourceSize": 55207
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/9a49160a-c7248aac1df4445b.js",
+            "transferSize": 742,
+            "resourceSize": 1100
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e5b94e92-4559663366fb29d8.js",
+            "transferSize": 738,
+            "resourceSize": 1803
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e1420163-c33f7186c147eec4.js",
+            "transferSize": 7348,
+            "resourceSize": 18514
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/97a8525b-8eea13cfa7e4704e.js",
+            "transferSize": 829,
+            "resourceSize": 1347
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/664871ed-ae539950b778d09d.js",
+            "transferSize": 878,
+            "resourceSize": 696
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/a97198d3-174fddb9e2ee7fb7.js",
+            "transferSize": 7377,
+            "resourceSize": 24228
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/aee267ce-a5e3429565046d7c.js",
+            "transferSize": 614,
+            "resourceSize": 1141
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/6520-c68430cbdeae63d3.js",
+            "transferSize": 62733,
+            "resourceSize": 185100
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2053-4197a4c9496bab04.js",
+            "transferSize": 19975,
+            "resourceSize": 52693
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/5162-e78cf00236068b0b.js",
+            "transferSize": 12116,
+            "resourceSize": 38078
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/page-3337ecb4c0894818.js",
+            "transferSize": 10195,
+            "resourceSize": 28343
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/993e6b61-9cf6d4ed62c1ce51.js",
+            "transferSize": 1289,
+            "resourceSize": 2885
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/4815-e8f97c8bea95d40b.js",
+            "transferSize": 1721,
+            "resourceSize": 3132
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/7726-97f3e4415ae0e7e6.js",
+            "transferSize": 12574,
+            "resourceSize": 35574
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/layout-eed0d6f709eeabc9.js",
+            "transferSize": 11374,
+            "resourceSize": 26131
+          }
+        ]
+      },
+      {
+        "filename": "desktop-2.json",
+        "fetchTime": "2026-10-09T04:18:59.095Z",
+        "url": "https://escolano-portfolio.vercel.app/",
+        "settings": {
+          "output": [
+            "json"
+          ],
+          "maxWaitForFcp": 30000,
+          "maxWaitForLoad": 45000,
+          "pauseAfterFcpMs": 1000,
+          "pauseAfterLoadMs": 1000,
+          "networkQuietThresholdMs": 1000,
+          "cpuQuietThresholdMs": 1000,
+          "formFactor": "desktop",
+          "throttling": {
+            "rttMs": 40,
+            "throughputKbps": 10240,
+            "requestLatencyMs": 0,
+            "downloadThroughputKbps": 0,
+            "uploadThroughputKbps": 0,
+            "cpuSlowdownMultiplier": 1
+          },
+          "throttlingMethod": "simulate",
+          "screenEmulation": {
+            "mobile": false,
+            "width": 1350,
+            "height": 940,
+            "deviceScaleFactor": 1,
+            "disabled": false
+          },
+          "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+          "auditMode": false,
+          "gatherMode": false,
+          "clearStorageTypes": [
+            "file_systems",
+            "shader_cache",
+            "service_workers",
+            "cache_storage"
+          ],
+          "disableStorageReset": false,
+          "debugNavigation": false,
+          "channel": "cli",
+          "usePassiveGathering": false,
+          "disableFullPageScreenshot": false,
+          "skipAboutBlank": false,
+          "blankPage": "about:blank",
+          "ignoreStatusCode": false,
+          "locale": "en-US",
+          "blockedUrlPatterns": null,
+          "additionalTraceCategories": null,
+          "extraHeaders": null,
+          "precomputedLanternData": null,
+          "onlyAudits": null,
+          "onlyCategories": [
+            "performance"
+          ],
+          "skipAudits": null
+        },
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "metrics": {
+          "mainThreadMs": 252.0870000000011,
+          "tbtMs": 0,
+          "fcpMs": 343.73,
+          "lcpMs": 680.23,
+          "cls": 0,
+          "scriptTransferBytes": 266032,
+          "scriptResourceBytes": 782929
+        },
+        "lcpEvidence": {
+          "node": {
+            "label": "Senior Software Engineer",
+            "selector": "section#home > h1.mb-10 > strong.relative > span.absolute",
+            "snippet": "<span aria-hidden=\"true\" class=\"absolute inset-0 flex items-center justify-center\" style=\"opacity:1;transform:none\">"
+          },
+          "observedSubparts": [
+            {
+              "subpart": "timeToFirstByte",
+              "duration": 247.924
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "duration": 205.56
+            }
+          ],
+          "fonts": [
+            {
+              "url": "https://escolano-portfolio.vercel.app/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+              "transferSize": 69938,
+              "resourceSize": 69652,
+              "isLinkPreload": true
+            },
+            {
+              "url": "https://escolano-portfolio.vercel.app/_next/static/media/723e11e5093b8e80.p.woff2",
+              "transferSize": 71625,
+              "resourceSize": 71368,
+              "isLinkPreload": true
+            }
+          ]
+        },
+        "mainThreadScore": 1,
+        "mainThreadWarning": false,
+        "categories": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 85.25400000000046
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 70.57200000000063
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 54.56999999999999
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 16.92400000000001
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 14.484999999999983
+          },
+          {
+            "group": "garbageCollection",
+            "groupLabel": "Garbage Collection",
+            "duration": 5.713999999999997
+          },
+          {
+            "group": "parseHTML",
+            "groupLabel": "Parse HTML & CSS",
+            "duration": 4.568
+          }
+        ],
+        "topScripts": [
+          {
+            "url": "https://escolano-portfolio.vercel.app/",
+            "total": 72.7950000000001,
+            "scripting": 2.606,
+            "scriptParseCompile": 2.230999999999999
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2945-290d407b673c087d.js",
+            "total": 58.44999999999951,
+            "scripting": 48.49099999999951,
+            "scriptParseCompile": 1.8079999999999998
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/6520-c68430cbdeae63d3.js",
+            "total": 57.26599999999995,
+            "scripting": 15.971999999999989,
+            "scriptParseCompile": 2.735
+          }
+        ],
+        "scriptRequests": [
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/webpack-47b2740f2f9f3f3b.js",
+            "transferSize": 2892,
+            "resourceSize": 5285
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2200cc46-3b68f251f09ee66c.js",
+            "transferSize": 55359,
+            "resourceSize": 172835
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2945-290d407b673c087d.js",
+            "transferSize": 33146,
+            "resourceSize": 124349
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/main-app-b0d4e3a07e6a8cd0.js",
+            "transferSize": 665,
+            "resourceSize": 465
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/db154509-ea1316a873fa0289.js",
+            "transferSize": 1396,
+            "resourceSize": 4023
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/374c924f-3a1b102ea292dbd0.js",
+            "transferSize": 22095,
+            "resourceSize": 55207
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/9a49160a-c7248aac1df4445b.js",
+            "transferSize": 747,
+            "resourceSize": 1100
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e5b94e92-4559663366fb29d8.js",
+            "transferSize": 711,
+            "resourceSize": 1803
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e1420163-c33f7186c147eec4.js",
+            "transferSize": 7339,
+            "resourceSize": 18514
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/97a8525b-8eea13cfa7e4704e.js",
+            "transferSize": 830,
+            "resourceSize": 1347
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/664871ed-ae539950b778d09d.js",
+            "transferSize": 898,
+            "resourceSize": 696
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/a97198d3-174fddb9e2ee7fb7.js",
+            "transferSize": 7448,
+            "resourceSize": 24228
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/aee267ce-a5e3429565046d7c.js",
+            "transferSize": 613,
+            "resourceSize": 1141
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/6520-c68430cbdeae63d3.js",
+            "transferSize": 62713,
+            "resourceSize": 185100
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2053-4197a4c9496bab04.js",
+            "transferSize": 20002,
+            "resourceSize": 52693
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/5162-e78cf00236068b0b.js",
+            "transferSize": 12113,
+            "resourceSize": 38078
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/page-3337ecb4c0894818.js",
+            "transferSize": 10201,
+            "resourceSize": 28343
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/993e6b61-9cf6d4ed62c1ce51.js",
+            "transferSize": 1269,
+            "resourceSize": 2885
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/4815-e8f97c8bea95d40b.js",
+            "transferSize": 1647,
+            "resourceSize": 3132
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/7726-97f3e4415ae0e7e6.js",
+            "transferSize": 12574,
+            "resourceSize": 35574
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/layout-eed0d6f709eeabc9.js",
+            "transferSize": 11374,
+            "resourceSize": 26131
+          }
+        ]
+      },
+      {
+        "filename": "desktop-3.json",
+        "fetchTime": "2026-10-09T04:19:10.208Z",
+        "url": "https://escolano-portfolio.vercel.app/",
+        "settings": {
+          "output": [
+            "json"
+          ],
+          "maxWaitForFcp": 30000,
+          "maxWaitForLoad": 45000,
+          "pauseAfterFcpMs": 1000,
+          "pauseAfterLoadMs": 1000,
+          "networkQuietThresholdMs": 1000,
+          "cpuQuietThresholdMs": 1000,
+          "formFactor": "desktop",
+          "throttling": {
+            "rttMs": 40,
+            "throughputKbps": 10240,
+            "requestLatencyMs": 0,
+            "downloadThroughputKbps": 0,
+            "uploadThroughputKbps": 0,
+            "cpuSlowdownMultiplier": 1
+          },
+          "throttlingMethod": "simulate",
+          "screenEmulation": {
+            "mobile": false,
+            "width": 1350,
+            "height": 940,
+            "deviceScaleFactor": 1,
+            "disabled": false
+          },
+          "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+          "auditMode": false,
+          "gatherMode": false,
+          "clearStorageTypes": [
+            "file_systems",
+            "shader_cache",
+            "service_workers",
+            "cache_storage"
+          ],
+          "disableStorageReset": false,
+          "debugNavigation": false,
+          "channel": "cli",
+          "usePassiveGathering": false,
+          "disableFullPageScreenshot": false,
+          "skipAboutBlank": false,
+          "blankPage": "about:blank",
+          "ignoreStatusCode": false,
+          "locale": "en-US",
+          "blockedUrlPatterns": null,
+          "additionalTraceCategories": null,
+          "extraHeaders": null,
+          "precomputedLanternData": null,
+          "onlyAudits": null,
+          "onlyCategories": [
+            "performance"
+          ],
+          "skipAudits": null
+        },
+        "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "metrics": {
+          "mainThreadMs": 233.31300000000107,
+          "tbtMs": 0,
+          "fcpMs": 339.33299999999997,
+          "lcpMs": 672.333,
+          "cls": 0,
+          "scriptTransferBytes": 265990,
+          "scriptResourceBytes": 782929
+        },
+        "lcpEvidence": {
+          "node": {
+            "label": "Senior Software Engineer",
+            "selector": "section#home > h1.mb-10 > strong.relative > span.absolute",
+            "snippet": "<span aria-hidden=\"true\" class=\"absolute inset-0 flex items-center justify-center\" style=\"opacity:1;transform:none\">"
+          },
+          "observedSubparts": [
+            {
+              "subpart": "timeToFirstByte",
+              "duration": 116.736
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "duration": 145.349
+            }
+          ],
+          "fonts": [
+            {
+              "url": "https://escolano-portfolio.vercel.app/_next/static/media/0b78ff376f6b9734-s.p.woff2",
+              "transferSize": 69938,
+              "resourceSize": 69652,
+              "isLinkPreload": true
+            },
+            {
+              "url": "https://escolano-portfolio.vercel.app/_next/static/media/723e11e5093b8e80.p.woff2",
+              "transferSize": 71583,
+              "resourceSize": 71368,
+              "isLinkPreload": true
+            }
+          ]
+        },
+        "mainThreadScore": 1,
+        "mainThreadWarning": false,
+        "categories": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 76.00300000000007
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 66.90900000000114
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 52.172999999999995
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 16.660999999999845
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 13.826999999999995
+          },
+          {
+            "group": "parseHTML",
+            "groupLabel": "Parse HTML & CSS",
+            "duration": 4.442
+          },
+          {
+            "group": "garbageCollection",
+            "groupLabel": "Garbage Collection",
+            "duration": 3.2979999999999943
+          }
+        ],
+        "topScripts": [
+          {
+            "url": "https://escolano-portfolio.vercel.app/",
+            "total": 69.06600000000013,
+            "scripting": 1.7649999999999997,
+            "scriptParseCompile": 2.1829999999999994
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2945-290d407b673c087d.js",
+            "total": 53.60799999999996,
+            "scripting": 44.15299999999996,
+            "scriptParseCompile": 1.783
+          }
+        ],
+        "scriptRequests": [
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/webpack-47b2740f2f9f3f3b.js",
+            "transferSize": 2865,
+            "resourceSize": 5285
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2200cc46-3b68f251f09ee66c.js",
+            "transferSize": 55391,
+            "resourceSize": 172835
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2945-290d407b673c087d.js",
+            "transferSize": 33140,
+            "resourceSize": 124349
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/main-app-b0d4e3a07e6a8cd0.js",
+            "transferSize": 691,
+            "resourceSize": 465
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/db154509-ea1316a873fa0289.js",
+            "transferSize": 1352,
+            "resourceSize": 4023
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/374c924f-3a1b102ea292dbd0.js",
+            "transferSize": 22030,
+            "resourceSize": 55207
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/9a49160a-c7248aac1df4445b.js",
+            "transferSize": 742,
+            "resourceSize": 1100
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e5b94e92-4559663366fb29d8.js",
+            "transferSize": 711,
+            "resourceSize": 1803
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/e1420163-c33f7186c147eec4.js",
+            "transferSize": 7343,
+            "resourceSize": 18514
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/97a8525b-8eea13cfa7e4704e.js",
+            "transferSize": 826,
+            "resourceSize": 1347
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/664871ed-ae539950b778d09d.js",
+            "transferSize": 932,
+            "resourceSize": 696
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/a97198d3-174fddb9e2ee7fb7.js",
+            "transferSize": 7376,
+            "resourceSize": 24228
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/aee267ce-a5e3429565046d7c.js",
+            "transferSize": 614,
+            "resourceSize": 1141
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/6520-c68430cbdeae63d3.js",
+            "transferSize": 62710,
+            "resourceSize": 185100
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/2053-4197a4c9496bab04.js",
+            "transferSize": 19975,
+            "resourceSize": 52693
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/5162-e78cf00236068b0b.js",
+            "transferSize": 12112,
+            "resourceSize": 38078
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/page-3337ecb4c0894818.js",
+            "transferSize": 10223,
+            "resourceSize": 28343
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/993e6b61-9cf6d4ed62c1ce51.js",
+            "transferSize": 1334,
+            "resourceSize": 2885
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/4815-e8f97c8bea95d40b.js",
+            "transferSize": 1701,
+            "resourceSize": 3132
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/7726-97f3e4415ae0e7e6.js",
+            "transferSize": 12546,
+            "resourceSize": 35574
+          },
+          {
+            "url": "https://escolano-portfolio.vercel.app/_next/static/chunks/app/layout-eed0d6f709eeabc9.js",
+            "transferSize": 11376,
+            "resourceSize": 26131
+          }
+        ]
+      }
+    ],
+    "metrics": {
+      "mainThreadMs": {
+        "values": [
+          230.09699999999924,
+          252.0870000000011,
+          233.31300000000107
+        ],
+        "median": 233.31300000000107,
+        "min": 230.09699999999924,
+        "max": 252.0870000000011
+      },
+      "tbtMs": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "fcpMs": {
+        "values": [
+          343.841,
+          343.73,
+          339.33299999999997
+        ],
+        "median": 343.73,
+        "min": 339.33299999999997,
+        "max": 343.841
+      },
+      "lcpMs": {
+        "values": [
+          663.841,
+          680.23,
+          672.333
+        ],
+        "median": 672.333,
+        "min": 663.841,
+        "max": 680.23
+      },
+      "cls": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "scriptTransferBytes": {
+        "values": [
+          266063,
+          266032,
+          265990
+        ],
+        "median": 266032,
+        "min": 265990,
+        "max": 266063
+      },
+      "scriptResourceBytes": {
+        "values": [
+          782929,
+          782929,
+          782929
+        ],
+        "median": 782929,
+        "min": 782929,
+        "max": 782929
+      }
+    },
+    "categories": {
+      "scriptEvaluation": {
+        "values": [
+          74.65899999999966,
+          85.25400000000046,
+          76.00300000000007
+        ],
+        "median": 76.00300000000007,
+        "min": 74.65899999999966,
+        "max": 85.25400000000046
+      },
+      "other": {
+        "values": [
+          65.72799999999972,
+          70.57200000000063,
+          66.90900000000114
+        ],
+        "median": 66.90900000000114,
+        "min": 65.72799999999972,
+        "max": 70.57200000000063
+      },
+      "styleLayout": {
+        "values": [
+          51.717999999999996,
+          54.56999999999999,
+          52.172999999999995
+        ],
+        "median": 52.172999999999995,
+        "min": 51.717999999999996,
+        "max": 54.56999999999999
+      },
+      "paintCompositeRender": {
+        "values": [
+          16.622999999999863,
+          16.92400000000001,
+          16.660999999999845
+        ],
+        "median": 16.660999999999845,
+        "min": 16.622999999999863,
+        "max": 16.92400000000001
+      },
+      "scriptParseCompile": {
+        "values": [
+          14.744999999999992,
+          14.484999999999983,
+          13.826999999999995
+        ],
+        "median": 14.484999999999983,
+        "min": 13.826999999999995,
+        "max": 14.744999999999992
+      },
+      "parseHTML": {
+        "values": [
+          3.943,
+          4.568,
+          4.442
+        ],
+        "median": 4.442,
+        "min": 3.943,
+        "max": 4.568
+      },
+      "garbageCollection": {
+        "values": [
+          2.680999999999995,
+          5.713999999999997,
+          3.2979999999999943
+        ],
+        "median": 3.2979999999999943,
+        "min": 2.680999999999995,
+        "max": 5.713999999999997
+      }
+    },
+    "warningCount": 0
+  }
+}

@@ -202,3 +202,34 @@ Candidate browser evidence is saved in `performance/lcp-final-candidate-20261009
 The delayed-script fixture captures 120 observations at roughly 500ms intervals, spanning unhydrated to hydrated state (`browser-hydration-verified.json`). It uses the post-hydration Project view controls as the readiness marker. Earlier delayed captures used an always-server-rendered carousel marker and are diagnostic only, not hydration acceptance evidence. Sampling is not a claim of continuous frame coverage. The fixture is separate from the audited production app.
 
 Current progress: **6/8 tasks complete**. Task 3.3 remains pending for complete browser acceptance, including the user's reduced-motion and background-tab verification; agreement to check manually is not a passing result. Task 5.1 remains pending for user-controlled deployment, confirmed identity and three passing mobile plus three desktop audits. The checklist remains unchecked and this change is not ready to archive as complete.
+
+## October 9: public deployment retest and extension contamination
+
+Six serial, storage-reset Lighthouse 13.5.0 performance audits of `https://escolano-portfolio.vercel.app/` are retained in `performance/lcp-deployed-retest-20261009`, with served HTML/headers, source identity, traces, network logs, summaries and simulation attribution. The local checkout is `b3c066a`; exact deployed source parity remains unconfirmed. These are deployment measurements, not a matched intervention comparison.
+
+| Profile | LCP runs, ms                 | FCP runs, ms                 | CLS runs | TBT runs, ms |
+| ------- | ---------------------------- | ---------------------------- | -------- | ------------ |
+| Mobile  | 3400.697, 3360.751, 3361.275 | 1109.697, 1110.751, 1111.275 | 0, 0, 0  | 1, 0, 11     |
+| Desktop | 663.841, 680.230, 672.333    | 343.841, 343.730, 339.333    | 0, 0, 0  | 0, 0, 0      |
+
+All six reports have no run warnings and zero JavaScript minification savings. Mobile median LCP is 3361.275ms, so every mobile run still fails the 2500ms gate; desktop median is 672.333ms. FCP and CLS meet their budgets. Task 5.1 remains unchecked.
+
+The user's conversation-provided Lighthouse 13.4.1 report, captured at `2026-10-09T04:16:48.296Z`, explicitly warns about Chrome extensions and stored IndexedDB. Its 397979-byte JavaScript minification estimate (389KiB) contains only `chrome-extension://` URLs. Its 2515924-byte unused JavaScript estimate (2457KiB) likewise contains only extension URLs, and its 11241-byte unused CSS estimate is injected `.glasp-extension` CSS. Those warnings do not justify changing portfolio minification or removing application code. The report records 869ms TBT, versus 0–11ms in the clean mobile runs. Reaudit using a fresh profile without extensions, or incognito with extensions disallowed.
+
+The user's 2665.556ms LCP still exceeds the gate. Different Lighthouse versions and emulation settings mean it is not a matched comparison with the clean captures. Removing extension contamination is not proof that LCP will pass.
+
+Real application opportunities remain: the first clean mobile report estimates 34386 bytes of image savings, including the quality-95 portrait and two project previews, and 48093 bytes of unused first-party JavaScript. The LCP node is the role text; observed rendering timestamps remain separate from simulated LCP. Image savings alone are not evidence of a role-text LCP improvement. No additional application patch is retained from this diagnostic retest; any next intervention still requires a matched comparison and regression checks. Browser task 3.3 also remains pending.
+
+## October 9: reduced-motion browser acceptance follow-up
+
+An isolated production snapshot of `b3c066a` was built without copying environment files or modifying the active development build. Its loopback server used port 3127; the development server on port 3000 was left untouched. `performance/lcp-browser-native-20261009` retains the build log, served build ID, matching role/greeting/theme source hashes, browser harness, Node-test results and screenshots. All 38 Node tests, lint and the isolated production/type build pass.
+
+Real Chrome browser contexts emulate `prefers-reduced-motion: reduce` at 320px and 1280px in both light and dark themes. Every context shows Senior Software Engineer initially and after another 5.2 seconds, longer than the four-second cycling interval. The reserved role width/height remains unchanged and no horizontal overflow is present. Screenshots confirm readable initial text in both themes. These are browser checks using emulated media, not OS-setting checks.
+
+Hidden-document acceptance is **not established**. Bringing another test page forward, minimizing the test Chrome window through CDP, and retrying without automation's backgrounding-disabling flags all left `document.visibilityState` reporting `visible`. The harness correctly rejects that prerequisite instead of substituting a mocked visibility event. Earlier attempts and partial captures remain in `lcp-browser-acceptance-20261009`, `lcp-browser-acceptance-repeat-20261009`, `lcp-browser-verified-20261009` and `lcp-browser-window-20261009`; no overall passing status is claimed. The first two attempts could not reach the server before an approved loopback start. The user was asked to verify normal-browser background-tab pause and fresh-interval resume.
+
+The public simulation graph still includes fonts, the priority portrait and initial application chunks; the final network boundary is the layout chunk in mobile runs 2/3. Next 14 already enables import optimization for the installed React Icons subpackages, so adding the same setting would not address this dependency. No speculative application edit is retained. Progress remains **6/8**: task 3.3 awaits genuine hidden-document evidence, and task 5.1 awaits a qualifying identified deployment with every mobile run below 2500ms.
+
+## October 9: user-approved archive with warnings
+
+The user explicitly approved archiving `mobile-lcp-optimization` with warnings and syncing its delta specs. The change is closed administratively, not accepted as passing: tasks 3.3 and 5.1 remain unchecked, background-tab verification is unconfirmed, deployed source parity is unknown, and the latest clean mobile median LCP is 3361.275ms. The LCP checklist remains open. Main specs preserve initial-visibility behavior and the unchanged production acceptance gate. Archived change location: `../openspec/changes/archive/2026-10-09-mobile-lcp-optimization`.

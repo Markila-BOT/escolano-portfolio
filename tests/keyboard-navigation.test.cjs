@@ -205,6 +205,16 @@ function headerHarness(isDesktop, hasFocus = false, hasActiveLink = true) {
   };
 }
 
+test("compact and desktop headers expose one named navigation landmark", () => {
+  for (const isDesktop of [false, true]) {
+    const navigation = nodes(headerHarness(isDesktop).root).filter(
+      (element) => element.type === "nav",
+    );
+    assert.equal(navigation.length, 1);
+    assert.equal(navigation[0].props["aria-label"], "Main navigation");
+  }
+});
+
 test("desktop transition clears stale menu state and disables modal", () => {
   const harness = headerHarness(true);
   assert.equal(harness.root.props.open, false);
@@ -245,7 +255,15 @@ test("main is a stable skip target outside normal tab order", () => {
       "skills",
     ].map((name) => [`@/components/${name}`, name]),
   );
-  const main = load("app/page.tsx", sections).default();
+  const seo = load("lib/seo.ts", {}, { URL }).createPortfolioGraph;
+  const main = load("app/page.tsx", {
+    ...sections,
+    "@/lib/data": { professionalSocialLinks: [] },
+    "@/lib/seo": {
+      createPortfolioGraph: seo,
+      serializeStructuredData: JSON.stringify,
+    },
+  }).default();
   assert.equal(main.type, "main");
   assert.equal(main.props.id, "main-content");
   assert.equal(main.props.tabIndex, -1);

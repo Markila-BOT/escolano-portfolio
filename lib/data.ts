@@ -3,6 +3,7 @@ import type { JourneySceneDescriptor } from "@/lib/journey-scene-types";
 import { CgWorkAlt } from "react-icons/cg";
 import {
   FaReact,
+  FaCss3Alt,
   FaHtml5,
   FaJs,
   FaNodeJs,
@@ -117,7 +118,7 @@ export const introCallToAction = {
 } as const;
 
 export const aboutWorkflow =
-  "Most days I start from a spec, write the change with Claude Code, Codex, and Cursor, and check it with tests. I own the result. That is AI-assisted engineering, test-driven development, and spec-driven development." as const;
+  "Most days I start from clear intent—the outcome and constraints for the user or system—then turn that into a spec. I write the change with Claude Code, Codex, and Cursor, name what I am still unsure about, and resolve it with tests or review before I treat an assumption as done. I own the result. That is AI-assisted engineering, test-driven development, spec-driven development, intent-driven development, and doubt-driven development." as const;
 
 export const contactFormFeedback = {
   accepted: "Your message was accepted for sending.",
@@ -568,6 +569,8 @@ export const projectsData = [
         "It is tied to the Owner app, so both sides can follow a task and act on its status.",
     },
     tags: [
+      { label: "HTML", icon: React.createElement(FaHtml5) },
+      { label: "CSS", icon: React.createElement(FaCss3Alt) },
       { label: "JavaScript", icon: React.createElement(SiJavascript) },
       { label: "React", icon: React.createElement(FaReact) },
       {
@@ -600,6 +603,8 @@ export const projectsData = [
       outcome: "People can organize and filter the conversations.",
     },
     tags: [
+      { label: "HTML", icon: React.createElement(FaHtml5) },
+      { label: "CSS", icon: React.createElement(FaCss3Alt) },
       { label: "JavaScript", icon: React.createElement(SiJavascript) },
       { label: "React", icon: React.createElement(FaReact) },
       { label: "Material UI", icon: React.createElement(SiMaterialdesign) },
@@ -646,6 +651,8 @@ export const projectsData = [
       "After they buy a styling package, they get a one-on-one consult. The stylist asks about their goals, what they like to wear, and the look they want. In 7 to 10 days they get outfit boards that mix clothes already in the closet with new pieces the stylist recommends.",
     ],
     tags: [
+      { label: "HTML", icon: React.createElement(FaHtml5) },
+      { label: "CSS", icon: React.createElement(FaCss3Alt) },
       { label: "JavaScript", icon: React.createElement(SiJavascript) },
       { label: "Angular", icon: React.createElement(SiAngular) },
       { label: "Cordova", icon: React.createElement(SiApachecordova) },
@@ -777,6 +784,8 @@ export const projectsData = [
         "The domestic list runs from city hotels to the countryside. Stays outside Japan have support in 8 languages. Package tours can include flights, local transport, and activities.",
     },
     tags: [
+      { label: "HTML", icon: React.createElement(FaHtml5) },
+      { label: "CSS", icon: React.createElement(FaCss3Alt) },
       { label: "JavaScript", icon: React.createElement(SiJavascript) },
       { label: "React", icon: React.createElement(FaReact) },
       { label: "Flux", icon: React.createElement(SiFlux) },
@@ -807,6 +816,8 @@ export const projectsData = [
         "Analytics show which content is actually needed, in support of fixing a problem the first time. Updates are gathered in one place for approval, and the current version is what the distribution channels serve.",
     },
     tags: [
+      { label: "HTML", icon: React.createElement(FaHtml5) },
+      { label: "CSS", icon: React.createElement(FaCss3Alt) },
       { label: "JavaScript", icon: React.createElement(SiJavascript) },
       { label: "Angular", icon: React.createElement(SiAngular) },
       { label: "Bower", icon: React.createElement(SiBower) },

@@ -61,6 +61,8 @@ test("actual portfolio classifies all 22 skills and retains exact evidence value
       "MySQL",
     ],
     project: [
+      "HTML",
+      "CSS",
       "Framer Motion",
       "Git",
       "Claude Code",
@@ -70,7 +72,7 @@ test("actual portfolio classifies all 22 skills and retains exact evidence value
       "PostgreSQL",
       "Firebase",
     ],
-    unlinked: ["HTML", "CSS", "Rust"],
+    unlinked: ["Rust"],
   };
   const labels = skillGroups.flatMap((group) =>
     group.skills.map((skill) => skill.label),
@@ -107,6 +109,17 @@ test("actual portfolio classifies all 22 skills and retains exact evidence value
     ),
     projectsData.map((project) => project.title),
   );
+  const javascriptProjects = resolveSkillEvidence("JavaScript", realInput)
+    .sources.filter((source) => source.kind === "Project")
+    .map((source) => source.title);
+  for (const label of ["HTML", "CSS"]) {
+    assert.deepEqual(
+      resolveSkillEvidence(label, realInput).sources.map(
+        (source) => source.title,
+      ),
+      javascriptProjects,
+    );
+  }
   for (const label of ["Claude Code", "Codex", "Cursor"]) {
     assert.deepEqual(
       resolveSkillEvidence(label, realInput).sources.map(
