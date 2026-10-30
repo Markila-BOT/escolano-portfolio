@@ -97,13 +97,14 @@ export default function ProjectsInteractive() {
         <div
           role="group"
           aria-label={projectViews.label}
-          className="mb-6 flex justify-center gap-2"
+          className="mb-6 flex flex-wrap justify-center gap-2"
         >
           {(["carousel", "rail"] as const).map((option) => (
             <Button
               key={option}
               type="button"
               size="lg"
+              className="h-auto min-h-11 max-w-full whitespace-normal break-words"
               variant={view === option ? "default" : "outline"}
               aria-pressed={view === option}
               onClick={() => setView(option)}
@@ -141,7 +142,7 @@ export default function ProjectsInteractive() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="mt-4 flex items-center justify-center gap-4">
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
             <CarouselPrevious className={controlClassName} />
             <p className="min-w-16 text-sm text-muted-foreground">
               {projectCarousel.position(place, total)}

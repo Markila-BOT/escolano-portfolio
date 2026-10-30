@@ -1,0 +1,86 @@
+{
+  "buildId": "30Su2wNLeaSYgl3rEQRnJ",
+  "configurations": [
+    {
+      "theme": "light",
+      "width": 320,
+      "motion": "reduce",
+      "textSizes": [
+        100,
+        200
+      ],
+      "promptContrast": 6.911,
+      "linkContrast": 16.545,
+      "keyboardNavigation": "passed"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "motion": "reduce",
+      "textSizes": [
+        100,
+        200
+      ],
+      "promptContrast": 6.911,
+      "linkContrast": 16.545,
+      "keyboardNavigation": "passed"
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "motion": "reduce",
+      "textSizes": [
+        100,
+        200
+      ],
+      "promptContrast": 6.838,
+      "linkContrast": 16.372,
+      "keyboardNavigation": "passed"
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "motion": "reduce",
+      "textSizes": [
+        100,
+        200
+      ],
+      "promptContrast": 12.168,
+      "linkContrast": 12.168,
+      "keyboardNavigation": "passed"
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "motion": "reduce",
+      "textSizes": [
+        100,
+        200
+      ],
+      "promptContrast": 12.168,
+      "linkContrast": 12.168,
+      "keyboardNavigation": "passed"
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "motion": "reduce",
+      "textSizes": [
+        100,
+        200
+      ],
+      "promptContrast": 12.064,
+      "linkContrast": 12.064,
+      "keyboardNavigation": "passed"
+    }
+  ],
+  "pageErrors": [],
+  "browser": "156.0.8078.80",
+  "normalMotionAndNoJavaScript": {
+    "widths": [
+      390,
+      1280
+    ],
+    "navigation": "passed"
+  }
+}

@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSoundContext } from "@/context/sound-context";
@@ -30,6 +31,7 @@ export default function MobileNav({
   onCloseAutoFocus,
   onFocusChange,
 }: MobileNavProps) {
+  const isHomepage = usePathname() === "/";
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
   const { playCue } = useSoundContext();
@@ -93,10 +95,11 @@ export default function MobileNav({
                     className={clsx(
                       "relative block px-4 py-2 transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                       {
-                        "text-accent-foreground": activeSection === link.name,
+                        "text-accent-foreground":
+                          isHomepage && activeSection === link.name,
                       },
                     )}
-                    href={link.hash}
+                    href={isHomepage ? link.hash : `/${link.hash}`}
                     onClick={() => {
                       setActiveSection(link.name);
                       setTimeOfLastClick(Date.now());
@@ -105,7 +108,7 @@ export default function MobileNav({
                     }}
                   >
                     {link.name}
-                    {link.name === activeSection && (
+                    {isHomepage && link.name === activeSection && (
                       <motion.span
                         className="absolute inset-0 -z-10 rounded-full bg-accent"
                         layoutId="activeSection"

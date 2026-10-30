@@ -3,6 +3,7 @@ import profile from "@/public/profile.png";
 import { ObservedSection } from "@/components/observed-section";
 import IntroGreeting from "@/components/intro-greeting";
 import { IntroContactLink } from "@/components/intro-contact-link";
+import IntroToolsLink from "@/components/intro-tools-link";
 import { hiringContact, introCallToAction } from "@/lib/data";
 export default function Intro() {
   return (
@@ -39,6 +40,10 @@ export default function Intro() {
       <IntroContactLink>{introCallToAction.startLabel}</IntroContactLink>
       <p className="mt-3 px-4 text-sm text-muted-foreground">
         {hiringContact.availability}
+      </p>
+      <p className="mt-4 px-4 text-sm text-muted-foreground dark:text-foreground">
+        {introCallToAction.toolsPrompt}{" "}
+        <IntroToolsLink>{introCallToAction.toolsLabel}</IntroToolsLink>.
       </p>
     </ObservedSection>
   );

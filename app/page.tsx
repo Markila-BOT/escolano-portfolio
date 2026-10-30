@@ -13,7 +13,7 @@ export default function Home() {
     <main
       id="main-content"
       tabIndex={-1}
-      className="mx-auto flex w-full max-w-[90rem] scroll-mt-28 flex-col items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
+      className="mx-auto flex w-full max-w-[90rem] scroll-mt-28 flex-col items-center [overflow-wrap:anywhere] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
     >
       <script
         type="application/ld+json"

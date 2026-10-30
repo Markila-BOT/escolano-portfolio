@@ -1,0 +1,291 @@
+{
+  "configurations": [
+    {
+      "theme": "light",
+      "width": 320,
+      "motion": "reduce",
+      "textZoom": [
+        100,
+        200
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".max-w-xl"
+              ],
+              [
+                ".mt-4:nth-child(3)"
+              ],
+              [
+                "a[href$=\"#json-formatter\"] > .mt-1.sm\\:mt-0"
+              ],
+              [
+                "#json-formatter-input"
+              ],
+              [
+                "#json-formatter-output"
+              ],
+              [
+                "#text-counter-input"
+              ],
+              [
+                "#url-converter-input"
+              ],
+              [
+                "#url-converter-output"
+              ]
+            ]
+          }
+        ]
+      },
+      "navigation": "passed"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "motion": "reduce",
+      "textZoom": [
+        100,
+        200
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".max-w-xl"
+              ],
+              [
+                ".mt-4:nth-child(3)"
+              ],
+              [
+                "a[href$=\"#json-formatter\"] > .mt-1.sm\\:mt-0"
+              ],
+              [
+                "a[href$=\"#text-counter\"] > .mt-1.sm\\:mt-0"
+              ],
+              [
+                "#json-formatter-input"
+              ],
+              [
+                "#json-formatter-output"
+              ],
+              [
+                "#text-counter-input"
+              ],
+              [
+                "#url-converter-input"
+              ],
+              [
+                "#url-converter-output"
+              ]
+            ]
+          }
+        ]
+      },
+      "navigation": "passed"
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "motion": "reduce",
+      "textZoom": [
+        100,
+        200
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                "a[href$=\"#url-converter\"] > .decoration-border.underline.underline-offset-4"
+              ],
+              [
+                "#json-formatter-input"
+              ],
+              [
+                "#json-formatter-output"
+              ],
+              [
+                "#text-counter-input"
+              ],
+              [
+                "#url-converter-input"
+              ],
+              [
+                "#url-converter-output"
+              ]
+            ]
+          }
+        ]
+      },
+      "navigation": "passed"
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "motion": "reduce",
+      "textZoom": [
+        100,
+        200
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".max-w-xl"
+              ],
+              [
+                ".mt-4:nth-child(3)"
+              ],
+              [
+                "a[href$=\"#json-formatter\"] > .mt-1.sm\\:mt-0"
+              ],
+              [
+                "#json-formatter-input"
+              ],
+              [
+                "#json-formatter-output"
+              ],
+              [
+                "#text-counter-input"
+              ],
+              [
+                "label[for=\"url-converter-input\"]"
+              ],
+              [
+                "#url-converter-input"
+              ],
+              [
+                "#url-converter-output"
+              ]
+            ]
+          }
+        ]
+      },
+      "navigation": "passed"
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "motion": "reduce",
+      "textZoom": [
+        100,
+        200
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                ".max-w-xl"
+              ],
+              [
+                ".mt-4:nth-child(3)"
+              ],
+              [
+                "a[href$=\"#json-formatter\"] > .mt-1.sm\\:mt-0"
+              ],
+              [
+                "a[href$=\"#text-counter\"] > .mt-1.sm\\:mt-0"
+              ],
+              [
+                "#json-formatter-input"
+              ],
+              [
+                "#json-formatter-output"
+              ],
+              [
+                "#text-counter-input"
+              ],
+              [
+                "#url-converter-input"
+              ],
+              [
+                "#url-converter-output"
+              ]
+            ]
+          }
+        ]
+      },
+      "navigation": "passed"
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "motion": "reduce",
+      "textZoom": [
+        100,
+        200
+      ],
+      "axe": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "targets": [
+              [
+                "a[href$=\"#url-converter\"] > .decoration-border.underline.underline-offset-4"
+              ],
+              [
+                "#json-formatter-input"
+              ],
+              [
+                "#json-formatter-output"
+              ],
+              [
+                "#text-counter-input"
+              ],
+              [
+                "#url-converter-input"
+              ],
+              [
+                "#url-converter-output"
+              ]
+            ]
+          }
+        ]
+      },
+      "navigation": "passed"
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "motion": "no-preference",
+      "navigation": "passed",
+      "formatting": "passed"
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "motion": "no-preference",
+      "navigation": "passed",
+      "formatting": "passed"
+    }
+  ],
+  "screenReader": "Native VoiceOver announcement quality unverified",
+  "buildId": "YWus_pf-GTgYDCgrCOUCY",
+  "pageErrors": [],
+  "browser": "156.0.8078.80",
+  "interactions": "Formatting, correction, Unicode counts, URL conversion, empty output, input limit, independent reset, keyboard traversal and clipboard granted/denied/missing passed",
+  "privacy": {
+    "markerAbsent": true,
+    "offlineTransforms": true,
+    "reloadEmpty": true,
+    "indexedDbDatabases": []
+  },
+  "noJavaScript": "passed"
+}

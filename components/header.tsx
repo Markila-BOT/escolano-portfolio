@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSoundContext } from "@/context/sound-context";
@@ -16,6 +17,7 @@ import MobileNav, { mobileNavigationId } from "./mobile-nav";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 
 export default function Header() {
+  const isHomepage = usePathname() === "/";
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
   const { playCue } = useSoundContext();
@@ -62,7 +64,7 @@ export default function Header() {
           }
         >
           <Link
-            href="#home"
+            href={isHomepage ? "#home" : "/#home"}
             aria-label="Home"
             onClick={() => {
               setActiveSection("Home");
@@ -99,10 +101,11 @@ export default function Header() {
                       className={clsx(
                         "flex w-full items-center justify-center px-3 py-3 transition hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                         {
-                          "text-accent-foreground": activeSection === link.name,
+                          "text-accent-foreground":
+                            isHomepage && activeSection === link.name,
                         },
                       )}
-                      href={link.hash}
+                      href={isHomepage ? link.hash : `/${link.hash}`}
                       onClick={() => {
                         setActiveSection(link.name);
                         setTimeOfLastClick(Date.now());
@@ -110,7 +113,7 @@ export default function Header() {
                       }}
                     >
                       {link.name}
-                      {link.name === activeSection && (
+                      {isHomepage && link.name === activeSection && (
                         <motion.span
                           className="absolute inset-0 -z-10 rounded-full bg-accent"
                           layoutId="activeSection"

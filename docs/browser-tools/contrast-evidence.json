@@ -1,0 +1,46 @@
+{
+  "buildId": "YWus_pf-GTgYDCgrCOUCY",
+  "method": "Computed foreground against rendered background pixel colors with text temporarily transparent; normal text >=4.5:1, input boundaries >=3:1",
+  "configurations": [
+    {
+      "theme": "light",
+      "width": 320,
+      "minimumTextContrast": 5.473,
+      "minimumInputBoundaryContrast": 3.034
+    },
+    {
+      "theme": "light",
+      "width": 390,
+      "minimumTextContrast": 5.473,
+      "minimumInputBoundaryContrast": 3.034
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "minimumTextContrast": 5.471,
+      "minimumInputBoundaryContrast": 3.034
+    },
+    {
+      "theme": "dark",
+      "width": 320,
+      "minimumTextContrast": 9.383,
+      "minimumInputBoundaryContrast": 3.905
+    },
+    {
+      "theme": "dark",
+      "width": 390,
+      "minimumTextContrast": 9.273,
+      "minimumInputBoundaryContrast": 3.905
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "minimumTextContrast": 8.555,
+      "minimumInputBoundaryContrast": 3.905
+    }
+  ],
+  "noJavaScriptWidths": [
+    390,
+    1280
+  ]
+}

@@ -44,8 +44,13 @@ export default function RootLayout({
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} relative bg-background pt-28 font-sans text-foreground antialiased sm:pt-36`}
       >
-        <div className="absolute right-[11rem] top-[-6rem] -z-10 h-[31.25rem] w-[31.25rem] rounded-full bg-glow-warm blur-[10rem] sm:w-[68.75rem]" />
-        <div className="absolute left-[-35rem] top-[-1rem] -z-10 h-[31.25rem] w-[50rem] rounded-full bg-glow-cool blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+        >
+          <div className="absolute right-[11rem] top-[-6rem] h-[31.25rem] w-[31.25rem] rounded-full bg-glow-warm blur-[10rem] sm:w-[68.75rem]" />
+          <div className="absolute left-[-35rem] top-[-1rem] h-[31.25rem] w-[50rem] rounded-full bg-glow-cool blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]" />
+        </div>
         <ThemeContextProvider>
           <SoundContextProvider>
             <ActiveSectionContextProvider>

@@ -115,6 +115,8 @@ export const introCallToAction = {
   positioning:
     "I help product teams take new code all the way to deployment, writing most of it in TypeScript with AI and spec-driven development.",
   startLabel: "Contact",
+  toolsPrompt: "Something to get done?",
+  toolsLabel: "Try the free tools",
 } as const;
 
 export const aboutWorkflow =

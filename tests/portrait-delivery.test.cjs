@@ -27,10 +27,17 @@ test("actual Intro portrait generates accurate density-aware image props", () =>
       if (name === "@/components/observed-section")
         return { ObservedSection: "section" };
       if (name === "@/components/intro-greeting") return "greeting";
+      if (name === "@/components/intro-tools-link") return "tools-link";
       if (name === "@/components/intro-contact-link")
         return { IntroContactLink: "link" };
       if (name === "@/lib/data")
-        return { hiringContact: {}, introCallToAction: {} };
+        return {
+          hiringContact: {},
+          introCallToAction: {
+            toolsPrompt: "Something to get done?",
+            toolsLabel: "Try the free tools",
+          },
+        };
       return require(name);
     },
   });

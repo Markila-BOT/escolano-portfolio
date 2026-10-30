@@ -92,6 +92,7 @@ test("mobile modal focuses its close control and preserves section selection fee
       useReducedMotion: () => true,
     },
     "next/link": "a",
+    "next/navigation": { usePathname: () => "/" },
     "@/lib/data": { links: navigationLinks },
     "@/components/ui/dialog": dialogTags,
     "@/components/ui/button": { Button: "button" },
@@ -147,7 +148,12 @@ test("mobile modal focuses its close control and preserves section selection fee
   );
 });
 
-function headerHarness(isDesktop, hasFocus = false, hasActiveLink = true) {
+function headerHarness(
+  isDesktop,
+  hasFocus = false,
+  hasActiveLink = true,
+  pathname = "/",
+) {
   let isMediaDesktop = isDesktop;
   const events = [];
   const effects = [];
@@ -171,6 +177,7 @@ function headerHarness(isDesktop, hasFocus = false, hasActiveLink = true) {
         useReducedMotion: () => true,
       },
       "next/link": "a",
+      "next/navigation": { usePathname: () => pathname },
       "@/lib/data": { links: navigationLinks },
       "@/hooks/useMediaQuery": () => isDesktop,
       "@/components/ui/dialog": dialogTags,
@@ -213,6 +220,14 @@ test("compact and desktop headers expose one named navigation landmark", () => {
     assert.equal(navigation.length, 1);
     assert.equal(navigation[0].props["aria-label"], "Main navigation");
   }
+});
+
+test("Tools header returns to real homepage sections without a false active section", () => {
+  const tree = nodes(headerHarness(true, false, true, "/tools").root);
+  const links = tree.filter((element) => element.type === "a");
+  assert(links.some((element) => element.props.href === "/#home"));
+  assert(links.some((element) => element.props.href === "/#about"));
+  assert(!tree.some((element) => element.props?.layoutId === "activeSection"));
 });
 
 test("desktop transition clears stale menu state and disables modal", () => {

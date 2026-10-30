@@ -51,7 +51,7 @@ export default function SkillSelector({
                     aria-controls={`skill-panel-${group.label}-${index}`}
                     onClick={() => handleSkillClick(skill.label)}
                     className={cn(
-                      "h-11 gap-2 rounded-xl border-border bg-card px-3 text-card-foreground motion-reduce:transition-none",
+                      "h-auto min-h-11 max-w-full gap-2 whitespace-normal rounded-xl border-border bg-card px-3 text-card-foreground motion-reduce:transition-none",
                       selectedSkill === skill.label &&
                         "border-ring bg-secondary text-secondary-foreground ring-1 ring-ring",
                     )}

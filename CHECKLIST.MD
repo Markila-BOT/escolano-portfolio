@@ -6,12 +6,14 @@ Status key: `[x]` done or explicitly user-accepted closed, `[ ]` still open. **U
 
 ## Progress
 
+Reconciled against current source and existing verification records on 2026-10-30. Implementation completion does not imply fresh deployment, performance, or assistive-technology acceptance.
+
 | Scope               | Done | Partial | Not started | Complete     |
 | ------------------- | ---- | ------- | ----------- | ------------ |
-| Current spec        | 104  | 8       | 18          | 104/130 (80%) |
-| Future enhancements | 1    | 1       | 13          | 1/15 (7%)    |
+| Current spec        | 104  | 5       | 6           | 104/115 (90%) |
+| Future enhancements | 2    | 1       | 12          | 2/15 (13%)   |
 
-Protected routes and server-state data fetching are not applicable. The site is a single public page with static portfolio content.
+Protected routes and server-state data fetching are not applicable. The public site has the portfolio homepage and `/tools`, with static portfolio content.
 
 ## 1. User interface
 
@@ -33,7 +35,7 @@ The toggle works. Sections, chrome, project cards, and the drawer read one navy 
 - [x] Header, mobile nav, theme switch, skill chips, and footer share the same surface and muted text
 - [x] Light and dark both pass the contrast check in section 7
 
-Component origin and usage must also be uniform. Primitives come from `components/ui` (shadcn), and sections compose them. Today some sections do and some hand-roll the same element.
+Primitives come from `components/ui` (shadcn), and sections compose the shared elements listed below.
 
 - [x] Every button uses `components/ui/button.tsx` variants (theme switch and the mobile menu use `chrome`; CV and submit use `pill`)
 - [x] One icon library in sections: `react-icons` (carousel arrows included)
@@ -44,7 +46,7 @@ Component origin and usage must also be uniform. Primitives come from `component
 
 ### 1.2 Adaptive logo
 
-The current `public/logo.png` loses contrast on the navy theme. Treat the logo as a reusable brand asset rather than correcting the bitmap with CSS filters.
+The adaptive SVG logo preserves its silhouette and reads the theme palette; implementation is in `components/logo-mark.tsx`.
 
 - [x] Replace the bitmap with a transparent SVG or intentional light and dark variants, preserving the same silhouette in both themes
 - [x] Select the correct logo from the active theme without flashing the wrong variant during hydration
@@ -120,7 +122,7 @@ Sound stays off until the visitor turns it on. Use `[use-sound](https://www.npmj
 - [x] Public code or a short build note on at least one project ([Bruno Simon](https://bruno-simon.com), [Bryan Elliott](https://elliottprogrammer.com))
 - [x] Expandable project rail: one project opens, the rest stay as slim labels; optional Rail/Carousel switch preserves the carousel ([Gyanendra Pal Singh](https://gyanendra.vercel.app/))
 - [x] Lay out drawer descriptions and case-study text with [Pretext](https://github.com/chenglou/pretext) using measured lines, cached preparation, and readable semantic fallbacks (verification in `docs/project-description-layout.md`)
-- [ ] YouTube video in the project drawer for MatterWorx, PotatoV3 and House Elf (other projects already set `videoUrl`; these two still show the screenshot), PotatoV3 - [https://youtu.be/KTq55vfBbGA](https://youtu.be/KTq55vfBbGA)
+- [ ] YouTube video in the project drawer for MatterWorx, PotatoV3 and House Elf (these three still lack `videoUrl` in `lib/data.ts`), PotatoV3 - [https://youtu.be/KTq55vfBbGA](https://youtu.be/KTq55vfBbGA)
 - [ ] Add the personal project Truck Driver Guide ([Markila-BOT/truck-driver-guide](https://github.com/Markila-BOT/truck-driver-guide)): a Django API and a React client set up to deploy on Vercel. The guide itself is not in the app yet; what runs today is a health check.
 
 ### 3.5 Skills
@@ -156,7 +158,7 @@ Measured on 2026-10-08 with pinned Lighthouse 13.5.0 and cold mobile/desktop pro
 
 ### 4.2 Security
 
-- [x] Form validation (**user-accepted closed with Contact readiness, 2026-10-09; partial verification** — required fields and a max-length check; no email-format check recorded)
+- [x] Form validation (**user-accepted closed with Contact readiness, 2026-10-09; partial verification** — server rejects malformed/overlong emails, blank messages and messages over 5000 characters; mocked-provider verification in `docs/contact-email.md`)
 - [x] Secure email handling (**user-accepted closed with Contact readiness, 2026-10-09; partial verification** — no rate limit, no spam control, unverified sender recorded)
 
 - Protected routes: **not applicable** — the portfolio is a single public page with no private content.
@@ -166,7 +168,7 @@ Measured on 2026-10-08 with pinned Lighthouse 13.5.0 and cold mobile/desktop pro
 - [x] Meta tags (**local production verified, 2026-10-09** — canonical, Open Graph, Twitter large-image metadata and 1200×630 share image; deployed verification pending; see `docs/portfolio-seo.md`)
 - [x] Semantic HTML (**local production verified, 2026-10-09** — one main and h1, section h2s and native landmarks; stale nested-h1 note corrected; see `docs/portfolio-seo.md`)
 - [x] Structured data (**local production verified, 2026-10-09** — safely serialized Person/WebSite JSON-LD with published profiles; deployed verification pending)
-- [x] Sitemap generation (**local production verified, 2026-10-09** — `/sitemap.xml` lists only the canonical homepage; deployed verification pending)
+- [x] Sitemap generation (**local production verified, 2026-10-09** — `/sitemap.xml` now lists the canonical homepage and `/tools`; deployed verification pending)
 - [x] `robots` file (**local production verified, 2026-10-09** — `/robots.txt` allows public discovery and advertises the canonical sitemap; deployed verification pending)
 
 ## 5. Component architecture
@@ -181,13 +183,13 @@ Measured on 2026-10-08 with pinned Lighthouse 13.5.0 and cold mobile/desktop pro
 - [x] Projects
 - [x] Skills
 - [x] Contact
-- [ ] CV (**partial** — button opens an external site)
+- [x] CV component (implemented as a “Go to CV” button opening the external CV site; downloadable CV/action bar remains open in section 3.6)
 - [x] Theme switch
 - [x] Submit button
 - [x] Section headings
 - [x] Project cards
 
-Component rows are inventory. They are not included in the current-spec progress totals above.
+Component rows are inventory. They are not included in the current-spec progress totals above. The drawer Pretext item repeated in section 11.1 is also excluded from future totals because it is already counted in section 3.4.
 
 ## 6. State and data
 
@@ -200,10 +202,10 @@ Component rows are inventory. They are not included in the current-spec progress
 
 Target is WCAG 2.1 AA.
 
-- [ ] WCAG 2.1 AA compliance
+- [ ] WCAG 2.1 AA compliance (**partial** — audit and focused remediation exist; unresolved criteria and manual acceptance in `docs/accessibility-audit.md`)
 - [x] Keyboard navigation support (modal mobile-menu focus containment/restoration, Escape dismissal, breakpoint recovery and native skip link; automated and user-reported reduced-motion verification in `docs/keyboard-navigation.md`)
 - [ ] Screen reader compatibility
-- [ ] Color contrast requirements (not audited)
+- [ ] Color contrast requirements (**partial** — palette/logo checks and `/tools` measurements exist; full-page rendered text/non-text acceptance remains unresolved in `docs/accessibility-audit.md`)
 - [ ] ARIA labels (**partial** — carousel controls, the mobile menu button, and the theme toggle)
 
 Concrete gaps inside those items (not scored separately):
@@ -221,15 +223,15 @@ Concrete gaps inside those items (not scored separately):
 - [x] Prettier formatting
 - [x] Component-based architecture
 - [x] Responsive design principles
-- [ ] Performance optimization
-- [ ] Accessibility best practices
+- [x] Performance optimization (demand-loaded drawer/video/journey, responsive images and production audits; see `docs/portfolio-performance.md` and `docs/mobile-lcp-optimization.md`; passing every performance budget is separate)
+- [x] Accessibility best practices (associated form labels, named controls, focus handling, skip link and reduced-motion support implemented; full WCAG/AT acceptance remains open in section 7)
 
 ## 9. Deployment
 
-- [ ] Vercel hosting (no project config in the repo)
+- [x] Vercel hosting (deployed site recorded in `docs/portfolio-performance.md` and `docs/time-to-interactive.md`; current checkout/deployment parity remains unverified)
 - [ ] Continuous deployment
-- [ ] Environment variable management (no `.env.example`; `RESEND_API_KEY` is required)
-- [ ] Build optimization (`next.config.js` is empty)
+- [x] Environment variable management (`.env.example` and server-only contact configuration documented in `docs/contact-email.md`; deployment settings require separate verification)
+- [x] Build optimization (Next.js production prerendering/code splitting plus explicit dynamic imports and responsive image sizing; an empty `next.config.js` does not disable these)
 
 ## 10. Maintenance
 
@@ -237,15 +239,16 @@ Concrete gaps inside those items (not scored separately):
 - [ ] Performance monitoring
 - [ ] Security patches (**partial** — same-major bump only)
 - [x] Content updates (copy and project data live in the repo)
-- [ ] Analytics tracking
+- [x] Analytics tracking (visitor/session tracking and delayed beacon/fetch delivery in `lib/visitor.ts`; requires `NEXT_PUBLIC_ANALYTICS_URL`, and live collection remains unverified)
 
 ## 11. Future enhancements
 
 - [ ] Blog integration ([Lee Robinson](https://leerob.io), [Chris Coyier](https://chriscoyier.net), [Dillion Megida](https://dillionmegida.com))
-  - Near future, not a separate task: a Tools section on the blog, the same kind of page as [Gyanendra Pal Singh](https://gyanendra.vercel.app/tools) — small utilities (converters, calculators, text, productivity, and design) that run in the browser. The public [Portfolio](https://github.com/gyanendracd/Portfolio) repo has no `/tools` route, so the live page is the reference.
+- [x] Browser tools — initial `/tools` set: JSON formatter, word/character counter, and URL component encoder/decoder; browser-only processing, responsive/keyboard checks, contrast measurements and SEO verified in a local production build ([evidence](docs/browser-tools.md)). Native VoiceOver and deployment remain unverified; blog integration and additional utility categories remain separate.
+  - Concept reference: [Gyanendra Pal Singh's live Tools page](https://gyanendra.vercel.app/tools), not an assumed implementation from the public repo.
 - [ ] Project filtering system
 - [ ] Multi-language support
-- [ ] Enhanced animations
+- [x] Enhanced animations (cycling greeting/roles, expandable project rail, measured drawer-text reveals and the 3D career journey are implemented; hero-specific Pretext effects remain open below)
 - [ ] Interactive project demos (**partial** — project drawer plays video; [Bruno Simon](https://bruno-simon.com) and [Dustin Brett](https://dustinbrett.com) make one interaction the proof)
 - [ ] A career Q&A grounded in your own project write-ups ([Bryan Elliott](https://elliottprogrammer.com))
 - [ ] Analytics dashboard
@@ -274,14 +277,14 @@ https://www.rsahani.space/about
 | ---------------------------------------------------- | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | [Brittany Chiang](https://brittanychiang.com)        | Yes                        | One-line role, social links, tech tags per job, projects with a measurable outcome                                                                                         | Experience timeline, project cards                                         |
 | [Bruno Simon](https://bruno-simon.com)               | Yes                        | A 3D hero you drive, with the controls written on the page, and a public "how it's built" note                                                                             | 3D experience journey; video drawer only                                   |
-| [Lee Robinson](https://leerob.io)                    | Yes                        | First sentence is the positioning; writing shows how he thinks                                                                                                             | Intro copy, no writing index                                               |
-| [Adham Dannaway](https://www.adhamdannaway.com)      | Yes                        | A few selected case studies, not every project at once                                                                                                                     | Carousel of all projects                                                   |
-| [Chris Coyier](https://chriscoyier.net)              | Yes                        | Writing, plus more than one way to make contact                                                                                                                            | Email form only                                                            |
-| [Delba](https://delba.dev)                           | Yes                        | Each piece of work is one sentence of outcome                                                                                                                              | Long project descriptions                                                  |
+| [Lee Robinson](https://leerob.io)                    | Yes                        | First sentence is the positioning; writing shows how he thinks                                                                                                             | Audience-specific intro and CTA; no writing index                                               |
+| [Adham Dannaway](https://www.adhamdannaway.com)      | Yes                        | A few selected case studies, not every project at once                                                                                                                     | Carousel/Rail switch and featured case studies                                                   |
+| [Chris Coyier](https://chriscoyier.net)              | Yes                        | Writing, plus more than one way to make contact                                                                                                                            | Public email, contact form, GitHub and LinkedIn                                                            |
+| [Delba](https://delba.dev)                           | Yes                        | Each piece of work is one sentence of outcome                                                                                                                              | Problem, role and outcome case studies                                                  |
 | [Dustin Brett](https://dustinbrett.com)              | Yes                        | One flagship interaction instead of a gallery                                                                                                                              | Video drawer only                                                          |
 | [Dillion Megida](https://dillionmegida.com)          | Yes                        | Short teaching notes that make the engineering legible                                                                                                                     | No writing                                                                 |
-| [Bryan Elliott](https://elliottprogrammer.com)       | Yes                        | Public code, an explicit AI workflow, one small interactive moment                                                                                                         | External CV link                                                           |
-| [Timmy O'Mahony](https://timmyomahony.com)           | Yes                        | Audience-specific headline, a direct CTA, and a short FAQ                                                                                                                  | Mailto inside the contact paragraph                                        |
-| [Gyanendra Pal Singh](https://gyanendra.vercel.app/) | Local copy in `Portfolio/` | Cycling role line, an expandable project rail with client and timeline, categorized skills, a toolkit you open by category, and a hover action bar for CV and social links | Greeting animation, project carousel, flat skill chips, external CV button |
-| [Francisco Salido](https://paco.fyi)                 | Yes                        | Previous and Next on an open project, naming the neighbor                                                                                                                  | Project drawer closes only                                                 |
-| [Chánh Đại](https://chanhdai.com)                    | Yes                        | Work built on the current shadcn primitives, with Claude listed beside it                                                                                                  | Older `forwardRef` card; skills omit the AI tools                          |
+| [Bryan Elliott](https://elliottprogrammer.com)       | Yes                        | Public code, an explicit AI workflow, one small interactive moment                                                                                                         | AI workflow, multilingual greeting and project build note; external CV link                                                           |
+| [Timmy O'Mahony](https://timmyomahony.com)           | Yes                        | Audience-specific headline, a direct CTA, and a short FAQ                                                                                                                  | Direct hiring copy, public email and contact form                                        |
+| [Gyanendra Pal Singh](https://gyanendra.vercel.app/) | Local copy in `Portfolio/` | Cycling role line, an expandable project rail with client and timeline, categorized skills, a toolkit you open by category, and a hover action bar for CV and social links | Cycling roles, project rail, categorized skill evidence, browser tools; external CV button |
+| [Francisco Salido](https://paco.fyi)                 | Yes                        | Previous and Next on an open project, naming the neighbor                                                                                                                  | Previous/Next navigation inside the open drawer                                                 |
+| [Chánh Đại](https://chanhdai.com)                    | Yes                        | Work built on the current shadcn primitives, with Claude listed beside it                                                                                                  | Updated primitives with React 18 refs; Claude Code, Codex and Cursor skills                          |

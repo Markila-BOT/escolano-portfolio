@@ -20,7 +20,7 @@ METADATA = {"description": DESCRIPTION, "og:title": "Mark Escolano Portfolio", "
 HEAD = '<title>Mark Escolano Portfolio</title>' + f'<link rel="canonical" href="{CANONICAL}">' + "".join(f'<meta name="{key}" content="{value}">' for key, value in METADATA.items())
 BODY = '<header><nav>Navigation</nav></header><main><h1>Mark Escolano</h1>' + "".join(f'<section id="{section_id}"><h2>{title}</h2></section>' for section_id, title in {"about": "About me", "projects": "My projects", "skills": "My skills", "experience": "My experience", "contact": "Contact me"}.items()) + "".join(f'<a href="{profile}">Profile</a>' for profile in PROFILES) + '</main><footer>Footer</footer>'
 HTML = '<html lang="en"><head>' + HEAD + '</head><body>' + BODY + '<script type="application/ld+json">' + json.dumps(GRAPH) + '</script></body></html>'
-SITEMAP = f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{CANONICAL}</loc></url></urlset>'
+SITEMAP = f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{CANONICAL}</loc></url><url><loc>{CANONICAL}tools</loc></url></urlset>'
 ROBOTS = f'User-Agent: *\nAllow: /\nSitemap: {CANONICAL}sitemap.xml\n'
 
 
@@ -66,6 +66,17 @@ process.stdout.write(loaded.exports.serializeStructuredData({name: process.argv[
         for source in (SITEMAP.replace(CANONICAL, CANONICAL + '#about'), SITEMAP.replace('</urlset>', f'<url><loc>{CANONICAL}og</loc></url></urlset>'), SITEMAP.replace(CANONICAL, 'https://preview.example/'), SITEMAP.replace('</url>', '<lastmod>2026-10-09</lastmod></url>')):
             with self.subTest(source=source), self.assertRaises(AssertionError):
                 seo.verify_sitemap(source)
+
+    def test_tools_metadata_does_not_inherit_homepage_canonical(self):
+        tools_head = HEAD.replace('Mark Escolano Portfolio</title>', 'Browser Tools | Mark Escolano</title>')
+        tools_head = tools_head.replace('content="Mark Escolano Portfolio"', 'content="Browser Tools | Mark Escolano"')
+        tools_head = tools_head.replace('name="og:site_name" content="Browser Tools | Mark Escolano"', 'name="og:site_name" content="Mark Escolano Portfolio"')
+        tools_head = tools_head.replace(DESCRIPTION, 'Format JSON, count words and characters, and encode URL components with small tools that process your text locally in your browser.')
+        tools_head = tools_head.replace(f'href="{CANONICAL}"', f'href="{CANONICAL}tools"').replace(f'name="og:url" content="{CANONICAL}"', f'name="og:url" content="{CANONICAL}tools"')
+        source = '<html><head>' + tools_head + '</head></html>'
+        seo.verify_metadata(seo.Document(source), is_tools=True)
+        with self.assertRaises(AssertionError):
+            seo.verify_metadata(seo.Document(source.replace(f'href="{CANONICAL}tools"', f'href="{CANONICAL}"')), is_tools=True)
 
     def test_robots(self):
         seo.verify_robots(ROBOTS)

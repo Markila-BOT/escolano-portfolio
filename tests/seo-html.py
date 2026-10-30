@@ -55,25 +55,28 @@ def normalized_url(value):
     return parsed._replace(path=parsed.path or "/").geturl()
 
 
-def verify_metadata(document):
+def verify_metadata(document, is_tools=False):
+    page_title = "Browser Tools | Mark Escolano" if is_tools else "Mark Escolano Portfolio"
+    description = "Format JSON, count words and characters, and encode URL components with small tools that process your text locally in your browser." if is_tools else "Senior software engineer with more than a decade of experience."
+    canonical_url = urljoin(CANONICAL, "tools") if is_tools else CANONICAL
     title = one(document.tags("title"), "Expected one title")
-    require(title["text"].strip() == "Mark Escolano Portfolio", "Unexpected portfolio title")
+    require(title["text"].strip() == page_title, "Unexpected page title")
     canonical = one([element for element in document.tags("link") if element["attrs"].get("rel") == "canonical"], "Expected one canonical")
-    require(normalized_url(canonical["attrs"].get("href")) == CANONICAL, "Canonical origin mismatch")
+    require(normalized_url(canonical["attrs"].get("href")) == canonical_url, "Canonical origin mismatch")
     expected = {
-        "description": "Senior software engineer with more than a decade of experience.",
+        "description": description,
         "og:title": title["text"],
-        "og:description": "Senior software engineer with more than a decade of experience.",
+        "og:description": description,
         "og:type": "website",
-        "og:url": CANONICAL,
-        "og:site_name": title["text"],
+        "og:url": canonical_url,
+        "og:site_name": "Mark Escolano Portfolio",
         "og:image": urljoin(CANONICAL, "og"),
         "og:image:width": "1200",
         "og:image:height": "630",
         "og:image:alt": "Mark Escolano — Senior Software Engineer",
         "twitter:card": "summary_large_image",
         "twitter:title": title["text"],
-        "twitter:description": "Senior software engineer with more than a decade of experience.",
+        "twitter:description": description,
         "twitter:image": urljoin(CANONICAL, "og"),
         "twitter:image:alt": "Mark Escolano — Senior Software Engineer",
     }
@@ -123,7 +126,7 @@ def verify_sitemap(source):
     root = ET.fromstring(source)
     namespace = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
     require(root.tag == namespace + "urlset", "Invalid sitemap root")
-    require([element.text for element in root.findall(f"{namespace}url/{namespace}loc")] == [CANONICAL], "Sitemap must contain only canonical homepage")
+    require([element.text for element in root.findall(f"{namespace}url/{namespace}loc")] == [CANONICAL, urljoin(CANONICAL, "tools")], "Sitemap must contain exactly canonical homepage and Tools")
     require(not root.findall(f".//{namespace}lastmod"), "Unexpected modification date")
 
 
@@ -156,6 +159,8 @@ def main():
     verify_structure(document)
     verify_graph(document)
     if is_url:
+        tools_document = Document(fetch(urljoin(args.source, "/tools"), {"text/html"}).decode())
+        verify_metadata(tools_document, is_tools=True)
         verify_sitemap(fetch(urljoin(args.source, "/sitemap.xml"), {"application/xml", "text/xml"}))
         verify_robots(fetch(urljoin(args.source, "/robots.txt"), {"text/plain"}).decode())
         verify_png(fetch(urljoin(args.source, "/og"), {"image/png"}))

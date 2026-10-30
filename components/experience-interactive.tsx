@@ -130,6 +130,7 @@ export default function ExperienceInteractive() {
         <Button
           type="button"
           variant="outline"
+          className="h-auto min-h-10 max-w-full whitespace-normal"
           aria-expanded={isJourneyOpen}
           aria-controls={journeyRegionId}
           onClick={handleToggleJourney}
