@@ -531,6 +531,23 @@ export const projectsData = [
     videoUrl: "https://youtu.be/vuIJBEjvYSo",
   },
   {
+    title: "Truck Driver Guide",
+    year: "2026",
+    description: [
+      "Truck Driver Guide is a personal route desk. It builds an HGV route from one trip brief, places the required fuel and rest events, and draws estimated daily logs.",
+      "The desk asks for the current location, the pickup, the drop-off, and the hours already used in the current 8-day cycle. It uses normal-condition property-carrier HOS assumptions, and it says to verify the route, parking, and the actual duty record.",
+    ],
+    tags: [
+      { label: "Personal", icon: React.createElement(LuUser) },
+      { label: "Django", icon: React.createElement(SiDjango) },
+      { label: "React", icon: React.createElement(FaReact) },
+      { label: "TypeScript", icon: React.createElement(SiTypescript) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
+    ],
+    imageUrl: TRUCK_DRIVER_GUIDE_IMAGE,
+    websiteUrl: "https://truck-driver-guide-web.vercel.app/",
+  },
+  {
     title: "Potato V3",
     year: "2024-Present",
     description: [
@@ -560,6 +577,34 @@ export const projectsData = [
     ],
     imageUrl: POTATO_V3_IMAGE,
     videoUrl: "https://youtu.be/KTq55vfBbGA",
+  },
+  {
+    title: "House Elf",
+    year: "2024-Present",
+    description: [
+      "House Elf is WealthPark's admin console for internal work. Operators manage user groups, single sign-on, and new accounts in one place, without writing a script or opening the database for ordinary tasks.",
+      "Bulk jobs include instant accounts with invitation letters, investment notices to investors, chat broadcast tags from a CSV, and deleting owners, rooms, properties, tenants, and contracts from an Excel file. Each bulk action is checked and reviewed before it runs.",
+      "A QA Toolbox in development and test environments covers API checks, member management, and configuration. The console is translated, has light and dark themes, and uses company SSO.",
+    ],
+    caseStudy: {
+      problem:
+        "Ordinary admin tasks for user groups, single sign-on, and new accounts required a script or opening the database.",
+      role: "House Elf is WealthPark's admin console for that internal work, including bulk jobs that are checked and reviewed before they run.",
+      outcome:
+        "Operators manage those tasks in one place. The console is translated, has light and dark themes, and uses company SSO.",
+    },
+    tags: [
+      { label: "TypeScript", icon: React.createElement(SiTypescript) },
+      { label: "React", icon: React.createElement(FaReact) },
+      { label: "NextJS", icon: React.createElement(SiNextdotjs) },
+      { label: "Ant Design", icon: React.createElement(SiAntdesign) },
+      { label: "Claude Code", icon: React.createElement(SiClaudecode) },
+      { label: "Codex", icon: React.createElement(TbBrandOpenai) },
+      { label: "Cursor", icon: React.createElement(SiCursor) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
+    ],
+    imageUrl: WEALTHPARK_HOUSE_ELF_IMAGE,
+    videoUrl: "https://youtu.be/lY9wpY_IktU",
   },
   {
     title: "Valuation",
@@ -681,34 +726,6 @@ export const projectsData = [
     imageUrl: WEALTHPARK_CHAT_ADMIN_IMAGE,
     videoUrl: "https://youtu.be/3i2YZLn77tw",
     websiteUrl: "https://demo.wealth-park.com/webchat/",
-  },
-  {
-    title: "House Elf",
-    year: "2024-Present",
-    description: [
-      "House Elf is WealthPark's admin console for internal work. Operators manage user groups, single sign-on, and new accounts in one place, without writing a script or opening the database for ordinary tasks.",
-      "Bulk jobs include instant accounts with invitation letters, investment notices to investors, chat broadcast tags from a CSV, and deleting owners, rooms, properties, tenants, and contracts from an Excel file. Each bulk action is checked and reviewed before it runs.",
-      "A QA Toolbox in development and test environments covers API checks, member management, and configuration. The console is translated, has light and dark themes, and uses company SSO.",
-    ],
-    caseStudy: {
-      problem:
-        "Ordinary admin tasks for user groups, single sign-on, and new accounts required a script or opening the database.",
-      role: "House Elf is WealthPark's admin console for that internal work, including bulk jobs that are checked and reviewed before they run.",
-      outcome:
-        "Operators manage those tasks in one place. The console is translated, has light and dark themes, and uses company SSO.",
-    },
-    tags: [
-      { label: "TypeScript", icon: React.createElement(SiTypescript) },
-      { label: "React", icon: React.createElement(FaReact) },
-      { label: "NextJS", icon: React.createElement(SiNextdotjs) },
-      { label: "Ant Design", icon: React.createElement(SiAntdesign) },
-      { label: "Claude Code", icon: React.createElement(SiClaudecode) },
-      { label: "Codex", icon: React.createElement(TbBrandOpenai) },
-      { label: "Cursor", icon: React.createElement(SiCursor) },
-      { label: "Git", icon: React.createElement(FaGitAlt) },
-    ],
-    imageUrl: WEALTHPARK_HOUSE_ELF_IMAGE,
-    videoUrl: "https://youtu.be/lY9wpY_IktU",
   },
   {
     title: "LookingGlass",
@@ -947,23 +964,6 @@ export const projectsData = [
     videoUrl: "https://youtu.be/FypJL83X9Yg",
     websiteUrl:
       "https://docs.infor.com/lsf/10.0/en-us/lsfwinolh/lsflsrdig/default.html",
-  },
-  {
-    title: "Truck Driver Guide",
-    year: "2026",
-    description: [
-      "Truck Driver Guide is a personal route desk. It builds an HGV route from one trip brief, places the required fuel and rest events, and draws estimated daily logs.",
-      "The desk asks for the current location, the pickup, the drop-off, and the hours already used in the current 8-day cycle. It uses normal-condition property-carrier HOS assumptions, and it says to verify the route, parking, and the actual duty record.",
-    ],
-    tags: [
-      { label: "Personal", icon: React.createElement(LuUser) },
-      { label: "Django", icon: React.createElement(SiDjango) },
-      { label: "React", icon: React.createElement(FaReact) },
-      { label: "TypeScript", icon: React.createElement(SiTypescript) },
-      { label: "Git", icon: React.createElement(FaGitAlt) },
-    ],
-    imageUrl: TRUCK_DRIVER_GUIDE_IMAGE,
-    websiteUrl: "https://truck-driver-guide-web.vercel.app/",
   },
 ] as const;
 

@@ -38,11 +38,23 @@ for (const extension of [".png", ".jpg", ".jpeg", ".webp"]) {
 
 const { projectsData } = require("../lib/data.ts");
 
-test("Truck Driver Guide is the last personal project and links to the live route desk", () => {
-  const project = projectsData.at(-1);
-  const description = project.description.join(" ");
+test("projects follow production year, newest first", () => {
+  const years = projectsData.map((project) =>
+    Number(/^(\d{4})/.exec(project.year)[1]),
+  );
+  const newestFirst = [...years].sort((left, right) => right - left);
 
-  assert.equal(project.title, "Truck Driver Guide");
+  assert.deepEqual(years, newestFirst);
+});
+
+test("Truck Driver Guide sits with the 2026 work and links to the live route desk", () => {
+  const project = projectsData.find((item) => item.title === "Truck Driver Guide");
+  const description = project.description.join(" ");
+  const matterWorxIndex = projectsData.findIndex((item) => item.title === "MatterWorx");
+  const guideIndex = projectsData.findIndex((item) => item.title === "Truck Driver Guide");
+
+  assert.equal(guideIndex, matterWorxIndex + 1);
+  assert.notEqual(guideIndex, projectsData.length - 1);
   assert.equal(project.websiteUrl, "https://truck-driver-guide-web.vercel.app/");
   assert.equal("videoUrl" in project, false);
   assert.equal("buildNote" in project, false);

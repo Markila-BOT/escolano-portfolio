@@ -11,14 +11,14 @@ export default function Contact() {
     <ObservedSection
       name="Contact"
       id="contact"
-      className="mb-20 w-[min(100%,38rem)] text-center sm:mb-28"
+      className="mx-auto mb-20 w-[min(100%,38rem)] text-center sm:mb-28"
     >
       <SectionHeading>Contact me</SectionHeading>
 
-      <p className="-mt-6 text-muted-foreground">
+      <p className="text-muted-foreground -mt-6">
         {hiringContact.availability}
       </p>
-      <p className="mt-3 text-muted-foreground">
+      <p className="text-muted-foreground mt-3">
         {hiringContact.emailIntroduction}{" "}
         <a className="underline" href={`mailto:${hiringContact.email}`}>
           {hiringContact.email}
@@ -32,7 +32,7 @@ export default function Contact() {
           return (
             <li key={profile.label}>
               <a
-                className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="text-muted-foreground hover:text-foreground focus-visible:ring-ring focus-visible:ring-offset-background inline-flex min-h-11 min-w-11 items-center justify-center rounded-md focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
                 href={profile.href}
                 aria-label={profile.label}
                 title={profile.label}
