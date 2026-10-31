@@ -6,7 +6,7 @@ const ts = require("typescript");
 const vm = require("node:vm");
 
 test("actual Intro portrait generates accurate density-aware image props", () => {
-  const module = { exports: {} };
+  const testModule = { exports: {} };
   const output = ts.transpileModule(
     fs.readFileSync("components/intro.tsx", "utf8"),
     {
@@ -18,8 +18,8 @@ test("actual Intro portrait generates accurate density-aware image props", () =>
     },
   ).outputText;
   vm.runInNewContext(output, {
-    module,
-    exports: module.exports,
+    module: testModule,
+    exports: testModule.exports,
     require: (name) => {
       if (name === "next/image") return "image";
       if (name === "@/public/profile.png")
@@ -41,11 +41,11 @@ test("actual Intro portrait generates accurate density-aware image props", () =>
       return require(name);
     },
   });
-  const root = module.exports.default();
+  const root = testModule.exports.default();
   const portrait = root.props.children[0].props.children.props.children[0];
   assert.equal(portrait.type, "image");
   assert.equal(portrait.props.quality, 95);
-  assert.equal(portrait.props.priority, true);
+  assert.equal(portrait.props.preload, true);
   assert.equal(portrait.props.width, 160);
   assert.equal(portrait.props.height, 160);
   assert.equal(portrait.props.sizes, "160px");

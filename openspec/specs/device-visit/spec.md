@@ -37,17 +37,17 @@ The page SHALL keep one visitor id and one visit count for this device. The firs
 
 ### Requirement: A new visit shows one toast
 
-A new visit SHALL show one polite status toast. Visit 1 SHALL use the title "Hello!" and the description "Thanks for stopping by — enjoy the site." A later new visit SHALL use the title "Welcome back!" and the description "Good to see you again — visit #N on this device.", with N equal to the visit count. A continuing visit SHALL show no visit toast. The visit toast MUST NOT play a sound, including when the saved sound choice is on. The contact form's success and error toasts SHALL still appear for those results.
+A new visit SHALL show one polite status toast. Visit 1 SHALL use the title "Hello!" and the description "Thanks for stopping by. Enjoy the site." A later new visit SHALL use the title "Welcome back!" and the description "Good to see you again. This is visit #N on this device.", with N equal to the visit count. A continuing visit SHALL show no visit toast. The visit toast MUST NOT play a sound, including when the saved sound choice is on. The contact form's success and error toasts SHALL still appear for those results.
 
 #### Scenario: First visit toast
 
 - **WHEN** the visit count becomes 1
-- **THEN** one status toast shows "Hello!" and "Thanks for stopping by — enjoy the site."
+- **THEN** one status toast shows "Hello!" and "Thanks for stopping by. Enjoy the site."
 
 #### Scenario: Returning visit toast
 
 - **WHEN** a new visit raises the count above 1
-- **THEN** one status toast shows "Welcome back!" and "Good to see you again — visit #N on this device." with that count
+- **THEN** one status toast shows "Welcome back!" and "Good to see you again. This is visit #N on this device." with that count
 
 #### Scenario: Continuing visit
 

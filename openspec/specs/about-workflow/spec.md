@@ -32,7 +32,7 @@ About SHALL say that the current way of working is AI-assisted engineering, test
 #### Scenario: Intent-driven development is concrete
 
 - **WHEN** the visitor reads About
-- **THEN** they can read that work starts from clear intent—outcome and constraints for the user or system—so the spec reflects that intent
+- **THEN** they can read that work starts from the outcome and the constraints for the user or the system, so the spec reflects that intent
 
 #### Scenario: Doubt-driven development is concrete
 

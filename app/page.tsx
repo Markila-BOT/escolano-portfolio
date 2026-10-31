@@ -3,6 +3,7 @@ import Contact from "@/components/contact";
 import Experience from "@/components/experience";
 import Intro from "@/components/intro";
 import Projects from "@/components/projects";
+import Questions from "@/components/questions";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
 import { professionalSocialLinks } from "@/lib/data";
@@ -43,6 +44,10 @@ export default function Home() {
       <SectionDivider />
       <div className="w-full px-4 sm:px-6 md:px-8">
         <Experience />
+      </div>
+      <SectionDivider />
+      <div className="w-full max-w-[52rem] px-4 sm:px-6 md:px-8">
+        <Questions />
       </div>
       <SectionDivider />
       <div className="w-full max-w-[52rem] px-4 sm:px-6 md:px-8">

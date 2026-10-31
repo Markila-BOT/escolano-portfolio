@@ -40,11 +40,15 @@ The initial HTML SHALL contain parseable schema.org JSON-LD describing Mark Esco
 
 ### Requirement: Sitemap lists real public pages
 
-The `/sitemap.xml` endpoint SHALL return HTTP 200 with XML containing exactly the canonical homepage as a page URL. It MUST NOT list section fragments, nonexistent detail pages, metadata endpoints, or fabricated modification dates.
+The `/sitemap.xml` endpoint SHALL return HTTP 200 with XML containing the canonical homepage, `/tools`, and `/writing` exactly once each. A post URL SHALL appear only when that post file is published. The sitemap MUST NOT list section fragments, nonexistent detail pages, metadata endpoints, or fabricated modification dates.
 
 #### Scenario: Single-page discovery
-- **WHEN** a crawler requests the sitemap
-- **THEN** the valid sitemap contains one absolute HTTPS homepage URL and no hash-based page entries
+- **WHEN** a crawler requests the sitemap and no post is published
+- **THEN** the valid sitemap contains the absolute HTTPS homepage, Tools, and writing index URLs exactly once each, and no hash-based page entries
+
+#### Scenario: A post is published
+- **WHEN** a crawler requests the sitemap and one post file is published
+- **THEN** the sitemap also contains that post's absolute URL exactly once
 
 ### Requirement: Robots policy permits public discovery
 
@@ -56,12 +60,14 @@ The production `/robots.txt` endpoint SHALL return HTTP 200 with a text policy a
 
 ### Requirement: Document semantics expose a coherent heading hierarchy
 
-The homepage SHALL expose one main landmark, one nonempty h1 for the introductory identity, and h2 headings for About, Projects, Skills, Experience, and Contact in their corresponding sections. It SHALL retain native header, navigation, and footer landmarks and its English document language. Heading elements MUST NOT be nested inside other headings.
+The homepage SHALL expose one main landmark, one nonempty h1 for the introductory identity, and h2 headings for About, Projects, Skills, Experience, Questions, and Contact in their corresponding sections. It SHALL retain native header, navigation, and footer landmarks and its English document language. Heading elements MUST NOT be nested inside other headings. If a locale control later sets `fil` or `ja` after first paint, that language change SHALL remain; this requirement still requires English before JavaScript runs.
 
 #### Scenario: Initial semantic document
+
 - **WHEN** the homepage is inspected before JavaScript execution
-- **THEN** its landmarks and section headings are present, there is exactly one h1, and no heading contains another heading
+- **THEN** its landmarks and section headings are present, including Questions, there is exactly one h1, and no heading contains another heading
 
 #### Scenario: Client initialization
+
 - **WHEN** the homepage hydrates and the greeting or role changes
 - **THEN** the single h1 and section-heading hierarchy remain intact without hiding introductory content

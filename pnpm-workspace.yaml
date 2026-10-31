@@ -1,2 +1,6 @@
 allowBuilds:
   react-vertical-timeline-component: false
+  unrs-resolver: true
+overrides:
+  glob@10.3.10: 10.5.0
+  postcss@8.4.31: 8.5.28

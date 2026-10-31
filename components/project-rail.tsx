@@ -9,12 +9,14 @@ import { projectsData, projectViews } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 type ProjectRailProps = {
+  projects: readonly (typeof projectsData)[number][];
   expandedIndex: number;
   onSelect: (index: number) => void;
   onOpen: (index: number, trigger: HTMLButtonElement) => void;
 };
 
 export default function ProjectRail({
+  projects,
   expandedIndex,
   onSelect,
   onOpen,
@@ -24,7 +26,7 @@ export default function ProjectRail({
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 text-left sm:px-6 lg:flex-row lg:items-stretch lg:px-8">
-      {projectsData.map((project, index) => {
+      {projects.map((project, index) => {
         const isExpanded = expandedIndex === index;
         const panelId = `${railId}-panel-${index}`;
         const titleId = `${railId}-title-${index}`;
@@ -35,7 +37,7 @@ export default function ProjectRail({
             layout={!hasReducedMotion}
             transition={{ duration: 0.25 }}
             className={cn(
-              "min-w-0 rounded-lg border border-border bg-card text-card-foreground",
+              "border-border bg-card text-card-foreground min-w-0 rounded-lg border",
               isExpanded ? "lg:flex-[6]" : "lg:flex-1",
             )}
           >
@@ -47,13 +49,13 @@ export default function ProjectRail({
               aria-controls={panelId}
               onClick={() => onSelect(index)}
               className={cn(
-                "h-auto min-h-11 w-full min-w-11 justify-start gap-2 whitespace-normal rounded-lg p-3 text-left lg:items-start lg:p-2",
+                "h-auto min-h-11 w-full min-w-11 justify-start gap-2 rounded-lg p-3 text-left whitespace-normal lg:items-start lg:p-2",
                 !isExpanded && "lg:h-full lg:flex-col lg:items-center",
               )}
             >
               <span
                 aria-hidden="true"
-                className="font-mono text-xs text-muted-foreground"
+                className="text-muted-foreground font-mono text-xs"
               >
                 {String(index + 1).padStart(2, "0")}
               </span>
@@ -68,7 +70,7 @@ export default function ProjectRail({
               </span>
               <span
                 aria-hidden="true"
-                className={cn("ml-auto", !isExpanded && "lg:ml-0 lg:mt-auto")}
+                className={cn("ml-auto", !isExpanded && "lg:mt-auto lg:ml-0")}
               >
                 {isExpanded ? "−" : "+"}
               </span>
@@ -88,7 +90,7 @@ export default function ProjectRail({
                     className="aspect-video w-full rounded-md object-cover"
                   />
                   <h3 className="text-xl font-semibold">{project.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     {project.description}
                   </p>
                   <ul

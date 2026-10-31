@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Resend } from "resend";
+import { render } from "@react-email/render";
 import { validateString } from "@/lib/utils";
 import ContactFormEmail from "@/email/contact-form-email";
 
@@ -40,16 +41,16 @@ export const sendEmail = async (formData: FormData) => {
   }
 
   try {
+    const html = await render(
+      React.createElement(ContactFormEmail, { message, senderEmail }),
+    );
     const resend = new Resend(apiKey);
     const { data, error } = await resend.emails.send({
       from,
       to,
       subject: "Message from contact form portfolio",
       replyTo: senderEmail,
-      react: React.createElement(ContactFormEmail, {
-        message: message,
-        senderEmail: senderEmail,
-      }),
+      html,
     });
     if (error || typeof data?.id !== "string" || !data.id.trim()) {
       return { error: deliveryError };

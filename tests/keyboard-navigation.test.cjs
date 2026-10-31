@@ -7,7 +7,7 @@ const assert = require("node:assert/strict");
 const { test } = require("node:test");
 
 function load(filename, mocks = {}, globals = {}) {
-  const module = { exports: {} };
+  const testModule = { exports: {} };
   const output = ts.transpileModule(fs.readFileSync(filename, "utf8"), {
     compilerOptions: {
       module: ts.ModuleKind.CommonJS,
@@ -16,13 +16,15 @@ function load(filename, mocks = {}, globals = {}) {
     },
   }).outputText;
   vm.runInNewContext(output, {
-    module,
-    exports: module.exports,
+    module: testModule,
+    exports: testModule.exports,
+    requestAnimationFrame: (callback) => { callback(); return 1; },
+    cancelAnimationFrame: () => {},
     require: (name) =>
       Object.hasOwn(mocks, name) ? mocks[name] : require(name),
     ...globals,
   });
-  return module.exports;
+  return testModule.exports;
 }
 
 function nodes(root) {
@@ -183,6 +185,10 @@ function headerHarness(
       "@/components/ui/dialog": dialogTags,
       "@/components/ui/button": { Button: "button" },
       "@/components/logo-mark": { LogoMark: "logo" },
+      "@/components/persistent-action-bar": {
+        default: () => null,
+        __esModule: true,
+      },
       "./mobile-nav": {
         __esModule: true,
         default: "MobileNav",
@@ -266,6 +272,7 @@ test("main is a stable skip target outside normal tab order", () => {
       "experience",
       "intro",
       "projects",
+      "questions",
       "section-divider",
       "skills",
     ].map((name) => [`@/components/${name}`, name]),

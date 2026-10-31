@@ -73,12 +73,12 @@ def verify_metadata(document, is_tools=False):
         "og:image": urljoin(CANONICAL, "og"),
         "og:image:width": "1200",
         "og:image:height": "630",
-        "og:image:alt": "Mark Escolano — Senior Software Engineer",
+        "og:image:alt": "Mark Escolano, Senior Software Engineer",
         "twitter:card": "summary_large_image",
         "twitter:title": title["text"],
         "twitter:description": description,
         "twitter:image": urljoin(CANONICAL, "og"),
-        "twitter:image:alt": "Mark Escolano — Senior Software Engineer",
+        "twitter:image:alt": "Mark Escolano, Senior Software Engineer",
     }
     for key, value in expected.items():
         element = one([element for element in document.tags("meta") if element["attrs"].get("name", element["attrs"].get("property")) == key], f"Expected one {key}")
@@ -100,9 +100,13 @@ def verify_structure(document):
         if element["tag"] in HEADINGS:
             require(not any(parent["tag"] in HEADINGS for parent in element["ancestors"]), "Nested heading")
             require(element["text"].strip(), "Empty heading")
-    for section_id, title in {"about": "About me", "projects": "My projects", "skills": "My skills", "experience": "My experience", "contact": "Contact me"}.items():
+    section_headings = [("about", "About me"), ("projects", "My projects"), ("skills", "My skills"), ("experience", "My experience"), ("questions", "Questions"), ("contact", "Contact me")]
+    positions = []
+    for section_id, title in section_headings:
         section = one([element for element in document.tags("section") if element["attrs"].get("id") == section_id], f"Missing section {section_id}")
-        one([element for element in document.tags("h2") if section in element["ancestors"] and element["text"].strip() == title], f"Missing heading in {section_id}")
+        heading = one([element for element in document.tags("h2") if section in element["ancestors"] and element["text"].strip() == title], f"Missing heading in {section_id}")
+        positions.append(document.elements.index(heading))
+    require(positions == sorted(positions), "Section headings are out of document order")
 
 
 def verify_graph(document):
@@ -126,7 +130,7 @@ def verify_sitemap(source):
     root = ET.fromstring(source)
     namespace = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
     require(root.tag == namespace + "urlset", "Invalid sitemap root")
-    require([element.text for element in root.findall(f"{namespace}url/{namespace}loc")] == [CANONICAL, urljoin(CANONICAL, "tools")], "Sitemap must contain exactly canonical homepage and Tools")
+    require([element.text for element in root.findall(f"{namespace}url/{namespace}loc")] == [CANONICAL, urljoin(CANONICAL, "tools"), urljoin(CANONICAL, "writing")], "Sitemap must contain the homepage, Tools, and writing index")
     require(not root.findall(f".//{namespace}lastmod"), "Unexpected modification date")
 
 

@@ -47,6 +47,21 @@ def deep_states(page, results):
         page.get_by_role("button", name="Close project", exact=True).wait_for(state="hidden")
     projects.get_by_role("button", name="Carousel", exact=True).click()
     scan(page, "projects-carousel", results)
+    carousel_openers = projects.get_by_role("button", name="View ")
+    opener_count = carousel_openers.count()
+    for opener_index in (0, opener_count - 1):
+        if opener_index < 0:
+            continue
+        carousel_openers.nth(opener_index).click()
+        page.get_by_role("button", name="Close project", exact=True).wait_for()
+        images = page.get_by_role("button", name="Next image", exact=True)
+        if images.count() and images.first.is_enabled():
+            images.first.click()
+            scan(page, f"carousel-drawer-screenshots-{opener_index}", results)
+        else:
+            scan(page, f"carousel-drawer-{opener_index}", results)
+        page.get_by_role("button", name="Close project", exact=True).click()
+        page.get_by_role("button", name="Close project", exact=True).wait_for(state="hidden")
 
     skills = page.locator("button[id^='skill-trigger-']")
     for index in range(skills.count()):
@@ -79,6 +94,22 @@ def deep_states(page, results):
     page.get_by_role("button", name="Show timeline", exact=True).click()
     scan(page, "journey-closed", results)
 
+    greeting = page.locator("#home h1 button")
+    for index in range(3):
+        greeting.press("Enter")
+        page.wait_for_timeout(1600)
+        scan(page, f"greeting-{index}", results)
+
+    sound = page.get_by_role("button", name="Turn sound on", exact=True)
+    sound.click()
+    scan(page, "sound-on", results)
+    page.get_by_role("button", name="Turn sound off", exact=True).click()
+    scan(page, "sound-off", results)
+
+    notice = page.get_by_role("status")
+    if notice.count():
+        scan(page, "visitor-notice", results)
+
 
 def main():
     parser = argparse.ArgumentParser(description="Local production WCAG 2.1 A/AA scan; never submits contact")
@@ -86,6 +117,7 @@ def main():
     parser.add_argument("--browser", required=True, help="Chromium executable path")
     parser.add_argument("--output", required=True)
     parser.add_argument("--base-only", action="store_true")
+    parser.add_argument("--fixture-only", action="store_true")
     arguments = parser.parse_args()
     if urlparse(arguments.url).hostname not in {"127.0.0.1", "localhost", "::1"}:
         parser.error("Only loopback production targets are supported")
@@ -93,7 +125,7 @@ def main():
     report = {
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "url": arguments.url,
-        "buildId": (ROOT / ".next/BUILD_ID").read_text().strip(),
+        "buildId": (ROOT / ".next/BUILD_ID").read_text().strip() if (ROOT / ".next/BUILD_ID").is_file() else "unavailable",
         "scope": "local only; all POST requests blocked; media/AT/manual checks not verified",
         "configurations": [],
     }
@@ -109,6 +141,12 @@ def main():
             raise RuntimeError("Scanner failed to detect deliberately invalid controls")
         report["fixture"] = {"status": "pass", "detected": sorted(identifiers)}
         fixture.close()
+        if arguments.fixture_only:
+            output = Path(arguments.output)
+            output.parent.mkdir(parents=True, exist_ok=True)
+            output.write_text(json.dumps(report, indent=2) + "\n")
+            print(f"Fixture passed: {', '.join(report['fixture']['detected'])}")
+            return
         for theme in ("light", "dark"):
             for width in (320, 390, 1280):
                 for motion in ("no-preference", "reduce"):

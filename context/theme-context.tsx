@@ -57,8 +57,9 @@ export default function ThemeContextProvider({
     } catch {
       // Keep the system preference when storage is unavailable.
     }
-    setTheme(nextTheme);
+    const frame = requestAnimationFrame(() => setTheme(nextTheme));
     document.documentElement.classList.toggle("dark", nextTheme === "dark");
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   return (

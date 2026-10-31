@@ -101,3 +101,14 @@ Validation: `pnpm lint`, `pnpm exec tsc --noEmit`, `node --test tests/*.test.cjs
 ## Budget decisions and follow-up
 
 Every deployed run in both profiles meets FCP <1500ms and CLS <0.1, so those checklist rows are complete for this captured lab baseline only. Mobile LCP is 3432.51–3442.92ms, above 2500ms; LCP stays open. TTI was not extracted in this original analysis; the separate [2026-10-09 TTI verification](time-to-interactive.md) now establishes a lab pass for its identified public build. TBT is diagnostic, not equivalent. No field-performance guarantee is made. Investigating the mobile LCP element/render delay and broader critical-path costs is a separate optimization proposal, not silently added to this change.
+
+## Recurring monitor
+
+`pnpm performance:monitor` rebuilds with `pnpm build`, serves that build with `pnpm start` on `127.0.0.1:3100`, and collects three mobile and three desktop runs through `scripts/audit-performance.sh`. It does not start `pnpm dev`. Raw JSON stays in gitignored `.performance-reports/`. The GitHub Actions `performance` job runs on `workflow_dispatch` and on pushes to `master`. Pull requests do not run it. The report is a workflow artifact. The public page does not show these numbers.
+
+The comparison baseline is the accepted deployed medians below. Paint and CLS come from `deployed-serial-baseline`. TTI comes from the 2026-10-09 capture in [time-to-interactive.md](time-to-interactive.md). A result fails only when all three runs agree: a previously passing budget misses, or FCP, LCP, or TTI is more than 100ms worse than this median, or CLS is more than 0.01 worse. Mobile LCP above 2.5s and at or below 3.50s is `known-miss`. It does not fail the command and it does not check the LCP checklist item. All three mobile LCP runs above 3.50s fail.
+
+| Profile | FCP (ms) | LCP (ms) | CLS | TTI (ms) | LCP status |
+| --- | --- | --- | --- | --- | --- |
+| mobile | 831.41 | 3440.91 | 0.01427 | 3370.387 | known-miss |
+| desktop | 280.48 | 697.98 | 0 | 657.7905 | pass |

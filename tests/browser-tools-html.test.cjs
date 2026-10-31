@@ -71,10 +71,17 @@ test("Tools metadata overrides inherited homepage identity without changing orig
   );
 });
 
-test("sitemap exposes exactly the two canonical pages", () => {
-  const sitemap = load("app/sitemap.ts", { "@/lib/seo": seo }).default();
+test("sitemap exposes the homepage, tools, and writing", () => {
+  const sitemap = load("app/sitemap.ts", {
+    "@/lib/seo": seo,
+    "@/lib/writing-posts": { listPublishedWritingPosts: () => [] },
+  }).default();
   assert.deepEqual(
     Array.from(sitemap, (entry) => entry.url),
-    [seo.portfolioIdentity.url, seo.portfolioIdentity.url + "tools"],
+    [
+      seo.portfolioIdentity.url,
+      seo.portfolioIdentity.url + "tools",
+      seo.writingUrl,
+    ],
   );
 });

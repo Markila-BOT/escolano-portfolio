@@ -60,7 +60,8 @@ export default function SoundContextProvider({
     try {
       const stored = window.localStorage.getItem(SOUND_STORAGE_KEY);
       if (stored === "on") {
-        setSoundOn(true);
+        const frame = requestAnimationFrame(() => setSoundOn(true));
+        return () => cancelAnimationFrame(frame);
       }
     } catch {
       // A blocked store leaves sound off, which is the default.

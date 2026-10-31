@@ -48,6 +48,7 @@ import {
   SiRust,
   SiClaudecode,
   SiCursor,
+  SiDjango,
 } from "react-icons/si";
 import {
   TbBrandCSharp,
@@ -64,7 +65,7 @@ import {
   FaPlaneDeparture,
   FaPlaneArrival,
 } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
+import { LuGraduationCap, LuUser } from "react-icons/lu";
 import { LiaChalkboardTeacherSolid } from "react-icons/lia";
 import LAWSON_SMART_REPORT_IMAGE from "@/public/projects/lawson-smart-report.png";
 import ASURION_IRIS_IMAGE from "@/public/projects/asurion-iris.png";
@@ -83,6 +84,7 @@ import WEALTHPARK_VALUATION_IMAGE from "@/public/projects/wealthpark-valuation.p
 import X_CLIMB_LAGOON_IMAGE from "@/public/projects/x-climb-lagoon.png";
 import LOOKING_GLASS_LOGIN_IMAGE from "@/public/projects/looking-glass-login.jpg";
 import LOOKING_GLASS_SHOP_IMAGE from "@/public/projects/looking-glass-shop.jpg";
+import TRUCK_DRIVER_GUIDE_IMAGE from "@/public/projects/truck-driver-guide.png";
 
 export const links = [
   {
@@ -111,6 +113,11 @@ export const links = [
   },
 ] as const;
 
+export const writingIndex = {
+  heading: "Writing",
+  empty: "There are no notes yet.",
+} as const;
+
 export const introCallToAction = {
   positioning:
     "I help product teams take new code all the way to deployment, writing most of it in TypeScript with AI and spec-driven development.",
@@ -120,7 +127,7 @@ export const introCallToAction = {
 } as const;
 
 export const aboutWorkflow =
-  "Most days I start from clear intent—the outcome and constraints for the user or system—then turn that into a spec. I write the change with Claude Code, Codex, and Cursor, name what I am still unsure about, and resolve it with tests or review before I treat an assumption as done. I own the result. That is AI-assisted engineering, test-driven development, spec-driven development, intent-driven development, and doubt-driven development." as const;
+  "Most days I write a spec from the outcome and the constraints, for the user or the system. I write the change with Claude Code, Codex, and Cursor, name what I am still unsure about, and resolve it with a test or a review before I treat an assumption as done. I own the result. That is AI-assisted engineering, test-driven development, spec-driven development, intent-driven development, and doubt-driven development." as const;
 
 export const contactFormFeedback = {
   accepted: "Your message was accepted for sending.",
@@ -138,6 +145,24 @@ export const hiringContact = {
   emailIntroduction: "You can email me at",
   formAlternative: "or through this form.",
 } as const;
+
+export const careerQuestionsLead =
+  "Three answers already written on this page." as const;
+
+export const careerQuestions = [
+  {
+    prompt: "What work are you open to?",
+    answer: hiringContact.availability,
+  },
+  {
+    prompt: "How do you work?",
+    answer: aboutWorkflow,
+  },
+  {
+    prompt: "What do you help product teams do?",
+    answer: introCallToAction.positioning,
+  },
+] as const;
 
 export const professionalSocialLinks = [
   { label: "GitHub", href: "https://github.com/Markila-BOT" },
@@ -167,24 +192,41 @@ export const introGreetings = [
 
 export const introRoleTitles = [
   "Senior Software Engineer",
-  "Full Stack Engineer",
+  "Senior Full Stack Engineer (AI Engineer)",
   "Lead Software Engineer",
-  "Front-End Engineer",
+  "Senior Front-End Engineer",
+  "Software Architect",
 ] as const;
 
 export const firstVisitNotice = {
   title: "Hello!",
-  description: "Thanks for stopping by — enjoy the site.",
+  description: "Thanks for stopping by. Enjoy the site.",
 } as const;
 
 export function returnVisitNotice(visitCount: number) {
   return {
     title: "Welcome back!",
-    description: `Good to see you again — visit #${visitCount} on this device.`,
+    description: `Good to see you again. This is visit #${visitCount} on this device.`,
   };
 }
 
 export const experiencesData = [
+  {
+    title: "Senior Full Stack Engineer (AI Engineer)",
+    location: "Quezon City, Philippines",
+    description:
+      "I work at a property-management technology company as a senior full stack engineer, with AI-assisted engineering.",
+    tags: [
+      "TypeScript",
+      "React",
+      "NextJS",
+      "Tailwind CSS",
+      "GraphQL",
+      "NestJS",
+    ],
+    icon: React.createElement(CgWorkAlt),
+    date: "2023-Present",
+  },
   {
     title: "Senior Software Engineer",
     location: "Quezon City, Philippines",
@@ -198,7 +240,7 @@ export const experiencesData = [
       "NestJS",
     ],
     icon: React.createElement(CgWorkAlt),
-    date: "2022-Present",
+    date: "2022-2023",
   },
   {
     title: "Full Stack Engineer",
@@ -397,6 +439,15 @@ export const experienceJourneyScenes = [
       props: "dual-monitors",
     },
   },
+  {
+    title: "Senior Full Stack Engineer (AI Engineer)",
+    visual: {
+      setting: "office",
+      activity: "code",
+      careerStage: "senior",
+      props: "dual-monitors",
+    },
+  },
 ] as const satisfies readonly {
   title: (typeof experiencesData)[number]["title"];
   visual: JourneySceneDescriptor;
@@ -424,6 +475,11 @@ export const projectCaseStudy = {
   outcome: "Outcome",
 } as const;
 
+export const projectWalkthrough = {
+  previous: "Previous part",
+  next: "Next part",
+} as const;
+
 export const projectBuildNote = {
   label: "Build",
 } as const;
@@ -433,6 +489,12 @@ export const projectViews = {
   carousel: "Carousel",
   rail: "Rail",
   details: (title: string) => `View ${title} details`,
+} as const;
+
+export const projectFilter = {
+  label: "Filter projects by technology",
+  all: "All",
+  empty: "No projects use that technology.",
 } as const;
 
 export const projectsData = [
@@ -466,6 +528,7 @@ export const projectsData = [
       { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: MATTERWORX_IMAGE,
+    videoUrl: "https://youtu.be/vuIJBEjvYSo",
   },
   {
     title: "Potato V3",
@@ -496,6 +559,7 @@ export const projectsData = [
       { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: POTATO_V3_IMAGE,
+    videoUrl: "https://youtu.be/KTq55vfBbGA",
   },
   {
     title: "Valuation",
@@ -644,6 +708,7 @@ export const projectsData = [
       { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: WEALTHPARK_HOUSE_ELF_IMAGE,
+    videoUrl: "https://youtu.be/lY9wpY_IktU",
   },
   {
     title: "LookingGlass",
@@ -883,6 +948,23 @@ export const projectsData = [
     websiteUrl:
       "https://docs.infor.com/lsf/10.0/en-us/lsfwinolh/lsflsrdig/default.html",
   },
+  {
+    title: "Truck Driver Guide",
+    year: "2026",
+    description: [
+      "Truck Driver Guide is a personal route desk. It builds an HGV route from one trip brief, places the required fuel and rest events, and draws estimated daily logs.",
+      "The desk asks for the current location, the pickup, the drop-off, and the hours already used in the current 8-day cycle. It uses normal-condition property-carrier HOS assumptions, and it says to verify the route, parking, and the actual duty record.",
+    ],
+    tags: [
+      { label: "Personal", icon: React.createElement(LuUser) },
+      { label: "Django", icon: React.createElement(SiDjango) },
+      { label: "React", icon: React.createElement(FaReact) },
+      { label: "TypeScript", icon: React.createElement(SiTypescript) },
+      { label: "Git", icon: React.createElement(FaGitAlt) },
+    ],
+    imageUrl: TRUCK_DRIVER_GUIDE_IMAGE,
+    websiteUrl: "https://truck-driver-guide-web.vercel.app/",
+  },
 ] as const;
 
 type SkillGroup = {
@@ -1030,6 +1112,7 @@ export const skillEvidenceAliases: Readonly<Record<string, readonly string[]>> =
   };
 
 export const skillEvidenceWorkRoles = [
+  "Senior Full Stack Engineer (AI Engineer)",
   "Senior Software Engineer",
   "Full Stack Engineer",
   "Lead Software Engineer",

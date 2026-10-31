@@ -29,6 +29,8 @@ function loadAction(
     exports,
     process: { env },
     require(name) {
+      if (name === "@react-email/render")
+        return { render: async (element) => JSON.stringify(element.props) };
       if (name === "react")
         return { createElement: (component, props) => ({ component, props }) };
       if (name === "@/email/contact-form-email")
@@ -118,7 +120,7 @@ test("valid limits preserve message, Reply-To, and server addresses", async () =
   assert.equal(action.calls[0].from, settings.CONTACT_EMAIL_FROM);
   assert.equal(action.calls[0].to, settings.CONTACT_EMAIL_TO);
   assert.equal(action.calls[0].replyTo, email);
-  assert.equal(action.calls[0].react.props.message, message);
+  assert.equal(JSON.parse(action.calls[0].html).message, message);
 });
 
 test("rejections, exceptions, and malformed responses never report success or leak details", async () => {
@@ -162,6 +164,7 @@ test("form routes accepted and rejected submissions to matching feedback and opt
       const exports = {};
       let resolveSubmission;
       vm.runInNewContext(formSource, {
+        React,
         exports,
         require(name) {
           if (name === "react")

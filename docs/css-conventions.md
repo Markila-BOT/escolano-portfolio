@@ -1,6 +1,6 @@
 # CSS and styling
 
-Styling is Tailwind 3 utility classes. The only stylesheet is `app/globals.css`. It holds the semantic tokens. Do not add a CSS module, a styled-component, or a new global rule for one component.
+Styling is Tailwind 4 utility classes. The only stylesheet is `app/globals.css`. It holds the semantic tokens and loads the shared Tailwind configuration through `@config`. Do not add a CSS module, a styled-component, or a new global rule for one component.
 
 Library choices are in [technology-convention.md](technology-convention.md).
 
@@ -29,5 +29,5 @@ Prefer `dark:` when a token is not enough. Do not branch colors in JavaScript wi
 
 ## Files
 
-- `tailwind.config.ts` is `darkMode: ["class"]` and maps the CSS variables. Add a color there only when it belongs to the shared palette.
+- `tailwind.config.ts` is `darkMode: "class"` and maps the CSS variables. Add a color there only when it belongs to the shared palette.
 - `components.json` records the shadcn setup (`baseColor: stone`, `cssVariables: true`). Keep generated primitives on those tokens.

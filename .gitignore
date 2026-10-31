@@ -39,3 +39,6 @@ next-env.d.ts
 
 # ide
 .cursor
+
+# lighthouse lab output
+.performance-reports/

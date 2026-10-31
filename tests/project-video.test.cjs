@@ -9,7 +9,7 @@ const feedback = { loading: "Loading", failed: "Failed" };
 const props = { url: "video-one", image: { src: "screenshot" }, title: "One" };
 
 function load(file, overrides = {}, onRequire = () => {}) {
-  const module = { exports: {} };
+  const testModule = { exports: {} };
   const source = ts.transpileModule(fs.readFileSync(file, "utf8"), {
     compilerOptions: {
       module: ts.ModuleKind.CommonJS,
@@ -26,15 +26,15 @@ function load(file, overrides = {}, onRequire = () => {}) {
     ...overrides,
   };
   vm.runInNewContext(source, {
-    module,
-    exports: module.exports,
+    module: testModule,
+    exports: testModule.exports,
     require: (name) => {
       onRequire(name);
       if (mocks[name] instanceof Error) throw mocks[name];
       return name in mocks ? mocks[name] : require(name);
     },
   });
-  return module.exports.default;
+  return testModule.exports.default;
 }
 
 function children(tree) {
@@ -87,7 +87,7 @@ test("media loading, readiness, errors and stale readiness retain stable fallbac
   assert.equal(children(render())[1].props.children, feedback.failed);
 });
 
-test("deferred module is not invoked on frame creation; delayed and failed imports remain usable", async () => {
+test("deferred testModule is not invoked on frame creation; delayed and failed imports remain usable", async () => {
   let loader;
   let options;
   let requests = 0;

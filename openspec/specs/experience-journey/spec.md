@@ -22,12 +22,12 @@ The Experience section SHALL show the timeline with its Read More control when t
 
 ### Requirement: The journey follows the experience data in order
 
-The journey SHALL show one stop for each Experience entry, oldest first, from "Education" to the current role. A person SHALL travel between stops. Between two stops in the same country, the person SHALL walk. Between two stops in different countries, the person SHALL fly in a plane. The country SHALL be the last part of the entry's location. The journey SHALL open at the first stop.
+The journey SHALL show one stop for each Experience entry, oldest first, from "Education" to the current role. The last stop SHALL be "Senior Full Stack Engineer (AI Engineer)". A person SHALL travel between stops. Between two stops in the same country, the person SHALL walk. Between two stops in different countries, the person SHALL fly in a plane. The country SHALL be the last part of the entry's location. The journey SHALL open at the first stop.
 
 #### Scenario: The journey starts at the beginning
 
 - **WHEN** the visitor switches to the journey
-- **THEN** the person stands at the "Education" stop and the page shows stop 1 of 12
+- **THEN** the person stands at the "Education" stop and the page shows stop 1 of 13
 
 #### Scenario: A change of country is a flight
 
@@ -39,9 +39,14 @@ The journey SHALL show one stop for each Experience entry, oldest first, from "E
 - **WHEN** the visitor travels from "Internship" in Taguig, Philippines to "First Job" in Makati, Philippines
 - **THEN** the person walks
 
+#### Scenario: The current role is a walk inside the Philippines
+
+- **WHEN** the visitor travels from "Senior Software Engineer" in Quezon City, Philippines to the last stop
+- **THEN** the person walks, and the last stop is "Senior Full Stack Engineer (AI Engineer)" in Quezon City, Philippines
+
 ### Requirement: The current stop and the controls are real text
 
-While the journey is shown, the page SHALL show, as real text outside the canvas, the current stop's title, location, date, and description, and its position as "Stop N of M", where M is the number of Experience entries (12 today). It SHALL offer Previous and Next buttons. Previous SHALL be disabled at the first stop and Next SHALL be disabled at the last. On a viewport at least 960 CSS pixels wide, written controls SHALL name the arrow keys or WASD, drag, and scroll. On a narrow viewport, they SHALL name tap, drag, and scroll, and MUST NOT tell the visitor to use a keyboard. The text SHALL be readable in light and dark mode without hovering, and a change of stop SHALL be announced to assistive technology.
+While the journey is shown, the page SHALL show, as real text outside the canvas, the current stop's title, location, date, and description, and its position as "Stop N of M", where M is the number of Experience entries (13 today). It SHALL offer Previous and Next buttons. Previous SHALL be disabled at the first stop and Next SHALL be disabled at the last. On a viewport at least 960 CSS pixels wide, written controls SHALL name the arrow keys or WASD, drag, and scroll. On a narrow viewport, they SHALL name tap, drag, and scroll, and MUST NOT tell the visitor to use a keyboard. The text SHALL be readable in light and dark mode without hovering, and a change of stop SHALL be announced to assistive technology.
 
 #### Scenario: The stop is readable without the canvas
 

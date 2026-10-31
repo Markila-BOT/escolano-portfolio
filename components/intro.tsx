@@ -22,7 +22,8 @@ export default function Intro() {
             height={160}
             sizes="160px"
             quality={95}
-            priority
+            preload
+            fetchPriority="high"
             className="h-40 w-40 rounded-full border-[0.35rem] border-border object-cover shadow-xl"
           />
           <span

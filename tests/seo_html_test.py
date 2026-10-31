@@ -16,11 +16,11 @@ GRAPH = {"@context": "https://schema.org", "@graph": [
     {"@type": "WebSite", "@id": CANONICAL + "#website", "url": CANONICAL, "name": "Mark Escolano Portfolio", "author": {"@id": CANONICAL + "#person"}},
 ]}
 DESCRIPTION = "Senior software engineer with more than a decade of experience."
-METADATA = {"description": DESCRIPTION, "og:title": "Mark Escolano Portfolio", "og:description": DESCRIPTION, "og:type": "website", "og:url": CANONICAL, "og:site_name": "Mark Escolano Portfolio", "og:image": CANONICAL + "og", "og:image:width": "1200", "og:image:height": "630", "og:image:alt": "Mark Escolano — Senior Software Engineer", "twitter:card": "summary_large_image", "twitter:title": "Mark Escolano Portfolio", "twitter:description": DESCRIPTION, "twitter:image": CANONICAL + "og", "twitter:image:alt": "Mark Escolano — Senior Software Engineer"}
+METADATA = {"description": DESCRIPTION, "og:title": "Mark Escolano Portfolio", "og:description": DESCRIPTION, "og:type": "website", "og:url": CANONICAL, "og:site_name": "Mark Escolano Portfolio", "og:image": CANONICAL + "og", "og:image:width": "1200", "og:image:height": "630", "og:image:alt": "Mark Escolano, Senior Software Engineer", "twitter:card": "summary_large_image", "twitter:title": "Mark Escolano Portfolio", "twitter:description": DESCRIPTION, "twitter:image": CANONICAL + "og", "twitter:image:alt": "Mark Escolano, Senior Software Engineer"}
 HEAD = '<title>Mark Escolano Portfolio</title>' + f'<link rel="canonical" href="{CANONICAL}">' + "".join(f'<meta name="{key}" content="{value}">' for key, value in METADATA.items())
-BODY = '<header><nav>Navigation</nav></header><main><h1>Mark Escolano</h1>' + "".join(f'<section id="{section_id}"><h2>{title}</h2></section>' for section_id, title in {"about": "About me", "projects": "My projects", "skills": "My skills", "experience": "My experience", "contact": "Contact me"}.items()) + "".join(f'<a href="{profile}">Profile</a>' for profile in PROFILES) + '</main><footer>Footer</footer>'
+BODY = '<header><nav>Navigation</nav></header><main><h1>Mark Escolano</h1>' + "".join(f'<section id="{section_id}"><h2>{title}</h2></section>' for section_id, title in {"about": "About me", "projects": "My projects", "skills": "My skills", "experience": "My experience", "questions": "Questions", "contact": "Contact me"}.items()) + "".join(f'<a href="{profile}">Profile</a>' for profile in PROFILES) + '</main><footer>Footer</footer>'
 HTML = '<html lang="en"><head>' + HEAD + '</head><body>' + BODY + '<script type="application/ld+json">' + json.dumps(GRAPH) + '</script></body></html>'
-SITEMAP = f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{CANONICAL}</loc></url><url><loc>{CANONICAL}tools</loc></url></urlset>'
+SITEMAP = f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{CANONICAL}</loc></url><url><loc>{CANONICAL}tools</loc></url><url><loc>{CANONICAL}writing</loc></url></urlset>'
 ROBOTS = f'User-Agent: *\nAllow: /\nSitemap: {CANONICAL}sitemap.xml\n'
 
 
@@ -37,7 +37,8 @@ class SeoTests(unittest.TestCase):
                 seo.verify_metadata(seo.Document(source))
 
     def test_semantics_rejects_bad_headings_and_landmarks(self):
-        for source in (HTML.replace('</h1>', '<h2>Nested</h2></h1>'), HTML.replace('</main>', '<h1>Extra</h1></main>'), HTML.replace('<h2>My skills</h2>', ''), HTML.replace('lang="en"', 'lang="fr"'), HTML.replace('<nav>Navigation</nav>', '')):
+        swapped_questions = HTML.replace('<section id="questions"><h2>Questions</h2></section><section id="contact"><h2>Contact me</h2></section>', '<section id="contact"><h2>Contact me</h2></section><section id="questions"><h2>Questions</h2></section>')
+        for source in (HTML.replace('</h1>', '<h2>Nested</h2></h1>'), HTML.replace('</main>', '<h1>Extra</h1></main>'), HTML.replace('<h2>My skills</h2>', ''), HTML.replace('lang="en"', 'lang="fr"'), HTML.replace('<nav>Navigation</nav>', ''), swapped_questions):
             with self.subTest(source=source[:60]), self.assertRaises(AssertionError):
                 seo.verify_structure(seo.Document(source))
 

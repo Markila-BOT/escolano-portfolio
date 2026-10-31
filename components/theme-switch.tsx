@@ -3,7 +3,6 @@
 import { useTheme } from "@/context/theme-context";
 import { useSoundContext } from "@/context/sound-context";
 import { Button } from "@/components/ui/button";
-import React from "react";
 import { BsMoon, BsSun } from "react-icons/bs";
 
 export default function ThemeSwitch() {

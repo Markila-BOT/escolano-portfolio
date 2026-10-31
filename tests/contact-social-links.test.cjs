@@ -8,7 +8,7 @@ const React = require("react");
 const { renderToStaticMarkup } = require("react-dom/server");
 
 function load(filename, mocks = {}) {
-  const module = { exports: {} };
+  const testModule = { exports: {} };
   const source = ts.transpileModule(
     fs.readFileSync(path.join(__dirname, "..", filename), "utf8"),
     {
@@ -20,15 +20,15 @@ function load(filename, mocks = {}) {
     },
   ).outputText;
   vm.runInNewContext(source, {
-    module,
-    exports: module.exports,
+    module: testModule,
+    exports: testModule.exports,
     require: (request) => {
       if (request in mocks) return mocks[request];
       if (/\.(png|jpe?g|webp)$/.test(request)) return { src: "test-image" };
       return require(request);
     },
   });
-  return module.exports;
+  return testModule.exports;
 }
 
 const data = load("lib/data.ts");

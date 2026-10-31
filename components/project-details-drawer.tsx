@@ -39,15 +39,17 @@ const neighborButtonClassName =
   "h-auto min-h-10 w-full whitespace-normal px-3 py-2 sm:w-auto";
 
 type ProjectDetailsDrawerProps = {
+  projects?: readonly (typeof projectsData)[number][];
   isOpen: boolean;
   selectedIndex: number;
   colorIndex: number;
   setSelectedIndex: (index: number) => void;
   handleOpenChange: (open: boolean) => void;
-  openedFromRef: RefObject<HTMLButtonElement>;
+  openedFromRef: RefObject<HTMLButtonElement | null>;
 };
 
 export default function ProjectDetailsDrawer({
+  projects = projectsData,
   isOpen,
   selectedIndex,
   colorIndex,
@@ -60,7 +62,7 @@ export default function ProjectDetailsDrawer({
   const detailsRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
-  const project = projectsData[selectedIndex];
+  const project = projects[selectedIndex];
   const videoUrl = "videoUrl" in project ? project.videoUrl : undefined;
   const websiteUrl = "websiteUrl" in project ? project.websiteUrl : undefined;
   const screenshots =
@@ -69,15 +71,15 @@ export default function ProjectDetailsDrawer({
   const buildNote = "buildNote" in project ? project.buildNote : undefined;
   const showsLinkCard = Boolean(websiteUrl) || !screenshots;
   const previousTitle =
-    selectedIndex > 0 ? projectsData[selectedIndex - 1].title : undefined;
+    selectedIndex > 0 ? projects[selectedIndex - 1].title : undefined;
   const nextTitle =
-    selectedIndex < projectsData.length - 1
-      ? projectsData[selectedIndex + 1].title
+    selectedIndex < projects.length - 1
+      ? projects[selectedIndex + 1].title
       : undefined;
 
   const focusAfterMove = (index: number, direction: "previous" | "next") => {
     const previousEnabled = index > 0;
-    const nextEnabled = index < projectsData.length - 1;
+    const nextEnabled = index < projects.length - 1;
     const activatedDisabled =
       direction === "previous" ? !previousEnabled : !nextEnabled;
     if (!activatedDisabled) return;
@@ -103,7 +105,7 @@ export default function ProjectDetailsDrawer({
   };
 
   const handleNext = () => {
-    if (selectedIndex >= projectsData.length - 1) return;
+    if (selectedIndex >= projects.length - 1) return;
     const index = selectedIndex + 1;
     setSelectedIndex(index);
     focusAfterMove(index, "next");
@@ -113,7 +115,7 @@ export default function ProjectDetailsDrawer({
     <Drawer open={isOpen} onOpenChange={handleOpenChange}>
       <DrawerContent
         aria-describedby={undefined}
-        className="fixed bottom-0 left-0 right-0 mt-24 flex h-[93%] flex-col rounded-t-[10px] bg-background text-foreground"
+        className="bg-background text-foreground fixed right-0 bottom-0 left-0 mt-24 flex h-[93%] flex-col rounded-t-[10px]"
         onOpenAutoFocus={(event) => {
           event.preventDefault();
           closeButtonRef.current?.focus();
@@ -124,13 +126,13 @@ export default function ProjectDetailsDrawer({
         }}
       >
         <DrawerTitle className="sr-only">{project.title}</DrawerTitle>
-        <div className="absolute right-[11rem] top-[-6rem] -z-10 h-[31.25rem] w-[31.25rem] rounded-full bg-glow-warm blur-[10rem] sm:w-[68.75rem]" />
-        <div className="absolute left-[-35rem] top-[-1rem] -z-10 h-[31.25rem] w-[50rem] rounded-full bg-glow-cool blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]" />
+        <div className="bg-glow-warm absolute top-[-6rem] right-[11rem] -z-10 h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem]" />
+        <div className="bg-glow-cool absolute top-[-1rem] left-[-35rem] -z-10 h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]" />
         <DrawerClose asChild>
           <Button
             ref={closeButtonRef}
             variant="ghost"
-            className="absolute right-5 top-5 z-10"
+            className="absolute top-5 right-5 z-10"
             aria-label="Close project"
           >
             <motion.div whileHover={{ rotate: 180 }}>
@@ -143,18 +145,18 @@ export default function ProjectDetailsDrawer({
           tabIndex={0}
           aria-label="Project details"
           role="region"
-          className="min-h-0 flex-1 overflow-y-auto pt-14 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
+          className="focus-visible:outline-ring min-h-0 flex-1 overflow-y-auto pt-14 focus-visible:outline focus-visible:outline-2"
         >
           <div className="grid w-full auto-rows-[minmax(min-content,auto)] grid-cols-1 gap-4 p-4 md:grid-cols-5 md:p-8 lg:p-20">
             {screenshots ? (
               <Card
                 key={project.title}
-                className="row-span-4 overflow-visible border-2 border-border md:col-span-3"
+                className="border-border row-span-4 overflow-visible border-2 md:col-span-3"
               >
                 <ProjectScreenshotPreview shots={screenshots} />
               </Card>
             ) : (
-              <Card className="row-span-4 overflow-hidden border-2 border-border md:col-span-3">
+              <Card className="border-border row-span-4 overflow-hidden border-2 md:col-span-3">
                 {videoUrl && isOpen ? (
                   <ProjectVideoFrame
                     url={videoUrl}
@@ -170,7 +172,7 @@ export default function ProjectDetailsDrawer({
                 )}
               </Card>
             )}
-            <Card className="row-span-3 border-2 border-border md:col-span-2">
+            <Card className="border-border row-span-3 border-2 md:col-span-2">
               <CardHeader>
                 <CardTitle className="text-lg">Tech Stack</CardTitle>
               </CardHeader>
@@ -197,7 +199,7 @@ export default function ProjectDetailsDrawer({
               </CardContent>
             </Card>
             {showsLinkCard ? (
-              <Card className="row-span-1 border-2 border-border md:col-span-1">
+              <Card className="border-border row-span-1 border-2 md:col-span-1">
                 <CardContent className="flex h-full w-full items-center justify-center">
                   {websiteUrl ? (
                     <motion.div
@@ -214,12 +216,12 @@ export default function ProjectDetailsDrawer({
                         <LuLink
                           size={40}
                           aria-hidden="true"
-                          className="md:w-15 md:h-15"
+                          className="md:h-15 md:w-15"
                         />
                       </Link>
                     </motion.div>
                   ) : (
-                    <div className="flex flex-col items-center gap-2 text-muted-foreground">
+                    <div className="text-muted-foreground flex flex-col items-center gap-2">
                       <LuLock size={40} aria-hidden />
                       <span className="text-sm font-medium">
                         Internal project
@@ -230,7 +232,7 @@ export default function ProjectDetailsDrawer({
               </Card>
             ) : null}
             <Card
-              className={`row-span-1 border-2 border-border ${showsLinkCard ? "md:col-span-1" : "md:col-span-2"}`}
+              className={`border-border row-span-1 border-2 ${showsLinkCard ? "md:col-span-1" : "md:col-span-2"}`}
             >
               <CardContent className="flex h-full w-full items-center justify-center">
                 <motion.div
@@ -243,14 +245,17 @@ export default function ProjectDetailsDrawer({
                 </motion.div>
               </CardContent>
             </Card>
-            <Card className="row-span-2 border-2 border-border md:col-span-5">
+            <Card className="border-border row-span-2 border-2 md:col-span-5">
               <CardHeader>
                 <CardTitle className="text-xl md:text-2xl">
                   {project.title}
                 </CardTitle>
-                <CardDescription className="flex flex-col gap-4 font-medium text-card-foreground md:text-base">
+                <CardDescription className="text-card-foreground flex flex-col gap-4 font-medium md:text-base">
                   {caseStudy ? (
-                    <ProjectCaseStudy caseStudy={caseStudy} />
+                    <ProjectCaseStudy
+                      caseStudy={caseStudy}
+                      walkthrough={project.title === "MatterWorx"}
+                    />
                   ) : (
                     project.description.map((paragraph) => (
                       <ProjectDescription key={paragraph} text={paragraph} />
@@ -264,7 +269,7 @@ export default function ProjectDetailsDrawer({
             </Card>
           </div>
         </div>
-        <div className="flex shrink-0 flex-col items-center justify-center gap-2 border-t border-border bg-background px-4 py-3 sm:flex-row">
+        <div className="border-border bg-background flex shrink-0 flex-col items-center justify-center gap-2 border-t px-4 py-3 sm:flex-row">
           <Button
             ref={previousButtonRef}
             variant="outline"
@@ -279,7 +284,7 @@ export default function ProjectDetailsDrawer({
             ref={nextButtonRef}
             variant="outline"
             className={neighborButtonClassName}
-            disabled={selectedIndex === projectsData.length - 1}
+            disabled={selectedIndex === projects.length - 1}
             onClick={handleNext}
           >
             {projectDrawer.next(nextTitle)}

@@ -25,6 +25,7 @@ Do not use it for a static section or a one-off layout. Jobs already assigned st
 | `@radix-ui/react-slot`   | `components/ui/button.tsx`, for `asChild`                  |
 | `@radix-ui/react-label`  | `components/ui/label.tsx`                                  |
 | `@radix-ui/react-dialog` | Modal mobile navigation through `components/ui/dialog.tsx` |
+| `@radix-ui/react-select` | `components/ui/select.tsx`, used by the project filter     |
 | `vaul`                   | `components/ui/drawer.tsx`                                 |
 
 Add the next primitive with `pnpm add @radix-ui/react-<name>`, one package, only when nothing in the table covers the job. Record that package in [technology-convention.md](technology-convention.md) in the same change. Do not install a styled kit, and do not add a second library for a job this table already names.

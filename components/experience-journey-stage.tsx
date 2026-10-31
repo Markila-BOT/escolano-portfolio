@@ -357,7 +357,9 @@ export function ExperienceJourneyStage({
   const viewportRef = useRef<HTMLDivElement>(null);
   const apiRef = useRef<JourneyApi | null>(null);
   const indexRef = useRef(currentIndex);
-  indexRef.current = currentIndex;
+  useEffect(() => {
+    indexRef.current = currentIndex;
+  }, [currentIndex]);
   useEffect(() => {
     const viewport = viewportRef.current;
     if (!viewport) return;

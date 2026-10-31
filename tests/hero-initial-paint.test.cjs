@@ -7,7 +7,7 @@ const React = require("react");
 const { renderToStaticMarkup } = require("react-dom/server");
 
 function loadRole(mocks = {}, globals = {}) {
-  const module = { exports: {} };
+  const testModule = { exports: {} };
   const source = ts.transpileModule(
     fs.readFileSync("components/role-title-loop.tsx", "utf8"),
     {
@@ -19,8 +19,8 @@ function loadRole(mocks = {}, globals = {}) {
     },
   ).outputText;
   vm.runInNewContext(source, {
-    module,
-    exports: module.exports,
+    module: testModule,
+    exports: testModule.exports,
     require: (name) =>
       name in mocks
         ? mocks[name]
@@ -29,14 +29,14 @@ function loadRole(mocks = {}, globals = {}) {
           : require(name),
     ...globals,
   });
-  return module.exports.RoleTitleLoop;
+  return testModule.exports.RoleTitleLoop;
 }
 
 const titles = [
   "Senior Software Engineer",
-  "Full Stack Engineer",
-  "Lead Software Engineer",
-  "Front-End Engineer",
+  "Senior Full Stack Engineer (AI Engineer)",
+  "Senior Lead Software Engineer",
+  "Senior Front-End Engineer",
 ];
 
 test("actual Framer Motion SSR exposes a settled first role and stable accessible copy", () => {
@@ -53,7 +53,7 @@ test("actual Framer Motion SSR exposes a settled first role and stable accessibl
   );
   assert.match(
     html,
-    /class="sr-only">Senior Software Engineer, Full Stack Engineer, Lead Software Engineer, and Front-End Engineer/,
+    /class="sr-only">Senior Software Engineer, Senior Full Stack Engineer \(AI Engineer\), Senior Lead Software Engineer, and Senior Front-End Engineer/,
   );
   assert.match(html, /invisible col-start-1 row-start-1/);
   assert.ok(!html.includes("aria-live"));

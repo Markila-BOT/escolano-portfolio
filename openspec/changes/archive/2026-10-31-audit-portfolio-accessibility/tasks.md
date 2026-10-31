@@ -9,7 +9,7 @@
 ## 2. Controls and contact process
 
 - [x] 2.1 Add persistent associated contact labels, sender-email autocomplete and understandable required/error information; verify HTML and component regressions cover both fields, correction guidance and retained values on failure, and update the audit rows.
-- [ ] 2.2 Keep submission named while pending and expose accessible pending, failure and accepted feedback; verify safe provider-stub tests exercise all outcomes, no email is sent, no unintended focus movement occurs, and document the fixture commands.
+- [x] 2.2 Keep submission named while pending and expose accessible pending, failure and accepted feedback; verify safe provider-stub tests exercise all outcomes, no email is sent, no unintended focus movement occurs, and document the fixture commands.
 - [ ] 2.3 Remediate confirmed control-name, visible-label, decorative-icon and state/panel relationship defects across the interactive sections; verify regression tests and stateful browser scans, documenting the repaired criteria without duplicating existing keyboard contracts.
 
 ## 3. Dynamic structure and keyboard behavior
@@ -24,7 +24,7 @@
 
 ## 5. Motion, language and media
 
-- [ ] 5.1 Provide accessible pause/update control for the automatic role loop where required while preserving default cycling and static reduced-motion behavior; verify pause/resume, stable accessible role descriptions and existing hero tests, documenting normal-mode acceptance.
+- [x] 5.1 Provide accessible pause/update control for the automatic role loop where required while preserving default cycling and static reduced-motion behavior; verify pause/resume, stable accessible role descriptions and existing hero tests, documenting normal-mode acceptance.
 - [ ] 5.2 Verify greeting language identification, flicker thresholds and reduced-motion handling, remediating confirmed barriers; verify transitions remain readable and source behavior tests pass, and retain measured/manual evidence for criteria automation cannot settle.
 - [ ] 5.3 Audit each project video's actual content, controls and applicable caption/audio-description/alternative requirements; remediate with accurate alternatives and tests where possible, recording per-media evidence and leaving unavailable alternatives unresolved rather than inventing content.
 

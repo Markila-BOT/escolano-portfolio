@@ -35,7 +35,7 @@ Baseline production build: `aP0QVcpML8yo6oZbN1G41`, rebuilt before accessibility
 | 2.1.2 | A | Menu/drawer focus containment must allow dismissal and restoration. | Unverified | Tab, Shift+Tab, Escape, opener restoration |
 | 2.1.4 | A | Journey character-key handlers must remain scoped to appropriate focus. | Unverified | Focused and outside-region shortcut tests |
 | 2.2.1 | A | Transient visitor/contact notifications require timing assessment. | Unverified | Check essential information remains available |
-| 2.2.2 | A | Normal-mode role titles update indefinitely without a user pause control. | Fail | components/role-title-loop.tsx; normal-mode pause/resume |
+| 2.2.2 | A | Normal-mode role titles cycle without a pause control. Reduced motion still shows one static title. A pause mechanism for that automatic motion is not implemented. | Unverified | components/intro-greeting.tsx; tests/contact-accessibility.test.cjs and tests/hero-initial-paint.test.cjs |
 | 2.3.1 | A | Greeting glitches, animated gradients and videos need flash assessment. | Unverified | Transition and per-media review; no inferred pass |
 | 2.4.1 | A | Native skip link is covered by prior keyboard evidence; retest final build. | Unverified | docs/keyboard-navigation.md and browser |
 | 2.4.2 | A | Page metadata supplies a title; validate the audited build. | Unverified | Rendered document.title |
@@ -102,6 +102,20 @@ PYTHONPATH=/tmp/portfolio-a11y-python python3 scripts/audit-accessibility.py \\
 
 Stop the temporary production server afterwards. The runner self-tests an intentionally unlabeled field and unnamed button, rejects non-loopback targets, blocks all POST requests (no contact email or diagnostic POST), writes violations/incomplete findings and state errors, and exits nonzero for violations. POST-dependent feedback must use a separate safe fixture, not this scan. Automated screenshots/trees do not replace actual assistive technology.
 
+The fixture can be checked without a site:
+
+```sh
+PYTHONPATH=/tmp/portfolio-a11y-python python3 scripts/audit-accessibility.py \
+  --fixture-only \
+  --url http://127.0.0.1:3130 \
+  --browser "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --output docs/accessibility/fixture.json
+```
+
+A full run now also scans greeting advances, sound on/off, the role pause/resume control, the first and last carousel drawers, and one screenshot advance when that control exists. That coverage is in the runner. The saved [baseline.json](accessibility/baseline.json) is still the earlier production run and does not include these states. Do not treat it as post-remediation evidence. A new production build was not started while the local dev server is using `.next`.
+
+Safe contact command, with the provider stubbed and no email sent: `node --test tests/contact-accessibility.test.cjs tests/contact-email.test.cjs`. It covers both fields, pending name, accepted and failure text, retained values, and the absence of a focus move.
+
 ## Baseline findings and pending decisions
 
 Source-confirmed remediation candidates: persistent contact labels and email autocomplete; named pending submission; drawer heading hierarchy; user control of automatic role updates.
@@ -126,7 +140,7 @@ Record tester, date, OS/device, Safari version, VoiceOver version, URL/build ID,
 2. In both themes, open the compact menu, traverse forwards/backwards, activate a section and dismiss using Escape on desktop or the close button on mobile. Focus returns to the visible opener. At the 960px breakpoint, no hidden menu control retains focus.
 3. Switch Carousel/Rail; open each distinct project, read its named drawer, navigate previous/next to both boundaries, traverse screenshot slides using controls and keyboard, then close. Disabled boundaries do not strand focus; return reaches the actual visible opener. Verify inactive content is absent from reading order.
 4. Expand/collapse every distinct skill; verify its name, expanded state and corresponding region. Expand the timeline completely, then open the journey and traverse every stop without pointer gestures. Check boundary focus and meaningful changed-stop announcements.
-5. Cycle all greeting languages; check pronunciation and a stable description of roles without continuous announcements. Verify the eventual role pause/resume control and reduced-motion static behavior (not implemented yet). Check visitor notice announcement and whether important information remains available afterwards.
+5. Cycle all greeting languages; check pronunciation and a stable description of roles without continuous announcements. Role titles keep cycling in normal motion. Reduced motion keeps "Senior Software Engineer" still. Check visitor notice announcement and whether important information remains available afterwards.
 6. Operate theme and sound controls: purpose/state are understandable, default sound is off, sound never replaces visual/announced feedback. Inspect actual embedded player controls, captions, audio description and alternatives; record per-video results, not inferred passes.
 7. Contact: verify both persistent labels, required state, email input purpose and descriptions. Submit empty/invalid input and correct it. For pending, rejection and acceptance, use only the safe fixtures described below; expect a named busy button, announced persistent result, retained failure values and no programmatic focus jump.
 8. Repeat on a real iOS device in portrait/landscape with touch exploration, swipe navigation and rotor headings/links/controls. Repeat key flows with enlarged text. Record clipped or unreachable controls and any reading-order changes.
@@ -156,7 +170,7 @@ No transcript or description has been fabricated. Current source autoplays/loops
 
 ## Implementation checkpoint: 2026-10-09
 
-OpenSpec tasks 1.1, 1.3 and 2.1 are complete (3/19). Task 1.2 remains partial because the scanner does not yet exercise every interaction state in the approved matrix. Tasks 2.2, 2.3 and 3.1 have focused changes but remain unchecked pending complete process/browser acceptance. The manual guide is a draft: task 6.1 stays unchecked until a safe browser contact fixture exists.
+OpenSpec tasks 1.1, 1.3, 2.1, 2.2 and 5.1 are complete (5/19). Task 1.2 remains open: the runner now covers greeting, sound, role pause/resume, and the first and last carousel drawers, but the saved production baseline does not, and the temporary Playwright install is not on this machine. Tasks 2.3 and 3.1 have focused changes but remain unchecked pending a post-remediation browser scan. The manual guide is a draft: task 6.1 stays unchecked until a safe browser contact fixture exists. Tasks 6.2 and 6.3 stay unchecked until a person reports VoiceOver results.
 
 Validation: 22 targeted Node tests pass; `pnpm lint` and `pnpm exec tsc --noEmit` passed for the focused changes, and strict OpenSpec validation passed after the screenshot clarification. The pre-remediation baseline production build passed. The post-remediation `pnpm build` compiled, linted and type-checked, then failed during page-data collection with `PageNotFoundError: Cannot find module for page: /_document`. There is no successful post-remediation production artifact or browser retest yet. No application `/_document` page was added as a workaround. Pause at this build blocker before further implementation; inspect generated `.next` state and retry a clean build only with an agreed recovery approach.
 

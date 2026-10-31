@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
@@ -13,6 +13,7 @@ import { FaBars } from "react-icons/fa";
 import { LogoMark } from "@/components/logo-mark";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import PersistentActionBar from "@/components/persistent-action-bar";
 import MobileNav, { mobileNavigationId } from "./mobile-nav";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 
@@ -29,7 +30,9 @@ export default function Header() {
   const hasModalFocus = useRef(false);
 
   useEffect(() => {
-    if (isDesktop) setIsMenuOpen(false);
+    if (!isDesktop) return;
+    const frame = requestAnimationFrame(() => setIsMenuOpen(false));
+    return () => cancelAnimationFrame(frame);
   }, [isDesktop]);
 
   function handleCloseAutoFocus(event: Event) {
@@ -80,6 +83,10 @@ export default function Header() {
             <LogoMark className="h-12 w-12" />
           </Link>
         </motion.div>
+
+        <PersistentActionBar
+          className={isMenuOpen && !isDesktop ? "hidden" : undefined}
+        />
 
         {isDesktop ? (
           <nav

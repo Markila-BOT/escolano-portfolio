@@ -7,7 +7,7 @@ const React = require("react");
 const { getImageProps } = require("next/image");
 
 function load(filename, mocks) {
-  const module = { exports: {} };
+  const testModule = { exports: {} };
   const output = ts.transpileModule(fs.readFileSync(filename, "utf8"), {
     compilerOptions: {
       module: ts.ModuleKind.CommonJS,
@@ -16,11 +16,11 @@ function load(filename, mocks) {
     },
   }).outputText;
   vm.runInNewContext(output, {
-    module,
-    exports: module.exports,
+    module: testModule,
+    exports: testModule.exports,
     require: (name) => (name in mocks ? mocks[name] : require(name)),
   });
-  return module.exports.default;
+  return testModule.exports.default;
 }
 
 function descendants(tree) {
@@ -62,6 +62,7 @@ test("drawer is absent until activation and stays mounted for close/focus behavi
     "@/lib/data": {
       projectsData: [{ title: "One" }],
       projectViews: {},
+      projectFilter: { label: "Filter", all: "All", empty: "None" },
       projectCarousel: { position: () => "1 of 1" },
     },
     "@/components/project-rail": "rail",
@@ -74,6 +75,14 @@ test("drawer is absent until activation and stays mounted for close/focus behavi
       CarouselPrevious: "previous",
     },
     "@/components/ui/button": { Button: "button" },
+    "@/components/ui/label": { Label: "label" },
+    "@/components/ui/select": {
+      Select: "select",
+      SelectTrigger: "trigger",
+      SelectValue: "value",
+      SelectContent: "content",
+      SelectItem: "item",
+    },
     "@/context/sound-context": {
       useSoundContext: () => ({ playCue: (cue) => cues.push(cue) }),
     },

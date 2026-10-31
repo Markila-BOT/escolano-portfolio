@@ -1,6 +1,6 @@
 # React and Next.js
 
-Next.js 14 App Router and React 18. Do not write Next.js 15 or React 19 APIs. `params` and `searchParams` on this version are plain objects, not promises. `cookies()` and `headers()` are synchronous.
+Next.js 16 App Router and React 19, with Tailwind 4. Dynamic `params`, `searchParams`, `cookies()` and `headers()` use asynchronous APIs; await them where used.
 
 Library roles are in [technology-convention.md](technology-convention.md). Styling is in [css-conventions.md](css-conventions.md).
 
@@ -9,7 +9,7 @@ Library roles are in [technology-convention.md](technology-convention.md). Styli
 - `app/page.tsx` and `app/layout.tsx` stay server components. They compose sections and own metadata.
 - Add `"use client"` only on a file that uses state, effects, events, or a browser API. Do not mark a parent client so a child can receive a callback.
 - Theme and the active section are React context (`context/theme-context.tsx`, `context/active-section-context.tsx`). Do not add a state library.
-- The contact form submits to the server action `actions/sendEmail.ts` (`"use server"`). Resend and `@react-email` run there, never in the browser. Surface the result with `react-hot-toast`.
+- The contact form submits to the server action `actions/sendEmail.ts` (`"use server"`). Resend and `@react-email/render` run there, never in the browser. Surface the result with `react-hot-toast`.
 
 ## Where files go
 

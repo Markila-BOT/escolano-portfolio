@@ -7,11 +7,18 @@ export const portfolioIdentity = {
   url: "https://escolano-portfolio.vercel.app/",
 } as const;
 
+export const writingIdentity = {
+  title: "Writing | Mark Escolano",
+  description: "Notes published on this site only after they are written.",
+} as const;
+
+export const writingUrl = new URL("writing", portfolioIdentity.url).href;
+
 export const portfolioShareImage = {
   url: new URL("og", portfolioIdentity.url).href,
   width: 1200,
   height: 630,
-  alt: `${portfolioIdentity.name} — ${portfolioIdentity.role}`,
+  alt: `${portfolioIdentity.name}, ${portfolioIdentity.role}`,
 } as const;
 
 export function serializeStructuredData(value: unknown): string {

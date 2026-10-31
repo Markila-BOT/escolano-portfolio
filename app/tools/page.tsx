@@ -48,6 +48,8 @@ export default function ToolsPage() {
           <p className="mt-4">
             Enable JavaScript to use the tools. Instructions and links still
             work.{" "}
+            {/* Native navigation is needed when scripts are disabled. */}
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a href="/#home" className="underline">
               Return to the portfolio
             </a>

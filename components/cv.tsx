@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { FaAddressCard } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 

@@ -6,7 +6,7 @@
 
 `app/page.tsx` renders one schema.org Person/WebSite graph in the initial HTML. The public role and name match portfolio content; social URLs come directly from `professionalSocialLinks`. The WebSite author references the Person's stable identifier. Serialization escapes less-than characters to prevent script termination. No private contact data or unverified credentials are included. This markup does not guarantee a rich search result.
 
-`/sitemap.xml` lists exactly the homepage and `/tools`. Sections and utility anchors are fragments, not separate pages. There is no fabricated modification timestamp. `/robots.txt` allows general crawlers and points to the canonical sitemap; this does not change Vercel preview indexing policy.
+`/sitemap.xml` lists the homepage, `/tools`, and `/writing`. A post URL is included only when that Markdown file is in `content/writing/`. Sections and utility anchors are fragments, not separate pages. There is no fabricated modification timestamp. `/robots.txt` allows general crawlers and points to the canonical sitemap; this does not change Vercel preview indexing policy.
 
 `app/tools/page.tsx` overrides title, description, canonical, Open Graph and Twitter identity for Tools. It shares the portfolio image but advertises the absolute production `/tools` URL even on local or preview hosts. Utility content is server-rendered, while transformations run only in client components. The original homepage metadata and identity graph remain unchanged.
 

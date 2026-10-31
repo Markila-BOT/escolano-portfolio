@@ -103,6 +103,20 @@ test("safe action fixtures announce outcomes and retain entered values on failur
   }
 });
 
+test("contact submission does not move focus", () => {
+  const source = fs.readFileSync(path.join(__dirname, "../components/contact-form.tsx"), "utf8");
+  assert.doesNotMatch(source, /\.focus\(/);
+  assert.doesNotMatch(source, /document\.activeElement/);
+});
+
+test("the role loop has no visitor pause control", () => {
+  const source = fs.readFileSync(path.join(__dirname, "../components/intro-greeting.tsx"), "utf8");
+  assert.equal(source.includes("Pause role titles"), false);
+  assert.equal(source.includes("Resume role titles"), false);
+  assert.equal(source.includes("isRoleLoopHeld"), false);
+  assert.match(source, /isPaused=\{isGlitching\}/);
+});
+
 test("drawer uses one page h1, decorative tag icons and a visibly focusable scroll region", () => {
   const source = fs.readFileSync(path.join(__dirname, "../components/project-details-drawer.tsx"), "utf8");
   assert.doesNotMatch(source, /<h1\b/);
