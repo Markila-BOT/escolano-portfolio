@@ -51,6 +51,7 @@ import {
   SiCursor,
   SiDjango,
   SiStripe,
+  SiTypeorm,
 } from "react-icons/si";
 import {
   TbBrandCSharp,
@@ -61,7 +62,7 @@ import {
   TbToggleRight,
 } from "react-icons/tb";
 import { AiOutlineApi } from "react-icons/ai";
-import { VscAzureDevops } from "react-icons/vsc";
+import { VscAzureDevops, VscBeaker } from "react-icons/vsc";
 import {
   FaLaptopCode,
   FaIdCard,
@@ -227,12 +228,11 @@ export const experiencesData = [
       "GraphQL",
       "NestJS",
       "AWS",
-      "Amazon S3",
-      "Amazon SES",
-      "Amazon SQS",
-      "Amazon SNS",
       "Azure DevOps",
       "Stripe",
+      "Playwright",
+      "TypeORM",
+      "React Aria",
     ],
     icon: React.createElement(CgWorkAlt),
     date: "2023-Present",
@@ -249,12 +249,11 @@ export const experiencesData = [
       "GraphQL",
       "NestJS",
       "AWS",
-      "Amazon S3",
-      "Amazon SES",
-      "Amazon SQS",
-      "Amazon SNS",
       "Azure DevOps",
       "Stripe",
+      "Playwright",
+      "TypeORM",
+      "React Aria",
     ],
     icon: React.createElement(CgWorkAlt),
     date: "2022-2023",
@@ -809,6 +808,9 @@ export const projectsData = [
       { label: "Terraform", icon: React.createElement(SiTerraform) },
       { label: "AWS", icon: React.createElement(FaAws) },
       { label: "Stripe", icon: React.createElement(SiStripe) },
+      { label: "Playwright", icon: React.createElement(VscBeaker) },
+      { label: "TypeORM", icon: React.createElement(SiTypeorm) },
+      { label: "React Aria", icon: React.createElement(FaReact) },
       { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: MERCHANTSPRING_IMAGE,
@@ -1100,26 +1102,6 @@ export const skillGroups: readonly SkillGroup[] = [
         note: "Amazon's cloud platform.",
       },
       {
-        label: "Amazon S3",
-        icon: React.createElement(FaAws),
-        note: "Object storage for files.",
-      },
-      {
-        label: "Amazon SES",
-        icon: React.createElement(FaAws),
-        note: "A service for sending email.",
-      },
-      {
-        label: "Amazon SQS",
-        icon: React.createElement(FaAws),
-        note: "A queue for messages between services.",
-      },
-      {
-        label: "Amazon SNS",
-        icon: React.createElement(FaAws),
-        note: "A service that publishes messages to subscribers.",
-      },
-      {
         label: "Azure DevOps",
         icon: React.createElement(VscAzureDevops),
         note: "Microsoft's service for repositories, pipelines, and work tracking.",
@@ -1128,6 +1110,21 @@ export const skillGroups: readonly SkillGroup[] = [
         label: "Stripe",
         icon: React.createElement(SiStripe),
         note: "A service for taking payments.",
+      },
+      {
+        label: "Playwright",
+        icon: React.createElement(VscBeaker),
+        note: "A tool for browser tests.",
+      },
+      {
+        label: "TypeORM",
+        icon: React.createElement(SiTypeorm),
+        note: "A library that maps database tables to objects.",
+      },
+      {
+        label: "React Aria",
+        icon: React.createElement(FaReact),
+        note: "React hooks for accessible components.",
       },
     ],
   },

@@ -45,7 +45,7 @@ const realInput = {
   workRoles: skillEvidenceWorkRoles,
 };
 
-test("actual portfolio classifies all 29 skills and retains exact evidence values", () => {
+test("actual portfolio classifies all 28 skills and retains exact evidence values", () => {
   const expected = {
     professional: [
       "JavaScript",
@@ -60,12 +60,11 @@ test("actual portfolio classifies all 29 skills and retains exact evidence value
       "Express",
       "MySQL",
       "AWS",
-      "Amazon S3",
-      "Amazon SES",
-      "Amazon SQS",
-      "Amazon SNS",
       "Azure DevOps",
       "Stripe",
+      "Playwright",
+      "TypeORM",
+      "React Aria",
     ],
     project: [
       "HTML",
@@ -84,7 +83,7 @@ test("actual portfolio classifies all 29 skills and retains exact evidence value
   const labels = skillGroups.flatMap((group) =>
     group.skills.map((skill) => skill.label),
   );
-  assert.equal(labels.length, 29);
+  assert.equal(labels.length, 28);
   for (const label of labels) {
     const evidence = resolveSkillEvidence(label, realInput);
     assert.ok(expected[evidence.status].includes(label), label);
@@ -139,13 +138,7 @@ test("actual portfolio classifies all 29 skills and retains exact evidence value
     "Senior Full Stack Engineer (AI Engineer)",
     "Senior Software Engineer",
   ];
-  for (const label of [
-    "Amazon S3",
-    "Amazon SES",
-    "Amazon SQS",
-    "Amazon SNS",
-    "Azure DevOps",
-  ]) {
+  for (const label of ["Azure DevOps"]) {
     assert.deepEqual(
       resolveSkillEvidence(label, realInput).sources.map(
         (source) => source.title,
@@ -153,7 +146,7 @@ test("actual portfolio classifies all 29 skills and retains exact evidence value
       wealthParkRoles,
     );
   }
-  for (const label of ["AWS", "Stripe"]) {
+  for (const label of ["AWS", "Stripe", "Playwright", "TypeORM", "React Aria"]) {
     assert.deepEqual(
       resolveSkillEvidence(label, realInput).sources.map(
         (source) => source.title,
