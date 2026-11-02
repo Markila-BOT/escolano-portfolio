@@ -2,6 +2,7 @@ import React from "react";
 import type { JourneySceneDescriptor } from "@/lib/journey-scene-types";
 import { CgWorkAlt } from "react-icons/cg";
 import {
+  FaAws,
   FaReact,
   FaCss3Alt,
   FaHtml5,
@@ -49,6 +50,7 @@ import {
   SiClaudecode,
   SiCursor,
   SiDjango,
+  SiStripe,
 } from "react-icons/si";
 import {
   TbBrandCSharp,
@@ -59,6 +61,7 @@ import {
   TbToggleRight,
 } from "react-icons/tb";
 import { AiOutlineApi } from "react-icons/ai";
+import { VscAzureDevops } from "react-icons/vsc";
 import {
   FaLaptopCode,
   FaIdCard,
@@ -223,6 +226,13 @@ export const experiencesData = [
       "Tailwind CSS",
       "GraphQL",
       "NestJS",
+      "AWS",
+      "Amazon S3",
+      "Amazon SES",
+      "Amazon SQS",
+      "Amazon SNS",
+      "Azure DevOps",
+      "Stripe",
     ],
     icon: React.createElement(CgWorkAlt),
     date: "2023-Present",
@@ -238,6 +248,13 @@ export const experiencesData = [
       "Tailwind CSS",
       "GraphQL",
       "NestJS",
+      "AWS",
+      "Amazon S3",
+      "Amazon SES",
+      "Amazon SQS",
+      "Amazon SNS",
+      "Azure DevOps",
+      "Stripe",
     ],
     icon: React.createElement(CgWorkAlt),
     date: "2022-2023",
@@ -790,6 +807,8 @@ export const projectsData = [
       { label: "Webpack", icon: React.createElement(SiWebpack) },
       { label: "Docker", icon: React.createElement(DiDocker) },
       { label: "Terraform", icon: React.createElement(SiTerraform) },
+      { label: "AWS", icon: React.createElement(FaAws) },
+      { label: "Stripe", icon: React.createElement(SiStripe) },
       { label: "Git", icon: React.createElement(FaGitAlt) },
     ],
     imageUrl: MERCHANTSPRING_IMAGE,
@@ -1074,6 +1093,41 @@ export const skillGroups: readonly SkillGroup[] = [
         label: "Cursor",
         icon: React.createElement(SiCursor),
         note: "An editor that writes and edits code with an agent.",
+      },
+      {
+        label: "AWS",
+        icon: React.createElement(FaAws),
+        note: "Amazon's cloud platform.",
+      },
+      {
+        label: "Amazon S3",
+        icon: React.createElement(FaAws),
+        note: "Object storage for files.",
+      },
+      {
+        label: "Amazon SES",
+        icon: React.createElement(FaAws),
+        note: "A service for sending email.",
+      },
+      {
+        label: "Amazon SQS",
+        icon: React.createElement(FaAws),
+        note: "A queue for messages between services.",
+      },
+      {
+        label: "Amazon SNS",
+        icon: React.createElement(FaAws),
+        note: "A service that publishes messages to subscribers.",
+      },
+      {
+        label: "Azure DevOps",
+        icon: React.createElement(VscAzureDevops),
+        note: "Microsoft's service for repositories, pipelines, and work tracking.",
+      },
+      {
+        label: "Stripe",
+        icon: React.createElement(SiStripe),
+        note: "A service for taking payments.",
       },
     ],
   },

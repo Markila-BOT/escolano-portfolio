@@ -45,7 +45,7 @@ const realInput = {
   workRoles: skillEvidenceWorkRoles,
 };
 
-test("actual portfolio classifies all 22 skills and retains exact evidence values", () => {
+test("actual portfolio classifies all 29 skills and retains exact evidence values", () => {
   const expected = {
     professional: [
       "JavaScript",
@@ -59,6 +59,13 @@ test("actual portfolio classifies all 22 skills and retains exact evidence value
       "Nest.js",
       "Express",
       "MySQL",
+      "AWS",
+      "Amazon S3",
+      "Amazon SES",
+      "Amazon SQS",
+      "Amazon SNS",
+      "Azure DevOps",
+      "Stripe",
     ],
     project: [
       "HTML",
@@ -77,7 +84,7 @@ test("actual portfolio classifies all 22 skills and retains exact evidence value
   const labels = skillGroups.flatMap((group) =>
     group.skills.map((skill) => skill.label),
   );
-  assert.equal(labels.length, 22);
+  assert.equal(labels.length, 29);
   for (const label of labels) {
     const evidence = resolveSkillEvidence(label, realInput);
     assert.ok(expected[evidence.status].includes(label), label);
@@ -125,7 +132,33 @@ test("actual portfolio classifies all 22 skills and retains exact evidence value
       resolveSkillEvidence(label, realInput).sources.map(
         (source) => source.title,
       ),
-      ["MatterWorx", "Potato V3", "Owner Web App", "Workflow", "House Elf"],
+      ["MatterWorx", "Potato V3", "House Elf", "Owner Web App", "Workflow"],
+    );
+  }
+  const wealthParkRoles = [
+    "Senior Full Stack Engineer (AI Engineer)",
+    "Senior Software Engineer",
+  ];
+  for (const label of [
+    "Amazon S3",
+    "Amazon SES",
+    "Amazon SQS",
+    "Amazon SNS",
+    "Azure DevOps",
+  ]) {
+    assert.deepEqual(
+      resolveSkillEvidence(label, realInput).sources.map(
+        (source) => source.title,
+      ),
+      wealthParkRoles,
+    );
+  }
+  for (const label of ["AWS", "Stripe"]) {
+    assert.deepEqual(
+      resolveSkillEvidence(label, realInput).sources.map(
+        (source) => source.title,
+      ),
+      [...wealthParkRoles, "MerchantSpring"],
     );
   }
   for (const [label, tag] of [
