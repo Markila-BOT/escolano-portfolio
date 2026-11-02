@@ -17,7 +17,7 @@ The Tools group SHALL show Claude Code, then Codex, then Cursor, immediately aft
 
 ### Requirement: The existing chips stay
 
-The chips other than Amazon S3, Amazon SES, Amazon SQS, and Amazon SNS SHALL remain, with the same labels. HTML SHALL be the first chip in the section. The chip before Claude Code SHALL be Framer Motion. The chip after Cursor SHALL be AWS. The chip before the databases SHALL be React Aria. The databases SHALL follow the Tools group, so Framer Motion is not last among the chips that existed before Claude Code, Codex, and Cursor.
+The chips other than Amazon S3, Amazon SES, Amazon SQS, and Amazon SNS SHALL remain, with the same labels. HTML SHALL be the first chip in the section. The chip before Claude Code SHALL be Framer Motion. The chip after Cursor SHALL be AWS. The chip before the databases SHALL be TypeORM. The databases SHALL follow the Tools group, so Framer Motion is not last among the chips that existed before Claude Code, Codex, and Cursor.
 
 #### Scenario: The list still starts with HTML
 
@@ -26,7 +26,7 @@ The chips other than Amazon S3, Amazon SES, Amazon SQS, and Amazon SNS SHALL rem
 
 #### Scenario: Databases follow the Tools group
 
-- **WHEN** the visitor reads past React Aria
+- **WHEN** the visitor reads past TypeORM
 - **THEN** the next chips are MongoDB, MySQL, PostgreSQL, and Firebase, in that order
 
 #### Scenario: AWS follows Cursor

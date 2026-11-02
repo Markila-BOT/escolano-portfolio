@@ -26,12 +26,12 @@ The Languages group SHALL contain HTML, CSS, JavaScript, TypeScript, and Rust, i
 
 ### Requirement: Tools membership
 
-The Tools group SHALL contain React, Next.js, Node.js, Git, Tailwind, Redux, GraphQL, Nest.js, Express, Framer Motion, Claude Code, Codex, Cursor, AWS, Azure DevOps, Stripe, Playwright, TypeORM, and React Aria, in that order, and no other chip.
+The Tools group SHALL contain React, Next.js, Node.js, Git, Tailwind, Redux, GraphQL, Nest.js, Express, Framer Motion, Claude Code, Codex, Cursor, AWS, Azure DevOps, Stripe, Playwright, and TypeORM, in that order, and no other chip.
 
 #### Scenario: Tools chips
 
 - **WHEN** the visitor reads the Tools group
-- **THEN** the chips are React, Next.js, Node.js, Git, Tailwind, Redux, GraphQL, Nest.js, Express, Framer Motion, Claude Code, Codex, Cursor, AWS, Azure DevOps, Stripe, Playwright, TypeORM, and React Aria, in that order
+- **THEN** the chips are React, Next.js, Node.js, Git, Tailwind, Redux, GraphQL, Nest.js, Express, Framer Motion, Claude Code, Codex, Cursor, AWS, Azure DevOps, Stripe, Playwright, and TypeORM, in that order
 
 #### Scenario: The four AWS services are absent
 
